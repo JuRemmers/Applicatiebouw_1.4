@@ -20,6 +20,11 @@ namespace Systeem
         private void btn_lunch_Click(object sender, EventArgs e)
         {
             gbox_items.Visible = true;
+
+            clb_menuitems.Items.Add("ding");
+            clb_menuitems.Items.Add("ding 2", CheckState.Indeterminate);
+
+
         }
     }
 }
