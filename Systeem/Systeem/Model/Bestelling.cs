@@ -13,7 +13,6 @@ namespace Systeem.Model
         private Status status;
         private Tafel tafel;
         private Medewerker medewerker;
-        private DateTime datumTijd;
     }
 }
 

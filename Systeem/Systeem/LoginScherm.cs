@@ -49,7 +49,7 @@ namespace Systeem
             }
             catch
             {
-                MessageBox.Show("Verkeerde invoer, Werknemer ID moet een getal zijn");
+                MessageBox.Show("Verkeerde invoer, Werknemer I");
             }
 
             
