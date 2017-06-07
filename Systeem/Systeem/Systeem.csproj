@@ -55,6 +55,7 @@
     <Compile Include="DAO\RekeningDAO.cs" />
     <Compile Include="DAO\TafelDAO.cs" />
     <Compile Include="Logica\BestellingService.cs" />
+    <Compile Include="Logica\Loginservice.cs" />
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>
     </Compile>

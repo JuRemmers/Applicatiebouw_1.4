@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using 
 
 namespace Systeem
 {
@@ -31,8 +32,10 @@ namespace Systeem
             int werknemer_id;
             string wachtwoord;
 
-            werknemer_id = int.Parse(tb_werknemer_id.Text);
-            wachtwoord = tb_wacthwoord.Text.ToString();
+            werknemer_id = Int32.Parse(tb_werknemer_id.Text);
+            wachtwoord = (tb_wacthwoord.Text).ToString();
+
+
         }
 
         private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
