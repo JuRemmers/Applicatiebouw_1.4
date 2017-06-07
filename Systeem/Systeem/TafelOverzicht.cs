@@ -21,8 +21,8 @@ namespace Systeem
         {
             gbox_items.Visible = true;
 
-            clb_menuitems.Items.Add("ding");
-            clb_menuitems.Items.Add("ding 2", CheckState.Indeterminate);
+            clb_menuitems.Items.Clear();
+            
 
 
         }
