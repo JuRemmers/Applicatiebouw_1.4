@@ -27,6 +27,12 @@ namespace Systeem
             this.Hide();
             var TafelOverzicht = new TafelOverzicht();
             TafelOverzicht.ShowDialog();
+
+            int werknemer_id;
+            string wachtwoord;
+
+            werknemer_id = int.Parse(tb_werknemer_id.Text);
+            wachtwoord = tb_wacthwoord.Text.ToString();
         }
 
         private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
