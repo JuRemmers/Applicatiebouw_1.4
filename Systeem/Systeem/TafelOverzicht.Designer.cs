@@ -298,6 +298,7 @@
             this.btn_terug.TabIndex = 1;
             this.btn_terug.Text = "Terug";
             this.btn_terug.UseVisualStyleBackColor = true;
+            this.btn_terug.Click += new System.EventHandler(this.btn_terug_Click);
             // 
             // clb_menuitems
             // 
@@ -305,7 +306,7 @@
             this.clb_menuitems.FormattingEnabled = true;
             this.clb_menuitems.Location = new System.Drawing.Point(6, 49);
             this.clb_menuitems.Name = "clb_menuitems";
-            this.clb_menuitems.Size = new System.Drawing.Size(390, 439);
+            this.clb_menuitems.Size = new System.Drawing.Size(390, 424);
             this.clb_menuitems.TabIndex = 0;
             // 
             // btn_bekijk_bestelling

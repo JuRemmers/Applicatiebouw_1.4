@@ -88,6 +88,7 @@
             this.tb_wacthwoord.Name = "tb_wacthwoord";
             this.tb_wacthwoord.Size = new System.Drawing.Size(139, 20);
             this.tb_wacthwoord.TabIndex = 10;
+            this.tb_wacthwoord.TextChanged += new System.EventHandler(this.tb_wacthwoord_TextChanged);
             // 
             // b_login_enter
             // 

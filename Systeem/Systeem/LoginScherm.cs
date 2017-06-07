@@ -28,5 +28,10 @@ namespace Systeem
             var TafelOverzicht = new TafelOverzicht();
             TafelOverzicht.ShowDialog();
         }
+
+        private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
+        {
+            tb_wacthwoord.PasswordChar = '*';
+        }
     }
 }

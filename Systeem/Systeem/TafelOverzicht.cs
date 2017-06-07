@@ -26,5 +26,10 @@ namespace Systeem
 
 
         }
+
+        private void btn_terug_Click(object sender, EventArgs e)
+        {
+            gbox_items.Visible = false;
+        }
     }
 }
