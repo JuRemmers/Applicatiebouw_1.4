@@ -281,6 +281,7 @@
             this.btn_Bekijk.TabIndex = 3;
             this.btn_Bekijk.Text = "Bekijk bestelling";
             this.btn_Bekijk.UseVisualStyleBackColor = true;
+            this.btn_Bekijk.Click += new System.EventHandler(this.btn_Bekijk_Click);
             // 
             // btn_add
             // 
@@ -291,6 +292,7 @@
             this.btn_add.TabIndex = 2;
             this.btn_add.Text = "Voeg selectie toe";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_terug
             // 
@@ -305,11 +307,12 @@
             // 
             // clb_menukaart
             // 
+            this.clb_menukaart.CheckOnClick = true;
             this.clb_menukaart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clb_menukaart.FormattingEnabled = true;
             this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
             this.clb_menukaart.Name = "clb_menukaart";
-            this.clb_menukaart.Size = new System.Drawing.Size(390, 439);
+            this.clb_menukaart.Size = new System.Drawing.Size(390, 424);
             this.clb_menukaart.TabIndex = 0;
             this.clb_menukaart.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 

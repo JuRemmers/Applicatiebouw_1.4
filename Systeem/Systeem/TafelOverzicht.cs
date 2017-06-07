@@ -81,5 +81,21 @@ namespace Systeem
                 clb_menukaart.Items.Add(item.ToString());
             }
         }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            string selected = clb_menukaart.CheckedItems.ToString();
+
+            
+        }
+
+        private void btn_Bekijk_Click(object sender, EventArgs e)
+        {
+            clb_menukaart.Items.Clear();
+
+            // somehow get list of bestellingen
+
+            // print each
+        }
     }
 }

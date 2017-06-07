@@ -63,6 +63,7 @@
     <Compile Include="LoginScherm.Designer.cs">
       <DependentUpon>LoginScherm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BestelItem.cs" />
     <Compile Include="Model\Bestelling.cs" />
     <Compile Include="Model\Functie.cs" />
     <Compile Include="Model\Medewerker.cs" />
