@@ -19,9 +19,9 @@ namespace Systeem.DAO
             conn = dbconn.GetConnection();
         }
 
-        public List<MenuItem> GetAllkaart()
-            {
+        //public List<MenuItem> GetAllkaart()
+           // {
                 
-            }
+            //}
     }
 }

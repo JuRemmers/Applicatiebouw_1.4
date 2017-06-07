@@ -11,5 +11,13 @@ namespace Systeem.Model
         private int id;
         private int btw;
         private MenuKaart kaart;
+
+        public Menucategorie(int id, int btw, MenuKaart kaart)
+        {
+            this.id = id;
+            this.btw = btw;
+            this.kaart = kaart;
+
+        }
     }
 }

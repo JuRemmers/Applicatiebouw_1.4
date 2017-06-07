@@ -11,6 +11,17 @@ namespace Systeem.Model
         private float prijs;
         private int id;
         private int voorraad;
-        private MenuItem catagorie;
+        private Menucategorie categorie;
+        private MenuKaart kaart;
+
+        public MenuItem(float prijs, int id, int vooraad, Menucategorie categorie, MenuKaart kaart)
+        {
+            this.prijs = prijs;
+            this.id = id;
+            this.voorraad = voorraad;
+            this.categorie = categorie;
+            this.kaart = kaart;
+
+        }
     }
 }

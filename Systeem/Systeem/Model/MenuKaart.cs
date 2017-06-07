@@ -8,5 +8,9 @@ namespace Systeem.Model
 {
     class MenuKaart
     {
+        int id;
+        enum kaart;
+
+        public 
     }
 }
