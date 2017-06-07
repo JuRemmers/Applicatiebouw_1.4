@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Systeem.Logica;
+using Systeem.Model;
 
 namespace Systeem
 {
@@ -26,9 +27,11 @@ namespace Systeem
             clb_menukaart.Items.Clear();
             Lunchservice lijst = new Lunchservice();
             string kaartid = "lunch";
-            List<MenuItem> lunchmenu = lijst.GetAllkaart(kaartid);
+            List<Model.MenuItem> kaart = new List<Model.MenuItem>();
 
-            foreach (MenuItem MenuItem in lunchmenu)
+            kaart.Add(new Model.MenuItem(2, 3, 50, new Menucategorie(1, "nagerecht", 2, 3), new MenuKaart(1, 3)));
+            kaart.Add(new Model.MenuItem(4, 3, 50, new Menucategorie(1, "nagerecht", 2, 3), new MenuKaart(1, 3)));
+            foreach (Model.MenuItem MenuItem in kaart)
             {
                 clb_menukaart.Items.Add(MenuItem.ToString());
             }

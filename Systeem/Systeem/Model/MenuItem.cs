@@ -18,7 +18,7 @@ namespace Systeem.Model
         {
             this.prijs = prijs;
             this.id = id;
-            this.voorraad = voorraad;
+            this.voorraad = vooraad;
             this.categorie = categorie;
             this.kaart = kaart;
 
