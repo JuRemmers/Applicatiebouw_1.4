@@ -25,17 +25,13 @@ namespace Systeem
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
-            Lunchservice lijst = new Lunchservice();
-            string kaartid = "lunch";
-            List<Model.MenuItem> kaart = new List<Model.MenuItem>();
+            Kaartservice service = new Kaartservice();
+            List<Model.MenuItem> allLunch = service.GetAllkaart("Lunch");
 
-            kaart.Add(new Model.MenuItem(2, 3, 50, new Menucategorie(1, "nagerecht", 2, 3), new MenuKaart(1, 3)));
-            kaart.Add(new Model.MenuItem(4, 3, 50, new Menucategorie(1, "nagerecht", 2, 3), new MenuKaart(1, 3)));
-            foreach (Model.MenuItem MenuItem in kaart)
+            foreach (Model.MenuItem item in allLunch)
             {
-                clb_menukaart.Items.Add(MenuItem.ToString());
+                clb_menukaart.Items.Add(item.ToString());
             }
-
         }
 
         private void btn_terug_Click(object sender, EventArgs e)
@@ -56,6 +52,34 @@ namespace Systeem
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_diner_Click(object sender, EventArgs e)
+        {
+            gbox_items.Visible = true;
+
+            clb_menukaart.Items.Clear();
+            Kaartservice service = new Kaartservice();
+            List<Model.MenuItem> allDiner = service.GetAllkaart("Diner");
+
+            foreach (Model.MenuItem item in allDiner)
+            {
+                clb_menukaart.Items.Add(item.ToString());
+            }
+        }
+
+        private void btn_dranken_Click(object sender, EventArgs e)
+        {
+            gbox_items.Visible = true;
+
+            clb_menukaart.Items.Clear();
+            Kaartservice service = new Kaartservice();
+            List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
+
+            foreach (Model.MenuItem item in allDranken)
+            {
+                clb_menukaart.Items.Add(item.ToString());
+            }
         }
     }
 }

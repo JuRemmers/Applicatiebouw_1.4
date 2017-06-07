@@ -9,13 +9,12 @@ namespace Systeem.Model
     class MenuKaart
     {
         int id;
-        int kaart;
+        string kaart;
 
-        public MenuKaart(int id, int kaart)
+        public MenuKaart(int id, string kaart)
         {
             this.id = id;
             this.kaart = kaart;
         }
-
     }
 }

@@ -34,6 +34,13 @@ namespace Systeem.DAO
             int menukaartid = (int)reader["Menu_Kaart_ID"];
 
             Menucategorie cAtegorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
+
+            int menukaart_id = (int)reader["menuKaartID"];
+            string naam = (string)reader["Kaart"];
+
+            MenuKaart kaart = new MenuKaart(menukaart_id, naam);
+
+            return new MenuItem(menuitemID, gerecht, prijs, voorraad, cAtegorie, kaart);
         }
 
         public List<MenuItem> GetAllForKaart(string menukaart)

@@ -8,13 +8,13 @@ using Systeem.DAO;
 
 namespace Systeem.Logica
 {
-    class Lunchservice
+    class Kaartservice
     {
-
         public List<MenuItem> GetAllkaart(string kaartid)
         {
             MenuItemDAO MenuDal = new MenuItemDAO();
-            List<MenuItem> kaart = new List<MenuItem>();
+            List<MenuItem> kaart = MenuDal.GetAllForKaart(kaartid); ;
+
 
             return kaart;
         }
