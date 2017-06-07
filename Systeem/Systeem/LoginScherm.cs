@@ -32,7 +32,7 @@ namespace Systeem
             string wachtwoord;
 
             werknemer_id = int.Parse(tb_werknemer_id.Text);
-            wachtwoord = tb_wacthwoord.ToString();
+            wachtwoord = tb_wacthwoord.Text.ToString();
         }
 
         private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
