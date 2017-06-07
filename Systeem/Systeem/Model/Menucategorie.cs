@@ -9,7 +9,16 @@ namespace Systeem.Model
     class Menucategorie
     {
         private int id;
+        private string categorie;
         private int btw;
-        private MenuKaart kaart;
+        private int menukaartID;
+
+        public Menucategorie(int ID, string Cat, int btw, int menu)
+        {
+            this.id = ID;
+            this.categorie = Cat;
+            this.btw = btw;
+            this.menukaartID = menu;
+        }
     }
 }

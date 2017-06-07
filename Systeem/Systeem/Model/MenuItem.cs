@@ -11,6 +11,7 @@ namespace Systeem.Model
         private float prijs;
         private int id;
         private int voorraad;
-        private MenuItem catagorie;
+        private Menucategorie categorie;
+        private MenuKaart kaart;
     }
 }

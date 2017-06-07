@@ -19,9 +19,42 @@ namespace Systeem.DAO
             conn = dbconn.GetConnection();
         }
 
-        public List<MenuItem> GetAllkaart()
+        public MenuItem ReadMenuItem(SqlDataReader reader)
+        {
+            // Menu_Item.ID, Gerecht, Prijs, Voorraad,
+            int menuitemID = (int)reader["Menu_Item.ID"];
+            string gerecht = (string)reader["Gerecht"];
+            float prijs = (float)reader["Prijs"];
+            int voorraad = (int)reader["Voorraad"];
+
+            // categorieID, Menu_Categorie.Categorie, Menu_Categorie.btw, Menu_Categorie.Menu_Kaart_ID
+            int categorieid = (int)reader["categorieID"];
+            string categorie = (string)reader["Categorie"];
+            int btw = (int)reader["btw"];
+            int menukaartid = (int)reader["Menu_Kaart_ID"];
+
+            Menucategorie categorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
+        }
+
+        public List<MenuItem> GetAllForKaart()
+        {
+            List<MenuItem> menuitems = new List<MenuItem>();
+
+            conn.Open();
+
+            SqlCommand command = new SqlCommand("SELECT Menu_Item.ID, Gerecht, Prijs, Voorraad, Menu_Categorie_ID as categorieID, Menu_Categorie.Categorie, Menu_Categorie.btw, Menu_Categorie.Menu_Kaart_ID, Menu_Kaart.id as menuKaartID, Menu_Kaart.Kaart FROM Menu_Item INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.id INNER JOIN Menu_Kaart on Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.id WHERE Menu_Kaart.Kaart=" + menukaart, conn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
             {
-                
+                MenuItem item = ReadMenuItem(reader);
+                menuitems.Add(item);
             }
+
+            reader.Close();
+            conn.Close();
+
+            return menuitems;
+        }
     }
 }
