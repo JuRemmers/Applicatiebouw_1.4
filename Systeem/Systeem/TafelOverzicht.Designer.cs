@@ -245,7 +245,7 @@
             this.gbox_items.Controls.Add(this.checkedListBox1);
             this.gbox_items.Location = new System.Drawing.Point(6, 6);
             this.gbox_items.Name = "gbox_items";
-            this.gbox_items.Size = new System.Drawing.Size(402, 547);
+            this.gbox_items.Size = new System.Drawing.Size(402, 555);
             this.gbox_items.TabIndex = 4;
             this.gbox_items.TabStop = false;
             this.gbox_items.Text = "Menu items";
@@ -282,7 +282,7 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(244, 491);
+            this.btn_add.Location = new System.Drawing.Point(244, 495);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(152, 50);
             this.btn_add.TabIndex = 2;

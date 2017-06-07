@@ -19,7 +19,7 @@ namespace Systeem
 
         private void btn_lunch_Click(object sender, EventArgs e)
         {
-
+            gbox_items.Visible = true;
         }
     }
 }
