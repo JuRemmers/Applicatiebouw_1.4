@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Systeem.Model;
 
 namespace Systeem.DAO
 {
@@ -17,5 +18,10 @@ namespace Systeem.DAO
             dbconn = new DBconnection();
             conn = dbconn.GetConnection();
         }
+
+        public List<MenuItem> GetAllkaart()
+            {
+                
+            }
     }
 }

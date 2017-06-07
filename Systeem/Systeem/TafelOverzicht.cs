@@ -25,6 +25,7 @@ namespace Systeem
             checkedListBox1.Items.Clear();
             Lunchservice lijst = new Lunchservice();
 
+            lijst.GetAlllunch();
 
 
         }
