@@ -243,7 +243,7 @@
             this.gbox_items.Controls.Add(this.btn_add);
             this.gbox_items.Controls.Add(this.btn_terug);
             this.gbox_items.Controls.Add(this.checkedListBox1);
-            this.gbox_items.Location = new System.Drawing.Point(399, 24);
+            this.gbox_items.Location = new System.Drawing.Point(6, 6);
             this.gbox_items.Name = "gbox_items";
             this.gbox_items.Size = new System.Drawing.Size(402, 547);
             this.gbox_items.TabIndex = 4;
@@ -351,6 +351,7 @@
             this.btn_lunch.TabIndex = 0;
             this.btn_lunch.Text = "Lunch";
             this.btn_lunch.UseVisualStyleBackColor = false;
+            this.btn_lunch.Click += new System.EventHandler(this.btn_lunch_Click);
             // 
             // tp_huidige_bestellingen
             // 
