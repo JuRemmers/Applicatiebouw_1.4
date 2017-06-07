@@ -23,5 +23,10 @@ namespace Systeem.Model
             this.kaart = kaart;
 
         }
+
+        public override string ToString()
+        {
+            
+        }
     }
 }
