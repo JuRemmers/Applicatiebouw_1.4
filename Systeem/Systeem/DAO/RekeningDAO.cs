@@ -42,12 +42,16 @@ namespace Systeem.DAO
             SqlCommand command = new SqlCommand(com);
             command.Parameters.AddWithValue("@id", tafelId);
             conn.Open();
+
         }
 
-        public void GetRekeningById()
+        public void GetRekeningById(int tafelID)
         {
-            string com = "";
+            string com = "SELECT Bestelling WHERE Tafel_ID=@id";
+            string com1 = "SELECT"
             SqlCommand command = new SqlCommand(com);
+            command.Parameters.AddWithValue("@id", tafelID);
+            conn.Open();
         }
 
         public void GetAll()
