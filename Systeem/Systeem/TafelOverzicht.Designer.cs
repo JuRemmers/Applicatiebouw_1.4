@@ -243,7 +243,7 @@
             this.gbox_items.Controls.Add(this.btn_add);
             this.gbox_items.Controls.Add(this.btn_terug);
             this.gbox_items.Controls.Add(this.checkedListBox1);
-            this.gbox_items.Location = new System.Drawing.Point(399, 24);
+            this.gbox_items.Location = new System.Drawing.Point(10, 6);
             this.gbox_items.Name = "gbox_items";
             this.gbox_items.Size = new System.Drawing.Size(402, 555);
             this.gbox_items.TabIndex = 4;
@@ -292,12 +292,13 @@
             // btn_terug
             // 
             this.btn_terug.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_terug.Location = new System.Drawing.Point(6, 14);
+            this.btn_terug.Location = new System.Drawing.Point(6, 12);
             this.btn_terug.Name = "btn_terug";
             this.btn_terug.Size = new System.Drawing.Size(75, 31);
             this.btn_terug.TabIndex = 1;
             this.btn_terug.Text = "Terug";
             this.btn_terug.UseVisualStyleBackColor = true;
+            this.btn_terug.Click += new System.EventHandler(this.btn_terug_Click_1);
             // 
             // checkedListBox1
             // 

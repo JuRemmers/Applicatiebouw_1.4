@@ -21,13 +21,16 @@ namespace Systeem
         {
             gbox_items.Visible = true;
 
-            clb_menuitems.Items.Clear();
-            
-
+            checkedListBox1.Items.Clear();
 
         }
 
         private void btn_terug_Click(object sender, EventArgs e)
+        {
+            gbox_items.Visible = false;
+        }
+
+        private void btn_terug_Click_1(object sender, EventArgs e)
         {
             gbox_items.Visible = false;
         }
