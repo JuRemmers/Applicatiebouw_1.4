@@ -16,5 +16,17 @@ namespace Systeem
         {
             InitializeComponent();
         }
+
+        private void lbl_login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void b_login_enter_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var TafelOverzicht = new TafelOverzicht();
+            TafelOverzicht.ShowDialog();
+        }
     }
 }

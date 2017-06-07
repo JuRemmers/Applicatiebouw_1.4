@@ -41,6 +41,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
@@ -54,11 +57,12 @@
             // 
             this.lbl_login.AutoSize = true;
             this.lbl_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_login.Location = new System.Drawing.Point(69, 61);
+            this.lbl_login.Location = new System.Drawing.Point(69, 9);
             this.lbl_login.Name = "lbl_login";
             this.lbl_login.Size = new System.Drawing.Size(283, 108);
             this.lbl_login.TabIndex = 12;
             this.lbl_login.Text = "Login";
+            this.lbl_login.Click += new System.EventHandler(this.lbl_login_Click);
             // 
             // lbl_werknemer_id
             // 
@@ -80,31 +84,35 @@
             // 
             // tb_wacthwoord
             // 
-            this.tb_wacthwoord.Location = new System.Drawing.Point(212, 442);
+            this.tb_wacthwoord.Location = new System.Drawing.Point(205, 442);
             this.tb_wacthwoord.Name = "tb_wacthwoord";
-            this.tb_wacthwoord.Size = new System.Drawing.Size(132, 20);
+            this.tb_wacthwoord.Size = new System.Drawing.Size(139, 20);
             this.tb_wacthwoord.TabIndex = 10;
             // 
             // b_login_enter
             // 
-            this.b_login_enter.Location = new System.Drawing.Point(212, 487);
+            this.b_login_enter.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.b_login_enter.Location = new System.Drawing.Point(205, 487);
             this.b_login_enter.Name = "b_login_enter";
-            this.b_login_enter.Size = new System.Drawing.Size(132, 23);
+            this.b_login_enter.Size = new System.Drawing.Size(139, 23);
             this.b_login_enter.TabIndex = 11;
             this.b_login_enter.Text = "Enter";
             this.b_login_enter.UseVisualStyleBackColor = true;
+            this.b_login_enter.Click += new System.EventHandler(this.b_login_enter_Click);
             // 
             // tb_werknemer_id
             // 
-            this.tb_werknemer_id.Location = new System.Drawing.Point(212, 398);
+            this.tb_werknemer_id.Location = new System.Drawing.Point(205, 398);
             this.tb_werknemer_id.Name = "tb_werknemer_id";
-            this.tb_werknemer_id.Size = new System.Drawing.Size(132, 20);
+            this.tb_werknemer_id.Size = new System.Drawing.Size(139, 20);
             this.tb_werknemer_id.TabIndex = 9;
             // 
             // LoginScherm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(424, 591);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_login);
@@ -114,7 +122,7 @@
             this.Controls.Add(this.b_login_enter);
             this.Controls.Add(this.tb_werknemer_id);
             this.Name = "LoginScherm";
-            this.Text = "Form1";
+            this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
