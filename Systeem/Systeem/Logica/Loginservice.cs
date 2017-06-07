@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Systeem.DAO;
+using Systeem.Model;
 
 namespace Systeem.Logica
 {
     class Loginservice
     {
         public bool logincheck(int werknemer_id, string wachtwoord)
-        {
-            bool result = false;
+        {  
+
+            MedewerkerDAO medewerkerDAL = new MedewerkerDAO();
+
+            Medewerker medewerker = medewerkerDAL.GetForID(werknemer_id);
+
+            bool result = medewerker.CheckWachtwoord(wachtwoord);
 
 
 

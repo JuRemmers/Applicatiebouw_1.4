@@ -22,6 +22,18 @@ namespace Systeem.Model
             this.functie = function;
             this.wachtwoord = password;
         }
+
+        public bool CheckWachtwoord(string wAchtwoord)
+        {
+            if (this.wachtwoord == wAchtwoord)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
     

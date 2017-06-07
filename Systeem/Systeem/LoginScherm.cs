@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using 
+using Systeem.Logica;
 
 namespace Systeem
 {
@@ -25,17 +25,34 @@ namespace Systeem
 
         private void b_login_enter_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            var TafelOverzicht = new TafelOverzicht();
-            TafelOverzicht.ShowDialog();
-
-            int werknemer_id;
-            string wachtwoord;
-
-            werknemer_id = Int32.Parse(tb_werknemer_id.Text);
-            wachtwoord = (tb_wacthwoord.Text).ToString();
+            try
+            {
+                int werknemer_id;
+                string wachtwoord;
 
 
+                werknemer_id = Int32.Parse(tb_werknemer_id.Text);
+                wachtwoord = tb_wacthwoord.Text.ToString();
+
+                Loginservice login = new Loginservice();
+                bool check = login.logincheck(werknemer_id, wachtwoord);
+                if (check)
+                {
+                    this.Hide();
+                    var TafelOverzicht = new TafelOverzicht();
+                    TafelOverzicht.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("incoreccte login");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Verkeerde invoer, Werknemer ID moet een getal zijn");
+            }
+
+            
         }
 
         private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
