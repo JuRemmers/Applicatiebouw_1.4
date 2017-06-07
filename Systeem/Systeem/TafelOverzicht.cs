@@ -20,13 +20,18 @@ namespace Systeem
 
         private void btn_lunch_Click(object sender, EventArgs e)
         {
+
             gbox_items.Visible = true;
 
-            checkedListBox1.Items.Clear();
+            clb_menukaart.Items.Clear();
             Lunchservice lijst = new Lunchservice();
+            string kaartid = "lunch";
+            List<MenuItem> lunchmenu = lijst.GetAllkaart(kaartid);
 
-            lijst.GetAlllunch();
-
+            foreach (MenuItem MenuItem in lunchmenu)
+            {
+                clb_menukaart.Items.Add(MenuItem.ToString());
+            }
 
         }
 

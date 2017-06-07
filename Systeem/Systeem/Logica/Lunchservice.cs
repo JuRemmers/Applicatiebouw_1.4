@@ -11,13 +11,11 @@ namespace Systeem.Logica
     class Lunchservice
     {
 
-        public List<MenuItem> GetAllkaart()
+        public List<MenuItem> GetAllkaart(string kaartid)
         {
             MenuItemDAO MenuDal = new MenuItemDAO();
-            MenuDal.GetAllkaart();
-
             List<MenuItem> kaart = new List<MenuItem>();
-
+            kaart.Add(new MenuItem(2, 3, 50, new Menucategorie(1,2, new MenuKaart()),  );
             return kaart;
         }
     }

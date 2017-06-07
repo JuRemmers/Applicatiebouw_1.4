@@ -50,7 +50,7 @@
             this.btn_Bekijk = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_terug = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.clb_menukaart = new System.Windows.Forms.CheckedListBox();
             this.btn_bekijk_bestelling = new System.Windows.Forms.Button();
             this.btn_diner = new System.Windows.Forms.Button();
             this.btn_dranken = new System.Windows.Forms.Button();
@@ -243,7 +243,7 @@
             this.gbox_items.Controls.Add(this.btn_Bekijk);
             this.gbox_items.Controls.Add(this.btn_add);
             this.gbox_items.Controls.Add(this.btn_terug);
-            this.gbox_items.Controls.Add(this.checkedListBox1);
+            this.gbox_items.Controls.Add(this.clb_menukaart);
             this.gbox_items.Location = new System.Drawing.Point(10, 6);
             this.gbox_items.Name = "gbox_items";
             this.gbox_items.Size = new System.Drawing.Size(402, 555);
@@ -303,14 +303,14 @@
             this.btn_terug.UseVisualStyleBackColor = true;
             this.btn_terug.Click += new System.EventHandler(this.btn_terug_Click_1);
             // 
-            // checkedListBox1
+            // clb_menukaart
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(6, 49);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(390, 439);
-            this.checkedListBox1.TabIndex = 0;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            this.clb_menukaart.FormattingEnabled = true;
+            this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
+            this.clb_menukaart.Name = "clb_menukaart";
+            this.clb_menukaart.Size = new System.Drawing.Size(390, 439);
+            this.clb_menukaart.TabIndex = 0;
+            this.clb_menukaart.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // btn_bekijk_bestelling
             // 
@@ -457,7 +457,7 @@
         private System.Windows.Forms.Button btn_Bekijk;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_terug;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox clb_menukaart;
         private System.Windows.Forms.Button btn_bekijk_bestelling;
         private System.Windows.Forms.Button btn_diner;
         private System.Windows.Forms.Button btn_dranken;
