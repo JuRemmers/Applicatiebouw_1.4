@@ -33,10 +33,10 @@ namespace Systeem.DAO
             int btw = (int)reader["btw"];
             int menukaartid = (int)reader["Menu_Kaart_ID"];
 
-            Menucategorie categorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
+            Menucategorie cAtegorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
         }
 
-        public List<MenuItem> GetAllForKaart()
+        public List<MenuItem> GetAllForKaart(string menukaart)
         {
             List<MenuItem> menuitems = new List<MenuItem>();
 
