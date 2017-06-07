@@ -243,7 +243,7 @@
             this.gbox_items.Controls.Add(this.btn_add);
             this.gbox_items.Controls.Add(this.btn_terug);
             this.gbox_items.Controls.Add(this.checkedListBox1);
-            this.gbox_items.Location = new System.Drawing.Point(8, 6);
+            this.gbox_items.Location = new System.Drawing.Point(399, 24);
             this.gbox_items.Name = "gbox_items";
             this.gbox_items.Size = new System.Drawing.Size(402, 547);
             this.gbox_items.TabIndex = 4;
@@ -345,7 +345,7 @@
             // 
             this.btn_lunch.BackColor = System.Drawing.Color.LightSalmon;
             this.btn_lunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_lunch.Location = new System.Drawing.Point(49, 95);
+            this.btn_lunch.Location = new System.Drawing.Point(50, 100);
             this.btn_lunch.Name = "btn_lunch";
             this.btn_lunch.Size = new System.Drawing.Size(323, 67);
             this.btn_lunch.TabIndex = 0;
