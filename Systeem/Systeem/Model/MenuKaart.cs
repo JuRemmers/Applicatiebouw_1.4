@@ -9,8 +9,13 @@ namespace Systeem.Model
     class MenuKaart
     {
         int id;
-        enum kaart;
+        int kaart;
 
-        public 
+        public MenuKaart(int id, int kaart)
+        {
+            this.id = id;
+            this.kaart = kaart;
+        }
+
     }
 }

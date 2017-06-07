@@ -15,7 +15,8 @@ namespace Systeem.Logica
         {
             MenuItemDAO MenuDal = new MenuItemDAO();
             List<MenuItem> kaart = new List<MenuItem>();
-            kaart.Add(new MenuItem(2, 3, 50, new Menucategorie(1,2, new MenuKaart()),  );
+            kaart.Add(new MenuItem(2, 3, 50, new Menucategorie(1,2, new MenuKaart(1,3)), new MenuKaart(1,3)));
+            kaart.Add(new MenuItem(4, 3, 50, new Menucategorie(1, 2, new MenuKaart(8, 3)), new MenuKaart(1, 3)));
             return kaart;
         }
     }
