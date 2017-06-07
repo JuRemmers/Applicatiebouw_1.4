@@ -26,7 +26,7 @@ namespace Systeem.Model
             totaalPrijs = totaal;
             fooi = tip;
             datumTijd = DateTime.Now;
-            medewerker = ;
+            medewerker = naam;
             opmerking = comment;
             betaald = pay;
         }
