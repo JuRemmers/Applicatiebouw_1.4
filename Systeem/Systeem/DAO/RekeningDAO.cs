@@ -48,7 +48,7 @@ namespace Systeem.DAO
         public void GetRekeningById(int tafelID)
         {
             string com = "SELECT Bestelling WHERE Tafel_ID=@id";
-            string com1 = "SELECT"
+            string com1 = "SELECT";
             SqlCommand command = new SqlCommand(com);
             command.Parameters.AddWithValue("@id", tafelID);
             conn.Open();
