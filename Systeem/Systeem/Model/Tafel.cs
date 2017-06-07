@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Systeem.Model
 {
-    public class Tafel
+    class Tafel
     {
         public int ID { get; set; }
         public bool Bezet { get; set; }
