@@ -31,7 +31,7 @@ namespace Systeem
 
         private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
         {
-
+            tb_wacthwoord.PasswordChar = '*';
         }
     }
 }
