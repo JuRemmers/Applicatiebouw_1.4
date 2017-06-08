@@ -10,12 +10,12 @@ namespace Systeem.Model
     {
         private int id;
         private string product;
-        private float prijs;
+        private double prijs;
         private int voorraad;
         private Menucategorie categorie;
         private MenuKaart kaart;
 
-        public MenuItem(int id, string product, float prijs, int vooraad, Menucategorie categorie, MenuKaart kaart)
+        public MenuItem(int id, string product, double prijs, int vooraad, Menucategorie categorie, MenuKaart kaart)
         {
             this.id = id;
             this.product = product;

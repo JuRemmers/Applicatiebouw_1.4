@@ -21,9 +21,9 @@ namespace Systeem.DAO
 
         public MenuItem ReadMenuItem(SqlDataReader reader)
         {
-            int menuitemID = (int)reader["Menu_Item.ID"];
+            int menuitemID = (int)reader["ID"];
             string gerecht = (string)reader["Gerecht"];
-            float prijs = (float)reader["Prijs"];
+            double prijs = (double)reader["Prijs"];
             int voorraad = (int)reader["Voorraad"];
 
             int categorieid = (int)reader["categorieID"];
