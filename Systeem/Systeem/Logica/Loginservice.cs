@@ -11,18 +11,20 @@ namespace Systeem.Logica
     class Loginservice
     {
         public bool logincheck(int werknemer_id, string wachtwoord)
-        {  
-
+        {
             MedewerkerDAO medewerkerDAL = new MedewerkerDAO();
 
             Medewerker medewerker = medewerkerDAL.GetForID(werknemer_id);
 
-            bool result = medewerker.CheckWachtwoord(wachtwoord);
+            bool result;
 
+            if (medewerker != null)
+            {
+                result = medewerker.CheckWachtwoord(wachtwoord);
+                return result;
+            }
 
-
-            return result;
+            else return false;           
         }
     }
-   
 }
