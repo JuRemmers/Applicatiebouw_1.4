@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
-using Systeem.Model;
+using Model;
 
 namespace Systeem.DAO
 {

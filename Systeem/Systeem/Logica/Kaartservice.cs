@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Systeem.Model;
+using Model;
 using Systeem.DAO;
 
 namespace Systeem.Logica
@@ -13,9 +13,7 @@ namespace Systeem.Logica
         public List<MenuItem> GetAllkaart(string kaartid)
         {
             MenuItemDAO MenuDal = new MenuItemDAO();
-            List<MenuItem> kaart = MenuDal.GetAllForKaart(kaartid); ;
-
-
+            List<MenuItem> kaart = MenuDal.GetAllForKaart(kaartid);
             return kaart;
         }
     }

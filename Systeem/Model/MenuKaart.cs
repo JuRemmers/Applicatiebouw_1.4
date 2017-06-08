@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Systeem.Model
+namespace Model
 {
-    class MenuKaart
+    public class MenuKaart
     {
         int id;
         string kaart;

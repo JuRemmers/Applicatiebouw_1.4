@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
-namespace Systeem.Model
+namespace Model
 {
-    class Bestelling
+    public class Bestelling
     {
         private int ID;
         private BestelItem product;

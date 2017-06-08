@@ -61,7 +61,9 @@
             this.btn_bar = new System.Windows.Forms.Button();
             this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.clb_bestellingen = new System.Windows.Forms.CheckedListBox();
+            this.cb_status = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -258,10 +260,10 @@
             // 
             // btn_aantal
             // 
-            this.btn_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
-            this.btn_aantal.Location = new System.Drawing.Point(83, 492);
+            this.btn_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.btn_aantal.Location = new System.Drawing.Point(63, 506);
             this.btn_aantal.Name = "btn_aantal";
-            this.btn_aantal.Size = new System.Drawing.Size(122, 50);
+            this.btn_aantal.Size = new System.Drawing.Size(122, 30);
             this.btn_aantal.TabIndex = 5;
             this.btn_aantal.Text = "1";
             // 
@@ -269,7 +271,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 510);
+            this.label1.Location = new System.Drawing.Point(2, 512);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 4;
@@ -290,9 +292,9 @@
             // btn_add
             // 
             this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.Location = new System.Drawing.Point(244, 495);
+            this.btn_add.Location = new System.Drawing.Point(244, 506);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(152, 50);
+            this.btn_add.Size = new System.Drawing.Size(152, 33);
             this.btn_add.TabIndex = 2;
             this.btn_add.Text = "Voeg selectie toe";
             this.btn_add.UseVisualStyleBackColor = true;
@@ -404,7 +406,7 @@
             this.btn_all.Name = "btn_all";
             this.btn_all.Size = new System.Drawing.Size(323, 67);
             this.btn_all.TabIndex = 5;
-            this.btn_all.Text = "All";
+            this.btn_all.Text = "Alles";
             this.btn_all.UseVisualStyleBackColor = false;
             this.btn_all.Click += new System.EventHandler(this.btn_all_Click);
             // 
@@ -422,9 +424,11 @@
             // 
             // gbox_bestellingen
             // 
+            this.gbox_bestellingen.Controls.Add(this.button1);
+            this.gbox_bestellingen.Controls.Add(this.cb_status);
             this.gbox_bestellingen.Controls.Add(this.button3);
-            this.gbox_bestellingen.Controls.Add(this.checkedListBox1);
-            this.gbox_bestellingen.Location = new System.Drawing.Point(6, 2);
+            this.gbox_bestellingen.Controls.Add(this.clb_bestellingen);
+            this.gbox_bestellingen.Location = new System.Drawing.Point(6, 6);
             this.gbox_bestellingen.Name = "gbox_bestellingen";
             this.gbox_bestellingen.Size = new System.Drawing.Size(402, 555);
             this.gbox_bestellingen.TabIndex = 7;
@@ -443,15 +447,36 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // checkedListBox1
+            // clb_bestellingen
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(6, 49);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(390, 424);
-            this.checkedListBox1.TabIndex = 0;
+            this.clb_bestellingen.CheckOnClick = true;
+            this.clb_bestellingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clb_bestellingen.FormattingEnabled = true;
+            this.clb_bestellingen.Location = new System.Drawing.Point(6, 49);
+            this.clb_bestellingen.Name = "clb_bestellingen";
+            this.clb_bestellingen.Size = new System.Drawing.Size(390, 445);
+            this.clb_bestellingen.TabIndex = 0;
+            // 
+            // cb_status
+            // 
+            this.cb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Location = new System.Drawing.Point(6, 506);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(169, 33);
+            this.cb_status.TabIndex = 2;
+            this.cb_status.Text = "Kies status...";
+            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
+            this.button1.Location = new System.Drawing.Point(242, 506);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 33);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Status aanpassen";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // TafelOverzicht
             // 
@@ -516,6 +541,8 @@
         private System.Windows.Forms.Button btn_bar;
         private System.Windows.Forms.GroupBox gbox_bestellingen;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox clb_bestellingen;
+        private System.Windows.Forms.ComboBox cb_status;
+        private System.Windows.Forms.Button button1;
     }
 }
