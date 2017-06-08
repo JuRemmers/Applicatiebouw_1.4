@@ -111,6 +111,11 @@ namespace Systeem
         private void btn_bar_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = true;
+            clb_bestellingen.Items.Clear();
+            //BestellingService service = new BestellingService();
+            //List < Model.Bestelling > = service.GetAllbestelling("Bar");
+
+            //foreach (Model.Bestelling item in )
         }
 
         private void btn_keuken_Click(object sender, EventArgs e)
