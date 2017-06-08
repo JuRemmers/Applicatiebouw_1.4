@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Systeem.Model;
+using Model;
 
 // Geschreven door Kayleigh Vossen
 namespace Systeem.DAO
@@ -80,8 +80,6 @@ namespace Systeem.DAO
             // voeg parameters toe
             command.Parameters.AddWithValue("@id", rekeningId);
             conn.Open();
-
-            
 
             return r;
         }
