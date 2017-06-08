@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using Systeem.Model;
+using Model;
 
 namespace Systeem.DAO
 {
@@ -21,9 +21,9 @@ namespace Systeem.DAO
 
         public MenuItem ReadMenuItem(SqlDataReader reader)
         {
-            int menuitemID = (int)reader["Menu_Item.ID"];
+            int menuitemID = (int)reader["ID"];
             string gerecht = (string)reader["Gerecht"];
-            float prijs = (float)reader["Prijs"];
+            double prijs = (double)reader["Prijs"];
             int voorraad = (int)reader["Voorraad"];
 
             int categorieid = (int)reader["categorieID"];
@@ -52,8 +52,8 @@ namespace Systeem.DAO
 
             while (reader.Read())
             {
-               MenuItem item = ReadMenuItem(reader);
-               menuitems.Add(item);
+                MenuItem item = ReadMenuItem(reader);
+                menuitems.Add(item);
             }
 
             reader.Close();

@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Systeem.Model;
+using Model;
 
 namespace Systeem.Logica
 {
     class BestellingService
     {
-        //public List<Bestelling> GetAllForKaart(string kaart)
-        //{
-        //}
+        public List<Bestelling> GetAllForBestelling(string locatieid)
+        {
+            BestelItemDAO BestelDAL = new BestelItemDAO();
+            List<Bestelling> Bestellingen = BestelDAL.GetAllBestellingen(locatieid);
+            return Bestellingen;
+        }
     }
 }

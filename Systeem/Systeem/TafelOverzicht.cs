@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Systeem.Logica;
-using Systeem.Model;
+using Model;
 
 namespace Systeem
 {
@@ -17,6 +17,10 @@ namespace Systeem
         public TafelOverzicht()
         {
             InitializeComponent();
+            cb_status.Items.Add("Opgenomen");
+            cb_status.Items.Add("Onderhande");
+            cb_status.Items.Add("Gereed");
+            cb_status.Items.Add("Uitgeserveerd");
         }
 
         private void btn_lunch_Click(object sender, EventArgs e)
@@ -76,8 +80,14 @@ namespace Systeem
             Kaartservice service = new Kaartservice();
             List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
 
+            Menucategorie cat = null;
             foreach (Model.MenuItem item in allDranken)
             {
+                if (item.Categorie != cat)
+                {
+                    clb_menukaart.Items.Add("-");
+                    cat = item.Categorie;
+                }
                 clb_menukaart.Items.Add(item.ToString());
             }
         }
@@ -96,6 +106,36 @@ namespace Systeem
             // somehow get list of bestellingen
 
             // print each
+        }
+
+        private void btn_bar_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = true;
+            clb_bestellingen.Items.Clear();
+            //BestellingService service = new BestellingService();
+            //List < Model.Bestelling > = service.GetAllbestelling("Bar");
+
+            //foreach (Model.Bestelling item in )
+        }
+
+        private void btn_keuken_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = true;
+        }
+
+        private void btn_all_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = false;
+        }
+
+        private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
