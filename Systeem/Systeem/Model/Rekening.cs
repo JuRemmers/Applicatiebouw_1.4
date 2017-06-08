@@ -8,7 +8,7 @@ namespace Systeem.Model
 {
     class Rekening
     {
-            public List<Bestelling> rekening;
+            public List<bestel> rekening;
             public int btwLaag;
             public int btwHoog;
             public int totaalPrijs;
@@ -20,9 +20,9 @@ namespace Systeem.Model
         
         public Rekening(List<Bestelling> bestellingen, int btwL, int btwH, int totaal, int tip, string naam, string comment, bool pay)
         {
-            rekening = bestellingen;
-            btwLaag = btwL;
-            btwHoog = btwH;
+            this.rekening = bestellingen;
+            this.btwLaag = btwL;
+            this.btwHoog = btwH;
             totaalPrijs = totaal;
             fooi = tip;
             datumTijd = DateTime.Now;

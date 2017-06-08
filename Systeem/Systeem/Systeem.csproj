@@ -65,7 +65,6 @@
     </Compile>
     <Compile Include="Model\BestelItem.cs" />
     <Compile Include="Model\Bestelling.cs" />
-    <Compile Include="Model\Bestel_Item.cs" />
     <Compile Include="Model\Functie.cs" />
     <Compile Include="Model\Medewerker.cs" />
     <Compile Include="Model\Menucategorie.cs" />
