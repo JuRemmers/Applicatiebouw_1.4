@@ -24,9 +24,9 @@ namespace Systeem.Model
 
         }
 
-        public override string ToString()
-        {
+        //public override string ToString()
+        //{
             
-        }
+        //}
     }
 }
