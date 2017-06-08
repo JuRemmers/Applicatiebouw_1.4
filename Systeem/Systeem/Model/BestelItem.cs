@@ -10,7 +10,7 @@ namespace Systeem.Model
     {
         private int ID;
         private Bestelling bestelling;
-        private MenuItem item;
+        private MenuItem item;         // heb je menu item nodig als je al bestelling hebt? list maken?
         private int aantal;
         private int voorraad;
         private Status status;
