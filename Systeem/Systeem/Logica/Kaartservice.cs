@@ -14,8 +14,6 @@ namespace Systeem.Logica
         {
             MenuItemDAO MenuDal = new MenuItemDAO();
             List<MenuItem> kaart = MenuDal.GetAllForKaart(kaartid); ;
-
-
             return kaart;
         }
     }

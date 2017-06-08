@@ -17,6 +17,10 @@ namespace Systeem
         public TafelOverzicht()
         {
             InitializeComponent();
+            cb_status.Items.Add("Opgenomen");
+            cb_status.Items.Add("Onderhande");
+            cb_status.Items.Add("Gereed");
+            cb_status.Items.Add("Uitgeserveerd");
         }
 
         private void btn_lunch_Click(object sender, EventArgs e)
@@ -116,6 +120,11 @@ namespace Systeem
         private void button3_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = false;
+        }
+
+        private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
