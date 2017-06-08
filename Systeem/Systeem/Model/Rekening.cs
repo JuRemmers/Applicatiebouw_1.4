@@ -8,7 +8,7 @@ namespace Systeem.Model
 {
     class Rekening
     {
-            public List<bestel> rekening;
+            public List<Bestelling> bestellingen;
             public int btwLaag;
             public int btwHoog;
             public int totaalPrijs;
@@ -18,17 +18,28 @@ namespace Systeem.Model
             public string opmerking;
             public bool betaald;
         
-        public Rekening(List<Bestelling> bestellingen, int btwL, int btwH, int totaal, int tip, string naam, string comment, bool pay)
+        public Rekening(List<Bestelling> bestellingen, int btwLaag, int btwHoog, int totaalPrijs, int fooi, string medewerker, string opmerking, bool betaald)
         {
-            this.rekening = bestellingen;
-            this.btwLaag = btwL;
-            this.btwHoog = btwH;
-            totaalPrijs = totaal;
-            fooi = tip;
-            datumTijd = DateTime.Now;
-            medewerker = naam;
-            opmerking = comment;
-            betaald = pay;
+            this.bestellingen = bestellingen;
+            this.btwLaag = btwLaag;
+            this.btwHoog = btwHoog;
+            this.totaalPrijs = totaalPrijs;
+            this.fooi = fooi;
+            this.medewerker = medewerker;
+            this.opmerking = opmerking;
+            this.betaald = betaald;
         }
+
+        public void GetRekening()
+        {
+
+        }
+
+        // foreach(Bestelling b in rekening)
+        //    {
+        //    foreach(BestelItem i in b){
+        
+        
+
     }
 }
