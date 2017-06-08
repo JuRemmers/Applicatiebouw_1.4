@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Systeem.Model
+namespace Model
 {
-    class Tafel
+    public class Tafel
     {
         public int ID { get; set; }
         public bool Bezet { get; set; }

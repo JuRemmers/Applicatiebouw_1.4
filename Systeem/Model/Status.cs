@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Systeem.Model
+namespace Model
 {
-    enum Functie { Bar, Bediening, Keuken, Beheer }
+    public enum Status { Opgenomen, Onderhande, Gereed, Uitgeserveerd }
 }

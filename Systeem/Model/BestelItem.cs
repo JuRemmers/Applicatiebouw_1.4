@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Systeem.Model
+namespace Model
 {
-    class BestelItem
+    public class BestelItem
     {
         private int ID;
         private Bestelling bestelling;
