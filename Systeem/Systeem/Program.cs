@@ -16,7 +16,7 @@ namespace Systeem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginScherm());
+            Application.Run(new TafelOverzicht());
         }
     }
 }

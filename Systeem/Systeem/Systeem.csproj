@@ -55,6 +55,7 @@
     <Compile Include="DAO\RekeningDAO.cs" />
     <Compile Include="DAO\TafelDAO.cs" />
     <Compile Include="Logica\BestellingService.cs" />
+    <Compile Include="Logica\Kaartservice.cs" />
     <Compile Include="Logica\Loginservice.cs" />
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>
@@ -62,10 +63,14 @@
     <Compile Include="LoginScherm.Designer.cs">
       <DependentUpon>LoginScherm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\BestelItem.cs" />
     <Compile Include="Model\Bestelling.cs" />
     <Compile Include="Model\Bestel_Item.cs" />
     <Compile Include="Model\Functie.cs" />
     <Compile Include="Model\Medewerker.cs" />
+    <Compile Include="Model\Menucategorie.cs" />
+    <Compile Include="Model\MenuItem.cs" />
+    <Compile Include="Model\MenuKaart.cs" />
     <Compile Include="Model\Rekening.cs" />
     <Compile Include="Model\Status.cs" />
     <Compile Include="Model\Tafel.cs" />

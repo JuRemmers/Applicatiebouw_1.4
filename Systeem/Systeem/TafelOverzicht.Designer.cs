@@ -50,7 +50,7 @@
             this.btn_Bekijk = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_terug = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.clb_menukaart = new System.Windows.Forms.CheckedListBox();
             this.btn_bekijk_bestelling = new System.Windows.Forms.Button();
             this.btn_diner = new System.Windows.Forms.Button();
             this.btn_dranken = new System.Windows.Forms.Button();
@@ -81,12 +81,13 @@
             this.tab_tafeloverzicht.Controls.Add(this.tp_plattegrond);
             this.tab_tafeloverzicht.Controls.Add(this.tp_bestelling_maken);
             this.tab_tafeloverzicht.Controls.Add(this.tp_huidige_bestellingen);
-            this.tab_tafeloverzicht.ItemSize = new System.Drawing.Size(66, 18);
-            this.tab_tafeloverzicht.Location = new System.Drawing.Point(-1, -1);
+            this.tab_tafeloverzicht.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tab_tafeloverzicht.ItemSize = new System.Drawing.Size(66, 30);
+            this.tab_tafeloverzicht.Location = new System.Drawing.Point(0, 0);
             this.tab_tafeloverzicht.Name = "tab_tafeloverzicht";
             this.tab_tafeloverzicht.Padding = new System.Drawing.Point(32, 3);
             this.tab_tafeloverzicht.SelectedIndex = 0;
-            this.tab_tafeloverzicht.Size = new System.Drawing.Size(426, 593);
+            this.tab_tafeloverzicht.Size = new System.Drawing.Size(424, 591);
             this.tab_tafeloverzicht.TabIndex = 1;
             this.tab_tafeloverzicht.Tag = "";
             // 
@@ -104,10 +105,10 @@
             this.tp_plattegrond.Controls.Add(this.pb_table1);
             this.tp_plattegrond.Controls.Add(this.btn_keuken_meldingen);
             this.tp_plattegrond.Controls.Add(this.btn_bar_meldingen);
-            this.tp_plattegrond.Location = new System.Drawing.Point(4, 22);
+            this.tp_plattegrond.Location = new System.Drawing.Point(4, 34);
             this.tp_plattegrond.Name = "tp_plattegrond";
             this.tp_plattegrond.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_plattegrond.Size = new System.Drawing.Size(418, 567);
+            this.tp_plattegrond.Size = new System.Drawing.Size(416, 553);
             this.tp_plattegrond.TabIndex = 0;
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
@@ -227,10 +228,10 @@
             this.tp_bestelling_maken.Controls.Add(this.btn_diner);
             this.tp_bestelling_maken.Controls.Add(this.btn_dranken);
             this.tp_bestelling_maken.Controls.Add(this.btn_lunch);
-            this.tp_bestelling_maken.Location = new System.Drawing.Point(4, 22);
+            this.tp_bestelling_maken.Location = new System.Drawing.Point(4, 34);
             this.tp_bestelling_maken.Name = "tp_bestelling_maken";
             this.tp_bestelling_maken.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_bestelling_maken.Size = new System.Drawing.Size(418, 567);
+            this.tp_bestelling_maken.Size = new System.Drawing.Size(416, 553);
             this.tp_bestelling_maken.TabIndex = 1;
             this.tp_bestelling_maken.Text = "Bestelling maken";
             this.tp_bestelling_maken.UseVisualStyleBackColor = true;
@@ -242,8 +243,8 @@
             this.gbox_items.Controls.Add(this.btn_Bekijk);
             this.gbox_items.Controls.Add(this.btn_add);
             this.gbox_items.Controls.Add(this.btn_terug);
-            this.gbox_items.Controls.Add(this.checkedListBox1);
-            this.gbox_items.Location = new System.Drawing.Point(10, 6);
+            this.gbox_items.Controls.Add(this.clb_menukaart);
+            this.gbox_items.Location = new System.Drawing.Point(6, 6);
             this.gbox_items.Name = "gbox_items";
             this.gbox_items.Size = new System.Drawing.Size(402, 555);
             this.gbox_items.TabIndex = 4;
@@ -253,9 +254,10 @@
             // 
             // btn_aantal
             // 
-            this.btn_aantal.Location = new System.Drawing.Point(67, 508);
+            this.btn_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F);
+            this.btn_aantal.Location = new System.Drawing.Point(83, 492);
             this.btn_aantal.Name = "btn_aantal";
-            this.btn_aantal.Size = new System.Drawing.Size(120, 20);
+            this.btn_aantal.Size = new System.Drawing.Size(122, 50);
             this.btn_aantal.TabIndex = 5;
             this.btn_aantal.Text = "1";
             // 
@@ -263,11 +265,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 506);
+            this.label1.Location = new System.Drawing.Point(6, 510);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Aantal";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btn_Bekijk
             // 
@@ -278,6 +281,7 @@
             this.btn_Bekijk.TabIndex = 3;
             this.btn_Bekijk.Text = "Bekijk bestelling";
             this.btn_Bekijk.UseVisualStyleBackColor = true;
+            this.btn_Bekijk.Click += new System.EventHandler(this.btn_Bekijk_Click);
             // 
             // btn_add
             // 
@@ -288,6 +292,7 @@
             this.btn_add.TabIndex = 2;
             this.btn_add.Text = "Voeg selectie toe";
             this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_terug
             // 
@@ -300,13 +305,16 @@
             this.btn_terug.UseVisualStyleBackColor = true;
             this.btn_terug.Click += new System.EventHandler(this.btn_terug_Click_1);
             // 
-            // checkedListBox1
+            // clb_menukaart
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(6, 49);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(390, 439);
-            this.checkedListBox1.TabIndex = 0;
+            this.clb_menukaart.CheckOnClick = true;
+            this.clb_menukaart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clb_menukaart.FormattingEnabled = true;
+            this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
+            this.clb_menukaart.Name = "clb_menukaart";
+            this.clb_menukaart.Size = new System.Drawing.Size(390, 424);
+            this.clb_menukaart.TabIndex = 0;
+            this.clb_menukaart.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // btn_bekijk_bestelling
             // 
@@ -328,6 +336,7 @@
             this.btn_diner.TabIndex = 2;
             this.btn_diner.Text = "Diner";
             this.btn_diner.UseVisualStyleBackColor = false;
+            this.btn_diner.Click += new System.EventHandler(this.btn_diner_Click);
             // 
             // btn_dranken
             // 
@@ -341,6 +350,7 @@
             this.btn_dranken.TabIndex = 1;
             this.btn_dranken.Text = "Dranken";
             this.btn_dranken.UseVisualStyleBackColor = false;
+            this.btn_dranken.Click += new System.EventHandler(this.btn_dranken_Click);
             // 
             // btn_lunch
             // 
@@ -359,10 +369,10 @@
             this.tp_huidige_bestellingen.Controls.Add(this.btn_keuken);
             this.tp_huidige_bestellingen.Controls.Add(this.btn_all);
             this.tp_huidige_bestellingen.Controls.Add(this.btn_bar);
-            this.tp_huidige_bestellingen.Location = new System.Drawing.Point(4, 22);
+            this.tp_huidige_bestellingen.Location = new System.Drawing.Point(4, 34);
             this.tp_huidige_bestellingen.Name = "tp_huidige_bestellingen";
             this.tp_huidige_bestellingen.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_huidige_bestellingen.Size = new System.Drawing.Size(418, 567);
+            this.tp_huidige_bestellingen.Size = new System.Drawing.Size(416, 553);
             this.tp_huidige_bestellingen.TabIndex = 2;
             this.tp_huidige_bestellingen.Text = "Huidige bestellingen";
             this.tp_huidige_bestellingen.UseVisualStyleBackColor = true;
@@ -453,7 +463,7 @@
         private System.Windows.Forms.Button btn_Bekijk;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_terug;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox clb_menukaart;
         private System.Windows.Forms.Button btn_bekijk_bestelling;
         private System.Windows.Forms.Button btn_diner;
         private System.Windows.Forms.Button btn_dranken;
