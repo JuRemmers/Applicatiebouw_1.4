@@ -52,8 +52,8 @@ namespace Systeem.DAO
 
             while (reader.Read())
             {
-                //MenuItem item = ReadMenuItem(reader);
-               // menuitems.Add(item);
+               MenuItem item = ReadMenuItem(reader);
+               menuitems.Add(item);
             }
 
             reader.Close();

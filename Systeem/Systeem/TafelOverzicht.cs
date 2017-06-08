@@ -97,5 +97,25 @@ namespace Systeem
 
             // print each
         }
+
+        private void btn_bar_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = true;
+        }
+
+        private void btn_keuken_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = true;
+        }
+
+        private void btn_all_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = true;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gbox_bestellingen.Visible = false;
+        }
     }
 }
