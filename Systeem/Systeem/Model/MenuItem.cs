@@ -31,5 +31,10 @@ namespace Systeem.Model
 
             return String;
         }
+
+        //public override string ToString()
+        //{
+            
+        //}
     }
 }

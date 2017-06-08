@@ -44,12 +44,12 @@ namespace Systeem
                 }
                 else
                 {
-                    MessageBox.Show("incoreccte login");
+                    MessageBox.Show("Incorect wachtwoord");
                 }
             }
             catch
             {
-                MessageBox.Show("Verkeerde invoer, Werknemer I");
+                MessageBox.Show("Verkeerde invoer, onthoud dat Werknemer ID een getal moet zijn");
             }
 
             

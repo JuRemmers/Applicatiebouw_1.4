@@ -47,13 +47,13 @@ namespace Systeem.DAO
 
             conn.Open();
 
-            SqlCommand command = new SqlCommand("SELECT Menu_Item.ID, Gerecht, Prijs, Voorraad, Menu_Categorie_ID as categorieID, Menu_Categorie.Categorie, Menu_Categorie.btw, Menu_Categorie.Menu_Kaart_ID, Menu_Kaart.id as menuKaartID, Menu_Kaart.Kaart FROM Menu_Item INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.id INNER JOIN Menu_Kaart on Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.id WHERE Menu_Kaart.Kaart=" + menukaart, conn);
+            SqlCommand command = new SqlCommand("SELECT Menu_Item.ID, Gerecht, Prijs, Voorraad, Menu_Categorie_ID as categorieID, Menu_Categorie.Categorie, Menu_Categorie.btw, Menu_Categorie.Menu_Kaart_ID, Menu_Kaart.id as menuKaartID, Menu_Kaart.Kaart FROM Menu_Item INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.id INNER JOIN Menu_Kaart on Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.id WHERE Menu_Kaart.Kaart='" + menukaart + "'", conn);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                MenuItem item = ReadMenuItem(reader);
-                menuitems.Add(item);
+                //MenuItem item = ReadMenuItem(reader);
+               // menuitems.Add(item);
             }
 
             reader.Close();
