@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Systeem.Model
+namespace Model
 {
-    class Rekening
+    public class Rekening
     {
             public List<Bestelling> bestellingen;
             public int btwLaag;

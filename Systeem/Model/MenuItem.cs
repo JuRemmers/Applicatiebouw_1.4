@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Systeem.Model
+namespace Model
 {
-    class MenuItem
+    public class MenuItem
     {
         private int id;
         private string product;
         private double prijs;
         private int voorraad;
-        private Menucategorie categorie;
+//        private Menucategorie categorie;
+        public Menucategorie Categorie { get; private set; }
         private MenuKaart kaart;
 
         public MenuItem(int id, string product, double prijs, int vooraad, Menucategorie categorie, MenuKaart kaart)
@@ -21,7 +22,7 @@ namespace Systeem.Model
             this.product = product;
             this.prijs = prijs;
             this.voorraad = vooraad;
-            this.categorie = categorie;
+            this.Categorie = categorie;
             this.kaart = kaart;
         }
 
@@ -31,10 +32,5 @@ namespace Systeem.Model
 
             return String;
         }
-
-        //public override string ToString()
-        //{
-            
-        //}
     }
 }

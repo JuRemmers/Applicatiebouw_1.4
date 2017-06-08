@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Systeem.Logica;
-using Systeem.Model;
+using Model;
 
 namespace Systeem
 {
@@ -80,8 +80,14 @@ namespace Systeem
             Kaartservice service = new Kaartservice();
             List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
 
+            Menucategorie cat = null;
             foreach (Model.MenuItem item in allDranken)
             {
+                if (item.Categorie != cat)
+                {
+                    clb_menukaart.Items.Add("-");
+                    cat = item.Categorie;
+                }
                 clb_menukaart.Items.Add(item.ToString());
             }
         }
