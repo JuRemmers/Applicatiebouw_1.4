@@ -127,6 +127,7 @@ namespace Systeem.DAO
             SqlCommand command = new SqlCommand(com);
             SqlDataReader reader = command.ExecuteReader();
 
+            int id = 0;
             double btwL = 0;
             double btwH = 0;
             double prijs = 0;
@@ -142,6 +143,7 @@ namespace Systeem.DAO
 
             while (reader.Read())
             {
+                id = reader.GetInt32(0);
                 btwL = reader.GetDouble(2);
                 btwH = reader.GetDouble(3);
                 prijs = reader.GetDouble(4);
@@ -153,7 +155,7 @@ namespace Systeem.DAO
             }
             conn.Close();
 
-            Rekening rekening = new Rekening(r.Id, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId), betaald, opmerking);
+            Rekening rekening = new Rekening(id, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId), betaald, opmerking);
 
             return rekening;
         }
