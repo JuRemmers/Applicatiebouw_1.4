@@ -9,7 +9,7 @@ namespace Model
     public class Rekening
     {
         public int Id;
-        public List<Bestelling> bestellingen;
+        public Bestelling bestelling;
         public int btwLaag;
         public int btwHoog;
         public int totaalPrijs;
@@ -19,10 +19,10 @@ namespace Model
         public string opmerking;
         public bool betaald;
 
-        public Rekening(int Id, List<Bestelling> bestellingen, int btwLaag, int btwHoog, int totaalPrijs, int fooi, string medewerker, string opmerking, bool betaald)
+        public Rekening(int Id, Bestelling bestelling, int btwLaag, int btwHoog, int totaalPrijs, int fooi, string medewerker, string opmerking, bool betaald)
         {
             this.Id = Id;
-            this.bestellingen = bestellingen;
+            this.bestelling = bestelling;
             this.btwLaag = btwLaag;
             this.btwHoog = btwHoog;
             this.totaalPrijs = totaalPrijs;
