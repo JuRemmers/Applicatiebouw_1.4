@@ -10,15 +10,15 @@ namespace Model
     public class Bestelling
     {
         private int ID;
-        private BestelItem product;
+        private List<BestelItem> producten;
         private Status status;
         private Tafel tafel;
         private Medewerker medewerker;
 
-        public Bestelling(int id, BestelItem product, Status status, Tafel tafel, Medewerker medewerker)
+        public Bestelling(int id, List<BestelItem> producten, Status status, Tafel tafel, Medewerker medewerker)
         {
             this.ID = id;
-            this.product = product;
+            this.producten = producten;
             this.status = status;
             this.tafel = tafel;
             this.medewerker = medewerker;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using Model;
 
 // Geschreven door Kayleigh Vossen
 namespace Systeem.DAO
@@ -20,13 +21,13 @@ namespace Systeem.DAO
         }
 
 
-        public void UpdateTip(int id, int fooi)
+        public void UpdateTip(int id, double fooi)
         {
-            // creeër command
+            // maak de command aan
             string com = "UPDATE Rekening SET Fooi = @fooi  WHERE ID = @id";
             SqlCommand command = new SqlCommand(com, conn);
 
-            // Addwithvalue omdat dat minder code schrijven is, kan direct de waarde toevoegen.
+            // geef de parameters aan command mee
             command.Parameters.AddWithValue("@id", id);
             command.Parameters.AddWithValue("@fooi", fooi);
 
@@ -45,13 +46,42 @@ namespace Systeem.DAO
 
         }
 
-        public void GetRekeningById(int tafelID)
+        public void MakeRekening(int bestelId, double btwL, double btwH, double prijs, double fooi, DateTime datumtijd, int medewerkerId, bool betaald, string oppmerking)
         {
-            string com = "SELECT Bestelling WHERE Tafel_ID=@id";
-            string com1 = "SELECT";
+            // maak de command aan
+            string com = "INSERT INTO Rekening VALUES @bestelId, @btwL, @btwH, @prijs, @fooi, @datumtijd, @medewerkerId, @betaald, @opmerking";
             SqlCommand command = new SqlCommand(com);
-            command.Parameters.AddWithValue("@id", tafelID);
+
+            // geef de parameters mee aan het command
+            command.Parameters.AddWithValue("@bestelId", bestelId);
+            command.Parameters.AddWithValue("@btwL", btwL);
+            command.Parameters.AddWithValue("@btwH", btwH);
+            command.Parameters.AddWithValue("@prijs", prijs);
+            command.Parameters.AddWithValue("@fooi", fooi);
+            command.Parameters.AddWithValue("@datumtijd", datumtijd);
+            command.Parameters.AddWithValue("@medewerkerId", medewerkerId);
+            command.Parameters.AddWithValue("@opmerking", oppmerking);
+
+            // voer command uit
             conn.Open();
+            command.ExecuteScalar();
+            conn.Close();
+
+        }
+
+        public Rekening GetRekeningById(int rekeningId)
+        {
+            Rekening r;
+            // maak command
+            string com = "SELECT Rekening WHERE ID=@id";
+            SqlCommand command = new SqlCommand(com);
+            SqlDataReader reader = command.ExecuteReader();
+
+            // voeg parameters toe
+            command.Parameters.AddWithValue("@id", rekeningId);
+            conn.Open();
+
+            return r;
         }
 
         public void GetAll()

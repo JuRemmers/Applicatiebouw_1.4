@@ -45,25 +45,27 @@
             this.btn_bar_meldingen = new System.Windows.Forms.Button();
             this.tp_bestelling_maken = new System.Windows.Forms.TabPage();
             this.gbox_items = new System.Windows.Forms.GroupBox();
-            this.btn_aantal = new System.Windows.Forms.DomainUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Bekijk = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_terug = new System.Windows.Forms.Button();
-            this.clb_menukaart = new System.Windows.Forms.CheckedListBox();
             this.btn_bekijk_bestelling = new System.Windows.Forms.Button();
             this.btn_diner = new System.Windows.Forms.Button();
             this.btn_dranken = new System.Windows.Forms.Button();
             this.btn_lunch = new System.Windows.Forms.Button();
             this.tp_huidige_bestellingen = new System.Windows.Forms.TabPage();
+            this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cb_status = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.clb_bestellingen = new System.Windows.Forms.CheckedListBox();
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.clb_bestellingen = new System.Windows.Forms.CheckedListBox();
-            this.cb_status = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.clb_menukaart = new System.Windows.Forms.ListView();
+            this.Menu_Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -78,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_table1)).BeginInit();
             this.tp_bestelling_maken.SuspendLayout();
             this.gbox_items.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.tp_huidige_bestellingen.SuspendLayout();
             this.gbox_bestellingen.SuspendLayout();
             this.SuspendLayout();
@@ -244,12 +247,12 @@
             // 
             // gbox_items
             // 
-            this.gbox_items.Controls.Add(this.btn_aantal);
+            this.gbox_items.Controls.Add(this.clb_menukaart);
+            this.gbox_items.Controls.Add(this.numericUpDown1);
             this.gbox_items.Controls.Add(this.label1);
             this.gbox_items.Controls.Add(this.btn_Bekijk);
             this.gbox_items.Controls.Add(this.btn_add);
             this.gbox_items.Controls.Add(this.btn_terug);
-            this.gbox_items.Controls.Add(this.clb_menukaart);
             this.gbox_items.Location = new System.Drawing.Point(6, 6);
             this.gbox_items.Name = "gbox_items";
             this.gbox_items.Size = new System.Drawing.Size(402, 555);
@@ -258,14 +261,13 @@
             this.gbox_items.Text = "Menu items";
             this.gbox_items.Visible = false;
             // 
-            // btn_aantal
+            // numericUpDown1
             // 
-            this.btn_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.btn_aantal.Location = new System.Drawing.Point(63, 506);
-            this.btn_aantal.Name = "btn_aantal";
-            this.btn_aantal.Size = new System.Drawing.Size(122, 30);
-            this.btn_aantal.TabIndex = 5;
-            this.btn_aantal.Text = "1";
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(63, 507);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
+            this.numericUpDown1.TabIndex = 6;
             // 
             // label1
             // 
@@ -310,17 +312,6 @@
             this.btn_terug.Text = "Terug";
             this.btn_terug.UseVisualStyleBackColor = true;
             this.btn_terug.Click += new System.EventHandler(this.btn_terug_Click_1);
-            // 
-            // clb_menukaart
-            // 
-            this.clb_menukaart.CheckOnClick = true;
-            this.clb_menukaart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clb_menukaart.FormattingEnabled = true;
-            this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
-            this.clb_menukaart.Name = "clb_menukaart";
-            this.clb_menukaart.Size = new System.Drawing.Size(390, 424);
-            this.clb_menukaart.TabIndex = 0;
-            this.clb_menukaart.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // btn_bekijk_bestelling
             // 
@@ -384,6 +375,62 @@
             this.tp_huidige_bestellingen.Text = "Huidige bestellingen";
             this.tp_huidige_bestellingen.UseVisualStyleBackColor = true;
             // 
+            // gbox_bestellingen
+            // 
+            this.gbox_bestellingen.Controls.Add(this.button1);
+            this.gbox_bestellingen.Controls.Add(this.cb_status);
+            this.gbox_bestellingen.Controls.Add(this.button3);
+            this.gbox_bestellingen.Controls.Add(this.clb_bestellingen);
+            this.gbox_bestellingen.Location = new System.Drawing.Point(6, 6);
+            this.gbox_bestellingen.Name = "gbox_bestellingen";
+            this.gbox_bestellingen.Size = new System.Drawing.Size(402, 555);
+            this.gbox_bestellingen.TabIndex = 7;
+            this.gbox_bestellingen.TabStop = false;
+            this.gbox_bestellingen.Text = "Huidige Bestellingen";
+            this.gbox_bestellingen.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
+            this.button1.Location = new System.Drawing.Point(242, 506);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 33);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Status aanpassen";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // cb_status
+            // 
+            this.cb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Location = new System.Drawing.Point(6, 506);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(169, 33);
+            this.cb_status.TabIndex = 2;
+            this.cb_status.Text = "Kies status...";
+            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(6, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 31);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Terug";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // clb_bestellingen
+            // 
+            this.clb_bestellingen.CheckOnClick = true;
+            this.clb_bestellingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clb_bestellingen.FormattingEnabled = true;
+            this.clb_bestellingen.Location = new System.Drawing.Point(6, 49);
+            this.clb_bestellingen.Name = "clb_bestellingen";
+            this.clb_bestellingen.Size = new System.Drawing.Size(390, 445);
+            this.clb_bestellingen.TabIndex = 0;
+            // 
             // btn_keuken
             // 
             this.btn_keuken.BackColor = System.Drawing.Color.PeachPuff;
@@ -422,61 +469,16 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
-            // gbox_bestellingen
+            // clb_menukaart
             // 
-            this.gbox_bestellingen.Controls.Add(this.button1);
-            this.gbox_bestellingen.Controls.Add(this.cb_status);
-            this.gbox_bestellingen.Controls.Add(this.button3);
-            this.gbox_bestellingen.Controls.Add(this.clb_bestellingen);
-            this.gbox_bestellingen.Location = new System.Drawing.Point(6, 6);
-            this.gbox_bestellingen.Name = "gbox_bestellingen";
-            this.gbox_bestellingen.Size = new System.Drawing.Size(402, 555);
-            this.gbox_bestellingen.TabIndex = 7;
-            this.gbox_bestellingen.TabStop = false;
-            this.gbox_bestellingen.Text = "Huidige Bestellingen";
-            this.gbox_bestellingen.Visible = false;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Terug";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // clb_bestellingen
-            // 
-            this.clb_bestellingen.CheckOnClick = true;
-            this.clb_bestellingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clb_bestellingen.FormattingEnabled = true;
-            this.clb_bestellingen.Location = new System.Drawing.Point(6, 49);
-            this.clb_bestellingen.Name = "clb_bestellingen";
-            this.clb_bestellingen.Size = new System.Drawing.Size(390, 445);
-            this.clb_bestellingen.TabIndex = 0;
-            // 
-            // cb_status
-            // 
-            this.cb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.cb_status.FormattingEnabled = true;
-            this.cb_status.Location = new System.Drawing.Point(6, 506);
-            this.cb_status.Name = "cb_status";
-            this.cb_status.Size = new System.Drawing.Size(169, 33);
-            this.cb_status.TabIndex = 2;
-            this.cb_status.Text = "Kies status...";
-            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
-            this.button1.Location = new System.Drawing.Point(242, 506);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 33);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Status aanpassen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.clb_menukaart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Menu_Item,
+            this.Prijs});
+            this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
+            this.clb_menukaart.Name = "clb_menukaart";
+            this.clb_menukaart.Size = new System.Drawing.Size(390, 451);
+            this.clb_menukaart.TabIndex = 7;
+            this.clb_menukaart.UseCompatibleStateImageBehavior = false;
             // 
             // TafelOverzicht
             // 
@@ -501,6 +503,7 @@
             this.tp_bestelling_maken.ResumeLayout(false);
             this.gbox_items.ResumeLayout(false);
             this.gbox_items.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.tp_huidige_bestellingen.ResumeLayout(false);
             this.gbox_bestellingen.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -525,12 +528,10 @@
         private System.Windows.Forms.Button btn_bar_meldingen;
         private System.Windows.Forms.TabPage tp_bestelling_maken;
         private System.Windows.Forms.GroupBox gbox_items;
-        private System.Windows.Forms.DomainUpDown btn_aantal;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_Bekijk;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Button btn_terug;
-        private System.Windows.Forms.CheckedListBox clb_menukaart;
         private System.Windows.Forms.Button btn_bekijk_bestelling;
         private System.Windows.Forms.Button btn_diner;
         private System.Windows.Forms.Button btn_dranken;
@@ -544,5 +545,9 @@
         private System.Windows.Forms.CheckedListBox clb_bestellingen;
         private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ListView clb_menukaart;
+        private System.Windows.Forms.ColumnHeader Menu_Item;
+        private System.Windows.Forms.ColumnHeader Prijs;
     }
 }

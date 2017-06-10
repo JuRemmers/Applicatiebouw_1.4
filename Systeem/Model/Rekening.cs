@@ -8,19 +8,21 @@ namespace Model
 {
     public class Rekening
     {
-            public List<Bestelling> bestellingen;
-            public int btwLaag;
-            public int btwHoog;
-            public int totaalPrijs;
-            public int fooi;
-            public DateTime datumTijd;
-            public string medewerker;
-            public string opmerking;
-            public bool betaald;
-        
-        public Rekening(List<Bestelling> bestellingen, int btwLaag, int btwHoog, int totaalPrijs, int fooi, string medewerker, string opmerking, bool betaald)
+        public int Id;
+        public Bestelling bestelling;
+        public int btwLaag;
+        public int btwHoog;
+        public int totaalPrijs;
+        public int fooi;
+        public DateTime datumTijd;
+        public string medewerker;
+        public string opmerking;
+        public bool betaald;
+
+        public Rekening(int Id, Bestelling bestelling, int btwLaag, int btwHoog, int totaalPrijs, int fooi, string medewerker, string opmerking, bool betaald)
         {
-            this.bestellingen = bestellingen;
+            this.Id = Id;
+            this.bestelling = bestelling;
             this.btwLaag = btwLaag;
             this.btwHoog = btwHoog;
             this.totaalPrijs = totaalPrijs;
@@ -38,8 +40,9 @@ namespace Model
         // foreach(Bestelling b in rekening)
         //    {
         //    foreach(BestelItem i in b){
-        
-        
+
+
 
     }
+
 }
