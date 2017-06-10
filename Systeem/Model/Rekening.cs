@@ -4,22 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+// Kayleigh
 namespace Model
 {
     public class Rekening
     {
-        public int Id;
-        public Bestelling bestelling;
-        public int btwLaag;
-        public int btwHoog;
-        public int totaalPrijs;
-        public int fooi;
-        public DateTime datumTijd;
-        public string medewerker;
-        public string opmerking;
-        public bool betaald;
+        public int Id { get; private set; }
+        public Bestelling bestelling { get; private set; }
+        public double btwLaag { get; private set; }
+        public double btwHoog { get; private set; }
+        public double totaalPrijs { get; private set; }
+        public double fooi { get; private set; }
+        public DateTime datumTijd { get; private set; }
+        public Medewerker medewerker { get; private set; }
+        public string opmerking { get; private set; }
+        public bool betaald { get; private set; }
 
-        public Rekening(int Id, Bestelling bestelling, int btwLaag, int btwHoog, int totaalPrijs, int fooi, string medewerker, string opmerking, bool betaald)
+        public Rekening(int Id, Bestelling bestelling)
+        {
+            this.Id = Id;
+            this.bestelling = bestelling;
+
+        }
+
+        public Rekening(int Id, Bestelling bestelling, double btwLaag, double btwHoog, double totaalPrijs, double fooi, DateTime datumTijd, Medewerker medewerker, bool betaald, string opmerking)
         {
             this.Id = Id;
             this.bestelling = bestelling;
@@ -27,22 +36,11 @@ namespace Model
             this.btwHoog = btwHoog;
             this.totaalPrijs = totaalPrijs;
             this.fooi = fooi;
+            this.datumTijd = datumTijd;
             this.medewerker = medewerker;
             this.opmerking = opmerking;
             this.betaald = betaald;
         }
 
-        public void GetRekening()
-        {
-
-        }
-
-        // foreach(Bestelling b in rekening)
-        //    {
-        //    foreach(BestelItem i in b){
-
-
-
     }
-
 }
