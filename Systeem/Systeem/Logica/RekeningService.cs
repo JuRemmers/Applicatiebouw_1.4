@@ -31,10 +31,29 @@ namespace Systeem.Logica
             return rek;
         }
 
+        public Rekening MaakTafeloverzicht(Rekening r)
+        {
+
+        }
+
         public void MaakRekening(Rekening r)
         {
+            // r.bestelling.ID;
+            // r.medewerker.ID;
+            // r.Id;
+
+            // medewerker.naam;
+            // fooi = 0;
+            // prijs = (menuitem.prijs*aantal) --> elk menu item (+)
+            // btwlaag = menuitem.btwlaag.prijs*aantal*0,06 --> elke menu item (+)
+            // btwhoog = menuitem.btwhoog.prijs*aantal*0,21 --> elke menu item (+)
+
+
+
             RekeningDAO rekening = new RekeningDAO();
             rekening.MakeRekening(r);
         }
+
+        public void 
     }
 }

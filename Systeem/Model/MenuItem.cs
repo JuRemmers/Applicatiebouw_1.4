@@ -32,5 +32,11 @@ namespace Model
 
             return String;
         }
+
+        public MenuItem(string product, double prijs)
+        {
+            this.product = product;
+            this.prijs = prijs;
+        }
     }
 }

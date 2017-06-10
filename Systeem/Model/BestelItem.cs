@@ -31,5 +31,11 @@ namespace Model
         {
             return item.ToString() + ", " + aantal;
         }
+
+        public BestelItem(MenuItem item, int aantal)
+        {
+            this.item = item;
+            this.aantal = aantal;
+        }
     }
 }
