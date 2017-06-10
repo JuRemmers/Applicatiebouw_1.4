@@ -23,6 +23,12 @@ namespace Model
             this.wachtwoord = password;
         }
 
+        // Kayleigh
+        public Medewerker(int ID)
+        {
+            this.ID = ID;
+        }
+
         public bool CheckWachtwoord(string wAchtwoord)
         {
             if (this.wachtwoord == wAchtwoord)
