@@ -57,6 +57,7 @@
     <Compile Include="Logica\BestellingService.cs" />
     <Compile Include="Logica\Kaartservice.cs" />
     <Compile Include="Logica\Loginservice.cs" />
+    <Compile Include="Logica\RekeningService.cs" />
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>
     </Compile>

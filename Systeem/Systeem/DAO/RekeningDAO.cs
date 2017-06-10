@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Data.SqlTypes;
-using System.Data.Sql;
 using Model;
 
 // Geschreven door Kayleigh Vossen
@@ -21,7 +19,6 @@ namespace Systeem.DAO
             dbconn = new DBconnection();
             conn = dbconn.GetConnection();
         }
-
 
         public void UpdateTip(int id, double fooi)
         {
@@ -123,14 +120,13 @@ namespace Systeem.DAO
             return r;
         }
 
-        public Rekening GetRekeningByBestelId(Rekening r)
+        public Rekening GetRekeningByBestelId(int bestelId)
         {
             // maak command
             string com = "SELECT * FROM Rekening WHERE Bestel_ID=@id";
             SqlCommand command = new SqlCommand(com);
             SqlDataReader reader = command.ExecuteReader();
 
-            int bestelId = 0;
             double btwL = 0;
             double btwH = 0;
             double prijs = 0;
@@ -141,12 +137,11 @@ namespace Systeem.DAO
             string opmerking = "";
 
             // voeg parameters toe
-            command.Parameters.AddWithValue("@id", r.bestelling.ID);
+            command.Parameters.AddWithValue("@id", bestelId);
             conn.Open();
 
             while (reader.Read())
             {
-                bestelId = reader.GetInt32(1);
                 btwL = reader.GetDouble(2);
                 btwH = reader.GetDouble(3);
                 prijs = reader.GetDouble(4);

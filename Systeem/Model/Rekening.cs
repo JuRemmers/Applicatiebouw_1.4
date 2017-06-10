@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.
+
 
 // Kayleigh
 namespace Model
@@ -40,5 +42,6 @@ namespace Model
             this.opmerking = opmerking;
             this.betaald = betaald;
         }
+
     }
 }
