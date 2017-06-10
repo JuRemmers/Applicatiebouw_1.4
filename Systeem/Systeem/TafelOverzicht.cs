@@ -137,5 +137,10 @@ namespace Systeem
         {
 
         }
+
+        private void clb_menukaart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
