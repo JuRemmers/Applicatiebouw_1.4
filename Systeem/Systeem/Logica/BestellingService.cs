@@ -12,7 +12,7 @@ namespace Systeem.Logica
     {
         public List<Bestelling> GetAllForBestelling(string locatieid)
         {
-            BestelItemDAO BestelDAL = new BestelItemDAO();
+            BestellingDAO BestelDAL = new BestellingDAO();
             List<Bestelling> Bestellingen = BestelDAL.GetAllBestellingen(locatieid);
             return Bestellingen;
         }

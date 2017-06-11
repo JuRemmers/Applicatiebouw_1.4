@@ -20,6 +20,7 @@ namespace Systeem.DAO
             conn = dbconn.GetConnection();
         }
 
+        // Maakt rekening aan met bestelID en medewerkerID
         public void MakeTafelOverzicht(int tafelId)
         {
             string com = "SELECT ID,Medewerker_ID FROM Bestelling WHERE Tafel_ID=@id";
@@ -44,9 +45,10 @@ namespace Systeem.DAO
             conn.Close();            
         }
 
+        // returned rekening met bestelID
         public Rekening GetTafelOverzichtByTafelId(int tafelId)
         {
-            string com = "SELECT ID,Bestelling FROM Rekening WHERE Tafel_ID=@id ";
+            string com = "SELECT ID,Bestel_ID FROM Rekening WHERE Tafel_ID=@id ";
             SqlCommand command = new SqlCommand(com);
             command.Parameters.AddWithValue("@id", tafelId);
             conn.Open();
@@ -68,13 +70,14 @@ namespace Systeem.DAO
 
         }
 
+        // update rekening met prijzen etc.
         public void MakeRekening(Rekening r)
         {
-            string com = "INSERT INTO Rekening VALUES @bestelId, @btwL, @btwH, @prijs, @fooi, @datumtijd, @medewerkerId, @betaald, @opmerking";
+            string com = "UPDATE Rekening SET BTW_Laag=@btwL, BTW_Hoog=@btwH, Prijs=@prijs, Fooi=@fooi, DatumTijd=@datumtijd, Medewerker_ID=@medewerkerId, Betaald=@betaald, Opmerking=@opmerking WHERE ID=id";
             SqlCommand command = new SqlCommand(com);
 
             // geef de parameters mee aan het command
-            command.Parameters.AddWithValue("@bestelId", r.bestelling.ID);
+            
             command.Parameters.AddWithValue("@btwL", r.btwLaag);
             command.Parameters.AddWithValue("@btwH", r.btwHoog);
             command.Parameters.AddWithValue("@prijs", r.totaalPrijs);
@@ -82,6 +85,7 @@ namespace Systeem.DAO
             command.Parameters.AddWithValue("@datumtijd", DateTime.Now);
             command.Parameters.AddWithValue("@medewerkerId", r.medewerker);
             command.Parameters.AddWithValue("@opmerking", r.opmerking);
+            command.Parameters.AddWithValue("@id", r.Id);
 
             // voer command uit
             conn.Open();
@@ -89,6 +93,7 @@ namespace Systeem.DAO
             conn.Close();
         }
 
+        // returned rekening met prijzen etc.
         public Rekening GetRekeningByBestelId(int bestelId)
         {
             // maak command
@@ -129,15 +134,16 @@ namespace Systeem.DAO
             return rekening;
         }
 
-        public void UpdateTip(int id, double fooi)
+        // update fooi
+        public void UpdateTip(Rekening r)
         {
             // maak de command aan
             string com = "UPDATE Rekening SET Fooi = @fooi  WHERE ID = @id";
             SqlCommand command = new SqlCommand(com, conn);
 
             // geef de parameters aan command mee
-            command.Parameters.AddWithValue("@id", id);
-            command.Parameters.AddWithValue("@fooi", fooi);
+            command.Parameters.AddWithValue("@id", r.Id);
+            command.Parameters.AddWithValue("@fooi", r.fooi);
 
             // Voer command uit
             conn.Open();
@@ -145,6 +151,19 @@ namespace Systeem.DAO
             conn.Close();
         }
 
+        // update betaald status
+        public void UpdateBetaald(Rekening r)
+        {
+            string com = "UPDATE Rekening SET Betaald=true WHERE ID=@id";
+            SqlCommand c = new SqlCommand(com, conn);
+            c.Parameters.AddWithValue("@id", r.Id);
+
+            conn.Open();
+            c.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        // ?? overbodig maybe
         public Rekening GetRekeningByRekeningId(int rekeningId)
         {
             // maak command
