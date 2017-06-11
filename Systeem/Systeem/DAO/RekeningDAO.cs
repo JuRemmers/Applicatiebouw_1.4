@@ -129,7 +129,7 @@ namespace Systeem.DAO
             }
             conn.Close();
 
-            Rekening r = new Rekening(rekeningId, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId), betaald, opmerking);
+            Rekening r = new Rekening(rekeningId, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId, "naam"), betaald, opmerking);
 
             return r;
         }
@@ -170,7 +170,7 @@ namespace Systeem.DAO
             }
             conn.Close();
 
-            Rekening rekening = new Rekening(id, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId), betaald, opmerking);
+            Rekening rekening = new Rekening(id, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId, "naam"), betaald, opmerking);
 
             return rekening;
         }

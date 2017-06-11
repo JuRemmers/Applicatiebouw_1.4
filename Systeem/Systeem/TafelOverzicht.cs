@@ -112,10 +112,13 @@ namespace Systeem
         {
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
-            //BestellingService service = new BestellingService();
-            //List < Model.Bestelling > = service.GetAllbestelling("Bar");
+            BestellingService service = new BestellingService();
+            List<Bestelling> bestellingen = service.GetAllForBestelling("bar");
 
-            //foreach (Model.Bestelling item in )
+            foreach (Bestelling item in bestellingen)
+            {
+                clb_bestellingen.Items.Add(item.ToString());
+            }
         }
 
         private void btn_keuken_Click(object sender, EventArgs e)

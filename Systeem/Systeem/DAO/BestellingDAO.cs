@@ -18,14 +18,31 @@ namespace Systeem.DAO
             dbconn = new DBconnection();
             conn = dbconn.GetConnection();
         }
-        public BestelItem ReamMBestelItem(SqlDataReader reader)
+        public Bestelling ReadBestelItem(SqlDataReader reader)
         {
+            Status enumstatus;
+
             int bestellingID = (int)reader["ID"];
             string status = (string)reader["Status"];
             int tafelid = (int)reader["Tafel_ID"];
-            int Medewerker_ID = (int)reader["Medwerker_ID"];
-            DateTime tijd = (DateTime)reader["DatumTijd"]; 
+            int Medewerker_ID = (int)reader["Medewerker_ID"];
+            DateTime tijd = (DateTime)reader["DatumTijd"];
 
+            Tafel tafel = new Tafel(tafelid, true);
+            Medewerker medewerker = new Medewerker(Medewerker_ID, "naam");
+
+            if (status == "Opgenomen")
+            {
+                enumstatus = Status.Opgenomen;
+            }
+            else
+            {
+                enumstatus = Status.Gereed;
+            }
+
+
+
+            return new Bestelling(bestellingID, enumstatus, tafel, medewerker);
 
         }
 
@@ -35,12 +52,12 @@ namespace Systeem.DAO
 
             conn.Open();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling ='", conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling", conn);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
             {
-                Bestelling item = ReadMenuItem(reader);
+                Bestelling item = ReadBestelItem(reader);
                 bestelling.Add(item);
             }
 
