@@ -9,10 +9,9 @@ namespace Model
     public class MenuItem
     {
         private int id;
-        private string product;
-        private double prijs;
+        public string product { get; private set; }
+        public double prijs { get; private set; }
         private int voorraad;
-//        private Menucategorie categorie;
         public Menucategorie Categorie { get; private set; }
         private MenuKaart kaart;
 
@@ -33,9 +32,10 @@ namespace Model
             return String;
         }
 
-        public MenuItem(string product, double prijs)
+        public MenuItem(string product, double prijs, Menucategorie Categorie)
         {
             this.product = product;
+            this.Categorie = Categorie;
             this.prijs = prijs;
         }
     }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Model;
+using Systeem.Logica;
 
 // Geschreven door Kayleigh Vossen
 namespace Systeem.DAO
@@ -71,7 +72,7 @@ namespace Systeem.DAO
         }
 
         // update rekening met prijzen etc.
-        public void MakeRekening(Rekening r)
+        public void UpdateRekening(Rekening r)
         {
             string com = "UPDATE Rekening SET BTW_Laag=@btwL, BTW_Hoog=@btwH, Prijs=@prijs, Fooi=@fooi, DatumTijd=@datumtijd, Medewerker_ID=@medewerkerId, Betaald=@betaald, Opmerking=@opmerking WHERE ID=id";
             SqlCommand command = new SqlCommand(com);
@@ -92,8 +93,48 @@ namespace Systeem.DAO
             command.ExecuteScalar();
             conn.Close();
         }
-
+        
         // returned rekening met prijzen etc.
+        public Rekening GetRekeningByRekeningId(int rekeningId)
+        {
+            // maak command
+            string com = "SELECT * FROM Rekening WHERE ID=@id";
+            SqlCommand command = new SqlCommand(com);
+            SqlDataReader reader = command.ExecuteReader();
+
+            int bestelId = 0;
+            double btwL = 0;
+            double btwH = 0;
+            double prijs = 0;
+            double fooi = 0;
+            DateTime dt = DateTime.Now;
+            int medId = 0;
+            bool betaald = false;
+            string opmerking = "";
+
+            // voeg parameters toe
+            command.Parameters.AddWithValue("@id", rekeningId);
+            conn.Open();
+
+            while (reader.Read())
+            {
+                btwL = reader.GetDouble(2);
+                btwH = reader.GetDouble(3);
+                prijs = reader.GetDouble(4);
+                fooi = reader.GetDouble(5);
+                dt = reader.GetDateTime(6);
+                medId = reader.GetInt32(7);
+                betaald = reader.GetBoolean(8);
+                opmerking = reader.GetString(9);
+            }
+            conn.Close();
+
+            Rekening r = new Rekening(rekeningId, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId), betaald, opmerking);
+
+            return r;
+        }
+        
+        // ?? overbodig maybe
         public Rekening GetRekeningByBestelId(int bestelId)
         {
             // maak command
@@ -163,44 +204,5 @@ namespace Systeem.DAO
             conn.Close();
         }
 
-        // ?? overbodig maybe
-        public Rekening GetRekeningByRekeningId(int rekeningId)
-        {
-            // maak command
-            string com = "SELECT * FROM Rekening WHERE ID=@id";
-            SqlCommand command = new SqlCommand(com);
-            SqlDataReader reader = command.ExecuteReader();
-
-            int bestelId = 0;
-            double btwL = 0;
-            double btwH = 0;
-            double prijs = 0;
-            double fooi = 0;
-            DateTime dt = DateTime.Now;
-            int medId = 0;
-            bool betaald = false;
-            string opmerking = "";
-
-            // voeg parameters toe
-            command.Parameters.AddWithValue("@id", rekeningId);
-            conn.Open();
-
-            while (reader.Read())
-            {
-                btwL = reader.GetDouble(2);
-                btwH = reader.GetDouble(3);
-                prijs = reader.GetDouble(4);
-                fooi = reader.GetDouble(5);
-                dt = reader.GetDateTime(6);
-                medId = reader.GetInt32(7);
-                betaald = reader.GetBoolean(8);
-                opmerking = reader.GetString(9);
-            }
-            conn.Close();
-
-            Rekening r = new Rekening(rekeningId, new Bestelling(bestelId), btwL, btwH, prijs, fooi, dt, new Medewerker(medId), betaald, opmerking);
-
-            return r;
-        }
     }
 }

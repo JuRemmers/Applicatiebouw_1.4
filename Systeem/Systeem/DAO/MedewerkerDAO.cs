@@ -64,5 +64,22 @@ namespace Systeem.DAO
 
             return medewerker;
         }
+
+        // Kayleigh
+        public Medewerker GetMedewerkerNaam(int id)
+        {
+            string com = "SELECT Voornaam FROM Medewerker WHERE ID=@id";
+            SqlCommand c = new SqlCommand(com, conn);
+            c.Parameters.AddWithValue("@id", id);
+            SqlDataReader reader = c.ExecuteReader();
+            string naam = "";
+            conn.Open();
+            while (reader.Read())
+            {
+                naam = reader.GetString(0);
+            }
+            Medewerker m = new Medewerker(id, naam);
+            return m;
+        }
     }
 }

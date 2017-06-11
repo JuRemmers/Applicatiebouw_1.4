@@ -10,7 +10,7 @@ namespace Model
     {
         private int id;
         public string Categorie { get; private set; }
-        private int btw;
+        public int btw { get; private set; }
         private int menukaartID;
 
         public Menucategorie(int ID, string Cat, int btw, int menu)
@@ -19,6 +19,11 @@ namespace Model
             this.Categorie = Cat;
             this.btw = btw;
             this.menukaartID = menu;
+        }
+
+        public Menucategorie(int btw)
+        {
+            this.btw = btw;
         }
     }
 }

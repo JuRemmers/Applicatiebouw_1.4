@@ -10,8 +10,8 @@ namespace Model
     {
         private int ID;
         private Bestelling bestelling;
-        private MenuItem item;         // heb je menu item nodig als je al bestelling hebt? list maken?
-        private int aantal;
+        public MenuItem item { get; private set; }
+        public int aantal { get; private set; }
         private int voorraad;
         private Status status;
         private string opmerking;

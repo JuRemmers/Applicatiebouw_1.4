@@ -23,7 +23,14 @@ namespace Systeem.DAO
         // Kayleigh
         public List<BestelItem> GetMenuItemsByBestellingId(int bestelId)
         {
-            string com = "SELECT Menu_Item.Gerecht, Menu_Item.Prijs, Bestel_Item.Aantal FROM Bestel_Item INNER JOIN Menu_Item_ID ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Bestel_ID=@id ";
+            string com = "SELECT Bestel_Item.Prijs, Bestel_Item.Aantal, Menu_Item.Gerecht, Menu_Categorie.BTW"+ 
+                         " FROM Bestel_Item"+
+                         " INNER JOIN Menu_Item" + 
+                                " ON Bestel_Item.Menu_Item_ID = Menu_Item.ID"+
+                         " INNER JOIN Menu_Categorie"+
+                                " ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID"+
+                         " WHERE Bestel_ID=@id";
+
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", bestelId);
 
@@ -33,10 +40,11 @@ namespace Systeem.DAO
             conn.Open();
             while (reader.Read())
             {
-                string gerecht = reader.GetString(0);
-                double prijs = reader.GetFloat(1);
-                int aantal = reader.GetInt32(2);
-                BestelItem item = new BestelItem(new MenuItem(gerecht, prijs), aantal);
+                double prijs = reader.GetFloat(0);
+                int aantal = reader.GetInt32(1);
+                string gerecht = reader.GetString(2);
+                int btw = reader.GetInt32(3);
+                BestelItem item = new BestelItem(new MenuItem(gerecht,prijs,new Menucategorie(btw)), aantal);
                 items.Add(item);
             }
             conn.Close();

@@ -8,7 +8,7 @@ namespace Model
 {
     public class Medewerker
     {
-        private int ID;
+        public int ID { get; private set; }
         private string voornaam;
         private string achternaam;
         private Functie functie;
@@ -24,9 +24,10 @@ namespace Model
         }
 
         // Kayleigh
-        public Medewerker(int ID)
+        public Medewerker(int ID, string voornaam)
         {
             this.ID = ID;
+            this.voornaam = voornaam;
         }
 
         public bool CheckWachtwoord(string wAchtwoord)
