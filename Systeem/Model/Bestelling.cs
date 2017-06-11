@@ -30,7 +30,7 @@ namespace Model
 
         public override string ToString()
         {
-            string String = "tafel" + tafel.ToString() + " " + ID.ToString() + " " + status.ToString() ;
+            string String = "tafel: " + tafel.ID.ToString() + " " + "bestelling nmr: "+ ID.ToString() + " " + "status: " + status.ToString() ;
 
             return String;
         }
