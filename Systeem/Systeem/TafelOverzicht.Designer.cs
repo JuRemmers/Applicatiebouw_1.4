@@ -59,13 +59,13 @@
             this.btn_lunch = new System.Windows.Forms.Button();
             this.tp_huidige_bestellingen = new System.Windows.Forms.TabPage();
             this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
+            this.clb_bestellingen = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.clb_bestellingen = new System.Windows.Forms.ListView();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -400,6 +400,20 @@
             this.gbox_bestellingen.Text = "Huidige Bestellingen";
             this.gbox_bestellingen.Visible = false;
             // 
+            // clb_bestellingen
+            // 
+            this.clb_bestellingen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clb_bestellingen.BackColor = System.Drawing.SystemColors.Window;
+            this.clb_bestellingen.GridLines = true;
+            this.clb_bestellingen.Location = new System.Drawing.Point(6, 55);
+            this.clb_bestellingen.Name = "clb_bestellingen";
+            this.clb_bestellingen.RightToLeftLayout = true;
+            this.clb_bestellingen.Size = new System.Drawing.Size(390, 445);
+            this.clb_bestellingen.TabIndex = 4;
+            this.clb_bestellingen.TileSize = new System.Drawing.Size(390, 30);
+            this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
+            this.clb_bestellingen.View = System.Windows.Forms.View.Tile;
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
@@ -469,14 +483,6 @@
             this.btn_bar.Text = "Bar";
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
-            // 
-            // clb_bestellingen
-            // 
-            this.clb_bestellingen.Location = new System.Drawing.Point(6, 55);
-            this.clb_bestellingen.Name = "clb_bestellingen";
-            this.clb_bestellingen.Size = new System.Drawing.Size(390, 445);
-            this.clb_bestellingen.TabIndex = 4;
-            this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
             // 
             // TafelOverzicht
             // 

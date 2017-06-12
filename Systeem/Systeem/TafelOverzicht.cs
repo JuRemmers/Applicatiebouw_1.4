@@ -113,7 +113,7 @@ namespace Systeem
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling("bar");
+            List<Bestelling> bestellingen = service.GetAllForBestelling("Bar");
 
             foreach (Bestelling item in bestellingen)
             {
@@ -127,7 +127,7 @@ namespace Systeem
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling("keuken");
+            List<Bestelling> bestellingen = service.GetAllForBestelling("Keuken");
 
             foreach (Bestelling item in bestellingen)
             {
