@@ -30,7 +30,10 @@ namespace Systeem
             cb_status.Items.Add("Onderhande");
             cb_status.Items.Add("Gereed");
             cb_status.Items.Add("Uitgeserveerd");
-            tab_tafeloverzicht.Select(tabopen);
+            if(tabopen == "tp_bestelling_maken")
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
         }
 
         private void btn_lunch_Click(object sender, EventArgs e)

@@ -41,7 +41,7 @@ namespace Model
             this.datumTijd = datumTijd;
             this.medewerker = medewerker;
             this.opmerking = opmerking;
-            this.betaald = betaald;
+            
         }
         
         

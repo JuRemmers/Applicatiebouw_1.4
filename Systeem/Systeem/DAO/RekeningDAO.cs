@@ -23,7 +23,7 @@ namespace Systeem.DAO
 
         public void InsertRekening(Rekening r)
         {
-            string com = "INSERT INTO Rekening VALUES @bestId,@btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
+            //string com = "INSERT INTO Rekening VALUES @bestId,@btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
         }
 
         // Maakt rekening aan met bestelID en medewerkerID

@@ -80,7 +80,7 @@ namespace Systeem.Logica
             r.fooi = 0;
             r.datumTijd = DateTime.Now;
             r.medewerker = m;
-            r.betaald = false;
+            
             r.opmerking = "";
 
             RekeningDAO rekening = new RekeningDAO();

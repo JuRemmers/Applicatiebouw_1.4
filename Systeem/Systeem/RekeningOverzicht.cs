@@ -31,14 +31,14 @@ namespace Systeem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TafelOverzicht overzicht = new TafelOverzicht("tp_plattegrond");
+            TafelOverzicht overzicht = new TafelOverzicht("tp_bestelling_maken");
             overzicht.Show();
             this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            tabControl1.Select("tp_rekening");
+            tabControl1.SelectedTab = tp_rekening;
         }
     }
 }
