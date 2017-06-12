@@ -23,6 +23,16 @@ namespace Systeem
             cb_status.Items.Add("Uitgeserveerd");
         }
 
+        public TafelOverzicht(string tabopen)
+        {
+            InitializeComponent();
+            cb_status.Items.Add("Opgenomen");
+            cb_status.Items.Add("Onderhande");
+            cb_status.Items.Add("Gereed");
+            cb_status.Items.Add("Uitgeserveerd");
+            tab_tafeloverzicht.Select(tabopen);
+        }
+
         private void btn_lunch_Click(object sender, EventArgs e)
         {
 
@@ -177,6 +187,7 @@ namespace Systeem
 
         }
 
+        // Kayleigh
         private void pb_table1_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
@@ -184,6 +195,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table3_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
@@ -191,6 +203,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table5_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
@@ -198,6 +211,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table7_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
@@ -205,6 +219,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table9_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
@@ -212,6 +227,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table2_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
@@ -219,6 +235,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table4_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
@@ -226,6 +243,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table6_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
@@ -233,6 +251,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table8_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
@@ -240,6 +259,7 @@ namespace Systeem
             this.Close();
         }
 
+        // Kayleigh
         private void pb_table10_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(10);

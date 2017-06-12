@@ -18,6 +18,27 @@ namespace Systeem
         {
             InitializeComponent();
             this.tafelId = tafelId;
+            lbl_tafelnummer.Text = "Tafel " + tafelId;
+                       
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht overzicht = new TafelOverzicht();
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht overzicht = new TafelOverzicht("tp_plattegrond");
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tabControl1.Select("tp_rekening");
         }
     }
 }

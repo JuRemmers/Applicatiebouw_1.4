@@ -28,23 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RekeningOverzicht));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tp_plattegrond = new System.Windows.Forms.TabPage();
-            this.pb_table3 = new System.Windows.Forms.PictureBox();
-            this.pb_table5 = new System.Windows.Forms.PictureBox();
-            this.pb_table7 = new System.Windows.Forms.PictureBox();
-            this.pb_table9 = new System.Windows.Forms.PictureBox();
-            this.pb_table2 = new System.Windows.Forms.PictureBox();
-            this.pb_table4 = new System.Windows.Forms.PictureBox();
-            this.pb_table6 = new System.Windows.Forms.PictureBox();
-            this.pb_table8 = new System.Windows.Forms.PictureBox();
-            this.pb_table10 = new System.Windows.Forms.PictureBox();
-            this.pb_table1 = new System.Windows.Forms.PictureBox();
-            this.btn_keuken_meldingen = new System.Windows.Forms.Button();
-            this.btn_bar_meldingen = new System.Windows.Forms.Button();
             this.tp_tafeloverzicht = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_tafelnummer = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -71,17 +57,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.tabControl1.SuspendLayout();
-            this.tp_plattegrond.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table1)).BeginInit();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +66,6 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tp_plattegrond);
             this.tabControl1.Controls.Add(this.tp_tafeloverzicht);
             this.tabControl1.Controls.Add(this.tp_rekening);
             this.tabControl1.ItemSize = new System.Drawing.Size(66, 30);
@@ -103,139 +77,9 @@
             this.tabControl1.Size = new System.Drawing.Size(425, 591);
             this.tabControl1.TabIndex = 1;
             // 
-            // tp_plattegrond
-            // 
-            this.tp_plattegrond.Controls.Add(this.pb_table3);
-            this.tp_plattegrond.Controls.Add(this.pb_table5);
-            this.tp_plattegrond.Controls.Add(this.pb_table7);
-            this.tp_plattegrond.Controls.Add(this.pb_table9);
-            this.tp_plattegrond.Controls.Add(this.pb_table2);
-            this.tp_plattegrond.Controls.Add(this.pb_table4);
-            this.tp_plattegrond.Controls.Add(this.pb_table6);
-            this.tp_plattegrond.Controls.Add(this.pb_table8);
-            this.tp_plattegrond.Controls.Add(this.pb_table10);
-            this.tp_plattegrond.Controls.Add(this.pb_table1);
-            this.tp_plattegrond.Controls.Add(this.btn_keuken_meldingen);
-            this.tp_plattegrond.Controls.Add(this.btn_bar_meldingen);
-            this.tp_plattegrond.Location = new System.Drawing.Point(4, 34);
-            this.tp_plattegrond.Name = "tp_plattegrond";
-            this.tp_plattegrond.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_plattegrond.Size = new System.Drawing.Size(417, 553);
-            this.tp_plattegrond.TabIndex = 3;
-            this.tp_plattegrond.Text = "Plattegrond";
-            this.tp_plattegrond.UseVisualStyleBackColor = true;
-            // 
-            // pb_table3
-            // 
-            this.pb_table3.Image = ((System.Drawing.Image)(resources.GetObject("pb_table3.Image")));
-            this.pb_table3.Location = new System.Drawing.Point(93, 166);
-            this.pb_table3.Name = "pb_table3";
-            this.pb_table3.Size = new System.Drawing.Size(89, 81);
-            this.pb_table3.TabIndex = 11;
-            this.pb_table3.TabStop = false;
-            // 
-            // pb_table5
-            // 
-            this.pb_table5.Image = ((System.Drawing.Image)(resources.GetObject("pb_table5.Image")));
-            this.pb_table5.Location = new System.Drawing.Point(93, 253);
-            this.pb_table5.Name = "pb_table5";
-            this.pb_table5.Size = new System.Drawing.Size(89, 81);
-            this.pb_table5.TabIndex = 10;
-            this.pb_table5.TabStop = false;
-            // 
-            // pb_table7
-            // 
-            this.pb_table7.Image = ((System.Drawing.Image)(resources.GetObject("pb_table7.Image")));
-            this.pb_table7.Location = new System.Drawing.Point(93, 340);
-            this.pb_table7.Name = "pb_table7";
-            this.pb_table7.Size = new System.Drawing.Size(89, 81);
-            this.pb_table7.TabIndex = 9;
-            this.pb_table7.TabStop = false;
-            // 
-            // pb_table9
-            // 
-            this.pb_table9.Image = ((System.Drawing.Image)(resources.GetObject("pb_table9.Image")));
-            this.pb_table9.Location = new System.Drawing.Point(93, 427);
-            this.pb_table9.Name = "pb_table9";
-            this.pb_table9.Size = new System.Drawing.Size(89, 81);
-            this.pb_table9.TabIndex = 8;
-            this.pb_table9.TabStop = false;
-            // 
-            // pb_table2
-            // 
-            this.pb_table2.Image = ((System.Drawing.Image)(resources.GetObject("pb_table2.Image")));
-            this.pb_table2.Location = new System.Drawing.Point(215, 79);
-            this.pb_table2.Name = "pb_table2";
-            this.pb_table2.Size = new System.Drawing.Size(89, 81);
-            this.pb_table2.TabIndex = 7;
-            this.pb_table2.TabStop = false;
-            // 
-            // pb_table4
-            // 
-            this.pb_table4.Image = ((System.Drawing.Image)(resources.GetObject("pb_table4.Image")));
-            this.pb_table4.Location = new System.Drawing.Point(215, 166);
-            this.pb_table4.Name = "pb_table4";
-            this.pb_table4.Size = new System.Drawing.Size(89, 81);
-            this.pb_table4.TabIndex = 6;
-            this.pb_table4.TabStop = false;
-            // 
-            // pb_table6
-            // 
-            this.pb_table6.Image = ((System.Drawing.Image)(resources.GetObject("pb_table6.Image")));
-            this.pb_table6.Location = new System.Drawing.Point(215, 253);
-            this.pb_table6.Name = "pb_table6";
-            this.pb_table6.Size = new System.Drawing.Size(89, 81);
-            this.pb_table6.TabIndex = 5;
-            this.pb_table6.TabStop = false;
-            // 
-            // pb_table8
-            // 
-            this.pb_table8.Image = ((System.Drawing.Image)(resources.GetObject("pb_table8.Image")));
-            this.pb_table8.Location = new System.Drawing.Point(215, 340);
-            this.pb_table8.Name = "pb_table8";
-            this.pb_table8.Size = new System.Drawing.Size(89, 81);
-            this.pb_table8.TabIndex = 4;
-            this.pb_table8.TabStop = false;
-            // 
-            // pb_table10
-            // 
-            this.pb_table10.Image = ((System.Drawing.Image)(resources.GetObject("pb_table10.Image")));
-            this.pb_table10.Location = new System.Drawing.Point(215, 427);
-            this.pb_table10.Name = "pb_table10";
-            this.pb_table10.Size = new System.Drawing.Size(89, 81);
-            this.pb_table10.TabIndex = 3;
-            this.pb_table10.TabStop = false;
-            // 
-            // pb_table1
-            // 
-            this.pb_table1.Image = ((System.Drawing.Image)(resources.GetObject("pb_table1.Image")));
-            this.pb_table1.Location = new System.Drawing.Point(93, 79);
-            this.pb_table1.Name = "pb_table1";
-            this.pb_table1.Size = new System.Drawing.Size(89, 81);
-            this.pb_table1.TabIndex = 2;
-            this.pb_table1.TabStop = false;
-            // 
-            // btn_keuken_meldingen
-            // 
-            this.btn_keuken_meldingen.Location = new System.Drawing.Point(215, 16);
-            this.btn_keuken_meldingen.Name = "btn_keuken_meldingen";
-            this.btn_keuken_meldingen.Size = new System.Drawing.Size(186, 39);
-            this.btn_keuken_meldingen.TabIndex = 1;
-            this.btn_keuken_meldingen.Text = "Keuken meldingen";
-            this.btn_keuken_meldingen.UseVisualStyleBackColor = true;
-            // 
-            // btn_bar_meldingen
-            // 
-            this.btn_bar_meldingen.Location = new System.Drawing.Point(20, 16);
-            this.btn_bar_meldingen.Name = "btn_bar_meldingen";
-            this.btn_bar_meldingen.Size = new System.Drawing.Size(178, 39);
-            this.btn_bar_meldingen.TabIndex = 0;
-            this.btn_bar_meldingen.Text = "Bar meldingen";
-            this.btn_bar_meldingen.UseVisualStyleBackColor = true;
-            // 
             // tp_tafeloverzicht
             // 
-            this.tp_tafeloverzicht.Controls.Add(this.label1);
+            this.tp_tafeloverzicht.Controls.Add(this.lbl_tafelnummer);
             this.tp_tafeloverzicht.Controls.Add(this.button4);
             this.tp_tafeloverzicht.Controls.Add(this.button3);
             this.tp_tafeloverzicht.Controls.Add(this.button2);
@@ -250,17 +94,17 @@
             this.tp_tafeloverzicht.Text = "Overzicht tafel";
             this.tp_tafeloverzicht.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lbl_tafelnummer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 17);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(227, 31);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Tafel : <nummer>";
-            this.label1.UseMnemonic = false;
+            this.lbl_tafelnummer.AutoSize = true;
+            this.lbl_tafelnummer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tafelnummer.Location = new System.Drawing.Point(146, 17);
+            this.lbl_tafelnummer.Name = "lbl_tafelnummer";
+            this.lbl_tafelnummer.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_tafelnummer.Size = new System.Drawing.Size(82, 31);
+            this.lbl_tafelnummer.TabIndex = 5;
+            this.lbl_tafelnummer.Text = "Tafel ";
+            this.lbl_tafelnummer.UseMnemonic = false;
             // 
             // button4
             // 
@@ -271,6 +115,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = ">";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -281,6 +126,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Afrekenen";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -291,6 +137,7 @@
             this.button2.TabIndex = 2;
             this.button2.Text = "Voeg nieuw bestelling toe";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -537,17 +384,6 @@
             this.Name = "RekeningOverzicht";
             this.Text = "RekeningOverzicht";
             this.tabControl1.ResumeLayout(false);
-            this.tp_plattegrond.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_table1)).EndInit();
             this.tp_tafeloverzicht.ResumeLayout(false);
             this.tp_tafeloverzicht.PerformLayout();
             this.tp_rekening.ResumeLayout(false);
@@ -561,20 +397,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tp_tafeloverzicht;
         private System.Windows.Forms.TabPage tp_rekening;
-        private System.Windows.Forms.TabPage tp_plattegrond;
-        private System.Windows.Forms.PictureBox pb_table3;
-        private System.Windows.Forms.PictureBox pb_table5;
-        private System.Windows.Forms.PictureBox pb_table7;
-        private System.Windows.Forms.PictureBox pb_table9;
-        private System.Windows.Forms.PictureBox pb_table2;
-        private System.Windows.Forms.PictureBox pb_table4;
-        private System.Windows.Forms.PictureBox pb_table6;
-        private System.Windows.Forms.PictureBox pb_table8;
-        private System.Windows.Forms.PictureBox pb_table10;
-        private System.Windows.Forms.PictureBox pb_table1;
-        private System.Windows.Forms.Button btn_keuken_meldingen;
-        private System.Windows.Forms.Button btn_bar_meldingen;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_tafelnummer;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
