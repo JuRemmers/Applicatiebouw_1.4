@@ -51,38 +51,46 @@ namespace Systeem.Logica
             
 
             double prijs = 0;
-
-            // totaalprijs minus fooi
-            foreach(BestelItem i in items)
-            {
-                double productprijs = i.aantal * i.item.prijs;
-                prijs += productprijs;
-            }
             double btwL = 0;
             double btwH = 0;
             double btw = 0;
-            foreach(BestelItem i in items)
+
+            // totaalprijs minus fooi
+            foreach (BestelItem i in items)
             {
-                if(i.item.Categorie.btw == BTWL)
+                double productprijs = i.aantal * i.item.prijs;
+                prijs += productprijs;
+
+                if (i.item.Categorie.btw == BTWL)
                 {
                     btw = (i.item.prijs * i.aantal) * btwL;
                     btwL += btw;
                 }
-                else if(i.item.Categorie.btw == BTWH)
+                else if (i.item.Categorie.btw == BTWH)
                 {
                     btw = (i.item.prijs * i.aantal) * btwL;
                     btwH += btw;
                 }
-            }
 
-            double fooi = 0;
-            DateTime dt = DateTime.Now;
+            } 
 
-            //r.btwLaag = btwL;
-
+            r.btwLaag = btwL;
+            r.btwHoog = btwH;
+            r.Prijs = prijs;
+            r.fooi = 0;
+            r.datumTijd = DateTime.Now;
+            r.medewerker = m;
+            r.betaald = false;
+            r.opmerking = "";
 
             RekeningDAO rekening = new RekeningDAO();
             rekening.UpdateRekening(r);
+        }
+
+        public void UpdateTip(double tip)
+        {
+            RekeningDAO rek = new RekeningDAO();
+            rek.UpdateTip(tip);
         }
     }
 }

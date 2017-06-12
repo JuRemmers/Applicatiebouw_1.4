@@ -71,19 +71,18 @@ namespace Systeem.DAO
 
         }
 
-        // update rekening met prijzen etc.
+        // update rekening met prijzen, wordt op 1 plek in UI aangeroepen!
         public void UpdateRekening(Rekening r)
         {
             string com = "UPDATE Rekening SET BTW_Laag=@btwL, BTW_Hoog=@btwH, Prijs=@prijs, Fooi=@fooi, DatumTijd=@datumtijd, Medewerker_ID=@medewerkerId, Betaald=@betaald, Opmerking=@opmerking WHERE ID=id";
             SqlCommand command = new SqlCommand(com);
 
             // geef de parameters mee aan het command
-            
             command.Parameters.AddWithValue("@btwL", r.btwLaag);
             command.Parameters.AddWithValue("@btwH", r.btwHoog);
-            command.Parameters.AddWithValue("@prijs", r.totaalPrijs);
+            command.Parameters.AddWithValue("@prijs", r.Prijs);
             command.Parameters.AddWithValue("@fooi", r.fooi);
-            command.Parameters.AddWithValue("@datumtijd", DateTime.Now);
+            command.Parameters.AddWithValue("@datumtijd", r.datumTijd);
             command.Parameters.AddWithValue("@medewerkerId", r.medewerker);
             command.Parameters.AddWithValue("@opmerking", r.opmerking);
             command.Parameters.AddWithValue("@id", r.Id);
@@ -176,15 +175,15 @@ namespace Systeem.DAO
         }
 
         // update fooi
-        public void UpdateTip(Rekening r)
+        public void UpdateTip(double tip, int Id)
         {
             // maak de command aan
             string com = "UPDATE Rekening SET Fooi = @fooi  WHERE ID = @id";
             SqlCommand command = new SqlCommand(com, conn);
 
             // geef de parameters aan command mee
-            command.Parameters.AddWithValue("@id", r.Id);
-            command.Parameters.AddWithValue("@fooi", r.fooi);
+            command.Parameters.AddWithValue("@id", Id);
+            command.Parameters.AddWithValue("@fooi", tip);
 
             // Voer command uit
             conn.Open();
@@ -193,11 +192,23 @@ namespace Systeem.DAO
         }
 
         // update betaald status
-        public void UpdateBetaald(Rekening r)
+        public void UpdateBetaald(int Id)
         {
             string com = "UPDATE Rekening SET Betaald=true WHERE ID=@id";
             SqlCommand c = new SqlCommand(com, conn);
-            c.Parameters.AddWithValue("@id", r.Id);
+            c.Parameters.AddWithValue("@id", Id);
+
+            conn.Open();
+            c.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        // update opmerken
+        public void UpdateOpmerking(string opm, int id)
+        {
+            string com = "UPDATE Rekening SET Opmerking=@opm WHERE ID=@id";
+            SqlCommand c = new SqlCommand(com, conn);
+            c.Parameters.AddWithValue("@id", id);
 
             conn.Open();
             c.ExecuteNonQuery();

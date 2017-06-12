@@ -12,14 +12,15 @@ namespace Model
     {
         public int Id { get; private set; }
         public Bestelling bestelling { get; private set; }
-        public double btwLaag { get; private set; }
-        public double btwHoog { get; private set; }
-        public double totaalPrijs { get; private set; }
-        public double fooi { get; private set; }
-        public DateTime datumTijd { get; private set; }
-        public Medewerker medewerker { get; private set; }
-        public string opmerking { get; private set; }
-        public bool betaald { get; private set; }
+        public double btwLaag;
+        public double btwHoog;
+        public double Prijs;
+        public double fooi;
+        public double totaalprijs;
+        public DateTime datumTijd;
+        public Medewerker medewerker;
+        public string opmerking;
+        public bool betaald;
 
         public Rekening(int Id, Bestelling bestelling)
         {
@@ -28,19 +29,20 @@ namespace Model
 
         }
 
-        public Rekening(int Id, Bestelling bestelling, double btwLaag, double btwHoog, double totaalPrijs, double fooi, DateTime datumTijd, Medewerker medewerker, bool betaald, string opmerking)
+        public Rekening(int Id, Bestelling bestelling, double btwLaag, double btwHoog, double Prijs, double fooi, DateTime datumTijd, Medewerker medewerker, bool betaald, string opmerking)
         {
             this.Id = Id;
             this.bestelling = bestelling;
             this.btwLaag = btwLaag;
             this.btwHoog = btwHoog;
-            this.totaalPrijs = totaalPrijs;
+            this.Prijs = Prijs;
             this.fooi = fooi;
+            this.totaalprijs = Prijs + fooi;
             this.datumTijd = datumTijd;
             this.medewerker = medewerker;
             this.opmerking = opmerking;
             this.betaald = betaald;
         }
-
+        
     }
 }
