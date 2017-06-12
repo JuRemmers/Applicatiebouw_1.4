@@ -90,6 +90,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RekeningOverzicht.resx">
+      <DependentUpon>RekeningOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TafelOverzicht.resx">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
     </EmbeddedResource>
