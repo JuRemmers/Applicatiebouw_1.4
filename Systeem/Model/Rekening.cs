@@ -16,11 +16,11 @@ namespace Model
         public double btwHoog;
         public double Prijs;
         public double fooi;
-        public double totaalprijs;
+        public double totaalprijs { get; private set; }
         public DateTime datumTijd;
         public Medewerker medewerker;
         public string opmerking;
-        public bool betaald;
+        
 
         public Rekening(int Id, Bestelling bestelling)
         {
@@ -43,6 +43,7 @@ namespace Model
             this.opmerking = opmerking;
             this.betaald = betaald;
         }
+        
         
     }
 }

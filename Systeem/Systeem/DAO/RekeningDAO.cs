@@ -21,6 +21,11 @@ namespace Systeem.DAO
             conn = dbconn.GetConnection();
         }
 
+        public void InsertRekening(Rekening r)
+        {
+            string com = "INSERT INTO Rekening VALUES @bestId,@btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
+        }
+
         // Maakt rekening aan met bestelID en medewerkerID
         public void MakeTafelOverzicht(int tafelId)
         {
