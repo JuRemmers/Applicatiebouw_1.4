@@ -16,5 +16,12 @@ namespace Systeem.Logica
             List<Bestelling> Bestellingen = BestelDAL.GetAllBestellingen(locatieid);
             return Bestellingen;
         }
+
+        public List<Bestelling> GetAllForBestellingAlles()
+        {
+            BestellingDAO BestelDAL = new BestellingDAO();
+            List<Bestelling> Bestellingen = BestelDAL.GetAllBestellingenAlles();
+            return Bestellingen;
+        }
     }
 }
