@@ -8,7 +8,7 @@ namespace Model
 {
     public class MenuItem
     {
-        private int id;
+        public int id { get; set; }
         public string product { get; private set; }
         public double prijs { get; private set; }
         private int voorraad;

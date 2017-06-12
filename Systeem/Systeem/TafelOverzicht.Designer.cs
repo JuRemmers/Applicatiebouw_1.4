@@ -64,8 +64,8 @@
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
             this.clb_menukaart = new System.Windows.Forms.ListView();
-            this.Menu_Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -433,7 +433,7 @@
             // 
             // btn_keuken
             // 
-            this.btn_keuken.BackColor = System.Drawing.Color.PeachPuff;
+            this.btn_keuken.BackColor = System.Drawing.Color.White;
             this.btn_keuken.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_keuken.Location = new System.Drawing.Point(48, 174);
             this.btn_keuken.Name = "btn_keuken";
@@ -445,7 +445,7 @@
             // 
             // btn_all
             // 
-            this.btn_all.BackColor = System.Drawing.Color.PaleGreen;
+            this.btn_all.BackColor = System.Drawing.Color.White;
             this.btn_all.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_all.FlatAppearance.BorderSize = 3;
             this.btn_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -459,7 +459,7 @@
             // 
             // btn_bar
             // 
-            this.btn_bar.BackColor = System.Drawing.Color.LightSalmon;
+            this.btn_bar.BackColor = System.Drawing.Color.White;
             this.btn_bar.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bar.Location = new System.Drawing.Point(48, 91);
             this.btn_bar.Name = "btn_bar";
@@ -472,13 +472,22 @@
             // clb_menukaart
             // 
             this.clb_menukaart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Menu_Item,
-            this.Prijs});
+            this.columnHeader1,
+            this.columnHeader2});
             this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
             this.clb_menukaart.Name = "clb_menukaart";
-            this.clb_menukaart.Size = new System.Drawing.Size(390, 451);
+            this.clb_menukaart.Size = new System.Drawing.Size(396, 451);
             this.clb_menukaart.TabIndex = 7;
             this.clb_menukaart.UseCompatibleStateImageBehavior = false;
+            this.clb_menukaart.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Width = 339;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Width = 30;
             // 
             // TafelOverzicht
             // 
@@ -547,7 +556,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ListView clb_menukaart;
-        private System.Windows.Forms.ColumnHeader Menu_Item;
-        private System.Windows.Forms.ColumnHeader Prijs;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

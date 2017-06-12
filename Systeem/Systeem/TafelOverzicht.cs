@@ -29,13 +29,13 @@ namespace Systeem
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
-            Kaartservice service = new Kaartservice();
-            List<Model.MenuItem> allLunch = service.GetAllkaart("Lunch");
+            //Kaartservice service = new Kaartservice();
+            //List<Model.MenuItem> allLunch = service.GetAllkaart("Lunch");
 
-            foreach (Model.MenuItem item in allLunch)
-            {
-                clb_menukaart.Items.Add(item.ToString());
-            }
+            //foreach (Model.MenuItem item in allLunch)
+            //{
+            //    clb_menukaart.Items.Add(item.ToString());
+            //}
         }
 
         private void btn_terug_Click(object sender, EventArgs e)
@@ -68,7 +68,10 @@ namespace Systeem
 
             foreach (Model.MenuItem item in allDiner)
             {
-                clb_menukaart.Items.Add(item.ToString());
+                ListViewItem listview = new ListViewItem(item.id.ToString());
+                listview.SubItems.Add(item.product);
+                listview.SubItems.Add(item.prijs.ToString());
+                clb_menukaart.Items.Add(listview);
             }
         }
 
@@ -77,19 +80,19 @@ namespace Systeem
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
-            Kaartservice service = new Kaartservice();
-            List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
+            //Kaartservice service = new Kaartservice();
+            //List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
 
-            Menucategorie cat = null;
-            foreach (Model.MenuItem item in allDranken)
-            {
-                if (item.Categorie != cat)
-                {
-                    clb_menukaart.Items.Add("-");
-                    cat = item.Categorie;
-                }
-                clb_menukaart.Items.Add(item.ToString());
-            }
+            //Menucategorie cat = null;
+            //foreach (Model.MenuItem item in allDranken)
+            //{
+            //    if (item.Categorie != cat)
+            //    {
+            //        clb_menukaart.Items.Add("-");
+            //        cat = item.Categorie;
+            //    }
+            //    clb_menukaart.Items.Add(item.ToString());
+            //}
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -111,11 +114,12 @@ namespace Systeem
         private void btn_bar_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = true;
-            clb_bestellingen.Items.Clear();
-            BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling("bar");
 
-            foreach (Bestelling item in bestellingen)
+            clb_bestellingen.Items.Clear();
+            Kaartservice service = new Kaartservice();
+            List<Model.MenuItem> bestellingen = service.GetAllkaart("bar");
+
+            foreach (Model.MenuItem item in bestellingen)
             {
                 clb_bestellingen.Items.Add(item.ToString());
             }
@@ -142,6 +146,11 @@ namespace Systeem
         }
 
         private void clb_menukaart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clb_menukaart_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }
