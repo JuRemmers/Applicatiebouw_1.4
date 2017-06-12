@@ -20,7 +20,7 @@ namespace Systeem.DAO
         }
         public Bestelling ReadBestelItem(SqlDataReader reader)
         {
-            Status enumstatus;
+            Status enumstatus = Status.Gereed;
 
             int bestellingID = (int)reader["ID"];
             string status = (string)reader["Status"];
@@ -31,14 +31,25 @@ namespace Systeem.DAO
             Tafel tafel = new Tafel(tafelid, true);
             Medewerker medewerker = new Medewerker(Medewerker_ID, "naam");
 
-            if (status == "Opgenomen")
+            switch(status)
             {
+                case "Opgenomen":
                 enumstatus = Status.Opgenomen;
+                break;
+
+                case "Gereed":
+                    enumstatus = Status.Gereed;
+                    break;
+
+                case "Onderhande":
+                    enumstatus = Status.Onderhande;
+                    break;
+
+                case "Uitgeserveerd":
+                    enumstatus = Status.Uitgeserveerd;
+                    break;
             }
-            else
-            {
-                enumstatus = Status.Gereed;
-            }
+
 
 
 
@@ -52,7 +63,7 @@ namespace Systeem.DAO
 
             conn.Open();
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling", conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling INNER JOIN Bestel_Item ON Bestelling.ID = Bestel_Item.Bestel_ID INNER JOIN  Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID", conn);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())

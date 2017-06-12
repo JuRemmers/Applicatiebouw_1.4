@@ -36,7 +36,7 @@ namespace Systeem
             //{
             //    clb_menukaart.Items.Add(item.ToString());
             //}
-        }
+            }
 
         private void btn_terug_Click(object sender, EventArgs e)
         {
@@ -116,18 +116,27 @@ namespace Systeem
             gbox_bestellingen.Visible = true;
 
             clb_bestellingen.Items.Clear();
-            Kaartservice service = new Kaartservice();
-            List<Model.MenuItem> bestellingen = service.GetAllkaart("bar");
+            BestellingService service = new BestellingService();
+            List<Bestelling> bestellingen = service.GetAllForBestelling("Bar");
 
             foreach (Model.MenuItem item in bestellingen)
             {
                 clb_bestellingen.Items.Add(item.ToString());
+               
             }
         }
 
         private void btn_keuken_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = true;
+            clb_bestellingen.Items.Clear();
+            BestellingService service = new BestellingService();
+            List<Bestelling> bestellingen = service.GetAllForBestelling("Keuken");
+
+            foreach (Bestelling item in bestellingen)
+            {
+                clb_bestellingen.Items.Add(item.ToString());
+            }
         }
 
         private void btn_all_Click(object sender, EventArgs e)

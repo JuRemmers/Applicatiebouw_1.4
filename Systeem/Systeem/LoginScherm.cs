@@ -18,50 +18,32 @@ namespace Systeem
             InitializeComponent();
         }
 
-        private void lbl_login_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void b_login_enter_Click(object sender, EventArgs e)
         {
-            int werknemer_id=0;
-            string wachtwoord=" ";
+            int werknemer_id = 0; // Initialiseert waarden voor id en wachtwoord
+            string wachtwoord = " ";
+            
+            // Inlezen ID en wachtwoord
+            werknemer_id = Int32.Parse(tb_werknemer_id.Text); 
+            wachtwoord = tb_wachtwoord.Text.ToString(); 
 
-            try
-            {
-                werknemer_id = Int32.Parse(tb_werknemer_id.Text);
-                wachtwoord = tb_wacthwoord.Text.ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Verkeerde invoer, onthoud dat Werknemer ID een getal moet zijn");
-            }
-
-            Loginservice login = new Loginservice();
-            bool check = login.logincheck(werknemer_id, wachtwoord);
+            // Onderstaande controleerd of de login valide is
+            Loginservice login = new Loginservice();  // Maakt instantie van class Loginservice
+            bool check = login.logincheck(werknemer_id, wachtwoord); // ..en stopt hem in bool
             if (check)
             {
-                this.Hide();
-                var TafelOverzicht = new TafelOverzicht();
+                this.Hide(); // Verbergt loginscherm wanneer ingelogd
+                var TafelOverzicht = new TafelOverzicht(); // 'var' = compiler bepaalt datatype
                 TafelOverzicht.ShowDialog();
-                this.Show();
-
-            }
-            else
-            {
-                MessageBox.Show("Incorect wachtwoord");
+                this.Show(); // Showt tafeloverzichtscherm
             }
 
-
-            
-
-
+            else MessageBox.Show("Incorect wachtwoord");
         }
 
-        private void tb_wacthwoord_TextChanged(object sender, EventArgs e)
+        private void tb_wachtwoord_TextChanged(object sender, EventArgs e)
         {
-            tb_wacthwoord.PasswordChar = '*';
+            tb_wachtwoord.PasswordChar = '*'; // Toont een * op de plek van het wachtwoord
         }
     }
 }
