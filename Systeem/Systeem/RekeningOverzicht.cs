@@ -12,9 +12,12 @@ namespace Systeem
 {
     public partial class RekeningOverzicht : Form
     {
-        public RekeningOverzicht()
+        public int tafelId;
+
+        public RekeningOverzicht(int tafelId)
         {
             InitializeComponent();
+            this.tafelId = tafelId;
         }
     }
 }

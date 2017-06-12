@@ -60,15 +60,15 @@
             this.tp_huidige_bestellingen = new System.Windows.Forms.TabPage();
             this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
             this.clb_bestellingen = new System.Windows.Forms.ListView();
+            this.Tafel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.Tafel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -133,6 +133,7 @@
             this.pb_table3.Size = new System.Drawing.Size(89, 81);
             this.pb_table3.TabIndex = 11;
             this.pb_table3.TabStop = false;
+            this.pb_table3.Click += new System.EventHandler(this.pb_table3_Click);
             // 
             // pb_table5
             // 
@@ -142,6 +143,7 @@
             this.pb_table5.Size = new System.Drawing.Size(89, 81);
             this.pb_table5.TabIndex = 10;
             this.pb_table5.TabStop = false;
+            this.pb_table5.Click += new System.EventHandler(this.pb_table5_Click);
             // 
             // pb_table7
             // 
@@ -151,6 +153,7 @@
             this.pb_table7.Size = new System.Drawing.Size(89, 81);
             this.pb_table7.TabIndex = 9;
             this.pb_table7.TabStop = false;
+            this.pb_table7.Click += new System.EventHandler(this.pb_table7_Click);
             // 
             // pb_table9
             // 
@@ -160,6 +163,7 @@
             this.pb_table9.Size = new System.Drawing.Size(89, 81);
             this.pb_table9.TabIndex = 8;
             this.pb_table9.TabStop = false;
+            this.pb_table9.Click += new System.EventHandler(this.pb_table9_Click);
             // 
             // pb_table2
             // 
@@ -169,6 +173,7 @@
             this.pb_table2.Size = new System.Drawing.Size(89, 81);
             this.pb_table2.TabIndex = 7;
             this.pb_table2.TabStop = false;
+            this.pb_table2.Click += new System.EventHandler(this.pb_table2_Click);
             // 
             // pb_table4
             // 
@@ -178,6 +183,7 @@
             this.pb_table4.Size = new System.Drawing.Size(89, 81);
             this.pb_table4.TabIndex = 6;
             this.pb_table4.TabStop = false;
+            this.pb_table4.Click += new System.EventHandler(this.pb_table4_Click);
             // 
             // pb_table6
             // 
@@ -187,6 +193,7 @@
             this.pb_table6.Size = new System.Drawing.Size(89, 81);
             this.pb_table6.TabIndex = 5;
             this.pb_table6.TabStop = false;
+            this.pb_table6.Click += new System.EventHandler(this.pb_table6_Click);
             // 
             // pb_table8
             // 
@@ -196,6 +203,7 @@
             this.pb_table8.Size = new System.Drawing.Size(89, 81);
             this.pb_table8.TabIndex = 4;
             this.pb_table8.TabStop = false;
+            this.pb_table8.Click += new System.EventHandler(this.pb_table8_Click);
             // 
             // pb_table10
             // 
@@ -205,6 +213,7 @@
             this.pb_table10.Size = new System.Drawing.Size(89, 81);
             this.pb_table10.TabIndex = 3;
             this.pb_table10.TabStop = false;
+            this.pb_table10.Click += new System.EventHandler(this.pb_table10_Click);
             // 
             // pb_table1
             // 
@@ -214,6 +223,7 @@
             this.pb_table1.Size = new System.Drawing.Size(89, 81);
             this.pb_table1.TabIndex = 2;
             this.pb_table1.TabStop = false;
+            this.pb_table1.Click += new System.EventHandler(this.pb_table1_Click);
             // 
             // btn_keuken_meldingen
             // 
@@ -423,6 +433,18 @@
             this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
             this.clb_bestellingen.View = System.Windows.Forms.View.Details;
             // 
+            // Tafel
+            // 
+            this.Tafel.Text = "Tafel";
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            // 
+            // Bestelling
+            // 
+            this.Bestelling.Text = "Bestelling";
+            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
@@ -493,18 +515,6 @@
             this.btn_bar.Text = "Bar";
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
-            // 
-            // Tafel
-            // 
-            this.Tafel.Text = "Tafel";
-            // 
-            // Status
-            // 
-            this.Status.Text = "Status";
-            // 
-            // Bestelling
-            // 
-            this.Bestelling.Text = "Bestelling";
             // 
             // TafelOverzicht
             // 

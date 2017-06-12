@@ -176,5 +176,75 @@ namespace Systeem
         {
 
         }
+
+        private void pb_table1_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(1);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table3_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(3);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table5_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(5);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table7_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(7);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table9_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(9);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table2_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(2);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table4_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(4);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table6_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(6);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table8_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(8);
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void pb_table10_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(10);
+            overzicht.Show();
+            this.Close();
+        }
     }
 }
