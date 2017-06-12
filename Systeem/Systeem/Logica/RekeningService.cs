@@ -87,10 +87,22 @@ namespace Systeem.Logica
             rekening.UpdateRekening(r);
         }
 
-        public void UpdateTip(double tip)
+        public void UpdateTip(Rekening r)
         {
             RekeningDAO rek = new RekeningDAO();
-            rek.UpdateTip(tip);
+            rek.UpdateTip(r.fooi, r.Id);
+        }
+
+        public void UpdateOpmerking(Rekening r)
+        {
+            RekeningDAO rek = new RekeningDAO();
+            rek.UpdateOpmerking(r.opmerking, r.Id);
+        }
+
+        public void RekeningBetaald(Rekening r)
+        {
+            RekeningDAO rek = new RekeningDAO();
+            rek.UpdateBetaald(r.Id);
         }
     }
 }
