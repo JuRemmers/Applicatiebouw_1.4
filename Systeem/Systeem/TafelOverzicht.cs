@@ -118,12 +118,21 @@ namespace Systeem
             foreach (Bestelling item in bestellingen)
             {
                 clb_bestellingen.Items.Add(item.ToString());
+               
             }
         }
 
         private void btn_keuken_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = true;
+            clb_bestellingen.Items.Clear();
+            BestellingService service = new BestellingService();
+            List<Bestelling> bestellingen = service.GetAllForBestelling("keuken");
+
+            foreach (Bestelling item in bestellingen)
+            {
+                clb_bestellingen.Items.Add(item.ToString());
+            }
         }
 
         private void btn_all_Click(object sender, EventArgs e)
