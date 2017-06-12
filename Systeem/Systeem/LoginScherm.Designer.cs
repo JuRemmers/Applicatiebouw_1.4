@@ -33,7 +33,7 @@
             this.lbl_login = new System.Windows.Forms.Label();
             this.lbl_werknemer_id = new System.Windows.Forms.Label();
             this.lbl_wachtwoord = new System.Windows.Forms.Label();
-            this.tb_wacthwoord = new System.Windows.Forms.TextBox();
+            this.tb_wachtwoord = new System.Windows.Forms.TextBox();
             this.b_login_enter = new System.Windows.Forms.Button();
             this.tb_werknemer_id = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -62,7 +62,6 @@
             this.lbl_login.Size = new System.Drawing.Size(283, 108);
             this.lbl_login.TabIndex = 12;
             this.lbl_login.Text = "Login";
-            this.lbl_login.Click += new System.EventHandler(this.lbl_login_Click);
             // 
             // lbl_werknemer_id
             // 
@@ -82,13 +81,13 @@
             this.lbl_wachtwoord.TabIndex = 8;
             this.lbl_wachtwoord.Text = "Wachtwoord";
             // 
-            // tb_wacthwoord
+            // tb_wachtwoord
             // 
-            this.tb_wacthwoord.Location = new System.Drawing.Point(205, 442);
-            this.tb_wacthwoord.Name = "tb_wacthwoord";
-            this.tb_wacthwoord.Size = new System.Drawing.Size(139, 20);
-            this.tb_wacthwoord.TabIndex = 10;
-            this.tb_wacthwoord.TextChanged += new System.EventHandler(this.tb_wacthwoord_TextChanged);
+            this.tb_wachtwoord.Location = new System.Drawing.Point(205, 442);
+            this.tb_wachtwoord.Name = "tb_wachtwoord";
+            this.tb_wachtwoord.Size = new System.Drawing.Size(139, 20);
+            this.tb_wachtwoord.TabIndex = 10;
+            this.tb_wachtwoord.TextChanged += new System.EventHandler(this.tb_wachtwoord_TextChanged);
             // 
             // b_login_enter
             // 
@@ -120,7 +119,7 @@
             this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.lbl_werknemer_id);
             this.Controls.Add(this.lbl_wachtwoord);
-            this.Controls.Add(this.tb_wacthwoord);
+            this.Controls.Add(this.tb_wachtwoord);
             this.Controls.Add(this.b_login_enter);
             this.Controls.Add(this.tb_werknemer_id);
             this.Name = "LoginScherm";
@@ -137,7 +136,7 @@
         private System.Windows.Forms.Label lbl_login;
         private System.Windows.Forms.Label lbl_werknemer_id;
         private System.Windows.Forms.Label lbl_wachtwoord;
-        private System.Windows.Forms.TextBox tb_wacthwoord;
+        private System.Windows.Forms.TextBox tb_wachtwoord;
         private System.Windows.Forms.Button b_login_enter;
         private System.Windows.Forms.TextBox tb_werknemer_id;
     }

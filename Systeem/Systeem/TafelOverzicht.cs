@@ -119,7 +119,7 @@ namespace Systeem
             BestellingService service = new BestellingService();
             List<Bestelling> bestellingen = service.GetAllForBestelling("Bar");
 
-            foreach (Model.MenuItem item in bestellingen)
+            foreach (Bestelling item in bestellingen)
             {
                 clb_bestellingen.Items.Add(item.ToString());
                
@@ -168,6 +168,11 @@ namespace Systeem
         }
 
         private void clb_menukaart_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

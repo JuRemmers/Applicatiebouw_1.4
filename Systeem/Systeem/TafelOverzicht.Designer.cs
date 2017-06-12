@@ -66,9 +66,9 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.clb_menukaart = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Tafel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -271,9 +271,10 @@
             this.Prijs});
             this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
             this.clb_menukaart.Name = "clb_menukaart";
-            this.clb_menukaart.Size = new System.Drawing.Size(390, 451);
+            this.clb_menukaart.Size = new System.Drawing.Size(396, 451);
             this.clb_menukaart.TabIndex = 7;
             this.clb_menukaart.UseCompatibleStateImageBehavior = false;
+            this.clb_menukaart.View = System.Windows.Forms.View.Details;
             // 
             // numericUpDown1
             // 
@@ -405,8 +406,13 @@
             // 
             // clb_bestellingen
             // 
+            this.clb_bestellingen.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.clb_bestellingen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clb_bestellingen.BackColor = System.Drawing.SystemColors.Window;
+            this.clb_bestellingen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Tafel,
+            this.Status,
+            this.Bestelling});
             this.clb_bestellingen.GridLines = true;
             this.clb_bestellingen.Location = new System.Drawing.Point(6, 55);
             this.clb_bestellingen.Name = "clb_bestellingen";
@@ -415,7 +421,7 @@
             this.clb_bestellingen.TabIndex = 4;
             this.clb_bestellingen.TileSize = new System.Drawing.Size(390, 30);
             this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
-            this.clb_bestellingen.View = System.Windows.Forms.View.Tile;
+            this.clb_bestellingen.View = System.Windows.Forms.View.Details;
             // 
             // button1
             // 
@@ -424,8 +430,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(154, 33);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Status aanpassen";
+            this.button1.Text = "Aanpassen";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cb_status
             // 
@@ -487,25 +494,17 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
-            // clb_menukaart
+            // Tafel
             // 
-            this.clb_menukaart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
-            this.clb_menukaart.Name = "clb_menukaart";
-            this.clb_menukaart.Size = new System.Drawing.Size(396, 451);
-            this.clb_menukaart.TabIndex = 7;
-            this.clb_menukaart.UseCompatibleStateImageBehavior = false;
-            this.clb_menukaart.View = System.Windows.Forms.View.Details;
+            this.Tafel.Text = "Tafel";
             // 
-            // columnHeader1
+            // Status
             // 
-            this.columnHeader1.Width = 339;
+            this.Status.Text = "Status";
             // 
-            // columnHeader2
+            // Bestelling
             // 
-            this.columnHeader2.Width = 30;
+            this.Bestelling.Text = "Bestelling";
             // 
             // TafelOverzicht
             // 
@@ -576,5 +575,8 @@
         private System.Windows.Forms.ColumnHeader Menu_Item;
         private System.Windows.Forms.ColumnHeader Prijs;
         private System.Windows.Forms.ListView clb_bestellingen;
+        private System.Windows.Forms.ColumnHeader Tafel;
+        private System.Windows.Forms.ColumnHeader Status;
+        private System.Windows.Forms.ColumnHeader Bestelling;
     }
 }
