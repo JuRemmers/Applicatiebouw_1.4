@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using Model;
 
-namespace Systeem.DAO
+namespace DAO
 {
 
     //Gemaakt door Julian Remmers

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Model;
 
-namespace Systeem.DAO
+namespace DAO
 {
     public class MenuItemDAO
     {
