@@ -66,19 +66,19 @@ namespace DAO
         }
 
         // Kayleigh
-        public Medewerker GetMedewerkerNaam(int id)
+        public Medewerker GetMedewerkerByBestellingId(int id)
         {
-            string com = "SELECT Voornaam FROM Medewerker WHERE ID=@id";
+            string com = "SELECT Medewerker_ID FROM Bestelling WHERE ID=@id";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", id);
-            SqlDataReader reader = c.ExecuteReader();
-            string naam = "";
             conn.Open();
-            while (reader.Read())
-            {
-                naam = reader.GetString(0);
-            }
-            Medewerker m = new Medewerker(id, naam);
+            int medId = (int)c.ExecuteScalar();
+
+            com = "SELECT Voornaam FROM Medewerker WHERE ID=@id";
+            c = new SqlCommand(com, conn);
+            string medNaam = c.ExecuteScalar().ToString();
+
+            Medewerker m = new Medewerker(medId, medNaam);
             return m;
         }
     }
