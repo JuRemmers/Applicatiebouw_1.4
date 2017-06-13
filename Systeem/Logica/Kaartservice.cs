@@ -8,7 +8,7 @@ using Systeem.DAO;
 
 namespace Systeem.Logica
 {
-    class Kaartservice
+    public class Kaartservice
     {
         public List<MenuItem> GetAllkaart(string kaartid)
         {

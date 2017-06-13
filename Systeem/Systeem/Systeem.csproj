@@ -54,10 +54,6 @@
     <Compile Include="DAO\MenuItemDAO.cs" />
     <Compile Include="DAO\RekeningDAO.cs" />
     <Compile Include="DAO\TafelDAO.cs" />
-    <Compile Include="Logica\BestellingService.cs" />
-    <Compile Include="Logica\Kaartservice.cs" />
-    <Compile Include="Logica\Loginservice.cs" />
-    <Compile Include="Logica\RekeningService.cs" />
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +106,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Logica\Logica.csproj">
+      <Project>{6a6f04ba-2e4b-4da9-9d14-41235a762f2a}</Project>
+      <Name>Logica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{94ddb18f-6a01-49f4-8000-f53da357545c}</Project>
       <Name>Model</Name>

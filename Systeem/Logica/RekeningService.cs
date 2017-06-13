@@ -8,8 +8,7 @@ using Systeem.DAO;
 
 namespace Systeem.Logica
 {
-    
-    class RekeningService
+    public class RekeningService
     {
         const double BTWL = 0.06;
         const double BTWH = 0.21;
@@ -48,7 +47,7 @@ namespace Systeem.Logica
 
             MedewerkerDAO med = new MedewerkerDAO();
             Medewerker m = med.GetMedewerkerNaam(r.medewerker.ID);
-            
+
 
             double prijs = 0;
             double btwL = 0;
@@ -72,7 +71,7 @@ namespace Systeem.Logica
                     btwH += btw;
                 }
 
-            } 
+            }
 
             r.btwLaag = btwL;
             r.btwHoog = btwH;
@@ -80,7 +79,7 @@ namespace Systeem.Logica
             r.fooi = 0;
             r.datumTijd = DateTime.Now;
             r.medewerker = m;
-            
+
             r.opmerking = "";
 
             RekeningDAO rekening = new RekeningDAO();
