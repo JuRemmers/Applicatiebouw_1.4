@@ -10,11 +10,11 @@ namespace Model
     public class Bestelling
     {
         public int ID { get; private set; }
-        private Status status;
-        private Tafel tafel;
-        private Medewerker medewerker;
+        public Status status { get; private set; }
+        public Tafel tafel { get; private set; }
+        public Medewerker medewerker { get; private set; }
 
-        public Bestelling(int ID, Status status, Tafel tafel, Medewerker medewerker)
+    public Bestelling(int ID, Status status, Tafel tafel, Medewerker medewerker)
         {
             this.ID = ID;
             this.status = status;

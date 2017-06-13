@@ -426,15 +426,17 @@
             // 
             // clb_bestellingen
             // 
-            this.clb_bestellingen.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.clb_bestellingen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clb_bestellingen.BackColor = System.Drawing.SystemColors.Window;
             this.clb_bestellingen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Bestelling,
             this.Tafel,
-            this.Status,
-            this.Bestelling});
-            this.clb_bestellingen.GridLines = true;
+            this.Status});
+            this.clb_bestellingen.FullRowSelect = true;
+            this.clb_bestellingen.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.clb_bestellingen.HideSelection = false;
             this.clb_bestellingen.Location = new System.Drawing.Point(6, 55);
+            this.clb_bestellingen.MultiSelect = false;
             this.clb_bestellingen.Name = "clb_bestellingen";
             this.clb_bestellingen.RightToLeftLayout = true;
             this.clb_bestellingen.Size = new System.Drawing.Size(390, 445);
@@ -446,10 +448,13 @@
             // Tafel
             // 
             this.Tafel.Text = "Tafel";
+            this.Tafel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Status
             // 
             this.Status.Text = "Status";
+            this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Status.Width = 118;
             // 
             // Bestelling
             // 

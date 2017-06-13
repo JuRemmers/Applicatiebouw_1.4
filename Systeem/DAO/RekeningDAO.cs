@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using Model;
 
 // Geschreven door Kayleigh Vossen
+/*
 namespace DAO
 {
     public class RekeningDAO
@@ -220,4 +221,4 @@ namespace DAO
         }
 
     }
-}
+}*/
