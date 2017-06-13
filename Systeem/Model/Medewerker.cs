@@ -9,7 +9,7 @@ namespace Model
     public class Medewerker
     {
         public int ID { get; private set; }
-        private string voornaam;
+        public string voornaam { get; private set; }
         private string achternaam;
         private Functie functie;
         private string wachtwoord;

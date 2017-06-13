@@ -113,9 +113,9 @@ namespace DAO
             string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
-
+            int bestId = 0;
             conn.Open();
-            int bestId = (int)c.ExecuteScalar();
+            bestId = (int)c.ExecuteScalar();
             conn.Close();
 
             return bestId;

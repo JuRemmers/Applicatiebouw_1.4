@@ -11,13 +11,13 @@ namespace Model
     public class Rekening
     {
         private int bestelId;
-        private double btwLaag;
-        private double btwHoog;
-        private double Prijs;
-        private double fooi;
-        private double totaalprijs;
-        private Medewerker medewerker;
-        private string opmerking;
+        public double btwLaag { get; private set; }
+        public double btwHoog { get; private set; }
+        public double Prijs { get; private set; }
+        public double fooi { get; private set; }
+        public double totaalprijs { get; private set; }
+        public Medewerker medewerker { get; private set; }
+        public string opmerking { get; private set; }
 
         public Rekening(int bestelId, double btwLaag,double btwHoog,double Prijs,double fooi,double totaalprijs,Medewerker medewerker, string opmerking)
         {
