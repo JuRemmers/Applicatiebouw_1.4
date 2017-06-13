@@ -24,7 +24,7 @@ namespace Systeem
             string wachtwoord = " ";
 
             // Inlezen ID en wachtwoord
-            if (tb_werknemer_id.Text.All(char.IsDigit))
+            if (tb_werknemer_id.Text.All(char.IsDigit) && tb_werknemer_id.Text != "")
             {
                 // Proceed
                 werknemer_id = Int32.Parse(tb_werknemer_id.Text);
