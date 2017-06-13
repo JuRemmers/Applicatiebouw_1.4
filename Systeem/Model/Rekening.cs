@@ -31,7 +31,7 @@ namespace Model
             this.opmerking = opmerking;
         }
         
-        public void UpdateTipAndTotaalprijs(int fooi)
+        public void UpdateTipAndTotaalprijs(double fooi)
         {
             this.fooi = fooi;
             totaalprijs = Prijs + this.fooi;

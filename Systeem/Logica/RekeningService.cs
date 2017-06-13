@@ -42,9 +42,9 @@ namespace Logica
                 double productprijs = i.aantal * i.item.prijs;
                 prijs += productprijs;
 
-                if (i.item.Categorie.btw == BTWL)
+                if (i.item.Categorie.btw == 6)
                     btwl += productprijs * BTWL;
-                else if (i.item.Categorie.btw == BTWH)
+                else if (i.item.Categorie.btw == 21)
                     btwh += productprijs * BTWH;
             }
 

@@ -81,12 +81,7 @@ namespace Systeem
         {
             RekeningService s = new RekeningService();
             r = s.MakeRekening(tafelId, items);
-            lbl_mednaam.Text = r.medewerker.voornaam;
-            lbl_btwl.Text = "€" + r.btwLaag.ToString("0.00");
-            lbl_btwh.Text = "€" + r.btwHoog.ToString("0.00");
-            lbl_prijs.Text = "€" + r.Prijs.ToString("0.00");
-            txt_tip.Text = r.fooi.ToString("0.00");
-            lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
+            ShowRekening();
             tabControl1.SelectedTab = tp_rekening;
         }
 
@@ -95,11 +90,29 @@ namespace Systeem
         {
             RekeningService s = new RekeningService();
             r = s.MakeRekening(tafelId, items);
+            ShowRekening();
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void ShowRekening()
+        {
+            lbl_mednaam.Text = r.medewerker.voornaam;
+            lbl_btwl.Text = "€" + r.btwLaag.ToString("0.00");
+            lbl_btwh.Text = "€" + r.btwHoog.ToString("0.00");
+            lbl_prijs.Text = "€" + r.Prijs.ToString("0.00");
+            txt_tip.Text = r.fooi.ToString("0.00");
+            lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
+        }
+
+        private void btn_updatefooi_Click(object sender, EventArgs e)
+        {
+            double fooi = double.Parse(txt_tip.Text);
+            r.UpdateTipAndTotaalprijs(fooi);
+            ShowRekening();
         }
     }
 }

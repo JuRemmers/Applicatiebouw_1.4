@@ -62,6 +62,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_updatefooi = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -187,6 +188,7 @@
             // 
             // tp_rekening
             // 
+            this.tp_rekening.Controls.Add(this.btn_updatefooi);
             this.tp_rekening.Controls.Add(this.lbl_tafelnummer2);
             this.tp_rekening.Controls.Add(this.label15);
             this.tp_rekening.Controls.Add(this.label14);
@@ -292,7 +294,7 @@
             // 
             // txt_tip
             // 
-            this.txt_tip.Location = new System.Drawing.Point(307, 440);
+            this.txt_tip.Location = new System.Drawing.Point(252, 440);
             this.txt_tip.Name = "txt_tip";
             this.txt_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_tip.Size = new System.Drawing.Size(100, 20);
@@ -378,7 +380,7 @@
             // lbl_mednaam
             // 
             this.lbl_mednaam.AutoSize = true;
-            this.lbl_mednaam.Location = new System.Drawing.Point(349, 49);
+            this.lbl_mednaam.Location = new System.Drawing.Point(352, 46);
             this.lbl_mednaam.Name = "lbl_mednaam";
             this.lbl_mednaam.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_mednaam.Size = new System.Drawing.Size(0, 13);
@@ -387,7 +389,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(274, 46);
+            this.label2.Location = new System.Drawing.Point(260, 46);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(75, 13);
@@ -423,6 +425,19 @@
             // 
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
+            // 
+            // btn_updatefooi
+            // 
+            this.btn_updatefooi.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_updatefooi.Location = new System.Drawing.Point(358, 439);
+            this.btn_updatefooi.Name = "btn_updatefooi";
+            this.btn_updatefooi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_updatefooi.Size = new System.Drawing.Size(50, 20);
+            this.btn_updatefooi.TabIndex = 20;
+            this.btn_updatefooi.Text = "+";
+            this.btn_updatefooi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_updatefooi.UseVisualStyleBackColor = true;
+            this.btn_updatefooi.Click += new System.EventHandler(this.btn_updatefooi_Click);
             // 
             // RekeningOverzicht
             // 
@@ -477,5 +492,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label lbl_tafelnummer2;
+        private System.Windows.Forms.Button btn_updatefooi;
     }
 }
