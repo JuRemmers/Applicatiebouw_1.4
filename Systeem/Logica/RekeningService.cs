@@ -1,27 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Model;
-using DAO;
+using Systeem.DAO;
 
-namespace Logica
+namespace Systeem.Logica
 {
     public class RekeningService
     {
         const double BTWL = 0.06;
         const double BTWH = 0.21;
 
-        public List<BestelItem> GetTafeloverzicht(int tafelId)
-        {
-            BestellingDAO b = new BestellingDAO();
-            Bestelling bes = b.GetBestellingIdByTafelId(tafelId);
-
-            BestelItemDAO d = new BestelItemDAO();
-            List<BestelItem> items = d.GetMenuItemsByBestellingId(bes.ID);
-
-            return items;
-        }
-        
-        /*
         public void MaakTafelOverzicht(int id)
         {
             RekeningDAO rekening = new RekeningDAO();
@@ -111,6 +102,6 @@ namespace Logica
         {
             RekeningDAO rek = new RekeningDAO();
             rek.UpdateBetaald(r.Id);
-        }*/
+        }
     }
 }

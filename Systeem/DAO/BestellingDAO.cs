@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Model;
 
-namespace DAO
+namespace Systeem.DAO
 {
     public class BestellingDAO
     {
@@ -105,18 +105,6 @@ namespace DAO
             conn.Close();
 
             return bestellingalles;
-        }
-
-        // Kayleigh
-        public Bestelling GetBestellingIdByTafelId(int tafelId)
-        {
-            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
-            SqlCommand c = new SqlCommand(com, conn);
-            c.Parameters.AddWithValue("@id", tafelId);
-
-            Bestelling b = new Bestelling((int)c.ExecuteScalar());
-
-            return b;
         }
     }
 }

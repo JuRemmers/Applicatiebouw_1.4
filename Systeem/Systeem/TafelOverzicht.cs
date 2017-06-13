@@ -134,9 +134,13 @@ namespace Systeem
 
             foreach (Bestelling item in bestellingen)
             {
-                clb_bestellingen.Items.Add(item.ToString());
-               
+                ListViewItem listview = new ListViewItem(item.ID.ToString());
+                listview.SubItems.Add(item.tafel.ToString());
+                listview.SubItems.Add(item.status.ToString());
+                clb_bestellingen.Items.Add(listview);
             }
+            clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void btn_keuken_Click(object sender, EventArgs e)
@@ -148,8 +152,13 @@ namespace Systeem
 
             foreach (Bestelling item in bestellingen)
             {
-                clb_bestellingen.Items.Add(item.ToString());
+                ListViewItem listview = new ListViewItem(item.ID.ToString());
+                listview.SubItems.Add(item.tafel.ToString());
+                listview.SubItems.Add(item.status.ToString());
+                clb_bestellingen.Items.Add(listview);
             }
+            clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void btn_all_Click(object sender, EventArgs e)
@@ -159,10 +168,15 @@ namespace Systeem
             BestellingService service = new BestellingService();
             List<Bestelling> bestellingen = service.GetAllForBestellingAlles();
 
-            foreach (Bestelling item in bestellingen)
+            foreach (Model.Bestelling item in bestellingen)
             {
-                clb_bestellingen.Items.Add(item.ToString());
+                ListViewItem listview = new ListViewItem(item.ID.ToString());
+                listview.SubItems.Add(item.tafel.ToString());
+                listview.SubItems.Add(item.status.ToString());
+                clb_bestellingen.Items.Add(listview);
             }
+            clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
+            clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace Model
 
         public override string ToString()
         {
-            string tafel = ID.ToString() + Bezet.ToString();
+            string tafel = ID.ToString();
             return tafel;
         }
     }
