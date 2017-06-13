@@ -31,11 +31,11 @@ namespace DAO
             Tafel tafel = new Tafel(tafelid, true);
             Medewerker medewerker = new Medewerker(Medewerker_ID, "naam");
 
-            switch(status)
+            switch (status)
             {
                 case "Opgenomen":
-                enumstatus = Status.Opgenomen;
-                break;
+                    enumstatus = Status.Opgenomen;
+                    break;
 
                 case "Gereed":
                     enumstatus = Status.Gereed;
@@ -63,7 +63,7 @@ namespace DAO
 
             conn.Open();
 
-            if (locatieid == "Bar" )
+            if (locatieid == "Bar")
             {
                 checkid = 1;
             }
@@ -108,7 +108,6 @@ namespace DAO
         }
 
         // Kayleigh
-
         public int GetBestelIdByTafelId(int tafelId)
         {
             string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
@@ -116,10 +115,25 @@ namespace DAO
             c.Parameters.AddWithValue("@id", tafelId);
 
             conn.Open();
-            return (int)c.ExecuteScalar();
+            int bestId = (int)c.ExecuteScalar();
+            conn.Close();
+
+            return bestId;
+            
+        }
+
+        public void UpdateBestelling(int bestellingid, Status updatestatus)
+        {           
+            string stringstatus = updatestatus.ToString();
+            SqlCommand command = new SqlCommand ("UPDATE Bestelling SET Status = @st WHERE Bestelling.ID = @id" , conn);
+            command.Parameters.AddWithValue("@id", bestellingid);
+            command.Parameters.AddWithValue("@st", stringstatus);
+
+            conn.Open();
+            command.ExecuteNonQuery();
+
             conn.Close();
         }
-        
     }
 }
 

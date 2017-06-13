@@ -21,6 +21,7 @@ namespace Model
             this.menukaartID = menu;
         }
 
+        // Kayleigh Vossen
         public Menucategorie(int btw)
         {
             this.btw = btw;

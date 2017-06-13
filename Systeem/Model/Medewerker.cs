@@ -23,7 +23,7 @@ namespace Model
             this.wachtwoord = password;
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         public Medewerker(int ID, string voornaam)
         {
             this.ID = ID;

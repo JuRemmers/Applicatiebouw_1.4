@@ -30,6 +30,8 @@ namespace Systeem
             cb_status.Items.Add("Onderhande");
             cb_status.Items.Add("Gereed");
             cb_status.Items.Add("Uitgeserveerd");
+
+            // Kayleigh Vossen
             if (tabopen == "tp_bestelling_maken")
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
@@ -231,10 +233,19 @@ namespace Systeem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int bestellingid;
+            Status updatestatus = Model.Status.Gereed;
+
+            ListViewItem selItem = clb_bestellingen.SelectedItems[0];
+            bestellingid = int.Parse(selItem.SubItems[0].Text);
+            updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
+
+            BestellingService service = new BestellingService();
+            service.UpdateStatus(bestellingid, updatestatus);
 
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table1_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
@@ -242,7 +253,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table3_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
@@ -250,7 +261,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table5_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
@@ -258,7 +269,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table7_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
@@ -266,7 +277,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table9_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
@@ -274,7 +285,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table2_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
@@ -282,7 +293,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table4_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
@@ -290,7 +301,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table6_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
@@ -298,7 +309,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table8_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
@@ -306,7 +317,7 @@ namespace Systeem
             this.Close();
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         private void pb_table10_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(10);

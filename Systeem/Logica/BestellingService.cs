@@ -23,5 +23,11 @@ namespace Logica
             List<Bestelling> Bestellingen = BestelDAL.GetAllBestellingenAlles();
             return Bestellingen;
         }
+
+        public void UpdateStatus(int bestellingid, Status updatestatus)
+        {
+            BestellingDAO Update = new BestellingDAO();
+            Update.UpdateBestelling(bestellingid, updatestatus);
+        }
     }
 }
