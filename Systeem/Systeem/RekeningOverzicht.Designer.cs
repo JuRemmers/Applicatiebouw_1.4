@@ -257,7 +257,7 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(8, 11);
+            this.button7.Location = new System.Drawing.Point(7, 6);
             this.button7.Name = "button7";
             this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.button7.Size = new System.Drawing.Size(42, 53);
@@ -353,7 +353,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(355, 53);
+            this.label3.Location = new System.Drawing.Point(360, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 2;
@@ -362,7 +362,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(274, 53);
+            this.label2.Location = new System.Drawing.Point(274, 46);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label2.Size = new System.Drawing.Size(75, 13);
@@ -375,10 +375,11 @@
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.listView2.Location = new System.Drawing.Point(7, 73);
+            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView2.Location = new System.Drawing.Point(7, 65);
             this.listView2.Name = "listView2";
             this.listView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView2.Size = new System.Drawing.Size(404, 297);
+            this.listView2.Size = new System.Drawing.Size(404, 305);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -417,7 +418,7 @@
             // 
             this.lbl_tafelnummer2.AutoSize = true;
             this.lbl_tafelnummer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tafelnummer2.Location = new System.Drawing.Point(121, 22);
+            this.lbl_tafelnummer2.Location = new System.Drawing.Point(146, 17);
             this.lbl_tafelnummer2.Name = "lbl_tafelnummer2";
             this.lbl_tafelnummer2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_tafelnummer2.Size = new System.Drawing.Size(82, 31);
