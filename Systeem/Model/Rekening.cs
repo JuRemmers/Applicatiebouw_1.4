@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-// Kayleigh
+// Kayleigh Vossen
 namespace Model
 {
     public class Rekening
