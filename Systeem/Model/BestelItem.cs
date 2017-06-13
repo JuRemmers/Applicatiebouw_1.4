@@ -12,17 +12,15 @@ namespace Model
         private Bestelling bestelling;
         public MenuItem item { get; private set; }
         public int aantal { get; private set; }
-        private int voorraad;
         private Status status;
         private string opmerking;
 
-        public BestelItem(int id, Bestelling bestelling, MenuItem item, int aantal, int voorraad, Status status, string opmerking)
+        public BestelItem(int id, Bestelling bestelling, MenuItem item, int aantal, Status status, string opmerking)
         {
             this.ID = id;
             this.bestelling = bestelling;
             this.item = item;
             this.aantal = aantal;
-            this.voorraad = voorraad;
             this.status = status;
             this.opmerking = opmerking;
         }

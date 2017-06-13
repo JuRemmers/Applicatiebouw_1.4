@@ -69,6 +69,7 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
+            this.lbl_test = new System.Windows.Forms.Label();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -260,6 +261,7 @@
             // 
             // gbox_items
             // 
+            this.gbox_items.Controls.Add(this.lbl_test);
             this.gbox_items.Controls.Add(this.clb_menukaart);
             this.gbox_items.Controls.Add(this.numericUpDown1);
             this.gbox_items.Controls.Add(this.label1);
@@ -531,6 +533,15 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
+            // lbl_test
+            // 
+            this.lbl_test.AutoSize = true;
+            this.lbl_test.Location = new System.Drawing.Point(87, 22);
+            this.lbl_test.Name = "lbl_test";
+            this.lbl_test.Size = new System.Drawing.Size(28, 13);
+            this.lbl_test.TabIndex = 8;
+            this.lbl_test.Text = "Test";
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -603,5 +614,6 @@
         private System.Windows.Forms.ColumnHeader Tafel;
         private System.Windows.Forms.ColumnHeader Status;
         private System.Windows.Forms.ColumnHeader Bestelling;
+        private System.Windows.Forms.Label lbl_test;
     }
 }
