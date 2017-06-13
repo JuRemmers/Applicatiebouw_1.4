@@ -22,23 +22,27 @@ namespace Systeem
         {
             int werknemer_id = 0; // Initialiseert waarden voor id en wachtwoord
             string wachtwoord = " ";
-            
+
             // Inlezen ID en wachtwoord
-            werknemer_id = Int32.Parse(tb_werknemer_id.Text); 
-            wachtwoord = tb_wachtwoord.Text.ToString(); 
-
-            // Onderstaande controleerd of de login valide is
-            Loginservice login = new Loginservice();  // Maakt instantie van class Loginservice
-            bool check = login.logincheck(werknemer_id, wachtwoord); // ..en stopt hem in bool
-            if (check)
+            if (tb_werknemer_id.Text.All(char.IsDigit))
             {
-                this.Hide(); // Verbergt loginscherm wanneer ingelogd
-                var TafelOverzicht = new TafelOverzicht(); // 'var' = compiler bepaalt datatype
-                TafelOverzicht.ShowDialog();
-                this.Show(); // Showt tafeloverzichtscherm
-            }
+                // Proceed
+                werknemer_id = Int32.Parse(tb_werknemer_id.Text);
+                wachtwoord = tb_wachtwoord.Text.ToString();
 
-            else MessageBox.Show("Incorect wachtwoord");
+                // Onderstaande controleerd of de login valide is
+                Loginservice login = new Loginservice();  // Maakt instantie van class Loginservice
+                bool check = login.logincheck(werknemer_id, wachtwoord); // ..en stopt hem in bool
+                if (check)
+                {
+                    this.Hide(); // Verbergt loginscherm wanneer ingelogd
+                    var TafelOverzicht = new TafelOverzicht(); // 'var' = compiler bepaalt datatype
+                    TafelOverzicht.ShowDialog();
+                    this.Show(); // Showt tafeloverzichtscherm
+                }
+                else MessageBox.Show("Incorect wachtwoord");
+            }
+            else MessageBox.Show("Geen geldig ID ingevoerd: voer cijfers in");                     
         }
 
         private void tb_wachtwoord_TextChanged(object sender, EventArgs e)
