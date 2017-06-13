@@ -30,7 +30,7 @@ namespace Systeem
             cb_status.Items.Add("Onderhande");
             cb_status.Items.Add("Gereed");
             cb_status.Items.Add("Uitgeserveerd");
-            if(tabopen == "tp_bestelling_maken")
+            if (tabopen == "tp_bestelling_maken")
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
@@ -42,14 +42,29 @@ namespace Systeem
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
-            //Kaartservice service = new Kaartservice();
-            //List<Model.MenuItem> allLunch = service.GetAllkaart("Lunch");
+            Kaartservice service = new Kaartservice();
+            List<Model.MenuItem> allLunch = service.GetAllkaart("Lunch");
 
-            //foreach (Model.MenuItem item in allLunch)
-            //{
-            //    clb_menukaart.Items.Add(item.ToString());
-            //}
+            ListViewItem listview;
+            string cat = null;
+            foreach (Model.MenuItem item in allLunch)
+            {
+                if (cat != item.Categorie.ToString())
+                {
+                    listview = new ListViewItem(item.Categorie.ToString());
+                    listview.Font = new Font("Serif", 15, FontStyle.Bold);
             }
+                else
+                {
+                    listview = new ListViewItem(item.product);
+                    listview.SubItems.Add(item.prijs.ToString());
+                }
+
+                cat = item.Categorie.ToString();
+
+                clb_menukaart.Items.Add(listview);
+            }
+        }
 
         private void btn_terug_Click(object sender, EventArgs e)
         {
@@ -66,11 +81,6 @@ namespace Systeem
 
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_diner_Click(object sender, EventArgs e)
         {
             gbox_items.Visible = true;
@@ -79,11 +89,23 @@ namespace Systeem
             Kaartservice service = new Kaartservice();
             List<Model.MenuItem> allDiner = service.GetAllkaart("Diner");
 
+            ListViewItem listview;
+            string cat = null;
             foreach (Model.MenuItem item in allDiner)
             {
-                ListViewItem listview = new ListViewItem(item.id.ToString());
-                listview.SubItems.Add(item.product);
+                if (cat != item.Categorie.ToString())
+                {
+                    listview = new ListViewItem(item.Categorie.ToString());
+                    listview.Font = new Font("Serif", 15, FontStyle.Bold);
+                }
+                else
+                {
+                    listview = new ListViewItem(item.product);
                 listview.SubItems.Add(item.prijs.ToString());
+                }
+
+                cat = item.Categorie.ToString();
+
                 clb_menukaart.Items.Add(listview);
             }
         }
@@ -93,19 +115,28 @@ namespace Systeem
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
-            //Kaartservice service = new Kaartservice();
-            //List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
+            Kaartservice service = new Kaartservice();
+            List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
 
-            //Menucategorie cat = null;
-            //foreach (Model.MenuItem item in allDranken)
-            //{
-            //    if (item.Categorie != cat)
-            //    {
-            //        clb_menukaart.Items.Add("-");
-            //        cat = item.Categorie;
-            //    }
-            //    clb_menukaart.Items.Add(item.ToString());
-            //}
+            ListViewItem listview;
+            string cat = null;
+            foreach (Model.MenuItem item in allDranken)
+            {
+                if (cat != item.Categorie.ToString())
+                {
+                    listview = new ListViewItem(item.Categorie.ToString());
+                    listview.Font = new Font("Serif", 15, FontStyle.Bold);
+                }
+                else
+                {
+                    listview = new ListViewItem(item.product);
+                    listview.SubItems.Add(item.prijs.ToString());
+                }
+
+                cat = item.Categorie.ToString();
+
+                clb_menukaart.Items.Add(listview);
+            }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -185,16 +216,6 @@ namespace Systeem
         }
 
         private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clb_menukaart_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void clb_menukaart_SelectedIndexChanged_1(object sender, EventArgs e)
         {
 
         }

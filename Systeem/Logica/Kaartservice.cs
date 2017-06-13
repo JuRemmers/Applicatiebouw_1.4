@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
-using Systeem.DAO;
+using DAO;
 
 namespace Systeem.Logica
 {

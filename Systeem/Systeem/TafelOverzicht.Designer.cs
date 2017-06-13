@@ -279,12 +279,22 @@
             this.clb_menukaart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Menu_Item,
             this.Prijs});
+            this.clb_menukaart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
             this.clb_menukaart.Name = "clb_menukaart";
             this.clb_menukaart.Size = new System.Drawing.Size(396, 451);
             this.clb_menukaart.TabIndex = 7;
             this.clb_menukaart.UseCompatibleStateImageBehavior = false;
             this.clb_menukaart.View = System.Windows.Forms.View.Details;
+            // 
+            // Menu_Item
+            // 
+            this.Menu_Item.Text = "Menu Item";
+            this.Menu_Item.Width = 331;
+            // 
+            // Prijs
+            // 
+            this.Prijs.Text = "Prijs";
             // 
             // numericUpDown1
             // 
