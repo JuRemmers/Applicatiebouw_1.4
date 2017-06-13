@@ -113,9 +113,10 @@ namespace DAO
             string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
-
-            Bestelling b = new Bestelling((int)c.ExecuteScalar());
-
+            conn.Open();
+            int bestelId = (int)c.ExecuteScalar();
+            Bestelling b = new Bestelling(bestelId);
+            conn.Close();
             return b;
         }
     }

@@ -33,14 +33,14 @@ namespace DAO
 
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", bestelId);
-
+            conn.Open();
             SqlDataReader reader = c.ExecuteReader();
             List<BestelItem> items = new List<BestelItem>();
 
-            conn.Open();
+            
             while (reader.Read())
             {
-                double prijs = reader.GetFloat(0);
+                double prijs = reader.GetDouble(0);
                 int aantal = reader.GetInt32(1);
                 string gerecht = reader.GetString(2);
                 int btw = reader.GetInt32(3);

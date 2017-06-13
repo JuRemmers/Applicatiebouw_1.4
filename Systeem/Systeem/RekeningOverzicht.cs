@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Logica;
 
 namespace Systeem
 {
@@ -19,7 +21,24 @@ namespace Systeem
             InitializeComponent();
             this.tafelId = tafelId;
             lbl_tafelnummer.Text = "Tafel " + tafelId;
-                       
+            RekeningService s = new RekeningService();
+            List<BestelItem> items = s.GetTafeloverzicht(tafelId);
+            InitList(items);        
+        }
+
+        public void InitList(List<BestelItem> items)
+        {
+            foreach(BestelItem i in items)
+            {
+                string sa = i.aantal.ToString();
+                string sa2 = i.item.product;
+                string sa3 = "€ " + (i.item.prijs*i.aantal).ToString("0.00");
+                ListViewItem lvi = new ListViewItem(sa);
+                
+                lvi.SubItems.Add(sa2);
+                lvi.SubItems.Add(sa3);
+                listView1.Items.Add(lvi);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
