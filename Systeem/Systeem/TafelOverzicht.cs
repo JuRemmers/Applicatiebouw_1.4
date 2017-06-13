@@ -14,6 +14,7 @@ namespace Systeem
 {
     public partial class TafelOverzicht : Form
     {
+        string sectie;
         public TafelOverzicht()
         {
             InitializeComponent();
@@ -166,13 +167,15 @@ namespace Systeem
             // print each
         }
 
-        private void btn_bar_Click(object sender, EventArgs e)
+        public void btn_bar_Click(object sender, EventArgs e)
         {
+            sectie = "Bar";
+
             gbox_bestellingen.Visible = true;
 
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling("Bar");
+            List<Bestelling> bestellingen = service.GetAllForBestelling(sectie);
 
             foreach (Bestelling item in bestellingen)
             {
@@ -185,12 +188,14 @@ namespace Systeem
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void btn_keuken_Click(object sender, EventArgs e)
+        public void btn_keuken_Click(object sender, EventArgs e)
         {
+            sectie = "Keuken";
+
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling("Keuken");
+            List<Bestelling> bestellingen = service.GetAllForBestelling(sectie);
 
             foreach (Bestelling item in bestellingen)
             {
@@ -205,6 +210,9 @@ namespace Systeem
 
         private void btn_all_Click(object sender, EventArgs e)
         {
+
+            sectie = "Alles";
+
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
@@ -236,12 +244,30 @@ namespace Systeem
             int bestellingid;
             Status updatestatus = Model.Status.Gereed;
 
-            ListViewItem selItem = clb_bestellingen.SelectedItems[0];
-            bestellingid = int.Parse(selItem.SubItems[0].Text);
+            ListViewItem list2 = clb_bestellingen.SelectedItems[0];
+            bestellingid = int.Parse(list2.SubItems[0].Text);
             updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
 
             BestellingService service = new BestellingService();
             service.UpdateStatus(bestellingid, updatestatus);
+
+
+            switch (sectie)
+            {
+                case "Keuken":
+                    btn_keuken.PerformClick();
+                    break;
+
+                case "Bar":
+                    btn_bar.PerformClick();
+                    break;
+
+                case "Alles":
+                    btn_all.PerformClick();
+                    break;
+
+            }
+
 
         }
 
