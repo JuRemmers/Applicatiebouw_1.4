@@ -230,7 +230,7 @@ namespace Systeem
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_back_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = false;
         }
@@ -350,6 +350,12 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
             overzicht.Show();
             this.Close();
+        }
+
+        private void btn_bekijkbestel_Click(object sender, EventArgs e)
+        {
+            BestellingService items = new BestellingService();
+            //List<Bestelling> bestelitems = items.GetAllForItems();
         }
     }
 }
