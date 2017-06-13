@@ -23,27 +23,9 @@ namespace Systeem.DAO
 
         public void InsertRekening(Rekening r)
         {
-            string com = "INSERT INTO Rekening VALUES @bestId,@btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
-            SqlCommand c = new SqlCommand(com, conn);
-
-            c.Parameters.AddWithValue("@bestId", r.bestelling.ID);
-            c.Parameters.AddWithValue("@btwl", r.btwLaag);
-            c.Parameters.AddWithValue("@btwh", r.btwHoog);
-            c.Parameters.AddWithValue("@prijs", r.Prijs);
-            c.Parameters.AddWithValue("@fooi", r.fooi);
-            c.Parameters.AddWithValue("@totaalprijs", r.totaalprijs);
-            c.Parameters.AddWithValue("@datumtijd", DateTime.Now);
-            c.Parameters.AddWithValue("@medid", r.medewerker.ID);
-            c.Parameters.AddWithValue("@opm", r.opmerking);
-
-            conn.Open();
-            c.ExecuteNonQuery();
-            conn.Close();
-
+            //string com = "INSERT INTO Rekening VALUES @bestId,@btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
         }
 
-
-        /*
         // Maakt rekening aan met bestelID en medewerkerID
         public void MakeTafelOverzicht(int tafelId)
         {
