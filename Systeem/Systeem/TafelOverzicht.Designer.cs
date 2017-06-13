@@ -60,9 +60,9 @@
             this.tp_huidige_bestellingen = new System.Windows.Forms.TabPage();
             this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
             this.clb_bestellingen = new System.Windows.Forms.ListView();
+            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tafel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -303,6 +303,11 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
             this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -445,6 +450,10 @@
             this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
             this.clb_bestellingen.View = System.Windows.Forms.View.Details;
             // 
+            // Bestelling
+            // 
+            this.Bestelling.Text = "Bestelling";
+            // 
             // Tafel
             // 
             this.Tafel.Text = "Tafel";
@@ -455,10 +464,6 @@
             this.Status.Text = "Status";
             this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Status.Width = 118;
-            // 
-            // Bestelling
-            // 
-            this.Bestelling.Text = "Bestelling";
             // 
             // button1
             // 

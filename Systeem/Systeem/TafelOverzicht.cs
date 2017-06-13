@@ -53,12 +53,15 @@ namespace Systeem
                 {
                     listview = new ListViewItem(item.Categorie.ToString());
                     listview.Font = new Font("Serif", 15, FontStyle.Bold);
-            }
-                else
-                {
-                    listview = new ListViewItem(item.product);
-                    listview.SubItems.Add(item.prijs.ToString());
+                    clb_menukaart.Items.Add(listview);
                 }
+                
+                    listview = new ListViewItem(item.product);
+                    if (item.voorraad <= 0)
+                    { listview.ForeColor = Color.Silver; }
+                    
+                    listview.SubItems.Add(item.prijs.ToString());
+                
 
                 cat = item.Categorie.ToString();
 
@@ -97,12 +100,15 @@ namespace Systeem
                 {
                     listview = new ListViewItem(item.Categorie.ToString());
                     listview.Font = new Font("Serif", 15, FontStyle.Bold);
+                    clb_menukaart.Items.Add(listview);
                 }
-                else
-                {
-                    listview = new ListViewItem(item.product);
+
+                listview = new ListViewItem(item.product);
+                if (item.voorraad <= 0)
+                { listview.ForeColor = Color.Silver; }
+
                 listview.SubItems.Add(item.prijs.ToString());
-                }
+
 
                 cat = item.Categorie.ToString();
 
@@ -126,12 +132,15 @@ namespace Systeem
                 {
                     listview = new ListViewItem(item.Categorie.ToString());
                     listview.Font = new Font("Serif", 15, FontStyle.Bold);
+                    clb_menukaart.Items.Add(listview);
                 }
-                else
-                {
-                    listview = new ListViewItem(item.product);
-                    listview.SubItems.Add(item.prijs.ToString());
-                }
+
+                listview = new ListViewItem(item.product);
+                if (item.voorraad <= 0)
+                { listview.ForeColor = Color.Silver; }
+
+                listview.SubItems.Add(item.prijs.ToString());
+
 
                 cat = item.Categorie.ToString();
 
@@ -143,7 +152,7 @@ namespace Systeem
         {
             string selected = clb_menukaart.CheckedItems.ToString();
 
-            
+
         }
 
         private void btn_Bekijk_Click(object sender, EventArgs e)
