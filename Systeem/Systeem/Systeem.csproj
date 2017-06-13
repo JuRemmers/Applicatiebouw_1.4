@@ -47,13 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\BestelItemDAO.cs" />
-    <Compile Include="DAO\BestellingDAO.cs" />
-    <Compile Include="DAO\DBconnection.cs" />
-    <Compile Include="DAO\MedewerkerDAO.cs" />
-    <Compile Include="DAO\MenuItemDAO.cs" />
-    <Compile Include="DAO\RekeningDAO.cs" />
-    <Compile Include="DAO\TafelDAO.cs" />
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>
     </Compile>

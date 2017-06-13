@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using Model;
 
 // Geschreven door Kayleigh Vossen
-namespace Systeem.DAO
+namespace DAO
 {
     public class RekeningDAO
     {

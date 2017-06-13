@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Systeem", "Systeem\Systeem.csproj", "{F9D565DC-450D-404B-884C-96065B8D867E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{342B5FAB-C424-4ABD-B5F5-15E71B975557} = {342B5FAB-C424-4ABD-B5F5-15E71B975557}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{94DDB18F-6A01-49F4-8000-F53DA357545C}"
 EndProject
