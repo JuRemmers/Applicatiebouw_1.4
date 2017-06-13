@@ -10,40 +10,19 @@ namespace Model
 {
     public class Rekening
     {
-        public int Id { get; private set; }
         public Bestelling bestelling { get; private set; }
         public double btwLaag;
         public double btwHoog;
         public double Prijs;
         public double fooi;
         public double totaalprijs { get; private set; }
-        public DateTime datumTijd;
         public Medewerker medewerker;
         public string opmerking;
         
-
-        public Rekening(int Id, Bestelling bestelling)
+        public Rekening(Bestelling bestelling,Medewerker medewerker)
         {
-            this.Id = Id;
             this.bestelling = bestelling;
-
-        }
-
-        public Rekening(int Id, Bestelling bestelling, double btwLaag, double btwHoog, double Prijs, double fooi, DateTime datumTijd, Medewerker medewerker, bool betaald, string opmerking)
-        {
-            this.Id = Id;
-            this.bestelling = bestelling;
-            this.btwLaag = btwLaag;
-            this.btwHoog = btwHoog;
-            this.Prijs = Prijs;
-            this.fooi = fooi;
-            this.totaalprijs = Prijs + fooi;
-            this.datumTijd = datumTijd;
             this.medewerker = medewerker;
-            this.opmerking = opmerking;
-            
         }
-        
-        
     }
 }

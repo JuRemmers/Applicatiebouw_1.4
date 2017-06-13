@@ -106,6 +106,16 @@ namespace Systeem.DAO
 
             return bestellingalles;
         }
+
+        // Kayleigh
+        public int GetBestelIdByTafelId(int tafelId)
+        {
+            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
+            SqlCommand c = new SqlCommand(com, conn);
+            c.Parameters.AddWithValue("@id", tafelId);
+            
+            return (int)c.ExecuteScalar();
+        }
     }
 }
 

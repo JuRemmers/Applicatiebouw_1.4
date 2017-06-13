@@ -14,13 +14,18 @@ namespace Systeem.Logica
         const double BTWL = 0.06;
         const double BTWH = 0.21;
 
-        public void MaakTafelOverzicht(int id)
+        public List<BestelItem> GetBestellingByTafelId(int id)
         {
-            RekeningDAO rekening = new RekeningDAO();
-            rekening.MakeTafelOverzicht(id);
+            BestellingDAO d = new BestellingDAO();
+            int bestelId = d.GetBestelIdByTafelId(id);
+
+            BestelItemDAO b = new BestelItemDAO();
+            List<BestelItem> bestelling = b.GetMenuItemsByBestellingId(bestelId);
+
+            return bestelling;
         }
 
-        public Rekening GetTafelOverzichtByTafelId(int id)
+        /* public Rekening GetTafelOverzichtByTafelId(int id)
         {
             RekeningDAO rekening = new RekeningDAO();
             Rekening r = rekening.GetTafelOverzichtByTafelId(id);
@@ -49,6 +54,7 @@ namespace Systeem.Logica
             MedewerkerDAO med = new MedewerkerDAO();
             Medewerker m = med.GetMedewerkerNaam(r.medewerker.ID);
             
+            Rekening r = new Rekening(new Bestelling())
 
             double prijs = 0;
             double btwL = 0;
@@ -103,6 +109,6 @@ namespace Systeem.Logica
         {
             RekeningDAO rek = new RekeningDAO();
             rek.UpdateBetaald(r.Id);
-        }
+        }*/
     }
 }

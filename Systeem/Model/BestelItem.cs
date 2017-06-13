@@ -32,6 +32,7 @@ namespace Model
             return item.ToString() + ", " + aantal;
         }
 
+        // Kayleigh
         public BestelItem(MenuItem item, int aantal)
         {
             this.item = item;

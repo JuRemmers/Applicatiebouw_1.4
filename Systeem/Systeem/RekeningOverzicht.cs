@@ -40,5 +40,10 @@ namespace Systeem
         {
             tabControl1.SelectedTab = tp_rekening;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
