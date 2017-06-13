@@ -42,7 +42,7 @@
     <Compile Include="BestelItem.cs" />
     <Compile Include="Bestelling.cs" />
     <Compile Include="Functie.cs" />
-    <Compile Include="Properties\Medewerker.cs" />
+    <Compile Include="Medewerker.cs" />
     <Compile Include="Menucategorie.cs" />
     <Compile Include="MenuItem.cs" />
     <Compile Include="MenuKaart.cs" />
