@@ -14,7 +14,7 @@ namespace Model
         public Tafel tafel { get; private set; }
         public Medewerker medewerker { get; private set; }
 
-    public Bestelling(int ID, Status status, Tafel tafel, Medewerker medewerker)
+        public Bestelling(int ID, Status status, Tafel tafel, Medewerker medewerker)
         {
             this.ID = ID;
             this.status = status;
@@ -22,7 +22,7 @@ namespace Model
             this.medewerker = medewerker;
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         public Bestelling(int ID)
         {
             this.ID = ID;

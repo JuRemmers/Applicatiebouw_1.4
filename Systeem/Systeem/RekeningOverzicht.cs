@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Model;
 using Logica;
 
+
+// Kayleigh Vossen
 namespace Systeem
 {
     public partial class RekeningOverzicht : Form

@@ -32,6 +32,7 @@ namespace Model
             return String;
         }
 
+        // Kayleigh Vossen
         public MenuItem(string product, double prijs, Menucategorie Categorie)
         {
             this.product = product;

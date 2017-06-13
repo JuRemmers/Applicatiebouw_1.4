@@ -108,7 +108,6 @@ namespace DAO
         }
 
         // Kayleigh
-
         public int GetBestelIdByTafelId(int tafelId)
         {
             string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
@@ -116,8 +115,11 @@ namespace DAO
             c.Parameters.AddWithValue("@id", tafelId);
 
             conn.Open();
-            return (int)c.ExecuteScalar();
+            int bestId = (int)c.ExecuteScalar();
             conn.Close();
+
+            return bestId;
+            
         }
         
     }
