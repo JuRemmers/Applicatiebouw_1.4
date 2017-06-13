@@ -45,6 +45,7 @@
             this.btn_bar_meldingen = new System.Windows.Forms.Button();
             this.tp_bestelling_maken = new System.Windows.Forms.TabPage();
             this.gbox_items = new System.Windows.Forms.GroupBox();
+            this.lbl_test = new System.Windows.Forms.Label();
             this.clb_menukaart = new System.Windows.Forms.ListView();
             this.Menu_Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,11 +66,11 @@
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.bt_aanpassen = new System.Windows.Forms.Button();
             this.cb_status = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_back = new System.Windows.Forms.Button();
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.lbl_test = new System.Windows.Forms.Label();
+            this.btn_bekijkbestel = new System.Windows.Forms.Button();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -276,6 +277,15 @@
             this.gbox_items.Text = "Menu items";
             this.gbox_items.Visible = false;
             // 
+            // lbl_test
+            // 
+            this.lbl_test.AutoSize = true;
+            this.lbl_test.Location = new System.Drawing.Point(87, 22);
+            this.lbl_test.Name = "lbl_test";
+            this.lbl_test.Size = new System.Drawing.Size(28, 13);
+            this.lbl_test.TabIndex = 8;
+            this.lbl_test.Text = "Test";
+            // 
             // clb_menukaart
             // 
             this.clb_menukaart.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -414,10 +424,11 @@
             // 
             // gbox_bestellingen
             // 
+            this.gbox_bestellingen.Controls.Add(this.btn_bekijkbestel);
             this.gbox_bestellingen.Controls.Add(this.clb_bestellingen);
             this.gbox_bestellingen.Controls.Add(this.bt_aanpassen);
             this.gbox_bestellingen.Controls.Add(this.cb_status);
-            this.gbox_bestellingen.Controls.Add(this.button3);
+            this.gbox_bestellingen.Controls.Add(this.btn_back);
             this.gbox_bestellingen.Location = new System.Drawing.Point(6, 6);
             this.gbox_bestellingen.Name = "gbox_bestellingen";
             this.gbox_bestellingen.Size = new System.Drawing.Size(402, 555);
@@ -484,16 +495,16 @@
             this.cb_status.Text = "Kies status...";
             this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
             // 
-            // button3
+            // btn_back
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Terug";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.Location = new System.Drawing.Point(6, 12);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(75, 31);
+            this.btn_back.TabIndex = 1;
+            this.btn_back.Text = "Terug";
+            this.btn_back.UseVisualStyleBackColor = true;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // btn_keuken
             // 
@@ -533,14 +544,16 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
-            // lbl_test
+            // btn_bekijkbestel
             // 
-            this.lbl_test.AutoSize = true;
-            this.lbl_test.Location = new System.Drawing.Point(87, 22);
-            this.lbl_test.Name = "lbl_test";
-            this.lbl_test.Size = new System.Drawing.Size(28, 13);
-            this.lbl_test.TabIndex = 8;
-            this.lbl_test.Text = "Test";
+            this.btn_bekijkbestel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bekijkbestel.Location = new System.Drawing.Point(242, 12);
+            this.btn_bekijkbestel.Name = "btn_bekijkbestel";
+            this.btn_bekijkbestel.Size = new System.Drawing.Size(154, 31);
+            this.btn_bekijkbestel.TabIndex = 5;
+            this.btn_bekijkbestel.Text = "Bekijk Bestelling";
+            this.btn_bekijkbestel.UseVisualStyleBackColor = true;
+            this.btn_bekijkbestel.Click += new System.EventHandler(this.btn_bekijkbestel_Click);
             // 
             // TafelOverzicht
             // 
@@ -603,7 +616,7 @@
         private System.Windows.Forms.Button btn_all;
         private System.Windows.Forms.Button btn_bar;
         private System.Windows.Forms.GroupBox gbox_bestellingen;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Button bt_aanpassen;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -615,5 +628,6 @@
         private System.Windows.Forms.ColumnHeader Status;
         private System.Windows.Forms.ColumnHeader Bestelling;
         private System.Windows.Forms.Label lbl_test;
+        private System.Windows.Forms.Button btn_bekijkbestel;
     }
 }

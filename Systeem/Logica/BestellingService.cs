@@ -34,5 +34,6 @@ namespace Logica
         {
             BestelDAL.UpdateBestelling(bestellingid, updatestatus);
         }
+
     }
 }
