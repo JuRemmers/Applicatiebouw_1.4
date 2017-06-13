@@ -8,7 +8,7 @@ using Systeem.DAO;
 
 namespace Systeem.Logica
 {
-    class BestellingService
+    public class BestellingService
     {
         public List<Bestelling> GetAllForBestelling(string locatieid)
         {

@@ -8,7 +8,7 @@ using Model;
 
 namespace Systeem.Logica
 {
-    class Loginservice
+    public class Loginservice
     {
         public bool logincheck(int werknemer_id, string wachtwoord)
         {
