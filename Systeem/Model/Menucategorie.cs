@@ -25,5 +25,10 @@ namespace Model
         {
             this.btw = btw;
         }
+
+        public override string ToString()
+        {
+            return this.Categorie;
+        }
     }
 }
