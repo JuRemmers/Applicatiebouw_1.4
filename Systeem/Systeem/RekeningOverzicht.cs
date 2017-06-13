@@ -16,17 +16,17 @@ namespace Systeem
     {
         public int tafelId;
 
-        //public RekeningOverzicht(int tafelId)
-        //{
-        //    InitializeComponent();
-        //    this.tafelId = tafelId;
-        //    lbl_tafelnummer.Text = "Tafel " + tafelId;
-        //    lbl_tafelnummer2.Text = "Tafel " + tafelId;
-        //    RekeningService s = new RekeningService();
-        //    List<BestelItem> items = s.GetTafeloverzicht(tafelId);
-        //    InitList(items);
-        //    InitRekening(items);        
-        //}
+        public RekeningOverzicht(int tafelId)
+        {
+            InitializeComponent();
+            this.tafelId = tafelId;
+            lbl_tafelnummer.Text = "Tafel " + tafelId;
+            lbl_tafelnummer2.Text = "Tafel " + tafelId;
+            RekeningService s = new RekeningService();
+            List<BestelItem> items = s.GetBestellingByTafelId(tafelId);
+            InitList(items);
+            InitRekening(items);
+        }
 
         private void InitList(List<BestelItem> items)
         {
@@ -76,6 +76,11 @@ namespace Systeem
         private void button3_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tp_rekening;
+        }
+
+        private void tp_rekening_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

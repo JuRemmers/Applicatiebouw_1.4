@@ -36,7 +36,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tp_rekening = new System.Windows.Forms.TabPage();
+            this.lbl_tafelnummer2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -55,13 +59,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
-            this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbl_tafelnummer2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -170,6 +170,21 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             // 
+            // Aantal
+            // 
+            this.Aantal.Text = "Aantal";
+            this.Aantal.Width = 50;
+            // 
+            // Naam
+            // 
+            this.Naam.Text = "Naam";
+            this.Naam.Width = 280;
+            // 
+            // Prijs
+            // 
+            this.Prijs.Text = "Prijs";
+            this.Prijs.Width = 70;
+            // 
             // tp_rekening
             // 
             this.tp_rekening.Controls.Add(this.lbl_tafelnummer2);
@@ -197,6 +212,19 @@
             this.tp_rekening.TabIndex = 2;
             this.tp_rekening.Text = "Rekening opmaken";
             this.tp_rekening.UseVisualStyleBackColor = true;
+            this.tp_rekening.Click += new System.EventHandler(this.tp_rekening_Click);
+            // 
+            // lbl_tafelnummer2
+            // 
+            this.lbl_tafelnummer2.AutoSize = true;
+            this.lbl_tafelnummer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tafelnummer2.Location = new System.Drawing.Point(146, 17);
+            this.lbl_tafelnummer2.Name = "lbl_tafelnummer2";
+            this.lbl_tafelnummer2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_tafelnummer2.Size = new System.Drawing.Size(82, 31);
+            this.lbl_tafelnummer2.TabIndex = 19;
+            this.lbl_tafelnummer2.Text = "Tafel ";
+            this.lbl_tafelnummer2.UseMnemonic = false;
             // 
             // label15
             // 
@@ -384,21 +412,6 @@
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
             // 
-            // Aantal
-            // 
-            this.Aantal.Text = "Aantal";
-            this.Aantal.Width = 50;
-            // 
-            // Naam
-            // 
-            this.Naam.Text = "Naam";
-            this.Naam.Width = 280;
-            // 
-            // Prijs
-            // 
-            this.Prijs.Text = "Prijs";
-            this.Prijs.Width = 70;
-            // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Aantal";
@@ -413,18 +426,6 @@
             // 
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
-            // 
-            // lbl_tafelnummer2
-            // 
-            this.lbl_tafelnummer2.AutoSize = true;
-            this.lbl_tafelnummer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tafelnummer2.Location = new System.Drawing.Point(146, 17);
-            this.lbl_tafelnummer2.Name = "lbl_tafelnummer2";
-            this.lbl_tafelnummer2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_tafelnummer2.Size = new System.Drawing.Size(82, 31);
-            this.lbl_tafelnummer2.TabIndex = 19;
-            this.lbl_tafelnummer2.Text = "Tafel ";
-            this.lbl_tafelnummer2.UseMnemonic = false;
             // 
             // RekeningOverzicht
             // 

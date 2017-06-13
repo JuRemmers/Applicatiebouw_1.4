@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Model;
 using DAO;
 
-namespace Systeem.Logica
+namespace Logica
 {
     public class BestellingService
     {

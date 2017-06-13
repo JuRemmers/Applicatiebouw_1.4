@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DAO;
 using Model;
 
-namespace Systeem.Logica
+namespace Logica
 {
     public class Loginservice
     {

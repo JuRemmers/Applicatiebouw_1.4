@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Systeem.Logica;
+using Logica;
 using Model;
 
 namespace Systeem
