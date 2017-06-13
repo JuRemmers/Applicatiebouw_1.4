@@ -60,10 +60,10 @@
             this.tp_huidige_bestellingen = new System.Windows.Forms.TabPage();
             this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
             this.clb_bestellingen = new System.Windows.Forms.ListView();
+            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tafel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt_aanpassen = new System.Windows.Forms.Button();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_keuken = new System.Windows.Forms.Button();
@@ -413,7 +413,7 @@
             // gbox_bestellingen
             // 
             this.gbox_bestellingen.Controls.Add(this.clb_bestellingen);
-            this.gbox_bestellingen.Controls.Add(this.button1);
+            this.gbox_bestellingen.Controls.Add(this.bt_aanpassen);
             this.gbox_bestellingen.Controls.Add(this.cb_status);
             this.gbox_bestellingen.Controls.Add(this.button3);
             this.gbox_bestellingen.Location = new System.Drawing.Point(6, 6);
@@ -445,6 +445,10 @@
             this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
             this.clb_bestellingen.View = System.Windows.Forms.View.Details;
             // 
+            // Bestelling
+            // 
+            this.Bestelling.Text = "Bestelling";
+            // 
             // Tafel
             // 
             this.Tafel.Text = "Tafel";
@@ -456,20 +460,16 @@
             this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Status.Width = 118;
             // 
-            // Bestelling
+            // bt_aanpassen
             // 
-            this.Bestelling.Text = "Bestelling";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
-            this.button1.Location = new System.Drawing.Point(242, 506);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(154, 33);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Aanpassen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.bt_aanpassen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
+            this.bt_aanpassen.Location = new System.Drawing.Point(242, 506);
+            this.bt_aanpassen.Name = "bt_aanpassen";
+            this.bt_aanpassen.Size = new System.Drawing.Size(154, 33);
+            this.bt_aanpassen.TabIndex = 3;
+            this.bt_aanpassen.Text = "Aanpassen";
+            this.bt_aanpassen.UseVisualStyleBackColor = true;
+            this.bt_aanpassen.Click += new System.EventHandler(this.button1_Click);
             // 
             // cb_status
             // 
@@ -594,7 +594,7 @@
         private System.Windows.Forms.GroupBox gbox_bestellingen;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox cb_status;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_aanpassen;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.ListView clb_menukaart;
         private System.Windows.Forms.ColumnHeader Menu_Item;

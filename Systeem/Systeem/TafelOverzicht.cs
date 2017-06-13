@@ -192,7 +192,7 @@ namespace Systeem
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
-        private void btn_all_Click(object sender, EventArgs e)
+        public void btn_all_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
@@ -222,6 +222,15 @@ namespace Systeem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int bestellingid;
+            Status updatestatus;
+
+            ListViewItem selItem = clb_bestellingen.SelectedItems[0];
+            bestellingid = int.Parse(selItem.SubItems[0].Text);
+            updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.Text);
+
+            BestellingService service = new BestellingService();
+            service.UpdateStatus(bestellingid, updatestatus);
 
         }
 
