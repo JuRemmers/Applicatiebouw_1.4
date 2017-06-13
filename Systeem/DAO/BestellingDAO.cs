@@ -127,7 +127,7 @@ namespace DAO
             string stringstatus = updatestatus.ToString();
             SqlCommand command = new SqlCommand ("UPDATE Bestelling SET Status = @st WHERE Bestelling.ID = @id" , conn);
             command.Parameters.AddWithValue("@id", bestellingid);
-            command.Parameters.AddWithValue("@st", updatestatus);
+            command.Parameters.AddWithValue("@st", stringstatus);
 
             conn.Open();
             command.ExecuteNonQuery();
