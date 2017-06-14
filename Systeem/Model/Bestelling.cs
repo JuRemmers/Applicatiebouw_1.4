@@ -10,14 +10,15 @@ namespace Model
     public class Bestelling
     {
         public int ID { get; private set; }
-        public Status status { get; private set; }
+        private bool betaald;
         public Tafel tafel { get; private set; }
         public Medewerker medewerker { get; private set; }
+        
 
-        public Bestelling(int ID, Status status, Tafel tafel, Medewerker medewerker)
+        public Bestelling(int ID,  Tafel tafel, Medewerker medewerker)
         {
             this.ID = ID;
-            this.status = status;
+            this.betaald = false;
             this.tafel = tafel;
             this.medewerker = medewerker;
         }
@@ -26,6 +27,7 @@ namespace Model
         public Bestelling(int ID)
         {
             this.ID = ID;
+            this.betaald = false;
         }
 
         public override string ToString()
@@ -34,6 +36,13 @@ namespace Model
 
             return String;
         }
+
+        public void UpdateBetaald()
+        {
+            this.betaald = true;
+        }
+
+
     }
 }
 
