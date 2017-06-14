@@ -23,36 +23,34 @@ namespace DAO
             Status enumstatus = Status.Gereed;
 
             int bestellingID = (int)reader["ID"];
-            string status = (string)reader["Status"];
             int tafelid = (int)reader["Tafel_ID"];
             int Medewerker_ID = (int)reader["Medewerker_ID"];
-            DateTime tijd = (DateTime)reader["DatumTijd"];
 
             Tafel tafel = new Tafel(tafelid, true);
             Medewerker medewerker = new Medewerker(Medewerker_ID, "naam");
 
-            switch (status)
-            {
-                case "Opgenomen":
-                    enumstatus = Status.Opgenomen;
-                    break;
+            //switch (status)
+            //{
+            //    case "Opgenomen":
+            //        enumstatus = Status.Opgenomen;
+            //        break;
 
-                case "Gereed":
-                    enumstatus = Status.Gereed;
-                    break;
+            //    case "Gereed":
+            //        enumstatus = Status.Gereed;
+            //        break;
 
-                case "Onderhande":
-                    enumstatus = Status.Onderhande;
-                    break;
+            //    case "Onderhande":
+            //        enumstatus = Status.Onderhande;
+            //        break;
 
-                case "Uitgeserveerd":
-                    enumstatus = Status.Uitgeserveerd;
-                    break;
-            }
+            //    case "Uitgeserveerd":
+            //        enumstatus = Status.Uitgeserveerd;
+            //        break;
+            //}
 
 
 
-            return new Bestelling(bestellingID, enumstatus, tafel, medewerker);
+            return new Bestelling(bestellingID, tafel, medewerker);
 
         }
 
