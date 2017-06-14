@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BestellingOverzicht.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestellingOverzicht.Designer.cs">
+      <DependentUpon>BestellingOverzicht.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginScherm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="TafelOverzicht.Designer.cs">
       <DependentUpon>TafelOverzicht.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BestellingOverzicht.resx">
+      <DependentUpon>BestellingOverzicht.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginScherm.resx">
       <DependentUpon>LoginScherm.cs</DependentUpon>
     </EmbeddedResource>
