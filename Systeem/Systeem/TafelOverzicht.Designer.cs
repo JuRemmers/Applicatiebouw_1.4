@@ -31,6 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TafelOverzicht));
             this.tab_tafeloverzicht = new System.Windows.Forms.TabControl();
             this.tp_plattegrond = new System.Windows.Forms.TabPage();
+            this.lbl_9 = new System.Windows.Forms.Label();
+            this.lbl_8 = new System.Windows.Forms.Label();
+            this.lbl_10 = new System.Windows.Forms.Label();
+            this.lbl_7 = new System.Windows.Forms.Label();
+            this.lbl_6 = new System.Windows.Forms.Label();
+            this.lbl_5 = new System.Windows.Forms.Label();
+            this.lbl_3 = new System.Windows.Forms.Label();
+            this.lbl_4 = new System.Windows.Forms.Label();
+            this.lbl_1 = new System.Windows.Forms.Label();
+            this.lbl_2 = new System.Windows.Forms.Label();
             this.pb_table3 = new System.Windows.Forms.PictureBox();
             this.pb_table5 = new System.Windows.Forms.PictureBox();
             this.pb_table7 = new System.Windows.Forms.PictureBox();
@@ -49,7 +59,7 @@
             this.clb_menukaart = new System.Windows.Forms.ListView();
             this.Menu_Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.txt_aantal = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_Bekijk = new System.Windows.Forms.Button();
             this.btn_add = new System.Windows.Forms.Button();
@@ -71,16 +81,7 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.lbl_2 = new System.Windows.Forms.Label();
-            this.lbl_1 = new System.Windows.Forms.Label();
-            this.lbl_4 = new System.Windows.Forms.Label();
-            this.lbl_3 = new System.Windows.Forms.Label();
-            this.lbl_5 = new System.Windows.Forms.Label();
-            this.lbl_6 = new System.Windows.Forms.Label();
-            this.lbl_7 = new System.Windows.Forms.Label();
-            this.lbl_10 = new System.Windows.Forms.Label();
-            this.lbl_8 = new System.Windows.Forms.Label();
-            this.lbl_9 = new System.Windows.Forms.Label();
+            this.lbl_aantal = new System.Windows.Forms.Label();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -95,7 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_table1)).BeginInit();
             this.tp_bestelling_maken.SuspendLayout();
             this.gbox_items.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_aantal)).BeginInit();
             this.tp_huidige_bestellingen.SuspendLayout();
             this.gbox_bestellingen.SuspendLayout();
             this.SuspendLayout();
@@ -146,6 +147,106 @@
             this.tp_plattegrond.TabIndex = 0;
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
+            // 
+            // lbl_9
+            // 
+            this.lbl_9.AutoSize = true;
+            this.lbl_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_9.Location = new System.Drawing.Point(128, 445);
+            this.lbl_9.Name = "lbl_9";
+            this.lbl_9.Size = new System.Drawing.Size(21, 22);
+            this.lbl_9.TabIndex = 22;
+            this.lbl_9.Text = "9";
+            // 
+            // lbl_8
+            // 
+            this.lbl_8.AutoSize = true;
+            this.lbl_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_8.Location = new System.Drawing.Point(250, 359);
+            this.lbl_8.Name = "lbl_8";
+            this.lbl_8.Size = new System.Drawing.Size(21, 22);
+            this.lbl_8.TabIndex = 21;
+            this.lbl_8.Text = "8";
+            // 
+            // lbl_10
+            // 
+            this.lbl_10.AutoSize = true;
+            this.lbl_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_10.Location = new System.Drawing.Point(239, 445);
+            this.lbl_10.Name = "lbl_10";
+            this.lbl_10.Size = new System.Drawing.Size(32, 22);
+            this.lbl_10.TabIndex = 20;
+            this.lbl_10.Text = "10";
+            // 
+            // lbl_7
+            // 
+            this.lbl_7.AutoSize = true;
+            this.lbl_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_7.Location = new System.Drawing.Point(128, 359);
+            this.lbl_7.Name = "lbl_7";
+            this.lbl_7.Size = new System.Drawing.Size(21, 22);
+            this.lbl_7.TabIndex = 19;
+            this.lbl_7.Text = "7";
+            // 
+            // lbl_6
+            // 
+            this.lbl_6.AutoSize = true;
+            this.lbl_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_6.Location = new System.Drawing.Point(250, 273);
+            this.lbl_6.Name = "lbl_6";
+            this.lbl_6.Size = new System.Drawing.Size(21, 22);
+            this.lbl_6.TabIndex = 17;
+            this.lbl_6.Text = "6";
+            // 
+            // lbl_5
+            // 
+            this.lbl_5.AutoSize = true;
+            this.lbl_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_5.Location = new System.Drawing.Point(128, 273);
+            this.lbl_5.Name = "lbl_5";
+            this.lbl_5.Size = new System.Drawing.Size(21, 22);
+            this.lbl_5.TabIndex = 16;
+            this.lbl_5.Text = "5";
+            // 
+            // lbl_3
+            // 
+            this.lbl_3.AutoSize = true;
+            this.lbl_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_3.Location = new System.Drawing.Point(128, 187);
+            this.lbl_3.Name = "lbl_3";
+            this.lbl_3.Size = new System.Drawing.Size(21, 22);
+            this.lbl_3.TabIndex = 15;
+            this.lbl_3.Text = "3";
+            // 
+            // lbl_4
+            // 
+            this.lbl_4.AutoSize = true;
+            this.lbl_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_4.Location = new System.Drawing.Point(250, 187);
+            this.lbl_4.Name = "lbl_4";
+            this.lbl_4.Size = new System.Drawing.Size(21, 22);
+            this.lbl_4.TabIndex = 14;
+            this.lbl_4.Text = "4";
+            // 
+            // lbl_1
+            // 
+            this.lbl_1.AutoSize = true;
+            this.lbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_1.Location = new System.Drawing.Point(128, 97);
+            this.lbl_1.Name = "lbl_1";
+            this.lbl_1.Size = new System.Drawing.Size(21, 22);
+            this.lbl_1.TabIndex = 13;
+            this.lbl_1.Text = "1";
+            // 
+            // lbl_2
+            // 
+            this.lbl_2.AutoSize = true;
+            this.lbl_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_2.Location = new System.Drawing.Point(250, 97);
+            this.lbl_2.Name = "lbl_2";
+            this.lbl_2.Size = new System.Drawing.Size(21, 22);
+            this.lbl_2.TabIndex = 12;
+            this.lbl_2.Text = "2";
             // 
             // pb_table3
             // 
@@ -284,9 +385,10 @@
             // 
             // gbox_items
             // 
+            this.gbox_items.Controls.Add(this.lbl_aantal);
             this.gbox_items.Controls.Add(this.lbl_test);
             this.gbox_items.Controls.Add(this.clb_menukaart);
-            this.gbox_items.Controls.Add(this.numericUpDown1);
+            this.gbox_items.Controls.Add(this.txt_aantal);
             this.gbox_items.Controls.Add(this.label1);
             this.gbox_items.Controls.Add(this.btn_Bekijk);
             this.gbox_items.Controls.Add(this.btn_add);
@@ -330,13 +432,18 @@
             // 
             this.Prijs.Text = "Prijs";
             // 
-            // numericUpDown1
+            // txt_aantal
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(63, 507);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 29);
-            this.numericUpDown1.TabIndex = 6;
+            this.txt_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_aantal.Location = new System.Drawing.Point(63, 507);
+            this.txt_aantal.Name = "txt_aantal";
+            this.txt_aantal.Size = new System.Drawing.Size(120, 29);
+            this.txt_aantal.TabIndex = 6;
+            this.txt_aantal.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label1
             // 
@@ -352,11 +459,11 @@
             // btn_Bekijk
             // 
             this.btn_Bekijk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Bekijk.Location = new System.Drawing.Point(266, 14);
+            this.btn_Bekijk.Location = new System.Drawing.Point(300, 14);
             this.btn_Bekijk.Name = "btn_Bekijk";
-            this.btn_Bekijk.Size = new System.Drawing.Size(130, 31);
+            this.btn_Bekijk.Size = new System.Drawing.Size(96, 31);
             this.btn_Bekijk.TabIndex = 3;
-            this.btn_Bekijk.Text = "Bekijk bestelling";
+            this.btn_Bekijk.Text = "Bestelling";
             this.btn_Bekijk.UseVisualStyleBackColor = true;
             this.btn_Bekijk.Click += new System.EventHandler(this.btn_Bekijk_Click);
             // 
@@ -577,105 +684,17 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
-            // lbl_2
+            // lbl_aantal
             // 
-            this.lbl_2.AutoSize = true;
-            this.lbl_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_2.Location = new System.Drawing.Point(250, 97);
-            this.lbl_2.Name = "lbl_2";
-            this.lbl_2.Size = new System.Drawing.Size(21, 22);
-            this.lbl_2.TabIndex = 12;
-            this.lbl_2.Text = "2";
-            // 
-            // lbl_1
-            // 
-            this.lbl_1.AutoSize = true;
-            this.lbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_1.Location = new System.Drawing.Point(128, 97);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(21, 22);
-            this.lbl_1.TabIndex = 13;
-            this.lbl_1.Text = "1";
-            // 
-            // lbl_4
-            // 
-            this.lbl_4.AutoSize = true;
-            this.lbl_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_4.Location = new System.Drawing.Point(250, 187);
-            this.lbl_4.Name = "lbl_4";
-            this.lbl_4.Size = new System.Drawing.Size(21, 22);
-            this.lbl_4.TabIndex = 14;
-            this.lbl_4.Text = "4";
-            // 
-            // lbl_3
-            // 
-            this.lbl_3.AutoSize = true;
-            this.lbl_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_3.Location = new System.Drawing.Point(128, 187);
-            this.lbl_3.Name = "lbl_3";
-            this.lbl_3.Size = new System.Drawing.Size(21, 22);
-            this.lbl_3.TabIndex = 15;
-            this.lbl_3.Text = "3";
-            // 
-            // lbl_5
-            // 
-            this.lbl_5.AutoSize = true;
-            this.lbl_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_5.Location = new System.Drawing.Point(128, 273);
-            this.lbl_5.Name = "lbl_5";
-            this.lbl_5.Size = new System.Drawing.Size(21, 22);
-            this.lbl_5.TabIndex = 16;
-            this.lbl_5.Text = "5";
-            // 
-            // lbl_6
-            // 
-            this.lbl_6.AutoSize = true;
-            this.lbl_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_6.Location = new System.Drawing.Point(250, 273);
-            this.lbl_6.Name = "lbl_6";
-            this.lbl_6.Size = new System.Drawing.Size(21, 22);
-            this.lbl_6.TabIndex = 17;
-            this.lbl_6.Text = "6";
-            // 
-            // lbl_7
-            // 
-            this.lbl_7.AutoSize = true;
-            this.lbl_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_7.Location = new System.Drawing.Point(128, 359);
-            this.lbl_7.Name = "lbl_7";
-            this.lbl_7.Size = new System.Drawing.Size(21, 22);
-            this.lbl_7.TabIndex = 19;
-            this.lbl_7.Text = "7";
-            // 
-            // lbl_10
-            // 
-            this.lbl_10.AutoSize = true;
-            this.lbl_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_10.Location = new System.Drawing.Point(239, 445);
-            this.lbl_10.Name = "lbl_10";
-            this.lbl_10.Size = new System.Drawing.Size(32, 22);
-            this.lbl_10.TabIndex = 20;
-            this.lbl_10.Text = "10";
-            // 
-            // lbl_8
-            // 
-            this.lbl_8.AutoSize = true;
-            this.lbl_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_8.Location = new System.Drawing.Point(250, 359);
-            this.lbl_8.Name = "lbl_8";
-            this.lbl_8.Size = new System.Drawing.Size(21, 22);
-            this.lbl_8.TabIndex = 21;
-            this.lbl_8.Text = "8";
-            // 
-            // lbl_9
-            // 
-            this.lbl_9.AutoSize = true;
-            this.lbl_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_9.Location = new System.Drawing.Point(128, 445);
-            this.lbl_9.Name = "lbl_9";
-            this.lbl_9.Size = new System.Drawing.Size(21, 22);
-            this.lbl_9.TabIndex = 22;
-            this.lbl_9.Text = "9";
+            this.lbl_aantal.AutoSize = true;
+            this.lbl_aantal.BackColor = System.Drawing.Color.DarkRed;
+            this.lbl_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aantal.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_aantal.Location = new System.Drawing.Point(297, 12);
+            this.lbl_aantal.Name = "lbl_aantal";
+            this.lbl_aantal.Size = new System.Drawing.Size(14, 15);
+            this.lbl_aantal.TabIndex = 9;
+            this.lbl_aantal.Text = "0";
             // 
             // TafelOverzicht
             // 
@@ -701,7 +720,7 @@
             this.tp_bestelling_maken.ResumeLayout(false);
             this.gbox_items.ResumeLayout(false);
             this.gbox_items.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_aantal)).EndInit();
             this.tp_huidige_bestellingen.ResumeLayout(false);
             this.gbox_bestellingen.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -742,7 +761,7 @@
         private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Button bt_aanpassen;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown txt_aantal;
         private System.Windows.Forms.ListView clb_menukaart;
         private System.Windows.Forms.ColumnHeader Menu_Item;
         private System.Windows.Forms.ColumnHeader Prijs;
@@ -762,5 +781,6 @@
         private System.Windows.Forms.Label lbl_4;
         private System.Windows.Forms.Label lbl_1;
         private System.Windows.Forms.Label lbl_2;
+        private System.Windows.Forms.Label lbl_aantal;
     }
 }

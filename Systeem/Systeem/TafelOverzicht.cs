@@ -153,9 +153,11 @@ namespace Systeem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            ListViewItem selected = clb_menukaart.SelectedItems[0];
+            string selected = clb_menukaart.SelectedItems[0].Text;
 
-            lbl_test.Text = selected.Text;
+            int aantal = (int)txt_aantal.Value;
+
+            lbl_test.Text = aantal.ToString();
 
         }
 
