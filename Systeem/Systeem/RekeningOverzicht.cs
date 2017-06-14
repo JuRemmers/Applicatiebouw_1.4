@@ -28,6 +28,11 @@ namespace Systeem
             lbl_tafelnummer2.Text = "Tafel " + tafelId;
             RekeningService s = new RekeningService();
             items = s.GetBestellingByTafelId(tafelId);
+            if (!items.Any())
+            {
+                btn_afrekenen.Enabled = false;
+                tabControl1.TabPages.Remove(tp_rekening);
+            }
             InitList(items);
             InitRekening(items);            
         }
@@ -43,8 +48,7 @@ namespace Systeem
                 
                 lvi.SubItems.Add(sa2);
                 lvi.SubItems.Add(sa3);
-                listView1.Items.Add(lvi);
-                
+                lv_bestelitems.Items.Add(lvi);                
             }
         }
 
@@ -73,6 +77,7 @@ namespace Systeem
         private void button2_Click(object sender, EventArgs e)
         {
             TafelOverzicht overzicht = new TafelOverzicht("tp_bestelling_maken");
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -95,7 +100,7 @@ namespace Systeem
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            tabControl1.SelectedTab = tp_tafeloverzicht;
         }
 
         private void ShowRekening()

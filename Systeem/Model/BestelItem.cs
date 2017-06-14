@@ -8,7 +8,7 @@ namespace Model
 {
     public class BestelItem
     {
-        private int ID;
+        private int ID; 
         private Bestelling bestelling;
         public MenuItem item { get; private set; }
         public int aantal { get; private set; }

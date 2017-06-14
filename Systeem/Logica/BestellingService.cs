@@ -11,6 +11,7 @@ namespace Logica
     public class BestellingService
     {
         BestellingDAO BestelDAL = new BestellingDAO();
+        BestelItemDAO bestelItemDAL = new BestelItemDAO();
         List<BestelItem> bestelling = new List<BestelItem>();
         MenuItemDAO menuItemDAL = new MenuItemDAO();
 
@@ -66,6 +67,12 @@ namespace Logica
             }
 
             return aantal;
+        }
+
+        public List<BestelItem> GetAllForItems(int bestelId)
+        {
+            List<BestelItem>bestelling = bestelItemDAL.GetMenuItemsByBestellingId(bestelId);
+            return bestelling;
         }
     }
 }

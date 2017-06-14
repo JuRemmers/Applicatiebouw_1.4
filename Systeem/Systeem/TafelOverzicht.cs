@@ -14,6 +14,8 @@ namespace Systeem
 {
     public partial class TafelOverzicht : Form
     {
+        int bestellingid { get; set; }
+        
         string sectie;
         BestellingService bestelservice = new BestellingService();
 
@@ -305,6 +307,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table1_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -313,6 +316,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table3_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -321,6 +325,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table5_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -329,6 +334,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table7_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -337,6 +343,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table9_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -345,6 +352,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table2_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -353,6 +361,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table4_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -361,6 +370,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table6_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -369,6 +379,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table8_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -377,6 +388,7 @@ lbl_test.Text = aantal.ToString();
         private void pb_table10_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
+            overzicht.Location = this.Location;
             overzicht.Show();
             this.Close();
         }
@@ -397,12 +409,12 @@ lbl_test.Text = aantal.ToString();
             clb_bestellingen.Visible = true;
             gbox_Bestelling.Visible = true;
         }
-        private void clb_bestellingen_ColumnClick(object sender, EventArgs e)
+        public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
-            BestellingOverzicht overzicht = new BestellingOverzicht();
-            string bestellingid = clb_bestellingen.SelectedItems[0].Text;
-            overzicht.lb_bestelling.Text = "Bestelling " + bestellingid;
-
+            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
+            
+            bestellingid = int.Parse(clb_bestellingen.SelectedItems[0].Text);
+            overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
             overzicht.Location = new Point(this.Top, this.Left);
         }
