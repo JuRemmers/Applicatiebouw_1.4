@@ -15,13 +15,24 @@ namespace Logica
         List<BestelItem> bestelling = new List<BestelItem>();
         MenuItemDAO menuItemDAL = new MenuItemDAO();
 
-        public void Add(string gerecht, int aantal)
+        public bool Add(string gerecht, int aantal)
         {
             MenuItem item = menuItemDAL.GetForGerecht(gerecht);
+            if (item ==null || item.voorraad <= 0)
+            { return false; }
 
             BestelItem bestelitem = new BestelItem(item, aantal);
 
-            bestelling.Add(bestelitem);
+            bool dubbel = false;
+            foreach (BestelItem bestel_item in bestelling)
+            {
+                dubbel = bestel_item.Compare(bestelitem);
+            }
+
+            if (!dubbel)
+            { bestelling.Add(bestelitem); }
+
+            return true;
         }
 
         public List<Bestelling> GetAllForBestelling(string locatieid)
@@ -44,6 +55,18 @@ namespace Logica
         public List<BestelItem> GetBestelling()
         {
             return bestelling;
+        }
+
+        public int GetCount()
+        {
+            int aantal = 0;
+
+            foreach (BestelItem item in bestelling)
+            {
+                aantal = aantal + item.aantal;
+            }
+
+            return aantal;
         }
 
         public List<BestelItem> GetAllForItems(int bestelId)

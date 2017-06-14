@@ -157,20 +157,40 @@ namespace Systeem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string selected = clb_menukaart.SelectedItems[0].Text;
+            string selected;
+            try
+            {
+                selected = clb_menukaart.SelectedItems[0].Text;
+                int aantal = (int)txt_aantal.Value;
 
-            int aantal = (int)txt_aantal.Value;
 
+                if(!bestelservice.Add(selected, aantal))
+                {
+                    lbl_test.Text = "nope";
+                }
+                else
+                {
+lbl_test.Text = aantal.ToString();
+                }
 
-            bestelservice.Add(selected, aantal);
+                
+            }
+            catch
+            {
 
-            lbl_test.Text = aantal.ToString();
+            }
+            finally
+            {
+                UpdateAantal();
+            }
+
 
         }
 
         private void btn_Bekijk_Click(object sender, EventArgs e)
         {
             gbox_Bestelling.Visible = true;
+            lv_bestelling.Clear();
 
             List<BestelItem> bestelling = bestelservice.GetBestelling();
 
@@ -180,8 +200,6 @@ namespace Systeem
                 listview.SubItems.Add(item.aantal.ToString());
                 lv_bestelling.Items.Add(listview);
             }
-
-            
         }
 
         public void btn_bar_Click(object sender, EventArgs e)
@@ -384,7 +402,6 @@ namespace Systeem
         private void button3_Click(object sender, EventArgs e)
         {
             gbox_Bestelling.Visible = false;
-            clb_bestellingen.Visible = false;
         }
 
         private void btn_bekijk_bestelling_Click(object sender, EventArgs e)
@@ -400,6 +417,12 @@ namespace Systeem
             overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
             overzicht.Location = new Point(this.Top, this.Left);
+        }
+
+        private void UpdateAantal()
+        {
+            int aantal = bestelservice.GetCount();
+            lbl_aantal.Text = aantal.ToString();
         }
     }
 }
