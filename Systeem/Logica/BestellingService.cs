@@ -11,11 +11,16 @@ namespace Logica
     public class BestellingService
     {
         BestellingDAO BestelDAL = new BestellingDAO();
-        List<Bestelling> bestelling = new List<Bestelling>();
+        List<BestelItem> bestelling = new List<BestelItem>();
+        MenuItemDAO menuItemDAL = new MenuItemDAO();
 
-        public void Add(string gerecht)
+        public void Add(string gerecht, int aantal)
         {
+            MenuItem item = menuItemDAL.GetForGerecht(gerecht);
 
+            BestelItem bestelitem = new BestelItem(item, aantal);
+
+            bestelling.Add(bestelitem);
         }
 
         public List<Bestelling> GetAllForBestelling(string locatieid)
@@ -35,5 +40,9 @@ namespace Logica
             BestelDAL.UpdateBestelling(bestellingid, updatestatus);
         }
 
+        public List<BestelItem> GetBestelling()
+        {
+            return bestelling;
+        }
     }
 }
