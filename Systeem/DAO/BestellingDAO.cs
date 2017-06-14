@@ -112,20 +112,14 @@ namespace DAO
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
             int bestId = 0;
-
             conn.Open();
-
-            var scalar = c.ExecuteScalar();
-            if (scalar == null)
-            {
-                return 0;
-            }
-
-            bestId = Convert.ToInt32(scalar);
+            bestId = (int)c.ExecuteScalar();
             conn.Close();
+
             return bestId;
         }
 
+        // Kayleigh
         public void UpdateBetaald(int bestelId)
         {
             string com = "UPDATE Besteling SET Betaald=True WHERE ID=@id";
