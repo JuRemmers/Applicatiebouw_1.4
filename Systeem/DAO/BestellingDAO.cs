@@ -108,14 +108,18 @@ namespace DAO
         // Kayleigh
         public int GetBestelIdByTafelId(int tafelId)
         {
-            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id AND Betaald=False";
+            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id AND Betaald=0";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
             int bestId = 0;
             conn.Open();
-            bestId = (int)c.ExecuteScalar();
+            var scalar = c.ExecuteScalar();
+            if (scalar == null)
+            {
+                return 0;
+            }
+            bestId = Convert.ToInt32(scalar);
             conn.Close();
-
             return bestId;
         }
 
