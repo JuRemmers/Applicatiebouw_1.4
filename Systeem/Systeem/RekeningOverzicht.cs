@@ -48,8 +48,7 @@ namespace Systeem
                 
                 lvi.SubItems.Add(sa2);
                 lvi.SubItems.Add(sa3);
-                lv_bestelitems.Items.Add(lvi);
-                
+                lv_bestelitems.Items.Add(lvi);                
             }
         }
 
@@ -101,7 +100,7 @@ namespace Systeem
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            tabControl1.SelectedTab = tp_tafeloverzicht;
         }
 
         private void ShowRekening()
