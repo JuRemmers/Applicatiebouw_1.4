@@ -23,7 +23,7 @@ namespace DAO
 
         public void InsertRekening(Rekening r)
         {
-            string com = "INSERT INTO Rekening VALUES @btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
+            string com = "INSERT INTO Rekening VALUES @bestId,@btwl,@btwh,@prijs,@fooi,@totaalprijs,@datumtijd,@medid,@opm";
             SqlCommand c = new SqlCommand(com, conn);
             
             c.Parameters.AddWithValue("@btwl", r.btwLaag);
@@ -31,7 +31,7 @@ namespace DAO
             c.Parameters.AddWithValue("@prijs", r.Prijs);
             c.Parameters.AddWithValue("@fooi", r.fooi);
             c.Parameters.AddWithValue("@totaalprijs", r.totaalprijs);
-            c.Parameters.AddWithValue("@datumtijd", DateTime.Now);
+            c.Parameters.AddWithValue("@datumtijd", r.datumtijd);
             c.Parameters.AddWithValue("@medid", r.medewerker.ID);
             c.Parameters.AddWithValue("@opm", r.opmerking);
             

@@ -67,42 +67,6 @@ namespace Systeem
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            TafelOverzicht overzicht = new TafelOverzicht();
-            overzicht.Show();
-            this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            TafelOverzicht overzicht = new TafelOverzicht("tp_bestelling_maken");
-            overzicht.Location = this.Location;
-            overzicht.Show();
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            RekeningService s = new RekeningService();
-            r = s.MakeRekening(tafelId, items);
-            ShowRekening();
-            tabControl1.SelectedTab = tp_rekening;
-        }
-
-
-        private void tp_rekening_Click(object sender, EventArgs e)
-        {
-            RekeningService s = new RekeningService();
-            r = s.MakeRekening(tafelId, items);
-            ShowRekening();
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            tabControl1.SelectedTab = tp_tafeloverzicht;
-        }
-
         private void ShowRekening()
         {
             lbl_mednaam.Text = r.medewerker.voornaam;
@@ -113,11 +77,65 @@ namespace Systeem
             lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
         }
 
+        private void tp_rekening_Click(object sender, EventArgs e)
+        {
+            RekeningService s = new RekeningService();
+            r = s.MakeRekening(tafelId, items);
+            ShowRekening();
+        }
+
         private void btn_updatefooi_Click(object sender, EventArgs e)
         {
             double fooi = double.Parse(txt_tip.Text);
             r.UpdateTipAndTotaalprijs(fooi);
             ShowRekening();
+        }
+
+        private void btn_terug_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht overzicht = new TafelOverzicht();
+            overzicht.Location = this.Location;
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void btn_AddBestelling_Click(object sender, EventArgs e)
+        {
+            TafelOverzicht overzicht = new TafelOverzicht("tp_bestelling_maken");
+            overzicht.Location = this.Location;
+            overzicht.Show();
+            this.Close();
+        }
+
+        private void btn_afrekenen_Click(object sender, EventArgs e)
+        {
+            RekeningService s = new RekeningService();
+            r = s.MakeRekening(tafelId, items);
+            ShowRekening();
+            tabControl1.SelectedTab = tp_rekening;
+        }
+
+        private void btn_Terug_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tp_tafeloverzicht;
+        }
+
+        private void btn_contant_Click(object sender, EventArgs e)
+        {
+            string c = "contant";
+            Betaling b = new Betaling(items, c, r);
+            b.Location = this.Location;
+            b.Show();
+            this.Close();
+        }
+
+        private void btn_pin_Click(object sender, EventArgs e)
+        {
+            string c = "met pin";
+            Betaling b = new Betaling(items, c, r);
+            b.Location = this.Location;
+            b.Show();
+            this.Close();
         }
     }
 }

@@ -48,10 +48,10 @@
             this.lbl_prijs = new System.Windows.Forms.Label();
             this.lbl_btwh = new System.Windows.Forms.Label();
             this.lbl_btwl = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_Terug = new System.Windows.Forms.Button();
             this.txt_tip = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_pin = new System.Windows.Forms.Button();
+            this.btn_contant = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -122,7 +122,7 @@
             this.btn_terugPlattegrond.TabIndex = 4;
             this.btn_terugPlattegrond.Text = ">";
             this.btn_terugPlattegrond.UseVisualStyleBackColor = true;
-            this.btn_terugPlattegrond.Click += new System.EventHandler(this.button4_Click);
+            this.btn_terugPlattegrond.Click += new System.EventHandler(this.btn_terug_Click);
             // 
             // btn_afrekenen
             // 
@@ -133,7 +133,7 @@
             this.btn_afrekenen.TabIndex = 3;
             this.btn_afrekenen.Text = "Afrekenen";
             this.btn_afrekenen.UseVisualStyleBackColor = true;
-            this.btn_afrekenen.Click += new System.EventHandler(this.button3_Click);
+            this.btn_afrekenen.Click += new System.EventHandler(this.btn_afrekenen_Click);
             // 
             // btn_AddBestelling
             // 
@@ -144,7 +144,7 @@
             this.btn_AddBestelling.TabIndex = 2;
             this.btn_AddBestelling.Text = "Voeg nieuw bestelling toe";
             this.btn_AddBestelling.UseVisualStyleBackColor = true;
-            this.btn_AddBestelling.Click += new System.EventHandler(this.button2_Click);
+            this.btn_AddBestelling.Click += new System.EventHandler(this.btn_AddBestelling_Click);
             // 
             // btn_wijzigBestelling
             // 
@@ -196,10 +196,10 @@
             this.tp_rekening.Controls.Add(this.lbl_prijs);
             this.tp_rekening.Controls.Add(this.lbl_btwh);
             this.tp_rekening.Controls.Add(this.lbl_btwl);
-            this.tp_rekening.Controls.Add(this.button7);
+            this.tp_rekening.Controls.Add(this.btn_Terug);
             this.tp_rekening.Controls.Add(this.txt_tip);
-            this.tp_rekening.Controls.Add(this.button6);
-            this.tp_rekening.Controls.Add(this.button5);
+            this.tp_rekening.Controls.Add(this.btn_pin);
+            this.tp_rekening.Controls.Add(this.btn_contant);
             this.tp_rekening.Controls.Add(this.label9);
             this.tp_rekening.Controls.Add(this.label8);
             this.tp_rekening.Controls.Add(this.label7);
@@ -293,17 +293,17 @@
             this.lbl_btwl.Size = new System.Drawing.Size(0, 16);
             this.lbl_btwl.TabIndex = 13;
             // 
-            // button7
+            // btn_Terug
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(7, 6);
-            this.button7.Name = "button7";
-            this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button7.Size = new System.Drawing.Size(42, 53);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "<";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_Terug.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Terug.Location = new System.Drawing.Point(7, 6);
+            this.btn_Terug.Name = "btn_Terug";
+            this.btn_Terug.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Terug.Size = new System.Drawing.Size(42, 53);
+            this.btn_Terug.TabIndex = 12;
+            this.btn_Terug.Text = "<";
+            this.btn_Terug.UseVisualStyleBackColor = true;
+            this.btn_Terug.Click += new System.EventHandler(this.btn_Terug_Click);
             // 
             // txt_tip
             // 
@@ -313,27 +313,29 @@
             this.txt_tip.Size = new System.Drawing.Size(100, 20);
             this.txt_tip.TabIndex = 11;
             // 
-            // button6
+            // btn_pin
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(209, 502);
-            this.button6.Name = "button6";
-            this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button6.Size = new System.Drawing.Size(198, 40);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Pinnen";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_pin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pin.Location = new System.Drawing.Point(209, 502);
+            this.btn_pin.Name = "btn_pin";
+            this.btn_pin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_pin.Size = new System.Drawing.Size(198, 40);
+            this.btn_pin.TabIndex = 10;
+            this.btn_pin.Text = "Pinnen";
+            this.btn_pin.UseVisualStyleBackColor = true;
+            this.btn_pin.Click += new System.EventHandler(this.btn_pin_Click);
             // 
-            // button5
+            // btn_contant
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(7, 502);
-            this.button5.Name = "button5";
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button5.Size = new System.Drawing.Size(196, 40);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Contant betalen";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_contant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_contant.Location = new System.Drawing.Point(7, 502);
+            this.btn_contant.Name = "btn_contant";
+            this.btn_contant.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_contant.Size = new System.Drawing.Size(196, 40);
+            this.btn_contant.TabIndex = 9;
+            this.btn_contant.Text = "Contant betalen";
+            this.btn_contant.UseVisualStyleBackColor = true;
+            this.btn_contant.Click += new System.EventHandler(this.btn_contant_Click);
             // 
             // label9
             // 
@@ -473,10 +475,10 @@
         private System.Windows.Forms.Label lbl_prijs;
         private System.Windows.Forms.Label lbl_btwh;
         private System.Windows.Forms.Label lbl_btwl;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_Terug;
         private System.Windows.Forms.TextBox txt_tip;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_pin;
+        private System.Windows.Forms.Button btn_contant;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
