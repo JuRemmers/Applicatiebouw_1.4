@@ -31,15 +31,16 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_tafeloverzicht = new System.Windows.Forms.TabPage();
             this.lbl_tafelnummer = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.btn_terugPlattegrond = new System.Windows.Forms.Button();
+            this.btn_afrekenen = new System.Windows.Forms.Button();
+            this.btn_AddBestelling = new System.Windows.Forms.Button();
+            this.btn_wijzigBestelling = new System.Windows.Forms.Button();
+            this.lv_bestelitems = new System.Windows.Forms.ListView();
             this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tp_rekening = new System.Windows.Forms.TabPage();
+            this.btn_updatefooi = new System.Windows.Forms.Button();
             this.lbl_tafelnummer2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btn_updatefooi = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -87,11 +87,11 @@
             // tp_tafeloverzicht
             // 
             this.tp_tafeloverzicht.Controls.Add(this.lbl_tafelnummer);
-            this.tp_tafeloverzicht.Controls.Add(this.button4);
-            this.tp_tafeloverzicht.Controls.Add(this.button3);
-            this.tp_tafeloverzicht.Controls.Add(this.button2);
-            this.tp_tafeloverzicht.Controls.Add(this.button1);
-            this.tp_tafeloverzicht.Controls.Add(this.listView1);
+            this.tp_tafeloverzicht.Controls.Add(this.btn_terugPlattegrond);
+            this.tp_tafeloverzicht.Controls.Add(this.btn_afrekenen);
+            this.tp_tafeloverzicht.Controls.Add(this.btn_AddBestelling);
+            this.tp_tafeloverzicht.Controls.Add(this.btn_wijzigBestelling);
+            this.tp_tafeloverzicht.Controls.Add(this.lv_bestelitems);
             this.tp_tafeloverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tp_tafeloverzicht.Location = new System.Drawing.Point(4, 34);
             this.tp_tafeloverzicht.Name = "tp_tafeloverzicht";
@@ -113,63 +113,63 @@
             this.lbl_tafelnummer.Text = "Tafel ";
             this.lbl_tafelnummer.UseMnemonic = false;
             // 
-            // button4
+            // btn_terugPlattegrond
             // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(7, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(42, 53);
-            this.button4.TabIndex = 4;
-            this.button4.Text = ">";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_terugPlattegrond.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_terugPlattegrond.Location = new System.Drawing.Point(7, 6);
+            this.btn_terugPlattegrond.Name = "btn_terugPlattegrond";
+            this.btn_terugPlattegrond.Size = new System.Drawing.Size(42, 53);
+            this.btn_terugPlattegrond.TabIndex = 4;
+            this.btn_terugPlattegrond.Text = ">";
+            this.btn_terugPlattegrond.UseVisualStyleBackColor = true;
+            this.btn_terugPlattegrond.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btn_afrekenen
             // 
-            this.button3.Location = new System.Drawing.Point(108, 498);
-            this.button3.Name = "button3";
-            this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(201, 44);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Afrekenen";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_afrekenen.Location = new System.Drawing.Point(108, 498);
+            this.btn_afrekenen.Name = "btn_afrekenen";
+            this.btn_afrekenen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_afrekenen.Size = new System.Drawing.Size(201, 44);
+            this.btn_afrekenen.TabIndex = 3;
+            this.btn_afrekenen.Text = "Afrekenen";
+            this.btn_afrekenen.UseVisualStyleBackColor = true;
+            this.btn_afrekenen.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btn_AddBestelling
             // 
-            this.button2.Location = new System.Drawing.Point(206, 448);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button2.Size = new System.Drawing.Size(201, 44);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Voeg nieuw bestelling toe";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_AddBestelling.Location = new System.Drawing.Point(206, 448);
+            this.btn_AddBestelling.Name = "btn_AddBestelling";
+            this.btn_AddBestelling.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_AddBestelling.Size = new System.Drawing.Size(201, 44);
+            this.btn_AddBestelling.TabIndex = 2;
+            this.btn_AddBestelling.Text = "Voeg nieuw bestelling toe";
+            this.btn_AddBestelling.UseVisualStyleBackColor = true;
+            this.btn_AddBestelling.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // btn_wijzigBestelling
             // 
-            this.button1.Location = new System.Drawing.Point(6, 448);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button1.Size = new System.Drawing.Size(197, 44);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Wijzig bestelling";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_wijzigBestelling.Location = new System.Drawing.Point(6, 448);
+            this.btn_wijzigBestelling.Name = "btn_wijzigBestelling";
+            this.btn_wijzigBestelling.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_wijzigBestelling.Size = new System.Drawing.Size(197, 44);
+            this.btn_wijzigBestelling.TabIndex = 1;
+            this.btn_wijzigBestelling.Text = "Wijzig bestelling";
+            this.btn_wijzigBestelling.UseVisualStyleBackColor = true;
             // 
-            // listView1
+            // lv_bestelitems
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lv_bestelitems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Aantal,
             this.Naam,
             this.Prijs});
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.Location = new System.Drawing.Point(7, 65);
-            this.listView1.Name = "listView1";
-            this.listView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView1.Size = new System.Drawing.Size(404, 377);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lv_bestelitems.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.lv_bestelitems.Location = new System.Drawing.Point(7, 65);
+            this.lv_bestelitems.Name = "lv_bestelitems";
+            this.lv_bestelitems.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lv_bestelitems.Size = new System.Drawing.Size(404, 377);
+            this.lv_bestelitems.TabIndex = 0;
+            this.lv_bestelitems.UseCompatibleStateImageBehavior = false;
+            this.lv_bestelitems.View = System.Windows.Forms.View.Details;
             // 
             // Aantal
             // 
@@ -215,6 +215,19 @@
             this.tp_rekening.Text = "Rekening opmaken";
             this.tp_rekening.UseVisualStyleBackColor = true;
             this.tp_rekening.Click += new System.EventHandler(this.tp_rekening_Click);
+            // 
+            // btn_updatefooi
+            // 
+            this.btn_updatefooi.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_updatefooi.Location = new System.Drawing.Point(358, 439);
+            this.btn_updatefooi.Name = "btn_updatefooi";
+            this.btn_updatefooi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_updatefooi.Size = new System.Drawing.Size(50, 20);
+            this.btn_updatefooi.TabIndex = 20;
+            this.btn_updatefooi.Text = "+";
+            this.btn_updatefooi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_updatefooi.UseVisualStyleBackColor = true;
+            this.btn_updatefooi.Click += new System.EventHandler(this.btn_updatefooi_Click);
             // 
             // lbl_tafelnummer2
             // 
@@ -426,19 +439,6 @@
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
             // 
-            // btn_updatefooi
-            // 
-            this.btn_updatefooi.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_updatefooi.Location = new System.Drawing.Point(358, 439);
-            this.btn_updatefooi.Name = "btn_updatefooi";
-            this.btn_updatefooi.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_updatefooi.Size = new System.Drawing.Size(50, 20);
-            this.btn_updatefooi.TabIndex = 20;
-            this.btn_updatefooi.Text = "+";
-            this.btn_updatefooi.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_updatefooi.UseVisualStyleBackColor = true;
-            this.btn_updatefooi.Click += new System.EventHandler(this.btn_updatefooi_Click);
-            // 
             // RekeningOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -462,11 +462,11 @@
         private System.Windows.Forms.TabPage tp_tafeloverzicht;
         private System.Windows.Forms.TabPage tp_rekening;
         private System.Windows.Forms.Label lbl_tafelnummer;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btn_terugPlattegrond;
+        private System.Windows.Forms.Button btn_afrekenen;
+        private System.Windows.Forms.Button btn_AddBestelling;
+        private System.Windows.Forms.Button btn_wijzigBestelling;
+        private System.Windows.Forms.ListView lv_bestelitems;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbl_totaal;
