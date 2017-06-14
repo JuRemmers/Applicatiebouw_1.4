@@ -16,7 +16,9 @@ namespace Systeem
 {
     public partial class RekeningOverzicht : Form
     {
-        public int tafelId;
+        private int tafelId;
+        private List<BestelItem> items;
+        private Rekening r;
 
         public RekeningOverzicht(int tafelId)
         {
@@ -25,9 +27,9 @@ namespace Systeem
             lbl_tafelnummer.Text = "Tafel " + tafelId;
             lbl_tafelnummer2.Text = "Tafel " + tafelId;
             RekeningService s = new RekeningService();
-            List<BestelItem> items = s.GetBestellingByTafelId(tafelId);
+            items = s.GetBestellingByTafelId(tafelId);
             InitList(items);
-            InitRekening(items);
+            InitRekening(items);            
         }
 
         private void InitList(List<BestelItem> items)
@@ -77,12 +79,40 @@ namespace Systeem
 
         private void button3_Click(object sender, EventArgs e)
         {
+            RekeningService s = new RekeningService();
+            r = s.MakeRekening(tafelId, items);
+            ShowRekening();
             tabControl1.SelectedTab = tp_rekening;
         }
 
+
         private void tp_rekening_Click(object sender, EventArgs e)
         {
+            RekeningService s = new RekeningService();
+            r = s.MakeRekening(tafelId, items);
+            ShowRekening();
+        }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ShowRekening()
+        {
+            lbl_mednaam.Text = r.medewerker.voornaam;
+            lbl_btwl.Text = "€" + r.btwLaag.ToString("0.00");
+            lbl_btwh.Text = "€" + r.btwHoog.ToString("0.00");
+            lbl_prijs.Text = "€" + r.Prijs.ToString("0.00");
+            txt_tip.Text = r.fooi.ToString("0.00");
+            lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
+        }
+
+        private void btn_updatefooi_Click(object sender, EventArgs e)
+        {
+            double fooi = double.Parse(txt_tip.Text);
+            r.UpdateTipAndTotaalprijs(fooi);
+            ShowRekening();
         }
     }
 }
