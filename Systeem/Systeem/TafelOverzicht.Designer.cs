@@ -55,13 +55,6 @@
             this.btn_bar_meldingen = new System.Windows.Forms.Button();
             this.tp_bestelling_maken = new System.Windows.Forms.TabPage();
             this.gbox_items = new System.Windows.Forms.GroupBox();
-            this.gbox_Bestelling = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lv_bestelling = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button3 = new System.Windows.Forms.Button();
-            this.lbl_aantal = new System.Windows.Forms.Label();
             this.lbl_test = new System.Windows.Forms.Label();
             this.clb_menukaart = new System.Windows.Forms.ListView();
             this.Menu_Item = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -77,13 +70,24 @@
             this.btn_lunch = new System.Windows.Forms.Button();
             this.tp_huidige_bestellingen = new System.Windows.Forms.TabPage();
             this.gbox_bestellingen = new System.Windows.Forms.GroupBox();
+            this.btn_bekijkbestel = new System.Windows.Forms.Button();
             this.clb_bestellingen = new System.Windows.Forms.ListView();
             this.Bestelling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Tafel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.bt_aanpassen = new System.Windows.Forms.Button();
+            this.cb_status = new System.Windows.Forms.ComboBox();
             this.btn_back = new System.Windows.Forms.Button();
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
+            this.lbl_aantal = new System.Windows.Forms.Label();
+            this.gbox_Bestelling = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lv_bestelling = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button3 = new System.Windows.Forms.Button();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -98,10 +102,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_table1)).BeginInit();
             this.tp_bestelling_maken.SuspendLayout();
             this.gbox_items.SuspendLayout();
-            this.gbox_Bestelling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_aantal)).BeginInit();
             this.tp_huidige_bestellingen.SuspendLayout();
             this.gbox_bestellingen.SuspendLayout();
+            this.gbox_Bestelling.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_tafeloverzicht
@@ -405,73 +409,6 @@
             this.gbox_items.Text = "Menu items";
             this.gbox_items.Visible = false;
             // 
-            // gbox_Bestelling
-            // 
-            this.gbox_Bestelling.Controls.Add(this.label3);
-            this.gbox_Bestelling.Controls.Add(this.lv_bestelling);
-            this.gbox_Bestelling.Controls.Add(this.button3);
-            this.gbox_Bestelling.Location = new System.Drawing.Point(0, 0);
-            this.gbox_Bestelling.Name = "gbox_Bestelling";
-            this.gbox_Bestelling.Size = new System.Drawing.Size(402, 555);
-            this.gbox_Bestelling.TabIndex = 10;
-            this.gbox_Bestelling.TabStop = false;
-            this.gbox_Bestelling.Text = "Bestelling";
-            this.gbox_Bestelling.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(87, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Test";
-            // 
-            // lv_bestelling
-            // 
-            this.lv_bestelling.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.lv_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lv_bestelling.Location = new System.Drawing.Point(6, 49);
-            this.lv_bestelling.Name = "lv_bestelling";
-            this.lv_bestelling.Size = new System.Drawing.Size(396, 451);
-            this.lv_bestelling.TabIndex = 7;
-            this.lv_bestelling.UseCompatibleStateImageBehavior = false;
-            this.lv_bestelling.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Menu Item";
-            this.columnHeader1.Width = 331;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Prijs";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Terug";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // lbl_aantal
-            // 
-            this.lbl_aantal.AutoSize = true;
-            this.lbl_aantal.BackColor = System.Drawing.Color.DarkRed;
-            this.lbl_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_aantal.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_aantal.Location = new System.Drawing.Point(297, 12);
-            this.lbl_aantal.Name = "lbl_aantal";
-            this.lbl_aantal.Size = new System.Drawing.Size(14, 15);
-            this.lbl_aantal.TabIndex = 9;
-            this.lbl_aantal.Text = "0";
-            // 
             // lbl_test
             // 
             this.lbl_test.AutoSize = true;
@@ -625,7 +562,10 @@
             // 
             // gbox_bestellingen
             // 
+            this.gbox_bestellingen.Controls.Add(this.btn_bekijkbestel);
             this.gbox_bestellingen.Controls.Add(this.clb_bestellingen);
+            this.gbox_bestellingen.Controls.Add(this.bt_aanpassen);
+            this.gbox_bestellingen.Controls.Add(this.cb_status);
             this.gbox_bestellingen.Controls.Add(this.btn_back);
             this.gbox_bestellingen.Location = new System.Drawing.Point(6, 6);
             this.gbox_bestellingen.Name = "gbox_bestellingen";
@@ -635,14 +575,25 @@
             this.gbox_bestellingen.Text = "Huidige Bestellingen";
             this.gbox_bestellingen.Visible = false;
             // 
+            // btn_bekijkbestel
+            // 
+            this.btn_bekijkbestel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_bekijkbestel.Location = new System.Drawing.Point(242, 12);
+            this.btn_bekijkbestel.Name = "btn_bekijkbestel";
+            this.btn_bekijkbestel.Size = new System.Drawing.Size(154, 31);
+            this.btn_bekijkbestel.TabIndex = 5;
+            this.btn_bekijkbestel.Text = "Bekijk Bestelling";
+            this.btn_bekijkbestel.UseVisualStyleBackColor = true;
+            this.btn_bekijkbestel.Click += new System.EventHandler(this.btn_bekijkbestel_Click);
+            // 
             // clb_bestellingen
             // 
-            this.clb_bestellingen.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.clb_bestellingen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clb_bestellingen.BackColor = System.Drawing.SystemColors.Window;
             this.clb_bestellingen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Bestelling,
-            this.Tafel});
+            this.Tafel,
+            this.Status});
             this.clb_bestellingen.FullRowSelect = true;
             this.clb_bestellingen.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.clb_bestellingen.HideSelection = false;
@@ -655,7 +606,6 @@
             this.clb_bestellingen.TileSize = new System.Drawing.Size(390, 30);
             this.clb_bestellingen.UseCompatibleStateImageBehavior = false;
             this.clb_bestellingen.View = System.Windows.Forms.View.Details;
-            this.clb_bestellingen.Click += new System.EventHandler(this.clb_bestellingen_ColumnClick);
             // 
             // Bestelling
             // 
@@ -665,6 +615,34 @@
             // 
             this.Tafel.Text = "Tafel";
             this.Tafel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Status
+            // 
+            this.Status.Text = "Status";
+            this.Status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Status.Width = 118;
+            // 
+            // bt_aanpassen
+            // 
+            this.bt_aanpassen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.15F);
+            this.bt_aanpassen.Location = new System.Drawing.Point(242, 506);
+            this.bt_aanpassen.Name = "bt_aanpassen";
+            this.bt_aanpassen.Size = new System.Drawing.Size(154, 33);
+            this.bt_aanpassen.TabIndex = 3;
+            this.bt_aanpassen.Text = "Aanpassen";
+            this.bt_aanpassen.UseVisualStyleBackColor = true;
+            this.bt_aanpassen.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cb_status
+            // 
+            this.cb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.cb_status.FormattingEnabled = true;
+            this.cb_status.Location = new System.Drawing.Point(6, 506);
+            this.cb_status.Name = "cb_status";
+            this.cb_status.Size = new System.Drawing.Size(169, 33);
+            this.cb_status.TabIndex = 2;
+            this.cb_status.Text = "Kies status...";
+            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
             // 
             // btn_back
             // 
@@ -715,6 +693,73 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
+            // lbl_aantal
+            // 
+            this.lbl_aantal.AutoSize = true;
+            this.lbl_aantal.BackColor = System.Drawing.Color.DarkRed;
+            this.lbl_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_aantal.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_aantal.Location = new System.Drawing.Point(297, 12);
+            this.lbl_aantal.Name = "lbl_aantal";
+            this.lbl_aantal.Size = new System.Drawing.Size(14, 15);
+            this.lbl_aantal.TabIndex = 9;
+            this.lbl_aantal.Text = "0";
+            // 
+            // gbox_Bestelling
+            // 
+            this.gbox_Bestelling.Controls.Add(this.label3);
+            this.gbox_Bestelling.Controls.Add(this.lv_bestelling);
+            this.gbox_Bestelling.Controls.Add(this.button3);
+            this.gbox_Bestelling.Location = new System.Drawing.Point(6, 0);
+            this.gbox_Bestelling.Name = "gbox_Bestelling";
+            this.gbox_Bestelling.Size = new System.Drawing.Size(398, 539);
+            this.gbox_Bestelling.TabIndex = 10;
+            this.gbox_Bestelling.TabStop = false;
+            this.gbox_Bestelling.Text = "Bestelling";
+            this.gbox_Bestelling.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(87, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Test";
+            // 
+            // lv_bestelling
+            // 
+            this.lv_bestelling.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lv_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_bestelling.Location = new System.Drawing.Point(6, 49);
+            this.lv_bestelling.Name = "lv_bestelling";
+            this.lv_bestelling.Size = new System.Drawing.Size(384, 451);
+            this.lv_bestelling.TabIndex = 7;
+            this.lv_bestelling.UseCompatibleStateImageBehavior = false;
+            this.lv_bestelling.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Menu Item";
+            this.columnHeader1.Width = 331;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Prijs";
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(6, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 31);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Terug";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -739,11 +784,11 @@
             this.tp_bestelling_maken.ResumeLayout(false);
             this.gbox_items.ResumeLayout(false);
             this.gbox_items.PerformLayout();
-            this.gbox_Bestelling.ResumeLayout(false);
-            this.gbox_Bestelling.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_aantal)).EndInit();
             this.tp_huidige_bestellingen.ResumeLayout(false);
             this.gbox_bestellingen.ResumeLayout(false);
+            this.gbox_Bestelling.ResumeLayout(false);
+            this.gbox_Bestelling.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -780,14 +825,18 @@
         private System.Windows.Forms.Button btn_bar;
         private System.Windows.Forms.GroupBox gbox_bestellingen;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.ComboBox cb_status;
+        private System.Windows.Forms.Button bt_aanpassen;
         private System.Windows.Forms.NumericUpDown txt_aantal;
         private System.Windows.Forms.ListView clb_menukaart;
         private System.Windows.Forms.ColumnHeader Menu_Item;
         private System.Windows.Forms.ColumnHeader Prijs;
         private System.Windows.Forms.ListView clb_bestellingen;
         private System.Windows.Forms.ColumnHeader Tafel;
+        private System.Windows.Forms.ColumnHeader Status;
         private System.Windows.Forms.ColumnHeader Bestelling;
         private System.Windows.Forms.Label lbl_test;
+        private System.Windows.Forms.Button btn_bekijkbestel;
         private System.Windows.Forms.Label lbl_9;
         private System.Windows.Forms.Label lbl_8;
         private System.Windows.Forms.Label lbl_10;

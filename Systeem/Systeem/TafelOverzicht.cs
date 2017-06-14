@@ -372,10 +372,12 @@ namespace Systeem
         private void button3_Click(object sender, EventArgs e)
         {
             gbox_Bestelling.Visible = false;
+            clb_bestellingen.Visible = false;
         }
 
         private void btn_bekijk_bestelling_Click(object sender, EventArgs e)
         {
+            clb_bestellingen.Visible = true;
             gbox_Bestelling.Visible = true;
         }
 

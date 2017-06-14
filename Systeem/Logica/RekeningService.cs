@@ -17,7 +17,11 @@ namespace Logica
         {
             BestellingDAO d = new BestellingDAO();
             int bestelId = d.GetBestelIdByTafelId(id);
-            
+            if (bestelId == 0)
+            {
+                List<BestelItem> best = new List<BestelItem>();
+                return best;
+            }
             BestelItemDAO b = new BestelItemDAO();
             List <BestelItem> bestelling = b.GetMenuItemsByBestellingId(bestelId);
             
@@ -28,8 +32,7 @@ namespace Logica
         {
             BestellingDAO d = new BestellingDAO();
             int bestelId = d.GetBestelIdByTafelId(TafelId);
-
-            
+                       
             MedewerkerDAO m = new MedewerkerDAO();
             Medewerker med = m.GetMedewerkerByBestellingId(bestelId);
 
