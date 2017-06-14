@@ -28,20 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.clb_besteIitems = new System.Windows.Forms.ListView();
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.btn_aanpassen = new System.Windows.Forms.Button();
             this.lb_bestelling = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
+            this.lb_bestellingtitel = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // listView1
+            // clb_besteIitems
             // 
-            this.listView1.Location = new System.Drawing.Point(13, 46);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(399, 489);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.clb_besteIitems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.clb_besteIitems.Location = new System.Drawing.Point(13, 46);
+            this.clb_besteIitems.Name = "clb_besteIitems";
+            this.clb_besteIitems.Size = new System.Drawing.Size(399, 489);
+            this.clb_besteIitems.TabIndex = 0;
+            this.clb_besteIitems.UseCompatibleStateImageBehavior = false;
+            this.clb_besteIitems.View = System.Windows.Forms.View.Details;
             // 
             // cb_status
             // 
@@ -66,11 +73,11 @@
             // 
             this.lb_bestelling.AutoSize = true;
             this.lb_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lb_bestelling.Location = new System.Drawing.Point(265, 9);
+            this.lb_bestelling.Location = new System.Drawing.Point(383, 9);
             this.lb_bestelling.Name = "lb_bestelling";
-            this.lb_bestelling.Size = new System.Drawing.Size(147, 31);
+            this.lb_bestelling.Size = new System.Drawing.Size(29, 31);
             this.lb_bestelling.TabIndex = 3;
-            this.lb_bestelling.Text = "Bestelling#";
+            this.lb_bestelling.Text = "0";
             // 
             // btn_back
             // 
@@ -83,16 +90,35 @@
             this.btn_back.UseVisualStyleBackColor = true;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
+            // lb_bestellingtitel
+            // 
+            this.lb_bestellingtitel.AutoSize = true;
+            this.lb_bestellingtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
+            this.lb_bestellingtitel.Location = new System.Drawing.Point(237, 9);
+            this.lb_bestellingtitel.Name = "lb_bestellingtitel";
+            this.lb_bestellingtitel.Size = new System.Drawing.Size(140, 31);
+            this.lb_bestellingtitel.TabIndex = 5;
+            this.lb_bestellingtitel.Text = "Bestelling:";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Gerecht";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Aantal";
+            // 
             // BestellingOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 591);
+            this.Controls.Add(this.lb_bestellingtitel);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lb_bestelling);
             this.Controls.Add(this.btn_aanpassen);
             this.Controls.Add(this.cb_status);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.clb_besteIitems);
             this.Name = "BestellingOverzicht";
             this.Text = "BestellingOverzicht";
             this.ResumeLayout(false);
@@ -102,10 +128,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView clb_besteIitems;
         private System.Windows.Forms.ComboBox cb_status;
         private System.Windows.Forms.Button btn_aanpassen;
         public System.Windows.Forms.Label lb_bestelling;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.Label lb_bestellingtitel;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }

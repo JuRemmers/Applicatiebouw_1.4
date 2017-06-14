@@ -14,6 +14,8 @@ namespace Systeem
 {
     public partial class TafelOverzicht : Form
     {
+        int bestellingid { get; set; }
+        
         string sectie;
         BestellingService bestelservice = new BestellingService();
 
@@ -380,12 +382,12 @@ namespace Systeem
             clb_bestellingen.Visible = true;
             gbox_Bestelling.Visible = true;
         }
-        private void clb_bestellingen_ColumnClick(object sender, EventArgs e)
+        public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
-            BestellingOverzicht overzicht = new BestellingOverzicht();
-            string bestellingid = clb_bestellingen.SelectedItems[0].Text;
-            overzicht.lb_bestelling.Text = "Bestelling " + bestellingid;
-
+            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
+            
+            bestellingid = int.Parse(clb_bestellingen.SelectedItems[0].Text);
+            overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
             overzicht.Location = new Point(this.Top, this.Left);
         }
