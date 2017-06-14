@@ -27,9 +27,7 @@ namespace Model
 
         public override string ToString()
         {
-            string String = product + ", " + prijs;
-
-            return String;
+            return product;
         }
 
         // Kayleigh Vossen

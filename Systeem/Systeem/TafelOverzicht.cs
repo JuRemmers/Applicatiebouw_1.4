@@ -15,6 +15,8 @@ namespace Systeem
     public partial class TafelOverzicht : Form
     {
         string sectie;
+        BestellingService bestelservice = new BestellingService();
+
         public TafelOverzicht()
         {
             InitializeComponent();
@@ -58,13 +60,13 @@ namespace Systeem
                     listview.Font = new Font("Serif", 15, FontStyle.Bold);
                     clb_menukaart.Items.Add(listview);
                 }
-                
-                    listview = new ListViewItem(item.product);
-                    if (item.voorraad <= 0)
-                    { listview.ForeColor = Color.Silver; }
-                    
-                    listview.SubItems.Add(item.prijs.ToString());
-                
+
+                listview = new ListViewItem(item.product);
+                if (item.voorraad <= 0)
+                { listview.ForeColor = Color.Silver; }
+
+                listview.SubItems.Add(item.prijs.ToString());
+
 
                 cat = item.Categorie.ToString();
 
@@ -157,17 +159,27 @@ namespace Systeem
 
             int aantal = (int)txt_aantal.Value;
 
+
+            bestelservice.Add(selected, aantal);
+
             lbl_test.Text = aantal.ToString();
 
         }
 
         private void btn_Bekijk_Click(object sender, EventArgs e)
         {
-            clb_menukaart.Items.Clear();
+            gbox_Bestelling.Visible = true;
 
-            // somehow get list of bestellingen
+            List<BestelItem> bestelling = bestelservice.GetBestelling();
 
-            // print each
+            foreach (BestelItem item in bestelling)
+            {
+                ListViewItem listview = new ListViewItem(item.item.ToString());
+                listview.SubItems.Add(item.aantal.ToString());
+                lv_bestelling.Items.Add(listview);
+            }
+
+            
         }
 
         public void btn_bar_Click(object sender, EventArgs e)
@@ -358,6 +370,16 @@ namespace Systeem
         {
             BestellingService items = new BestellingService();
             //List<Bestelling> bestelitems = items.GetAllForItems();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            gbox_Bestelling.Visible = false;
+        }
+
+        private void btn_bekijk_bestelling_Click(object sender, EventArgs e)
+        {
+            gbox_Bestelling.Visible = true;
         }
     }
 }
