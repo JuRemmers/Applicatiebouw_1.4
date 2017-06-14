@@ -36,5 +36,18 @@ namespace Model
             this.item = item;
             this.aantal = aantal;
         }
+
+        public bool Compare(BestelItem item)
+        {
+            if (this.item == item.item)
+            {
+                this.aantal++;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -407,12 +407,12 @@
             // 
             // gbox_Bestelling
             // 
-            this.gbox_Bestelling.Controls.Add(this.label3);
             this.gbox_Bestelling.Controls.Add(this.lv_bestelling);
+            this.gbox_Bestelling.Controls.Add(this.label3);
             this.gbox_Bestelling.Controls.Add(this.button3);
-            this.gbox_Bestelling.Location = new System.Drawing.Point(6, 0);
+            this.gbox_Bestelling.Location = new System.Drawing.Point(0, 0);
             this.gbox_Bestelling.Name = "gbox_Bestelling";
-            this.gbox_Bestelling.Size = new System.Drawing.Size(398, 539);
+            this.gbox_Bestelling.Size = new System.Drawing.Size(404, 539);
             this.gbox_Bestelling.TabIndex = 10;
             this.gbox_Bestelling.TabStop = false;
             this.gbox_Bestelling.Text = "Bestelling";
@@ -435,7 +435,7 @@
             this.lv_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_bestelling.Location = new System.Drawing.Point(6, 49);
             this.lv_bestelling.Name = "lv_bestelling";
-            this.lv_bestelling.Size = new System.Drawing.Size(384, 451);
+            this.lv_bestelling.Size = new System.Drawing.Size(390, 451);
             this.lv_bestelling.TabIndex = 7;
             this.lv_bestelling.UseCompatibleStateImageBehavior = false;
             this.lv_bestelling.View = System.Windows.Forms.View.Details;
