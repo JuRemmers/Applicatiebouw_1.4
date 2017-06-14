@@ -110,7 +110,7 @@ namespace DAO
         // Kayleigh
         public int GetBestelIdByTafelId(int tafelId)
         {
-            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id";
+            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id AND Betaald=False";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
             int bestId = 0;
@@ -119,7 +119,17 @@ namespace DAO
             conn.Close();
 
             return bestId;
-            
+        }
+
+        // Kayleigh
+        public void UpdateBetaald(int bestelId)
+        {
+            string com = "UPDATE Besteling SET Betaald=True WHERE ID=@id";
+            SqlCommand c = new SqlCommand(com, conn);
+            c.Parameters.AddWithValue("@id", bestelId);
+            conn.Open();
+            c.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void UpdateBestelling(int bestellingid, Status updatestatus)
