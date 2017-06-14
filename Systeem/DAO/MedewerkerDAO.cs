@@ -65,7 +65,7 @@ namespace DAO
             return medewerker;
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         public Medewerker GetMedewerkerByBestellingId(int id)
         {
             string com = "SELECT Medewerker_ID FROM Bestelling WHERE ID=@id";

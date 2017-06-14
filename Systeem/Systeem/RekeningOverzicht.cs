@@ -137,5 +137,11 @@ namespace Systeem
             b.Show();
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string opm = txt_opmerking.Text;
+            r.UpdateOpmerking(opm);            
+        }
     }
 }
