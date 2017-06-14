@@ -31,7 +31,22 @@ namespace Systeem
             d.InsertRekening(r);
             BestellingDAO b = new BestellingDAO();
             b.UpdateBetaald(r.bestelId);
-            
+            InitList(items);
+        }
+
+        private void InitList(List<BestelItem> items)
+        {
+            foreach (BestelItem i in items)
+            {
+                string sa = i.aantal.ToString();
+                string sa2 = i.item.product;
+                string sa3 = "€ " + (i.item.prijs * i.aantal).ToString("0.00");
+                ListViewItem lvi = new ListViewItem(sa);
+
+                lvi.SubItems.Add(sa2);
+                lvi.SubItems.Add(sa3);
+                listView1.Items.Add(lvi);
+            }
         }
 
         private void btn_plattegrond_Click(object sender, EventArgs e)
