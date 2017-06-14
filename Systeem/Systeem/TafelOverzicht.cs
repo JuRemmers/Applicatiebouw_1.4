@@ -380,13 +380,12 @@ namespace Systeem
             clb_bestellingen.Visible = true;
             gbox_Bestelling.Visible = true;
         }
-
-        public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
+        private void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
             BestellingOverzicht overzicht = new BestellingOverzicht();
             string bestellingid = clb_bestellingen.SelectedItems[0].Text;
             overzicht.lb_bestelling.Text = "Bestelling " + bestellingid;
-            
+
             overzicht.Show();
             overzicht.Location = new Point(this.Top, this.Left);
         }
