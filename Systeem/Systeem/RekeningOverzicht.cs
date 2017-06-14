@@ -28,6 +28,11 @@ namespace Systeem
             lbl_tafelnummer2.Text = "Tafel " + tafelId;
             RekeningService s = new RekeningService();
             items = s.GetBestellingByTafelId(tafelId);
+            if (items[0] == null)
+            {
+                button3.Enabled = false;
+                tabControl1.TabPages.Remove(tp_rekening);
+            }
             InitList(items);
             InitRekening(items);            
         }
@@ -43,8 +48,7 @@ namespace Systeem
                 
                 lvi.SubItems.Add(sa2);
                 lvi.SubItems.Add(sa3);
-                listView1.Items.Add(lvi);
-                
+                listView1.Items.Add(lvi);                
             }
         }
 
