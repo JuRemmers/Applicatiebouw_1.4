@@ -31,21 +31,23 @@
             this.clb_besteIitems = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.btn_aanpassen = new System.Windows.Forms.Button();
             this.lb_bestelling = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.lb_bestellingtitel = new System.Windows.Forms.Label();
-            this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // clb_besteIitems
             // 
             this.clb_besteIitems.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.clb_besteIitems.AllowDrop = true;
             this.clb_besteIitems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.status});
+            this.clb_besteIitems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.clb_besteIitems.FullRowSelect = true;
             this.clb_besteIitems.HideSelection = false;
             this.clb_besteIitems.Location = new System.Drawing.Point(11, 46);
@@ -64,6 +66,12 @@
             // 
             this.columnHeader2.Text = "Aantal";
             this.columnHeader2.Width = 50;
+            // 
+            // status
+            // 
+            this.status.Text = "Status";
+            this.status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.status.Width = 100;
             // 
             // cb_status
             // 
@@ -116,11 +124,6 @@
             this.lb_bestellingtitel.Size = new System.Drawing.Size(140, 31);
             this.lb_bestellingtitel.TabIndex = 5;
             this.lb_bestellingtitel.Text = "Bestelling:";
-            // 
-            // status
-            // 
-            this.status.Text = "Status";
-            this.status.Width = 100;
             // 
             // BestellingOverzicht
             // 
