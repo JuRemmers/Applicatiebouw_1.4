@@ -410,7 +410,7 @@
             this.gbox_Bestelling.Controls.Add(this.lv_bestelling);
             this.gbox_Bestelling.Controls.Add(this.label3);
             this.gbox_Bestelling.Controls.Add(this.button3);
-            this.gbox_Bestelling.Location = new System.Drawing.Point(0, 0);
+            this.gbox_Bestelling.Location = new System.Drawing.Point(129, 75);
             this.gbox_Bestelling.Name = "gbox_Bestelling";
             this.gbox_Bestelling.Size = new System.Drawing.Size(404, 539);
             this.gbox_Bestelling.TabIndex = 10;

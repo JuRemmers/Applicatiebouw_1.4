@@ -15,7 +15,7 @@ namespace Systeem
     public partial class TafelOverzicht : Form
     {
         int bestellingid { get; set; }
-        
+
         string sectie;
         BestellingService bestelservice = new BestellingService();
 
@@ -157,40 +157,31 @@ namespace Systeem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            string selected;
-            try
+            if (clb_menukaart.SelectedItems == null)
+            { lbl_test.Text = "dude"; }
+
+            string selected = clb_menukaart.SelectedItems[0].Text; 
+            
+            
+            int aantal = (int)txt_aantal.Value;
+
+
+            if (!bestelservice.Add(selected, aantal))
             {
-                selected = clb_menukaart.SelectedItems[0].Text;
-                int aantal = (int)txt_aantal.Value;
-
-
-                if(!bestelservice.Add(selected, aantal))
-                {
-                    lbl_test.Text = "nope";
-                }
-                else
-                {
-lbl_test.Text = aantal.ToString();
-                }
-
-                
+                lbl_test.Text = "nope";
             }
-            catch
+            else
             {
-
-            }
-            finally
-            {
-                UpdateAantal();
+                lbl_test.Text = aantal.ToString();
             }
 
-
+            UpdateAantal();
         }
 
         private void btn_Bekijk_Click(object sender, EventArgs e)
         {
             gbox_Bestelling.Visible = true;
-            lv_bestelling.Clear();
+
 
             List<BestelItem> bestelling = bestelservice.GetBestelling();
 
@@ -406,13 +397,13 @@ lbl_test.Text = aantal.ToString();
 
         private void btn_bekijk_bestelling_Click(object sender, EventArgs e)
         {
-            clb_bestellingen.Visible = true;
+            gbox_items.Visible = true;
             gbox_Bestelling.Visible = true;
         }
         public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
             BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
-            
+
             bestellingid = int.Parse(clb_bestellingen.SelectedItems[0].Text);
             overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
