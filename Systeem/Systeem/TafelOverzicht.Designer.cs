@@ -54,8 +54,6 @@
             this.btn_wijzigAantal = new System.Windows.Forms.Button();
             this.btn_verwijderitem = new System.Windows.Forms.Button();
             this.btn_plaats = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_wijzigAantal = new System.Windows.Forms.Button();
             this.btn_verwijderitem = new System.Windows.Forms.Button();
             this.lv_bestelling = new System.Windows.Forms.ListView();
