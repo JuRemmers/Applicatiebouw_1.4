@@ -35,6 +35,8 @@ namespace Model
         {
             this.item = item;
             this.aantal = aantal;
+            opmerking = "";
+            status = Status.Uitgeserveerd;
         }
 
         public bool Compare(BestelItem bestelitem)

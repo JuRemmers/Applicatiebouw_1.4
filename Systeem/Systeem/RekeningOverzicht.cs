@@ -93,10 +93,7 @@ namespace Systeem
 
         private void btn_terug_Click(object sender, EventArgs e)
         {
-            TafelOverzicht overzicht = new TafelOverzicht();
-            overzicht.Location = this.Location;
-            overzicht.Show();
-            this.Close();
+                        this.Close();
         }
 
         private void btn_AddBestelling_Click(object sender, EventArgs e)

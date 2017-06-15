@@ -46,6 +46,9 @@
             this.lbl_totaalprijs = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btn_plattegrond = new System.Windows.Forms.Button();
+            this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,12 +79,17 @@
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Aantal,
+            this.Naam,
+            this.Prijs});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.Location = new System.Drawing.Point(12, 183);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(400, 183);
             this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // label1
             // 
@@ -223,6 +231,18 @@
             this.btn_plattegrond.UseVisualStyleBackColor = true;
             this.btn_plattegrond.Click += new System.EventHandler(this.btn_plattegrond_Click);
             // 
+            // Aantal
+            // 
+            this.Aantal.Text = "Aantal";
+            // 
+            // Naam
+            // 
+            this.Naam.Text = "Naam";
+            // 
+            // Prijs
+            // 
+            this.Prijs.Text = "Prijs";
+            // 
             // Betaling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,5 +296,8 @@
         private System.Windows.Forms.Label lbl_totaalprijs;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btn_plattegrond;
+        private System.Windows.Forms.ColumnHeader Aantal;
+        private System.Windows.Forms.ColumnHeader Naam;
+        private System.Windows.Forms.ColumnHeader Prijs;
     }
 }

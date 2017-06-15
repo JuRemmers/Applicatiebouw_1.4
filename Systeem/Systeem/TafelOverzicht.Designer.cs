@@ -31,16 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TafelOverzicht));
             this.tab_tafeloverzicht = new System.Windows.Forms.TabControl();
             this.tp_plattegrond = new System.Windows.Forms.TabPage();
-            this.lbl_9 = new System.Windows.Forms.Label();
-            this.lbl_8 = new System.Windows.Forms.Label();
-            this.lbl_10 = new System.Windows.Forms.Label();
-            this.lbl_7 = new System.Windows.Forms.Label();
-            this.lbl_6 = new System.Windows.Forms.Label();
-            this.lbl_5 = new System.Windows.Forms.Label();
-            this.lbl_3 = new System.Windows.Forms.Label();
-            this.lbl_4 = new System.Windows.Forms.Label();
-            this.lbl_1 = new System.Windows.Forms.Label();
-            this.lbl_2 = new System.Windows.Forms.Label();
             this.pb_table3 = new System.Windows.Forms.PictureBox();
             this.pb_table5 = new System.Windows.Forms.PictureBox();
             this.pb_table7 = new System.Windows.Forms.PictureBox();
@@ -89,6 +79,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.btn_plaats = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -108,6 +99,7 @@
             this.tp_huidige_bestellingen.SuspendLayout();
             this.gbox_bestellingen.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_tafeloverzicht
@@ -127,16 +119,7 @@
             // 
             // tp_plattegrond
             // 
-            this.tp_plattegrond.Controls.Add(this.lbl_9);
-            this.tp_plattegrond.Controls.Add(this.lbl_8);
-            this.tp_plattegrond.Controls.Add(this.lbl_10);
-            this.tp_plattegrond.Controls.Add(this.lbl_7);
-            this.tp_plattegrond.Controls.Add(this.lbl_6);
-            this.tp_plattegrond.Controls.Add(this.lbl_5);
-            this.tp_plattegrond.Controls.Add(this.lbl_3);
-            this.tp_plattegrond.Controls.Add(this.lbl_4);
-            this.tp_plattegrond.Controls.Add(this.lbl_1);
-            this.tp_plattegrond.Controls.Add(this.lbl_2);
+            this.tp_plattegrond.Controls.Add(this.pictureBox1);
             this.tp_plattegrond.Controls.Add(this.pb_table3);
             this.tp_plattegrond.Controls.Add(this.pb_table5);
             this.tp_plattegrond.Controls.Add(this.pb_table7);
@@ -157,110 +140,10 @@
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
             // 
-            // lbl_9
-            // 
-            this.lbl_9.AutoSize = true;
-            this.lbl_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_9.Location = new System.Drawing.Point(128, 445);
-            this.lbl_9.Name = "lbl_9";
-            this.lbl_9.Size = new System.Drawing.Size(21, 22);
-            this.lbl_9.TabIndex = 22;
-            this.lbl_9.Text = "9";
-            // 
-            // lbl_8
-            // 
-            this.lbl_8.AutoSize = true;
-            this.lbl_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_8.Location = new System.Drawing.Point(250, 359);
-            this.lbl_8.Name = "lbl_8";
-            this.lbl_8.Size = new System.Drawing.Size(21, 22);
-            this.lbl_8.TabIndex = 21;
-            this.lbl_8.Text = "8";
-            // 
-            // lbl_10
-            // 
-            this.lbl_10.AutoSize = true;
-            this.lbl_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_10.Location = new System.Drawing.Point(239, 445);
-            this.lbl_10.Name = "lbl_10";
-            this.lbl_10.Size = new System.Drawing.Size(32, 22);
-            this.lbl_10.TabIndex = 20;
-            this.lbl_10.Text = "10";
-            // 
-            // lbl_7
-            // 
-            this.lbl_7.AutoSize = true;
-            this.lbl_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_7.Location = new System.Drawing.Point(128, 359);
-            this.lbl_7.Name = "lbl_7";
-            this.lbl_7.Size = new System.Drawing.Size(21, 22);
-            this.lbl_7.TabIndex = 19;
-            this.lbl_7.Text = "7";
-            // 
-            // lbl_6
-            // 
-            this.lbl_6.AutoSize = true;
-            this.lbl_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_6.Location = new System.Drawing.Point(250, 273);
-            this.lbl_6.Name = "lbl_6";
-            this.lbl_6.Size = new System.Drawing.Size(21, 22);
-            this.lbl_6.TabIndex = 17;
-            this.lbl_6.Text = "6";
-            // 
-            // lbl_5
-            // 
-            this.lbl_5.AutoSize = true;
-            this.lbl_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_5.Location = new System.Drawing.Point(128, 273);
-            this.lbl_5.Name = "lbl_5";
-            this.lbl_5.Size = new System.Drawing.Size(21, 22);
-            this.lbl_5.TabIndex = 16;
-            this.lbl_5.Text = "5";
-            // 
-            // lbl_3
-            // 
-            this.lbl_3.AutoSize = true;
-            this.lbl_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_3.Location = new System.Drawing.Point(128, 187);
-            this.lbl_3.Name = "lbl_3";
-            this.lbl_3.Size = new System.Drawing.Size(21, 22);
-            this.lbl_3.TabIndex = 15;
-            this.lbl_3.Text = "3";
-            // 
-            // lbl_4
-            // 
-            this.lbl_4.AutoSize = true;
-            this.lbl_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_4.Location = new System.Drawing.Point(250, 187);
-            this.lbl_4.Name = "lbl_4";
-            this.lbl_4.Size = new System.Drawing.Size(21, 22);
-            this.lbl_4.TabIndex = 14;
-            this.lbl_4.Text = "4";
-            // 
-            // lbl_1
-            // 
-            this.lbl_1.AutoSize = true;
-            this.lbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_1.Location = new System.Drawing.Point(128, 97);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(21, 22);
-            this.lbl_1.TabIndex = 13;
-            this.lbl_1.Text = "1";
-            // 
-            // lbl_2
-            // 
-            this.lbl_2.AutoSize = true;
-            this.lbl_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_2.Location = new System.Drawing.Point(250, 97);
-            this.lbl_2.Name = "lbl_2";
-            this.lbl_2.Size = new System.Drawing.Size(21, 22);
-            this.lbl_2.TabIndex = 12;
-            this.lbl_2.Text = "2";
-            // 
             // pb_table3
             // 
             this.pb_table3.Image = ((System.Drawing.Image)(resources.GetObject("pb_table3.Image")));
-            this.pb_table3.Location = new System.Drawing.Point(93, 166);
+            this.pb_table3.Location = new System.Drawing.Point(93, 148);
             this.pb_table3.Name = "pb_table3";
             this.pb_table3.Size = new System.Drawing.Size(89, 81);
             this.pb_table3.TabIndex = 11;
@@ -270,7 +153,7 @@
             // pb_table5
             // 
             this.pb_table5.Image = ((System.Drawing.Image)(resources.GetObject("pb_table5.Image")));
-            this.pb_table5.Location = new System.Drawing.Point(93, 253);
+            this.pb_table5.Location = new System.Drawing.Point(93, 235);
             this.pb_table5.Name = "pb_table5";
             this.pb_table5.Size = new System.Drawing.Size(89, 81);
             this.pb_table5.TabIndex = 10;
@@ -280,7 +163,7 @@
             // pb_table7
             // 
             this.pb_table7.Image = ((System.Drawing.Image)(resources.GetObject("pb_table7.Image")));
-            this.pb_table7.Location = new System.Drawing.Point(93, 340);
+            this.pb_table7.Location = new System.Drawing.Point(93, 322);
             this.pb_table7.Name = "pb_table7";
             this.pb_table7.Size = new System.Drawing.Size(89, 81);
             this.pb_table7.TabIndex = 9;
@@ -290,7 +173,7 @@
             // pb_table9
             // 
             this.pb_table9.Image = ((System.Drawing.Image)(resources.GetObject("pb_table9.Image")));
-            this.pb_table9.Location = new System.Drawing.Point(93, 427);
+            this.pb_table9.Location = new System.Drawing.Point(93, 409);
             this.pb_table9.Name = "pb_table9";
             this.pb_table9.Size = new System.Drawing.Size(89, 81);
             this.pb_table9.TabIndex = 8;
@@ -300,7 +183,7 @@
             // pb_table2
             // 
             this.pb_table2.Image = ((System.Drawing.Image)(resources.GetObject("pb_table2.Image")));
-            this.pb_table2.Location = new System.Drawing.Point(215, 79);
+            this.pb_table2.Location = new System.Drawing.Point(215, 61);
             this.pb_table2.Name = "pb_table2";
             this.pb_table2.Size = new System.Drawing.Size(89, 81);
             this.pb_table2.TabIndex = 7;
@@ -310,7 +193,7 @@
             // pb_table4
             // 
             this.pb_table4.Image = ((System.Drawing.Image)(resources.GetObject("pb_table4.Image")));
-            this.pb_table4.Location = new System.Drawing.Point(215, 166);
+            this.pb_table4.Location = new System.Drawing.Point(215, 148);
             this.pb_table4.Name = "pb_table4";
             this.pb_table4.Size = new System.Drawing.Size(89, 81);
             this.pb_table4.TabIndex = 6;
@@ -320,7 +203,7 @@
             // pb_table6
             // 
             this.pb_table6.Image = ((System.Drawing.Image)(resources.GetObject("pb_table6.Image")));
-            this.pb_table6.Location = new System.Drawing.Point(215, 253);
+            this.pb_table6.Location = new System.Drawing.Point(215, 235);
             this.pb_table6.Name = "pb_table6";
             this.pb_table6.Size = new System.Drawing.Size(89, 81);
             this.pb_table6.TabIndex = 5;
@@ -330,7 +213,7 @@
             // pb_table8
             // 
             this.pb_table8.Image = ((System.Drawing.Image)(resources.GetObject("pb_table8.Image")));
-            this.pb_table8.Location = new System.Drawing.Point(215, 340);
+            this.pb_table8.Location = new System.Drawing.Point(215, 322);
             this.pb_table8.Name = "pb_table8";
             this.pb_table8.Size = new System.Drawing.Size(89, 81);
             this.pb_table8.TabIndex = 4;
@@ -340,7 +223,7 @@
             // pb_table10
             // 
             this.pb_table10.Image = ((System.Drawing.Image)(resources.GetObject("pb_table10.Image")));
-            this.pb_table10.Location = new System.Drawing.Point(215, 427);
+            this.pb_table10.Location = new System.Drawing.Point(215, 409);
             this.pb_table10.Name = "pb_table10";
             this.pb_table10.Size = new System.Drawing.Size(89, 81);
             this.pb_table10.TabIndex = 3;
@@ -352,7 +235,7 @@
             this.pb_table1.BackColor = System.Drawing.Color.Transparent;
             this.pb_table1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pb_table1.Image = ((System.Drawing.Image)(resources.GetObject("pb_table1.Image")));
-            this.pb_table1.Location = new System.Drawing.Point(93, 79);
+            this.pb_table1.Location = new System.Drawing.Point(93, 61);
             this.pb_table1.Name = "pb_table1";
             this.pb_table1.Size = new System.Drawing.Size(89, 81);
             this.pb_table1.TabIndex = 2;
@@ -452,6 +335,15 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Aantal";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(87, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Test";
             // 
             // label3
             // 
@@ -783,6 +675,15 @@
             this.btn_plaats.Text = "Plaats bestelling";
             this.btn_plaats.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 490);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 67);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -793,7 +694,6 @@
             this.Text = "TafelOverzicht";
             this.tab_tafeloverzicht.ResumeLayout(false);
             this.tp_plattegrond.ResumeLayout(false);
-            this.tp_plattegrond.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table7)).EndInit();
@@ -813,6 +713,7 @@
             this.tp_huidige_bestellingen.ResumeLayout(false);
             this.gbox_bestellingen.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -857,16 +758,6 @@
         private System.Windows.Forms.ColumnHeader Tafel;
         private System.Windows.Forms.ColumnHeader Bestelling;
         private System.Windows.Forms.Label lbl_test;
-        private System.Windows.Forms.Label lbl_9;
-        private System.Windows.Forms.Label lbl_8;
-        private System.Windows.Forms.Label lbl_10;
-        private System.Windows.Forms.Label lbl_7;
-        private System.Windows.Forms.Label lbl_6;
-        private System.Windows.Forms.Label lbl_5;
-        private System.Windows.Forms.Label lbl_3;
-        private System.Windows.Forms.Label lbl_4;
-        private System.Windows.Forms.Label lbl_1;
-        private System.Windows.Forms.Label lbl_2;
         private System.Windows.Forms.Label lbl_aantal;
         private System.Windows.Forms.GroupBox gbox_Bestelling;
         private System.Windows.Forms.Label label3;
@@ -879,5 +770,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_wijzigAantal;
         private System.Windows.Forms.Button btn_verwijderitem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
