@@ -35,7 +35,18 @@ namespace Systeem
                 tabControl1.TabPages.Remove(tp_rekening);
             }
             InitList(items);
-            InitRekening(items);            
+            InitRekening(items);
+
+            lbl_Tafelstatus.Text = t.TafelStatus(tafelId).ToString();
+            if(t.TafelStatus(tafelId) == false)
+            {
+                lbl_Tafelstatus.Text = "Tafel " + tafelId + ": Vrij";                
+
+            }
+            else
+            {
+                lbl_Tafelstatus.Text = "Tafel " + tafelId + ": Bezet";
+            }
         }
 
         private void InitList(List<BestelItem> items)
@@ -149,12 +160,16 @@ namespace Systeem
             // 3. Databaselaag zoekt uit of status bezet/vrij is
             // 4. if status == bezet --> zet status op vrij
             t.UpdateStatus(tafelId, false);
+            string tafelStatus = "Tafel " + tafelId + ": Bezet";
+            lbl_Tafelstatus.Text = tafelStatus;
             
         }
 
         private void btn_vrij_Click(object sender, EventArgs e)
         {
             t.UpdateStatus(tafelId, true);
+            string tafelStatus = "Tafel " + tafelId + ": Vrij";
+            lbl_Tafelstatus.Text = tafelStatus;
         }
     }
 }
