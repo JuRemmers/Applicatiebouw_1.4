@@ -103,10 +103,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Gerecht";
+            this.columnHeader1.Width = 300;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Aantal";
+            this.columnHeader2.Width = 99;
             // 
             // BestellingOverzicht
             // 

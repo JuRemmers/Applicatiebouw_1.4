@@ -36,8 +36,6 @@ namespace Systeem
                 listview.SubItems.Add(sa2);
                 clb_besteIitems.Items.Add(listview);
             }
-            clb_besteIitems.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
-            clb_besteIitems.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
     private void btn_back_Click(object sender, EventArgs e)
