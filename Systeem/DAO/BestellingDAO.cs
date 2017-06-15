@@ -27,30 +27,10 @@ namespace DAO
             int Medewerker_ID = (int)reader["Medewerker_ID"];
 
             Tafel tafel = new Tafel(tafelid, true);
-            Medewerker medewerker = new Medewerker(Medewerker_ID, "naam");
-
-            //switch (status)
-            //{
-            //    case "Opgenomen":
-            //        enumstatus = Status.Opgenomen;
-            //        break;
-
-            //    case "Gereed":
-            //        enumstatus = Status.Gereed;
-            //        break;
-
-            //    case "Onderhande":
-            //        enumstatus = Status.Onderhande;
-            //        break;
-
-            //    case "Uitgeserveerd":
-            //        enumstatus = Status.Uitgeserveerd;
-            //        break;
-            //}
+            Medewerker medewerker = new Medewerker(Medewerker_ID, "naam", "achternaam", Functie.Bar, "password");
 
 
-
-            return new Bestelling(bestellingID, tafel, medewerker);
+            return new Bestelling(bestellingID, true, tafel, medewerker);
 
         }
 

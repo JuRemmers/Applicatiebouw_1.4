@@ -79,7 +79,7 @@ namespace DAO
             return items;
         }
 
-        public void UpdateBestelitem(int bestellingid, Status updatestatus)
+        public void UpdateBestelitem(int bestellingid, Status updatestatus, string gerecht)
          {
             string stringstatus = updatestatus.ToString();
              SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st WHERE Bestelling.ID = @id", conn);

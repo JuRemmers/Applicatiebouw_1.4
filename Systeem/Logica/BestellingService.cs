@@ -71,7 +71,7 @@ namespace Logica
 
         public List<BestelItem> GetAllForItems(int bestelId)
         {
-            List<BestelItem>bestelling = bestelItemDAL.GetBestellingItemsByBestellingId(bestelId);
+            List<BestelItem>bestelling = bestelItemDAL.GetMenuItemsByBestellingId(bestelId);
             return bestelling;
         }
 
