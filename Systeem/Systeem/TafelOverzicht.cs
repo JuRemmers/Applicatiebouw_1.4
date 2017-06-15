@@ -413,5 +413,10 @@ namespace Systeem
             int aantal = bestelservice.GetCount();
             lbl_aantal.Text = aantal.ToString();
         }
+
+        private void btn_wijzigAantal_Click(object sender, EventArgs e)
+        {
+            int aantal = (int)nod_aantal.Value;
+        }
     }
 }

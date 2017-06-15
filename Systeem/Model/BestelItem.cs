@@ -43,7 +43,7 @@ namespace Model
         {
             if (this.item.ToString() == bestelitem.item.ToString())
             {
-                this.aantal++;
+                this.aantal = this.aantal + bestelitem.aantal;
                 return true;
             }
             else
