@@ -31,10 +31,10 @@ namespace DAO
                         " FULL OUTER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID" +
                         " FULL OUTER JOIN Tafel ON Bestelling.Tafel_ID = Tafel.ID" +
                         " FULL OUTER JOIN Medewerker ON Bestelling.Medewerker_ID = Medewerker.ID" +
-                        " WHERE Bestel_Item.Bestel_ID = bestelId";
+                        " WHERE Bestel_Item.Bestel_ID =@bestelId AND Bestelling.Betaald=0";
 
             SqlCommand c = new SqlCommand(com, conn);
-            c.Parameters.AddWithValue("@id", bestelId);
+            c.Parameters.AddWithValue("@bestelId", bestelId);
             conn.Open();
             SqlDataReader reader = c.ExecuteReader();
             List<BestelItem> items = new List<BestelItem>();
