@@ -37,6 +37,7 @@
             this.lb_bestelling = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.lb_bestellingtitel = new System.Windows.Forms.Label();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // clb_besteIitems
@@ -46,6 +47,7 @@
             this.clb_besteIitems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
+            this.columnHeader3,
             this.status});
             this.clb_besteIitems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.clb_besteIitems.FullRowSelect = true;
@@ -60,7 +62,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Gerecht";
-            this.columnHeader1.Width = 250;
+            this.columnHeader1.Width = 150;
             // 
             // columnHeader2
             // 
@@ -121,9 +123,16 @@
             this.lb_bestellingtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.lb_bestellingtitel.Location = new System.Drawing.Point(237, 9);
             this.lb_bestellingtitel.Name = "lb_bestellingtitel";
-            this.lb_bestellingtitel.Size = new System.Drawing.Size(140, 31);
+            this.lb_bestellingtitel.Size = new System.Drawing.Size(154, 31);
             this.lb_bestellingtitel.TabIndex = 5;
-            this.lb_bestellingtitel.Text = "Bestelling:";
+            this.lb_bestellingtitel.Text = "Bestelling #";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.DisplayIndex = 3;
+            this.columnHeader3.Text = "Tijd";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 100;
             // 
             // BestellingOverzicht
             // 
@@ -155,5 +164,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader status;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }
