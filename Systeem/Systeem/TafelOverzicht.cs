@@ -157,31 +157,31 @@ namespace Systeem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (clb_menukaart.SelectedItems == null)
-            { lbl_test.Text = "dude"; }
-
-            string selected = clb_menukaart.SelectedItems[0].Text; 
-            
-            
-            int aantal = (int)txt_aantal.Value;
-
-
-            if (!bestelservice.Add(selected, aantal))
-            {
-                lbl_test.Text = "nope";
-            }
+            if (clb_menukaart.SelectedIndices.Count == 0)
+            { MessageBox.Show("Selecteer een item."); }
             else
             {
-                lbl_test.Text = aantal.ToString();
-            }
+                string selected = clb_menukaart.SelectedItems[0].Text;
 
-            UpdateAantal();
+                int aantal = (int)txt_aantal.Value;
+
+                if (!bestelservice.Add(selected, aantal))
+                {
+                    lbl_test.Text = "nope";
+                }
+                else
+                {
+                    lbl_test.Text = aantal.ToString();
+                }
+                UpdateAantal();
+            }
         }
 
         private void btn_Bekijk_Click(object sender, EventArgs e)
         {
+            lv_bestelling.Items.Clear();
+            gbox_items.Visible = false;
             gbox_Bestelling.Visible = true;
-
 
             List<BestelItem> bestelling = bestelservice.GetBestelling();
 
@@ -397,7 +397,6 @@ namespace Systeem
 
         private void btn_bekijk_bestelling_Click(object sender, EventArgs e)
         {
-            gbox_items.Visible = true;
             gbox_Bestelling.Visible = true;
         }
         public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
