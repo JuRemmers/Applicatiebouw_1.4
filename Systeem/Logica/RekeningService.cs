@@ -29,9 +29,6 @@ namespace Logica
             BestellingDAO d = new BestellingDAO();
             int bestelId = d.GetBestelIdByTafelId(TafelId);
 
-            
-            MedewerkerDAO m = new MedewerkerDAO();
-            Medewerker med = m.GetMedewerkerByBestellingId(bestelId);
 
             double prijs = 0;
             double btwl = 0;
@@ -51,7 +48,7 @@ namespace Logica
             double fooi = 0;
             double totaalprijs = prijs + fooi;
             string opm = "";
-            Rekening r = new Rekening(bestelId, btwl, btwh, prijs, fooi, totaalprijs, med, opm);
+            Rekening r = new Rekening(bestelId, btwl, btwh, prijs, fooi, totaalprijs, items[0].bestelling.medewerker, opm);
             return r;
         }
 
