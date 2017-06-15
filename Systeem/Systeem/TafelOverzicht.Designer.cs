@@ -31,16 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TafelOverzicht));
             this.tab_tafeloverzicht = new System.Windows.Forms.TabControl();
             this.tp_plattegrond = new System.Windows.Forms.TabPage();
-            this.lbl_9 = new System.Windows.Forms.Label();
-            this.lbl_8 = new System.Windows.Forms.Label();
-            this.lbl_10 = new System.Windows.Forms.Label();
-            this.lbl_7 = new System.Windows.Forms.Label();
-            this.lbl_6 = new System.Windows.Forms.Label();
-            this.lbl_5 = new System.Windows.Forms.Label();
-            this.lbl_3 = new System.Windows.Forms.Label();
-            this.lbl_4 = new System.Windows.Forms.Label();
-            this.lbl_1 = new System.Windows.Forms.Label();
-            this.lbl_2 = new System.Windows.Forms.Label();
             this.pb_table3 = new System.Windows.Forms.PictureBox();
             this.pb_table5 = new System.Windows.Forms.PictureBox();
             this.pb_table7 = new System.Windows.Forms.PictureBox();
@@ -56,10 +46,10 @@
             this.tp_bestelling_maken = new System.Windows.Forms.TabPage();
             this.gbox_items = new System.Windows.Forms.GroupBox();
             this.gbox_Bestelling = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.lv_bestelling = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.lbl_aantal = new System.Windows.Forms.Label();
             this.lbl_test = new System.Windows.Forms.Label();
@@ -121,16 +111,6 @@
             // 
             // tp_plattegrond
             // 
-            this.tp_plattegrond.Controls.Add(this.lbl_9);
-            this.tp_plattegrond.Controls.Add(this.lbl_8);
-            this.tp_plattegrond.Controls.Add(this.lbl_10);
-            this.tp_plattegrond.Controls.Add(this.lbl_7);
-            this.tp_plattegrond.Controls.Add(this.lbl_6);
-            this.tp_plattegrond.Controls.Add(this.lbl_5);
-            this.tp_plattegrond.Controls.Add(this.lbl_3);
-            this.tp_plattegrond.Controls.Add(this.lbl_4);
-            this.tp_plattegrond.Controls.Add(this.lbl_1);
-            this.tp_plattegrond.Controls.Add(this.lbl_2);
             this.tp_plattegrond.Controls.Add(this.pb_table3);
             this.tp_plattegrond.Controls.Add(this.pb_table5);
             this.tp_plattegrond.Controls.Add(this.pb_table7);
@@ -150,106 +130,6 @@
             this.tp_plattegrond.TabIndex = 0;
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
-            // 
-            // lbl_9
-            // 
-            this.lbl_9.AutoSize = true;
-            this.lbl_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_9.Location = new System.Drawing.Point(128, 445);
-            this.lbl_9.Name = "lbl_9";
-            this.lbl_9.Size = new System.Drawing.Size(21, 22);
-            this.lbl_9.TabIndex = 22;
-            this.lbl_9.Text = "9";
-            // 
-            // lbl_8
-            // 
-            this.lbl_8.AutoSize = true;
-            this.lbl_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_8.Location = new System.Drawing.Point(250, 359);
-            this.lbl_8.Name = "lbl_8";
-            this.lbl_8.Size = new System.Drawing.Size(21, 22);
-            this.lbl_8.TabIndex = 21;
-            this.lbl_8.Text = "8";
-            // 
-            // lbl_10
-            // 
-            this.lbl_10.AutoSize = true;
-            this.lbl_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_10.Location = new System.Drawing.Point(239, 445);
-            this.lbl_10.Name = "lbl_10";
-            this.lbl_10.Size = new System.Drawing.Size(32, 22);
-            this.lbl_10.TabIndex = 20;
-            this.lbl_10.Text = "10";
-            // 
-            // lbl_7
-            // 
-            this.lbl_7.AutoSize = true;
-            this.lbl_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_7.Location = new System.Drawing.Point(128, 359);
-            this.lbl_7.Name = "lbl_7";
-            this.lbl_7.Size = new System.Drawing.Size(21, 22);
-            this.lbl_7.TabIndex = 19;
-            this.lbl_7.Text = "7";
-            // 
-            // lbl_6
-            // 
-            this.lbl_6.AutoSize = true;
-            this.lbl_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_6.Location = new System.Drawing.Point(250, 273);
-            this.lbl_6.Name = "lbl_6";
-            this.lbl_6.Size = new System.Drawing.Size(21, 22);
-            this.lbl_6.TabIndex = 17;
-            this.lbl_6.Text = "6";
-            // 
-            // lbl_5
-            // 
-            this.lbl_5.AutoSize = true;
-            this.lbl_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_5.Location = new System.Drawing.Point(128, 273);
-            this.lbl_5.Name = "lbl_5";
-            this.lbl_5.Size = new System.Drawing.Size(21, 22);
-            this.lbl_5.TabIndex = 16;
-            this.lbl_5.Text = "5";
-            // 
-            // lbl_3
-            // 
-            this.lbl_3.AutoSize = true;
-            this.lbl_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_3.Location = new System.Drawing.Point(128, 187);
-            this.lbl_3.Name = "lbl_3";
-            this.lbl_3.Size = new System.Drawing.Size(21, 22);
-            this.lbl_3.TabIndex = 15;
-            this.lbl_3.Text = "3";
-            // 
-            // lbl_4
-            // 
-            this.lbl_4.AutoSize = true;
-            this.lbl_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_4.Location = new System.Drawing.Point(250, 187);
-            this.lbl_4.Name = "lbl_4";
-            this.lbl_4.Size = new System.Drawing.Size(21, 22);
-            this.lbl_4.TabIndex = 14;
-            this.lbl_4.Text = "4";
-            // 
-            // lbl_1
-            // 
-            this.lbl_1.AutoSize = true;
-            this.lbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_1.Location = new System.Drawing.Point(128, 97);
-            this.lbl_1.Name = "lbl_1";
-            this.lbl_1.Size = new System.Drawing.Size(21, 22);
-            this.lbl_1.TabIndex = 13;
-            this.lbl_1.Text = "1";
-            // 
-            // lbl_2
-            // 
-            this.lbl_2.AutoSize = true;
-            this.lbl_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_2.Location = new System.Drawing.Point(250, 97);
-            this.lbl_2.Name = "lbl_2";
-            this.lbl_2.Size = new System.Drawing.Size(21, 22);
-            this.lbl_2.TabIndex = 12;
-            this.lbl_2.Text = "2";
             // 
             // pb_table3
             // 
@@ -407,25 +287,16 @@
             // 
             // gbox_Bestelling
             // 
-            this.gbox_Bestelling.Controls.Add(this.label3);
             this.gbox_Bestelling.Controls.Add(this.lv_bestelling);
+            this.gbox_Bestelling.Controls.Add(this.label3);
             this.gbox_Bestelling.Controls.Add(this.button3);
-            this.gbox_Bestelling.Location = new System.Drawing.Point(6, 0);
+            this.gbox_Bestelling.Location = new System.Drawing.Point(129, 75);
             this.gbox_Bestelling.Name = "gbox_Bestelling";
-            this.gbox_Bestelling.Size = new System.Drawing.Size(398, 539);
+            this.gbox_Bestelling.Size = new System.Drawing.Size(404, 539);
             this.gbox_Bestelling.TabIndex = 10;
             this.gbox_Bestelling.TabStop = false;
             this.gbox_Bestelling.Text = "Bestelling";
             this.gbox_Bestelling.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(87, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Test";
             // 
             // lv_bestelling
             // 
@@ -435,7 +306,7 @@
             this.lv_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lv_bestelling.Location = new System.Drawing.Point(6, 49);
             this.lv_bestelling.Name = "lv_bestelling";
-            this.lv_bestelling.Size = new System.Drawing.Size(384, 451);
+            this.lv_bestelling.Size = new System.Drawing.Size(390, 451);
             this.lv_bestelling.TabIndex = 7;
             this.lv_bestelling.UseCompatibleStateImageBehavior = false;
             this.lv_bestelling.View = System.Windows.Forms.View.Details;
@@ -448,6 +319,15 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Prijs";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(87, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Test";
             // 
             // button3
             // 
@@ -725,7 +605,6 @@
             this.Text = "TafelOverzicht";
             this.tab_tafeloverzicht.ResumeLayout(false);
             this.tp_plattegrond.ResumeLayout(false);
-            this.tp_plattegrond.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table7)).EndInit();
@@ -788,16 +667,6 @@
         private System.Windows.Forms.ColumnHeader Tafel;
         private System.Windows.Forms.ColumnHeader Bestelling;
         private System.Windows.Forms.Label lbl_test;
-        private System.Windows.Forms.Label lbl_9;
-        private System.Windows.Forms.Label lbl_8;
-        private System.Windows.Forms.Label lbl_10;
-        private System.Windows.Forms.Label lbl_7;
-        private System.Windows.Forms.Label lbl_6;
-        private System.Windows.Forms.Label lbl_5;
-        private System.Windows.Forms.Label lbl_3;
-        private System.Windows.Forms.Label lbl_4;
-        private System.Windows.Forms.Label lbl_1;
-        private System.Windows.Forms.Label lbl_2;
         private System.Windows.Forms.Label lbl_aantal;
         private System.Windows.Forms.GroupBox gbox_Bestelling;
         private System.Windows.Forms.Label label3;

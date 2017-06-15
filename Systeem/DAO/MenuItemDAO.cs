@@ -21,24 +21,29 @@ namespace DAO
 
         public MenuItem ReadMenuItem(SqlDataReader reader)
         {
-            int menuitemID = (int)reader["ID"];
-            string gerecht = (string)reader["Gerecht"];
-            double prijs = (double)reader["Prijs"];
-            int voorraad = (int)reader["Voorraad"];
+            try
+            {
+                int menuitemID = (int)reader["ID"];
+                string gerecht = (string)reader["Gerecht"];
+                double prijs = (double)reader["Prijs"];
+                int voorraad = (int)reader["Voorraad"];
 
-            int categorieid = (int)reader["categorieID"];
-            string categorie = (string)reader["Categorie"];
-            int btw = (int)reader["btw"];
-            int menukaartid = (int)reader["Menu_Kaart_ID"];
+                int categorieid = (int)reader["categorieID"];
+                string categorie = (string)reader["Categorie"];
+                int btw = (int)reader["btw"];
+                int menukaartid = (int)reader["Menu_Kaart_ID"];
 
-            Menucategorie cAtegorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
+                Menucategorie cAtegorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
 
-            int menukaart_id = (int)reader["menuKaartID"];
-            string naam = (string)reader["Kaart"];
+                int menukaart_id = (int)reader["menuKaartID"];
+                string naam = (string)reader["Kaart"];
 
-            MenuKaart kaart = new MenuKaart(menukaart_id, naam);
+                MenuKaart kaart = new MenuKaart(menukaart_id, naam);
 
-            return new MenuItem(menuitemID, gerecht, prijs, voorraad, cAtegorie, kaart);
+                return new MenuItem(menuitemID, gerecht, prijs, voorraad, cAtegorie, kaart);
+            }
+            catch
+            { return null; }
         }
 
         public List<MenuItem> GetAllForKaart(string menukaart)
