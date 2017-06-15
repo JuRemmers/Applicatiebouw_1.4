@@ -18,7 +18,7 @@ namespace Logica
         public bool Add(string gerecht, int aantal)
         {
             MenuItem item = menuItemDAL.GetForGerecht(gerecht);
-            if (item ==null || item.voorraad <= 0)
+            if (item == null || item.voorraad <= 0)
             { return false; }
 
             BestelItem bestelitem = new BestelItem(item, aantal);
@@ -47,9 +47,9 @@ namespace Logica
             return Bestellingen;
         }
 
-        public void UpdateStatus(int bestellingid, Status updatestatus)
+        public void UpdateStatus(int bestellingid, Status updatestatus, string gerecht)
         {
-            BestelDAL.UpdateBestelling(bestellingid, updatestatus);
+            bestelItemDAL.UpdateBestelitem(bestellingid, updatestatus, gerecht);
         }
 
         public List<BestelItem> GetBestelling()
@@ -71,8 +71,21 @@ namespace Logica
 
         public List<BestelItem> GetAllForItems(int bestelId)
         {
-            List<BestelItem>bestelling = bestelItemDAL.GetMenuItemsByBestellingId(bestelId);
+            List<BestelItem>bestelling = bestelItemDAL.GetBestellingItemsByBestellingId(bestelId);
             return bestelling;
+        }
+
+        public bool WijzigAantal(string item, int aantal)
+        {
+            foreach (BestelItem bestelItem in bestelling)
+            {
+                if (bestelItem.Vergelijk(item))
+                {
+                    bestelItem.WijzigAantal(aantal);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

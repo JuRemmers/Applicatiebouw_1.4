@@ -157,40 +157,31 @@ namespace Systeem
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (clb_menukaart.SelectedItems == null)
-            { lbl_test.Text = "dude"; }
-
-            string selected = clb_menukaart.SelectedItems[0].Text; 
-            
-            
-            int aantal = (int)txt_aantal.Value;
-
-
-            if (!bestelservice.Add(selected, aantal))
-            {
-                lbl_test.Text = "nope";
-            }
+            if (clb_menukaart.SelectedIndices.Count == 0)
+            { MessageBox.Show("Selecteer een item."); }
             else
             {
-                lbl_test.Text = aantal.ToString();
-            }
+                string selected = clb_menukaart.SelectedItems[0].Text;
 
-            UpdateAantal();
+                int aantal = (int)txt_aantal.Value;
+
+                if (!bestelservice.Add(selected, aantal))
+                {
+                    MessageBox.Show("Input ongeldig.");
+                }
+
+                UpdateAantal();
+
+                this.clb_menukaart.SelectedIndices.Clear();
+            }
         }
 
         private void btn_Bekijk_Click(object sender, EventArgs e)
         {
+            UpdateBestelling();
+
+            gbox_items.Visible = false;
             gbox_Bestelling.Visible = true;
-
-
-            List<BestelItem> bestelling = bestelservice.GetBestelling();
-
-            foreach (BestelItem item in bestelling)
-            {
-                ListViewItem listview = new ListViewItem(item.item.ToString());
-                listview.SubItems.Add(item.aantal.ToString());
-                lv_bestelling.Items.Add(listview);
-            }
         }
 
         public void btn_bar_Click(object sender, EventArgs e)
@@ -298,63 +289,64 @@ namespace Systeem
         private void pb_table1_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
+            // pb_table1.Image = Image.FromFile("C:/Users/jesse/OneDrive/Afbeeldingen/111.png");        
         }
 
         // Kayleigh Vossen
         private void pb_table3_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table5_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table7_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table9_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table2_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table4_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -362,25 +354,25 @@ namespace Systeem
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table8_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
-            
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
         private void pb_table10_Click(object sender, EventArgs e)
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
-           
+
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         private void btn_bekijkbestel_Click(object sender, EventArgs e)
@@ -396,23 +388,54 @@ namespace Systeem
 
         private void btn_bekijk_bestelling_Click(object sender, EventArgs e)
         {
-            gbox_items.Visible = true;
+            UpdateBestelling();
             gbox_Bestelling.Visible = true;
         }
+
         public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
-            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
-
             bestellingid = int.Parse(clb_bestellingen.SelectedItems[0].Text);
+            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
             overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         private void UpdateAantal()
         {
             int aantal = bestelservice.GetCount();
             lbl_aantal.Text = aantal.ToString();
+        }
+
+        private void btn_wijzigAantal_Click(object sender, EventArgs e)
+        {
+            if (lv_bestelling.SelectedIndices.Count == 0)
+            { MessageBox.Show("Selecteer een item."); }
+            else
+            {
+                string selected = lv_bestelling.SelectedItems[0].Text;
+                int aantal = (int)nod_aantal.Value;
+
+                if (!bestelservice.WijzigAantal(selected, aantal))
+                { MessageBox.Show("Input ongeldig."); }
+
+                this.lv_bestelling.SelectedIndices.Clear();
+                UpdateAantal();
+
+                UpdateBestelling();
+            }
+        }
+
+        private void UpdateBestelling()
+        {
+            lv_bestelling.Items.Clear();
+
+            foreach (BestelItem item in bestelservice.GetBestelling())
+            {
+                ListViewItem listview = new ListViewItem(item.item.ToString());
+                listview.SubItems.Add(item.aantal.ToString());
+                lv_bestelling.Items.Add(listview);
+            }
         }
     }
 }

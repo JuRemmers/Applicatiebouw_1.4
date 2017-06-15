@@ -8,7 +8,7 @@ namespace Model
 {
     public class BestelItem
     {
-        private int ID; 
+        private int ID;
         private Bestelling bestelling;
         public MenuItem item { get; private set; }
         public int aantal { get; private set; }
@@ -43,18 +43,37 @@ namespace Model
             opmerking = "";
             status = Status.Uitgeserveerd;
         }
-
-        public bool Compare(BestelItem item)
+        public BestelItem(MenuItem item, int aantal, Status status)
         {
-            if (this.item == item.item)
+            this.item = item;
+            this.aantal = aantal;
+            this.status = status;
+        }
+
+        public bool Compare(BestelItem bestelitem)
+        {
+            if (this.item.ToString() == bestelitem.item.ToString())
             {
-                this.aantal++;
+                this.aantal = this.aantal + bestelitem.aantal;
                 return true;
             }
             else
             {
                 return false;
             }
+        }
+
+        public bool Vergelijk(string item)
+        {
+            if (this.item.ToString() == item)
+            { return true; }
+
+            else { return false; }
+        }
+
+        public void WijzigAantal(int aantal)
+        {
+            this.aantal = aantal;
         }
     }
 }
