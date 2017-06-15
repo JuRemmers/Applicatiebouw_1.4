@@ -64,23 +64,5 @@ namespace DAO
 
             return medewerker;
         }
-
-        // Kayleigh Vossen
-        public Medewerker GetMedewerkerByBestellingId(int id)
-        {
-            string com = "SELECT Medewerker_ID FROM Bestelling WHERE ID=@id";
-            SqlCommand c = new SqlCommand(com, conn);
-            c.Parameters.AddWithValue("@id", id);
-            conn.Open();
-            int medId = (int)c.ExecuteScalar();
-            
-            com = "SELECT Voornaam FROM Medewerker WHERE ID=@id";
-            c = new SqlCommand(com, conn);
-            c.Parameters.AddWithValue("@id", medId);
-            string medNaam = c.ExecuteScalar().ToString();
-
-            Medewerker m = new Medewerker(medId, medNaam);
-            return m;
-        }
     }
 }

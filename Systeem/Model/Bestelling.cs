@@ -15,20 +15,15 @@ namespace Model
         public Medewerker medewerker { get; private set; }
         
 
-        public Bestelling(int ID,  Tafel tafel, Medewerker medewerker)
+        public Bestelling(int ID, bool betaald ,Tafel tafel, Medewerker medewerker)
         {
             this.ID = ID;
-            this.betaald = false;
+            this.betaald = betaald;
             this.tafel = tafel;
             this.medewerker = medewerker;
         }
 
-        // Kayleigh Vossen
-        public Bestelling(int ID)
-        {
-            this.ID = ID;
-            this.betaald = false;
-        }
+        
 
         public override string ToString()
         {

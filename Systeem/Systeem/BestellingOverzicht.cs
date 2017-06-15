@@ -32,7 +32,7 @@ namespace Systeem
             clb_besteIitems.Items.Clear();
             int bestelId = bestellingid;
             BestellingService service = new BestellingService();
-            List<BestelItem> bestellingen = service.GetAllForItems(bestelId);           
+            List<BestelItem> bestellingen = service.GetAllForItems(bestelId);                                   
             TafelOverzicht tafel = new TafelOverzicht();            
             
 
@@ -55,13 +55,20 @@ namespace Systeem
 
         public void btn_aanpassen_Click(object sender, EventArgs e)
         {
-            Status updatestatus = Model.Status.Gereed;
-            string gerecht = clb_besteIitems.SelectedItems[0].Text;
-            updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
-            BestellingService service = new BestellingService();
-            service.UpdateStatus(bestellingid, updatestatus, gerecht);
-            
-            Bestellinglist(bestellingid);
+            try
+            {
+                Status updatestatus = Model.Status.Gereed;
+                string gerecht = clb_besteIitems.SelectedItems[0].Text;
+                updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
+                BestellingService service = new BestellingService();
+                service.UpdateStatus(bestellingid, updatestatus, gerecht);
+                Bestellinglist(bestellingid);
+            }
+
+            catch
+            {
+                MessageBox.Show("Maak een selectie");
+            }
         }
     }
 }

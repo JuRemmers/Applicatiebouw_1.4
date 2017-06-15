@@ -74,5 +74,18 @@ namespace Logica
             List<BestelItem>bestelling = bestelItemDAL.GetBestellingItemsByBestellingId(bestelId);
             return bestelling;
         }
+
+        public bool WijzigAantal(string item, int aantal)
+        {
+            foreach (BestelItem bestelItem in bestelling)
+            {
+                if (bestelItem.Vergelijk(item))
+                {
+                    bestelItem.WijzigAantal(aantal);
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

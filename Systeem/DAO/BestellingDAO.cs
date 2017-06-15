@@ -70,7 +70,8 @@ namespace DAO
                 checkid = 2;
             }
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling INNER JOIN Bestel_Item ON Bestelling.ID = Bestel_Item.Bestel_ID INNER JOIN  Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID INNER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID WHERE Menu_Kaart.ID = " + checkid, conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling INNER JOIN Bestel_Item ON Bestelling.ID = Bestel_Item.Bestel_ID INNER JOIN  Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID INNER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID WHERE Menu_Kaart.ID = @id AND Bestelling.Betaald = 0", conn);
+            command.Parameters.AddWithValue("@id", checkid);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
@@ -90,7 +91,7 @@ namespace DAO
             conn.Open();
 
             List<Bestelling> bestellingalles = new List<Bestelling>();
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling ", conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Betaald = 0", conn);
             SqlDataReader reader = command.ExecuteReader();
 
             while (reader.Read())
