@@ -38,7 +38,7 @@ namespace Logica
 
         public void UpdateStatus(int bestellingid, Status updatestatus)
         {
-            BestelDAL.UpdateBestelling(bestellingid, updatestatus);
+            bestelItemDAL.UpdateBestelitem(bestellingid, updatestatus);
         }
 
         public List<BestelItem> GetBestelling()

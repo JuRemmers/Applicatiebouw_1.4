@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.clb_besteIitems = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.btn_aanpassen = new System.Windows.Forms.Button();
             this.lb_bestelling = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.lb_bestellingtitel = new System.Windows.Forms.Label();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // clb_besteIitems
@@ -50,6 +50,16 @@
             this.clb_besteIitems.UseCompatibleStateImageBehavior = false;
             this.clb_besteIitems.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Gerecht";
+            this.columnHeader1.Width = 300;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Aantal";
+            this.columnHeader2.Width = 99;
+            // 
             // cb_status
             // 
             this.cb_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
@@ -58,6 +68,7 @@
             this.cb_status.Name = "cb_status";
             this.cb_status.Size = new System.Drawing.Size(197, 39);
             this.cb_status.TabIndex = 1;
+            this.cb_status.Text = "Status...";
             // 
             // btn_aanpassen
             // 
@@ -68,6 +79,7 @@
             this.btn_aanpassen.TabIndex = 2;
             this.btn_aanpassen.Text = "Aanpassen";
             this.btn_aanpassen.UseVisualStyleBackColor = true;
+            this.btn_aanpassen.Click += new System.EventHandler(this.btn_aanpassen_Click);
             // 
             // lb_bestelling
             // 
@@ -100,21 +112,12 @@
             this.lb_bestellingtitel.TabIndex = 5;
             this.lb_bestellingtitel.Text = "Bestelling:";
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Gerecht";
-            this.columnHeader1.Width = 300;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Aantal";
-            this.columnHeader2.Width = 99;
-            // 
             // BestellingOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 591);
+            this.ControlBox = false;
             this.Controls.Add(this.lb_bestellingtitel);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lb_bestelling);

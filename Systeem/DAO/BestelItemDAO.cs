@@ -50,5 +50,17 @@ namespace DAO
             conn.Close();
             return items;
         }
+        public void UpdateBestelitem(int bestellingid, Status updatestatus)
+        {
+            string stringstatus = updatestatus.ToString();
+            SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st WHERE Bestelling.ID = @id", conn);
+            command.Parameters.AddWithValue("@id", bestellingid);
+            command.Parameters.AddWithValue("@st", stringstatus);
+
+            conn.Open();
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
     }
 }

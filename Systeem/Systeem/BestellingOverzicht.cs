@@ -14,10 +14,16 @@ namespace Systeem
 {
     public partial class BestellingOverzicht : Form
     {
+        int bestellingid;
         public BestellingOverzicht(int bestellingid)
         {
+            this.bestellingid = bestellingid;
             InitializeComponent();
             Bestellinglist(bestellingid);
+            cb_status.Items.Add("Opgenomen");
+            cb_status.Items.Add("Onderhande");
+            cb_status.Items.Add("Gereed");
+            cb_status.Items.Add("Uitgeserveerd");
         }
 
         public void Bestellinglist(int bestellingid)
@@ -41,6 +47,15 @@ namespace Systeem
     private void btn_back_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void btn_aanpassen_Click(object sender, EventArgs e)
+        {
+            Status updatestatus = Model.Status.Gereed;
+            updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
+            BestellingService service = new BestellingService();
+            service.UpdateStatus(bestellingid, updatestatus);
+
         }
     }
 }
