@@ -8,7 +8,7 @@ namespace Model
 {
     public class BestelItem
     {
-        private int ID; 
+        private int ID;
         private Bestelling bestelling;
         public MenuItem item { get; private set; }
         public int aantal { get; private set; }
@@ -56,6 +56,19 @@ namespace Model
             {
                 return false;
             }
+        }
+
+        public bool Vergelijk(string item)
+        {
+            if (this.item.ToString() == item)
+            { return true; }
+
+            else { return false; }
+        }
+
+        public void WijzigAantal(int aantal)
+        {
+            this.aantal = aantal;
         }
     }
 }
