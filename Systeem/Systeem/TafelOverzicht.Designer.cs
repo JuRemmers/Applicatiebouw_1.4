@@ -293,6 +293,11 @@
             // 
             this.nod_tafel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nod_tafel.Location = new System.Drawing.Point(55, 426);
+            this.nod_tafel.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nod_tafel.Name = "nod_tafel";
             this.nod_tafel.Size = new System.Drawing.Size(39, 26);
             this.nod_tafel.TabIndex = 14;
@@ -478,9 +483,15 @@
             // 
             this.txt_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_aantal.Location = new System.Drawing.Point(63, 507);
+            this.txt_aantal.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.txt_aantal.Name = "txt_aantal";
             this.txt_aantal.Size = new System.Drawing.Size(120, 29);
             this.txt_aantal.TabIndex = 6;
+            this.txt_aantal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt_aantal.Value = new decimal(new int[] {
             1,
             0,

@@ -171,6 +171,7 @@ namespace Systeem
 
                 UpdateAantal();
 
+                txt_aantal.Text = "1";
                 this.clb_menukaart.SelectedIndices.Clear();
             }
         }
