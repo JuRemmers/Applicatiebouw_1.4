@@ -46,9 +46,10 @@ namespace DAO
                 int menuItemID = reader.GetInt32(2);
                 int aantal = reader.GetInt32(3);
                 Status status = (Status) Enum.Parse(typeof(Status),reader.GetString(4));
-                string opmerking = reader.GetString(5);
+                string opmerking = "";
+                
                 double BestelItemPrijs = reader.GetDouble(6);
-                DateTime bestelItemTijd = reader.GetDateTime(7);
+                DateTime bestelItemTijd = DateTime.Now;
                 string MenuItemNaam = reader.GetString(9);
                 double MenuItemPrijs = reader.GetDouble(10);
                 int MenuItemVoorraad = reader.GetInt32(11);
