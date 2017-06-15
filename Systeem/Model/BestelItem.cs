@@ -12,7 +12,7 @@ namespace Model
         private Bestelling bestelling;
         public MenuItem item { get; private set; }
         public int aantal { get; private set; }
-        private Status status;
+        public Status status { get; private set; }
         private string opmerking;
 
         public BestelItem(int id, Bestelling bestelling, MenuItem item, int aantal, Status status, string opmerking)
@@ -35,6 +35,12 @@ namespace Model
         {
             this.item = item;
             this.aantal = aantal;
+        }
+        public BestelItem(MenuItem item, int aantal, Status status)
+        {
+            this.item = item;
+            this.aantal = aantal;
+            this.status = status;
         }
 
         public bool Compare(BestelItem item)

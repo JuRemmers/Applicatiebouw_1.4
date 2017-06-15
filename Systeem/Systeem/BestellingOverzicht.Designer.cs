@@ -36,14 +36,19 @@
             this.lb_bestelling = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.lb_bestellingtitel = new System.Windows.Forms.Label();
+            this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // clb_besteIitems
             // 
+            this.clb_besteIitems.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.clb_besteIitems.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
-            this.columnHeader2});
-            this.clb_besteIitems.Location = new System.Drawing.Point(13, 46);
+            this.columnHeader2,
+            this.status});
+            this.clb_besteIitems.FullRowSelect = true;
+            this.clb_besteIitems.HideSelection = false;
+            this.clb_besteIitems.Location = new System.Drawing.Point(11, 46);
             this.clb_besteIitems.Name = "clb_besteIitems";
             this.clb_besteIitems.Size = new System.Drawing.Size(399, 489);
             this.clb_besteIitems.TabIndex = 0;
@@ -53,12 +58,12 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Gerecht";
-            this.columnHeader1.Width = 300;
+            this.columnHeader1.Width = 250;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Aantal";
-            this.columnHeader2.Width = 99;
+            this.columnHeader2.Width = 50;
             // 
             // cb_status
             // 
@@ -112,6 +117,11 @@
             this.lb_bestellingtitel.TabIndex = 5;
             this.lb_bestellingtitel.Text = "Bestelling:";
             // 
+            // status
+            // 
+            this.status.Text = "Status";
+            this.status.Width = 100;
+            // 
             // BestellingOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,5 +151,6 @@
         private System.Windows.Forms.Label lb_bestellingtitel;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader status;
     }
 }
