@@ -13,8 +13,8 @@ namespace DAO
     //Gemaakt door Julian Remmers
     public class TafelDAO
     {
-        protected SqlConnection conn;
-        protected DBconnection dbconn;
+        protected SqlConnection conn; // Algemeen verbinding leggen met DB
+        protected DBconnection dbconn; // Methode om in te loggen
 
         public TafelDAO()
         {
@@ -93,6 +93,15 @@ namespace DAO
             }
 
             return bezet;
+        }
+
+        public void UpdateStatus(int id, bool status)
+        {
+            SqlCommand c = new SqlCommand("UPDATE Tafel SET Bezet ='" + status.ToString() + "' WHERE ID =" + id, conn); // Enkele haakjes want varchar (hierom geen parameters)
+
+            conn.Open();
+            c.ExecuteNonQuery();
+            conn.Close();
         }
 
     }

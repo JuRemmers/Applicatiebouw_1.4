@@ -44,6 +44,7 @@
     <Compile Include="Loginservice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RekeningService.cs" />
+    <Compile Include="TafelService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAO\DAO.csproj">
