@@ -23,12 +23,15 @@ namespace DAO
         // Kayleigh
         public List<BestelItem> GetMenuItemsByBestellingId(int bestelId)
         {
-            string com = "SELECT *" +
-                            " FROM Bestel_Item" +
-                            " FULL OUTER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID" +
-                            " FULL OUTER JOIN Bestelling ON Bestelling.ID = Bestel_Item.Bestel_ID" +
-                            " FULL OUTER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID" +
-                            " WHERE Bestel_Item.Bestel_ID = 1 AND Bestel_Item.Betaald=0";
+            string com ="SELECT *" +
+                        " FROM Bestel_Item" +
+                        " FULL OUTER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID" +
+                        " FULL OUTER JOIN Bestelling ON Bestelling.ID = Bestel_Item.Bestel_ID" +
+                        " FULL OUTER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID" +
+                        " FULL OUTER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID" +
+                        " FULL OUTER JOIN Tafel ON Bestelling.Tafel_ID = Tafel.ID" +
+                        " FULL OUTER JOIN Medewerker ON Bestelling.Medewerker_ID = Medewerker.ID" +
+                        " WHERE Bestel_Item.Bestel_ID = bestelId";
 
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", bestelId);
@@ -75,5 +78,18 @@ namespace DAO
             conn.Close();
             return items;
         }
-    }
+
+        public void UpdateBestelitem(int bestellingid, Status updatestatus)
+         {
+            string stringstatus = updatestatus.ToString();
+             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st WHERE Bestelling.ID = @id", conn);
+             command.Parameters.AddWithValue("@id", bestellingid);
+             command.Parameters.AddWithValue("@st", stringstatus);
+ 
+             conn.Open();
+            command.ExecuteNonQuery();
+ 
+            conn.Close();
+        }
+}
 }

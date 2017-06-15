@@ -13,7 +13,7 @@ namespace Model
         public MenuItem item { get; private set; }
         public int aantal { get; private set; }
         public double prijs { get; private set; }
-        private Status status;
+        public Status status { get; private set; }
         private string opmerking;
         public DateTime tijd { get; private set; }
 
