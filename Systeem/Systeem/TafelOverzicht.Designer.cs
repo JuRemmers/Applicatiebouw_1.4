@@ -74,6 +74,12 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
+            this.btn_verwijderitem = new System.Windows.Forms.Button();
+            this.btn_wijzigAantal = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btn_plaats = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_table3)).BeginInit();
@@ -92,6 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_aantal)).BeginInit();
             this.tp_huidige_bestellingen.SuspendLayout();
             this.gbox_bestellingen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_tafeloverzicht
@@ -111,6 +119,7 @@
             // 
             // tp_plattegrond
             // 
+            this.tp_plattegrond.Controls.Add(this.pictureBox1);
             this.tp_plattegrond.Controls.Add(this.pb_table3);
             this.tp_plattegrond.Controls.Add(this.pb_table5);
             this.tp_plattegrond.Controls.Add(this.pb_table7);
@@ -126,7 +135,7 @@
             this.tp_plattegrond.Location = new System.Drawing.Point(4, 34);
             this.tp_plattegrond.Name = "tp_plattegrond";
             this.tp_plattegrond.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_plattegrond.Size = new System.Drawing.Size(416, 553);
+            this.tp_plattegrond.Size = new System.Drawing.Size(457, 553);
             this.tp_plattegrond.TabIndex = 0;
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
@@ -134,7 +143,7 @@
             // pb_table3
             // 
             this.pb_table3.Image = ((System.Drawing.Image)(resources.GetObject("pb_table3.Image")));
-            this.pb_table3.Location = new System.Drawing.Point(93, 166);
+            this.pb_table3.Location = new System.Drawing.Point(93, 148);
             this.pb_table3.Name = "pb_table3";
             this.pb_table3.Size = new System.Drawing.Size(89, 81);
             this.pb_table3.TabIndex = 11;
@@ -144,7 +153,7 @@
             // pb_table5
             // 
             this.pb_table5.Image = ((System.Drawing.Image)(resources.GetObject("pb_table5.Image")));
-            this.pb_table5.Location = new System.Drawing.Point(93, 253);
+            this.pb_table5.Location = new System.Drawing.Point(93, 235);
             this.pb_table5.Name = "pb_table5";
             this.pb_table5.Size = new System.Drawing.Size(89, 81);
             this.pb_table5.TabIndex = 10;
@@ -154,7 +163,7 @@
             // pb_table7
             // 
             this.pb_table7.Image = ((System.Drawing.Image)(resources.GetObject("pb_table7.Image")));
-            this.pb_table7.Location = new System.Drawing.Point(93, 340);
+            this.pb_table7.Location = new System.Drawing.Point(93, 322);
             this.pb_table7.Name = "pb_table7";
             this.pb_table7.Size = new System.Drawing.Size(89, 81);
             this.pb_table7.TabIndex = 9;
@@ -164,7 +173,7 @@
             // pb_table9
             // 
             this.pb_table9.Image = ((System.Drawing.Image)(resources.GetObject("pb_table9.Image")));
-            this.pb_table9.Location = new System.Drawing.Point(93, 427);
+            this.pb_table9.Location = new System.Drawing.Point(93, 409);
             this.pb_table9.Name = "pb_table9";
             this.pb_table9.Size = new System.Drawing.Size(89, 81);
             this.pb_table9.TabIndex = 8;
@@ -174,7 +183,7 @@
             // pb_table2
             // 
             this.pb_table2.Image = ((System.Drawing.Image)(resources.GetObject("pb_table2.Image")));
-            this.pb_table2.Location = new System.Drawing.Point(215, 79);
+            this.pb_table2.Location = new System.Drawing.Point(215, 61);
             this.pb_table2.Name = "pb_table2";
             this.pb_table2.Size = new System.Drawing.Size(89, 81);
             this.pb_table2.TabIndex = 7;
@@ -184,7 +193,7 @@
             // pb_table4
             // 
             this.pb_table4.Image = ((System.Drawing.Image)(resources.GetObject("pb_table4.Image")));
-            this.pb_table4.Location = new System.Drawing.Point(215, 166);
+            this.pb_table4.Location = new System.Drawing.Point(215, 148);
             this.pb_table4.Name = "pb_table4";
             this.pb_table4.Size = new System.Drawing.Size(89, 81);
             this.pb_table4.TabIndex = 6;
@@ -194,7 +203,7 @@
             // pb_table6
             // 
             this.pb_table6.Image = ((System.Drawing.Image)(resources.GetObject("pb_table6.Image")));
-            this.pb_table6.Location = new System.Drawing.Point(215, 253);
+            this.pb_table6.Location = new System.Drawing.Point(215, 235);
             this.pb_table6.Name = "pb_table6";
             this.pb_table6.Size = new System.Drawing.Size(89, 81);
             this.pb_table6.TabIndex = 5;
@@ -204,7 +213,7 @@
             // pb_table8
             // 
             this.pb_table8.Image = ((System.Drawing.Image)(resources.GetObject("pb_table8.Image")));
-            this.pb_table8.Location = new System.Drawing.Point(215, 340);
+            this.pb_table8.Location = new System.Drawing.Point(215, 322);
             this.pb_table8.Name = "pb_table8";
             this.pb_table8.Size = new System.Drawing.Size(89, 81);
             this.pb_table8.TabIndex = 4;
@@ -214,7 +223,7 @@
             // pb_table10
             // 
             this.pb_table10.Image = ((System.Drawing.Image)(resources.GetObject("pb_table10.Image")));
-            this.pb_table10.Location = new System.Drawing.Point(215, 427);
+            this.pb_table10.Location = new System.Drawing.Point(215, 409);
             this.pb_table10.Name = "pb_table10";
             this.pb_table10.Size = new System.Drawing.Size(89, 81);
             this.pb_table10.TabIndex = 3;
@@ -226,7 +235,7 @@
             this.pb_table1.BackColor = System.Drawing.Color.Transparent;
             this.pb_table1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pb_table1.Image = ((System.Drawing.Image)(resources.GetObject("pb_table1.Image")));
-            this.pb_table1.Location = new System.Drawing.Point(93, 79);
+            this.pb_table1.Location = new System.Drawing.Point(93, 61);
             this.pb_table1.Name = "pb_table1";
             this.pb_table1.Size = new System.Drawing.Size(89, 81);
             this.pb_table1.TabIndex = 2;
@@ -253,6 +262,7 @@
             // 
             // tp_bestelling_maken
             // 
+            this.tp_bestelling_maken.Controls.Add(this.gbox_Bestelling);
             this.tp_bestelling_maken.Controls.Add(this.gbox_items);
             this.tp_bestelling_maken.Controls.Add(this.btn_bekijk_bestelling);
             this.tp_bestelling_maken.Controls.Add(this.btn_diner);
@@ -268,7 +278,6 @@
             // 
             // gbox_items
             // 
-            this.gbox_items.Controls.Add(this.gbox_Bestelling);
             this.gbox_items.Controls.Add(this.lbl_aantal);
             this.gbox_items.Controls.Add(this.lbl_test);
             this.gbox_items.Controls.Add(this.clb_menukaart);
@@ -287,10 +296,15 @@
             // 
             // gbox_Bestelling
             // 
+            this.gbox_Bestelling.Controls.Add(this.btn_plaats);
+            this.gbox_Bestelling.Controls.Add(this.numericUpDown1);
+            this.gbox_Bestelling.Controls.Add(this.button1);
+            this.gbox_Bestelling.Controls.Add(this.btn_wijzigAantal);
+            this.gbox_Bestelling.Controls.Add(this.btn_verwijderitem);
             this.gbox_Bestelling.Controls.Add(this.lv_bestelling);
             this.gbox_Bestelling.Controls.Add(this.label3);
             this.gbox_Bestelling.Controls.Add(this.button3);
-            this.gbox_Bestelling.Location = new System.Drawing.Point(129, 75);
+            this.gbox_Bestelling.Location = new System.Drawing.Point(3, 6);
             this.gbox_Bestelling.Name = "gbox_Bestelling";
             this.gbox_Bestelling.Size = new System.Drawing.Size(404, 539);
             this.gbox_Bestelling.TabIndex = 10;
@@ -304,9 +318,11 @@
             this.columnHeader1,
             this.columnHeader2});
             this.lv_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lv_bestelling.HideSelection = false;
             this.lv_bestelling.Location = new System.Drawing.Point(6, 49);
+            this.lv_bestelling.MultiSelect = false;
             this.lv_bestelling.Name = "lv_bestelling";
-            this.lv_bestelling.Size = new System.Drawing.Size(390, 451);
+            this.lv_bestelling.Size = new System.Drawing.Size(390, 404);
             this.lv_bestelling.TabIndex = 7;
             this.lv_bestelling.UseCompatibleStateImageBehavior = false;
             this.lv_bestelling.View = System.Windows.Forms.View.Details;
@@ -314,11 +330,20 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Menu Item";
-            this.columnHeader1.Width = 331;
+            this.columnHeader1.Width = 324;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "Prijs";
+            this.columnHeader2.Text = "Aantal";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(87, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Test";
             // 
             // label3
             // 
@@ -332,9 +357,9 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(6, 12);
+            this.button3.Location = new System.Drawing.Point(6, 13);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 31);
+            this.button3.Size = new System.Drawing.Size(75, 30);
             this.button3.TabIndex = 1;
             this.button3.Text = "Terug";
             this.button3.UseVisualStyleBackColor = true;
@@ -367,7 +392,9 @@
             this.Menu_Item,
             this.Prijs});
             this.clb_menukaart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clb_menukaart.HideSelection = false;
             this.clb_menukaart.Location = new System.Drawing.Point(6, 49);
+            this.clb_menukaart.MultiSelect = false;
             this.clb_menukaart.Name = "clb_menukaart";
             this.clb_menukaart.Size = new System.Drawing.Size(396, 451);
             this.clb_menukaart.TabIndex = 7;
@@ -595,6 +622,68 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
+            // btn_verwijderitem
+            // 
+            this.btn_verwijderitem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_verwijderitem.Location = new System.Drawing.Point(6, 459);
+            this.btn_verwijderitem.Name = "btn_verwijderitem";
+            this.btn_verwijderitem.Size = new System.Drawing.Size(140, 30);
+            this.btn_verwijderitem.TabIndex = 9;
+            this.btn_verwijderitem.Text = "Verwijder item";
+            this.btn_verwijderitem.UseVisualStyleBackColor = true;
+            // 
+            // btn_wijzigAantal
+            // 
+            this.btn_wijzigAantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_wijzigAantal.Location = new System.Drawing.Point(234, 13);
+            this.btn_wijzigAantal.Name = "btn_wijzigAantal";
+            this.btn_wijzigAantal.Size = new System.Drawing.Size(117, 30);
+            this.btn_wijzigAantal.TabIndex = 10;
+            this.btn_wijzigAantal.Text = "Wijzig aantal";
+            this.btn_wijzigAantal.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(235, 459);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(161, 30);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Voeg opmerking toe";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(357, 14);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(39, 26);
+            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btn_plaats
+            // 
+            this.btn_plaats.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_plaats.Location = new System.Drawing.Point(103, 495);
+            this.btn_plaats.Name = "btn_plaats";
+            this.btn_plaats.Size = new System.Drawing.Size(177, 44);
+            this.btn_plaats.TabIndex = 12;
+            this.btn_plaats.Text = "Plaats bestelling";
+            this.btn_plaats.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-4, 490);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 67);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,6 +712,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_aantal)).EndInit();
             this.tp_huidige_bestellingen.ResumeLayout(false);
             this.gbox_bestellingen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,5 +765,11 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_plaats;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_wijzigAantal;
+        private System.Windows.Forms.Button btn_verwijderitem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

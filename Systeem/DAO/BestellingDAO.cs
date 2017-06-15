@@ -126,7 +126,7 @@ namespace DAO
         // Kayleigh
         public void UpdateBetaald(int bestelId)
         {
-            string com = "UPDATE Bestelling SET Betaald=True WHERE ID=@id";
+            string com = "UPDATE Bestelling SET Betaald=1 WHERE ID=@id";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", bestelId);
             conn.Open();

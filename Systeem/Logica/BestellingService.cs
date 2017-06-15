@@ -18,7 +18,7 @@ namespace Logica
         public bool Add(string gerecht, int aantal)
         {
             MenuItem item = menuItemDAL.GetForGerecht(gerecht);
-            if (item ==null || item.voorraad <= 0)
+            if (item == null || item.voorraad <= 0)
             { return false; }
 
             BestelItem bestelitem = new BestelItem(item, aantal);

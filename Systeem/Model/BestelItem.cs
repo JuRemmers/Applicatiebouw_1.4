@@ -35,6 +35,8 @@ namespace Model
         {
             this.item = item;
             this.aantal = aantal;
+            opmerking = "";
+            status = Status.Uitgeserveerd;
         }
         public BestelItem(MenuItem item, int aantal, Status status)
         {
@@ -43,9 +45,9 @@ namespace Model
             this.status = status;
         }
 
-        public bool Compare(BestelItem item)
+        public bool Compare(BestelItem bestelitem)
         {
-            if (this.item == item.item)
+            if (this.item.ToString() == bestelitem.item.ToString())
             {
                 this.aantal++;
                 return true;
