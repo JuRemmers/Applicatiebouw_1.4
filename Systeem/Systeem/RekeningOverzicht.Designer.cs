@@ -30,16 +30,20 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_tafeloverzicht = new System.Windows.Forms.TabPage();
+            this.btn_vrij = new System.Windows.Forms.Button();
+            this.btn_bezet = new System.Windows.Forms.Button();
             this.lbl_tafelnummer = new System.Windows.Forms.Label();
             this.btn_terugPlattegrond = new System.Windows.Forms.Button();
             this.btn_afrekenen = new System.Windows.Forms.Button();
             this.btn_AddBestelling = new System.Windows.Forms.Button();
-            this.btn_wijzigBestelling = new System.Windows.Forms.Button();
+            this.bt_wijzig_tafelstatus = new System.Windows.Forms.Button();
             this.lv_bestelitems = new System.Windows.Forms.ListView();
             this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tp_rekening = new System.Windows.Forms.TabPage();
+            this.btn_updatopm = new System.Windows.Forms.Button();
+            this.txt_opmerking = new System.Windows.Forms.TextBox();
             this.btn_updatefooi = new System.Windows.Forms.Button();
             this.lbl_tafelnummer2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -63,8 +67,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txt_opmerking = new System.Windows.Forms.TextBox();
-            this.btn_updatopm = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -88,11 +90,13 @@
             // 
             // tp_tafeloverzicht
             // 
+            this.tp_tafeloverzicht.Controls.Add(this.btn_vrij);
+            this.tp_tafeloverzicht.Controls.Add(this.btn_bezet);
             this.tp_tafeloverzicht.Controls.Add(this.lbl_tafelnummer);
             this.tp_tafeloverzicht.Controls.Add(this.btn_terugPlattegrond);
             this.tp_tafeloverzicht.Controls.Add(this.btn_afrekenen);
             this.tp_tafeloverzicht.Controls.Add(this.btn_AddBestelling);
-            this.tp_tafeloverzicht.Controls.Add(this.btn_wijzigBestelling);
+            this.tp_tafeloverzicht.Controls.Add(this.bt_wijzig_tafelstatus);
             this.tp_tafeloverzicht.Controls.Add(this.lv_bestelitems);
             this.tp_tafeloverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tp_tafeloverzicht.Location = new System.Drawing.Point(4, 34);
@@ -102,6 +106,28 @@
             this.tp_tafeloverzicht.TabIndex = 1;
             this.tp_tafeloverzicht.Text = "Overzicht tafel";
             this.tp_tafeloverzicht.UseVisualStyleBackColor = true;
+            // 
+            // btn_vrij
+            // 
+            this.btn_vrij.BackColor = System.Drawing.Color.LightGreen;
+            this.btn_vrij.Location = new System.Drawing.Point(19, 480);
+            this.btn_vrij.Name = "btn_vrij";
+            this.btn_vrij.Size = new System.Drawing.Size(83, 53);
+            this.btn_vrij.TabIndex = 7;
+            this.btn_vrij.Text = "Vrij";
+            this.btn_vrij.UseVisualStyleBackColor = false;
+            this.btn_vrij.Click += new System.EventHandler(this.btn_vrij_Click);
+            // 
+            // btn_bezet
+            // 
+            this.btn_bezet.BackColor = System.Drawing.Color.Salmon;
+            this.btn_bezet.Location = new System.Drawing.Point(108, 480);
+            this.btn_bezet.Name = "btn_bezet";
+            this.btn_bezet.Size = new System.Drawing.Size(81, 53);
+            this.btn_bezet.TabIndex = 6;
+            this.btn_bezet.Text = "Bezet";
+            this.btn_bezet.UseVisualStyleBackColor = false;
+            this.btn_bezet.Click += new System.EventHandler(this.btn_bezet_Click);
             // 
             // lbl_tafelnummer
             // 
@@ -128,7 +154,7 @@
             // 
             // btn_afrekenen
             // 
-            this.btn_afrekenen.Location = new System.Drawing.Point(108, 498);
+            this.btn_afrekenen.Location = new System.Drawing.Point(206, 498);
             this.btn_afrekenen.Name = "btn_afrekenen";
             this.btn_afrekenen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_afrekenen.Size = new System.Drawing.Size(201, 44);
@@ -148,15 +174,18 @@
             this.btn_AddBestelling.UseVisualStyleBackColor = true;
             this.btn_AddBestelling.Click += new System.EventHandler(this.btn_AddBestelling_Click);
             // 
-            // btn_wijzigBestelling
+            // bt_wijzig_tafelstatus
             // 
-            this.btn_wijzigBestelling.Location = new System.Drawing.Point(6, 448);
-            this.btn_wijzigBestelling.Name = "btn_wijzigBestelling";
-            this.btn_wijzigBestelling.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btn_wijzigBestelling.Size = new System.Drawing.Size(197, 44);
-            this.btn_wijzigBestelling.TabIndex = 1;
-            this.btn_wijzigBestelling.Text = "Wijzig bestelling";
-            this.btn_wijzigBestelling.UseVisualStyleBackColor = true;
+            this.bt_wijzig_tafelstatus.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_wijzig_tafelstatus.Location = new System.Drawing.Point(6, 448);
+            this.bt_wijzig_tafelstatus.Name = "bt_wijzig_tafelstatus";
+            this.bt_wijzig_tafelstatus.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.bt_wijzig_tafelstatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bt_wijzig_tafelstatus.Size = new System.Drawing.Size(197, 94);
+            this.bt_wijzig_tafelstatus.TabIndex = 1;
+            this.bt_wijzig_tafelstatus.Text = "Wijzig status tafel:";
+            this.bt_wijzig_tafelstatus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bt_wijzig_tafelstatus.UseVisualStyleBackColor = true;
             // 
             // lv_bestelitems
             // 
@@ -219,6 +248,25 @@
             this.tp_rekening.Text = "Rekening opmaken";
             this.tp_rekening.UseVisualStyleBackColor = true;
             this.tp_rekening.Click += new System.EventHandler(this.tp_rekening_Click);
+            // 
+            // btn_updatopm
+            // 
+            this.btn_updatopm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_updatopm.Location = new System.Drawing.Point(119, 469);
+            this.btn_updatopm.Name = "btn_updatopm";
+            this.btn_updatopm.Size = new System.Drawing.Size(175, 30);
+            this.btn_updatopm.TabIndex = 22;
+            this.btn_updatopm.Text = "Voeg opmerking toe";
+            this.btn_updatopm.UseVisualStyleBackColor = true;
+            this.btn_updatopm.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txt_opmerking
+            // 
+            this.txt_opmerking.Location = new System.Drawing.Point(10, 417);
+            this.txt_opmerking.Multiline = true;
+            this.txt_opmerking.Name = "txt_opmerking";
+            this.txt_opmerking.Size = new System.Drawing.Size(401, 46);
+            this.txt_opmerking.TabIndex = 21;
             // 
             // btn_updatefooi
             // 
@@ -445,25 +493,6 @@
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
             // 
-            // txt_opmerking
-            // 
-            this.txt_opmerking.Location = new System.Drawing.Point(10, 417);
-            this.txt_opmerking.Multiline = true;
-            this.txt_opmerking.Name = "txt_opmerking";
-            this.txt_opmerking.Size = new System.Drawing.Size(401, 46);
-            this.txt_opmerking.TabIndex = 21;
-            // 
-            // btn_updatopm
-            // 
-            this.btn_updatopm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_updatopm.Location = new System.Drawing.Point(119, 469);
-            this.btn_updatopm.Name = "btn_updatopm";
-            this.btn_updatopm.Size = new System.Drawing.Size(175, 30);
-            this.btn_updatopm.TabIndex = 22;
-            this.btn_updatopm.Text = "Voeg opmerking toe";
-            this.btn_updatopm.UseVisualStyleBackColor = true;
-            this.btn_updatopm.Click += new System.EventHandler(this.button1_Click);
-            // 
             // RekeningOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,7 +519,7 @@
         private System.Windows.Forms.Button btn_terugPlattegrond;
         private System.Windows.Forms.Button btn_afrekenen;
         private System.Windows.Forms.Button btn_AddBestelling;
-        private System.Windows.Forms.Button btn_wijzigBestelling;
+        private System.Windows.Forms.Button bt_wijzig_tafelstatus;
         private System.Windows.Forms.ListView lv_bestelitems;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -520,5 +549,7 @@
         private System.Windows.Forms.Button btn_updatefooi;
         private System.Windows.Forms.Button btn_updatopm;
         private System.Windows.Forms.TextBox txt_opmerking;
+        private System.Windows.Forms.Button btn_vrij;
+        private System.Windows.Forms.Button btn_bezet;
     }
 }

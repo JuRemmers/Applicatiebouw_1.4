@@ -19,6 +19,7 @@ namespace Systeem
         private int tafelId;
         private List<BestelItem> items;
         private Rekening r;
+        private TafelService t = new TafelService();
 
         public RekeningOverzicht(int tafelId)
         {
@@ -139,6 +140,21 @@ namespace Systeem
         {
             string opm = txt_opmerking.Text;
             r.UpdateOpmerking(opm);            
+        }
+
+        private void btn_bezet_Click(object sender, EventArgs e)
+        {
+            // 1. Verbind met logicalaag 
+            // 2. Logicalaag verbind met databaselaag 
+            // 3. Databaselaag zoekt uit of status bezet/vrij is
+            // 4. if status == bezet --> zet status op vrij
+            t.UpdateStatus(tafelId, false);
+            
+        }
+
+        private void btn_vrij_Click(object sender, EventArgs e)
+        {
+            t.UpdateStatus(tafelId, true);
         }
     }
 }
