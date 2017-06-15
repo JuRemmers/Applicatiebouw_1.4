@@ -32,7 +32,7 @@ namespace Systeem
             clb_besteIitems.Items.Clear();
             int bestelId = bestellingid;
             BestellingService service = new BestellingService();
-            List<BestelItem> bestellingen = service.GetAllForItems(bestelId);           
+            List<BestelItem> bestellingen = service.GetAllForItems(bestelId);                                   
             TafelOverzicht tafel = new TafelOverzicht();            
             
 

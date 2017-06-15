@@ -401,9 +401,8 @@ namespace Systeem
         }
         public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
-            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
-
             bestellingid = int.Parse(clb_bestellingen.SelectedItems[0].Text);
+            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
             overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
             overzicht.Location = new Point(this.Top, this.Left);
