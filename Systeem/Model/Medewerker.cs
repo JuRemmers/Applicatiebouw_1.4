@@ -23,13 +23,6 @@ namespace Model
             this.wachtwoord = password;
         }
 
-        // Kayleigh Vossen
-        public Medewerker(int ID, string voornaam)
-        {
-            this.ID = ID;
-            this.voornaam = voornaam;
-        }
-
         public bool CheckWachtwoord(string wAchtwoord)
         {
             if (this.wachtwoord == wAchtwoord)

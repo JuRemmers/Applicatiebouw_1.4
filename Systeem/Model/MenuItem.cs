@@ -29,13 +29,5 @@ namespace Model
         {
             return product;
         }
-
-        // Kayleigh Vossen
-        public MenuItem(string product, double prijs, Menucategorie Categorie)
-        {
-            this.product = product;
-            this.Categorie = Categorie;
-            this.prijs = prijs;
-        }
     }
 }
