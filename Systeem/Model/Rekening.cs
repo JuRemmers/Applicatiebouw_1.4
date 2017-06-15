@@ -10,7 +10,7 @@ namespace Model
 {
     public class Rekening
     {
-        private int bestelId;
+        public int bestelId { get; private set; }
         public double btwLaag { get; private set; }
         public double btwHoog { get; private set; }
         public double Prijs { get; private set; }
@@ -18,6 +18,7 @@ namespace Model
         public double totaalprijs { get; private set; }
         public Medewerker medewerker { get; private set; }
         public string opmerking { get; private set; }
+        public DateTime datumtijd { get; private set; }
 
         public Rekening(int bestelId, double btwLaag,double btwHoog,double Prijs,double fooi,double totaalprijs,Medewerker medewerker, string opmerking)
         {
@@ -29,6 +30,7 @@ namespace Model
             this.totaalprijs = totaalprijs;
             this.medewerker = medewerker;
             this.opmerking = opmerking;
+            this.datumtijd = DateTime.Now;
         }
         
         public void UpdateTipAndTotaalprijs(double fooi)

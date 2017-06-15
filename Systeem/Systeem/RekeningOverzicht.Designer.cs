@@ -48,10 +48,10 @@
             this.lbl_prijs = new System.Windows.Forms.Label();
             this.lbl_btwh = new System.Windows.Forms.Label();
             this.lbl_btwl = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_Terug = new System.Windows.Forms.Button();
             this.txt_tip = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_pin = new System.Windows.Forms.Button();
+            this.btn_contant = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,6 +63,8 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txt_opmerking = new System.Windows.Forms.TextBox();
+            this.btn_updatopm = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -122,7 +124,7 @@
             this.btn_terugPlattegrond.TabIndex = 4;
             this.btn_terugPlattegrond.Text = ">";
             this.btn_terugPlattegrond.UseVisualStyleBackColor = true;
-            this.btn_terugPlattegrond.Click += new System.EventHandler(this.button4_Click);
+            this.btn_terugPlattegrond.Click += new System.EventHandler(this.btn_terug_Click);
             // 
             // btn_afrekenen
             // 
@@ -133,7 +135,7 @@
             this.btn_afrekenen.TabIndex = 3;
             this.btn_afrekenen.Text = "Afrekenen";
             this.btn_afrekenen.UseVisualStyleBackColor = true;
-            this.btn_afrekenen.Click += new System.EventHandler(this.button3_Click);
+            this.btn_afrekenen.Click += new System.EventHandler(this.btn_afrekenen_Click);
             // 
             // btn_AddBestelling
             // 
@@ -144,7 +146,7 @@
             this.btn_AddBestelling.TabIndex = 2;
             this.btn_AddBestelling.Text = "Voeg nieuw bestelling toe";
             this.btn_AddBestelling.UseVisualStyleBackColor = true;
-            this.btn_AddBestelling.Click += new System.EventHandler(this.button2_Click);
+            this.btn_AddBestelling.Click += new System.EventHandler(this.btn_AddBestelling_Click);
             // 
             // btn_wijzigBestelling
             // 
@@ -188,6 +190,8 @@
             // 
             // tp_rekening
             // 
+            this.tp_rekening.Controls.Add(this.btn_updatopm);
+            this.tp_rekening.Controls.Add(this.txt_opmerking);
             this.tp_rekening.Controls.Add(this.btn_updatefooi);
             this.tp_rekening.Controls.Add(this.lbl_tafelnummer2);
             this.tp_rekening.Controls.Add(this.label15);
@@ -196,10 +200,10 @@
             this.tp_rekening.Controls.Add(this.lbl_prijs);
             this.tp_rekening.Controls.Add(this.lbl_btwh);
             this.tp_rekening.Controls.Add(this.lbl_btwl);
-            this.tp_rekening.Controls.Add(this.button7);
+            this.tp_rekening.Controls.Add(this.btn_Terug);
             this.tp_rekening.Controls.Add(this.txt_tip);
-            this.tp_rekening.Controls.Add(this.button6);
-            this.tp_rekening.Controls.Add(this.button5);
+            this.tp_rekening.Controls.Add(this.btn_pin);
+            this.tp_rekening.Controls.Add(this.btn_contant);
             this.tp_rekening.Controls.Add(this.label9);
             this.tp_rekening.Controls.Add(this.label8);
             this.tp_rekening.Controls.Add(this.label7);
@@ -219,7 +223,7 @@
             // btn_updatefooi
             // 
             this.btn_updatefooi.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_updatefooi.Location = new System.Drawing.Point(358, 439);
+            this.btn_updatefooi.Location = new System.Drawing.Point(358, 354);
             this.btn_updatefooi.Name = "btn_updatefooi";
             this.btn_updatefooi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_updatefooi.Size = new System.Drawing.Size(50, 20);
@@ -244,7 +248,7 @@
             // label15
             // 
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Location = new System.Drawing.Point(10, 463);
+            this.label15.Location = new System.Drawing.Point(10, 378);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(397, 2);
             this.label15.TabIndex = 18;
@@ -252,7 +256,7 @@
             // label14
             // 
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.Location = new System.Drawing.Point(11, 435);
+            this.label14.Location = new System.Drawing.Point(11, 350);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(397, 2);
             this.label14.TabIndex = 17;
@@ -261,7 +265,7 @@
             // 
             this.lbl_totaal.AutoSize = true;
             this.lbl_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totaal.Location = new System.Drawing.Point(355, 473);
+            this.lbl_totaal.Location = new System.Drawing.Point(355, 388);
             this.lbl_totaal.Name = "lbl_totaal";
             this.lbl_totaal.Size = new System.Drawing.Size(0, 16);
             this.lbl_totaal.TabIndex = 16;
@@ -270,7 +274,7 @@
             // 
             this.lbl_prijs.AutoSize = true;
             this.lbl_prijs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_prijs.Location = new System.Drawing.Point(355, 419);
+            this.lbl_prijs.Location = new System.Drawing.Point(355, 334);
             this.lbl_prijs.Name = "lbl_prijs";
             this.lbl_prijs.Size = new System.Drawing.Size(0, 16);
             this.lbl_prijs.TabIndex = 15;
@@ -279,7 +283,7 @@
             // 
             this.lbl_btwh.AutoSize = true;
             this.lbl_btwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_btwh.Location = new System.Drawing.Point(355, 397);
+            this.lbl_btwh.Location = new System.Drawing.Point(355, 312);
             this.lbl_btwh.Name = "lbl_btwh";
             this.lbl_btwh.Size = new System.Drawing.Size(0, 16);
             this.lbl_btwh.TabIndex = 14;
@@ -288,58 +292,60 @@
             // 
             this.lbl_btwl.AutoSize = true;
             this.lbl_btwl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_btwl.Location = new System.Drawing.Point(355, 373);
+            this.lbl_btwl.Location = new System.Drawing.Point(355, 288);
             this.lbl_btwl.Name = "lbl_btwl";
             this.lbl_btwl.Size = new System.Drawing.Size(0, 16);
             this.lbl_btwl.TabIndex = 13;
             // 
-            // button7
+            // btn_Terug
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(7, 6);
-            this.button7.Name = "button7";
-            this.button7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button7.Size = new System.Drawing.Size(42, 53);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "<";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btn_Terug.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Terug.Location = new System.Drawing.Point(7, 6);
+            this.btn_Terug.Name = "btn_Terug";
+            this.btn_Terug.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_Terug.Size = new System.Drawing.Size(42, 53);
+            this.btn_Terug.TabIndex = 12;
+            this.btn_Terug.Text = "<";
+            this.btn_Terug.UseVisualStyleBackColor = true;
+            this.btn_Terug.Click += new System.EventHandler(this.btn_Terug_Click);
             // 
             // txt_tip
             // 
-            this.txt_tip.Location = new System.Drawing.Point(252, 440);
+            this.txt_tip.Location = new System.Drawing.Point(252, 355);
             this.txt_tip.Name = "txt_tip";
             this.txt_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_tip.Size = new System.Drawing.Size(100, 20);
             this.txt_tip.TabIndex = 11;
             // 
-            // button6
+            // btn_pin
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(209, 502);
-            this.button6.Name = "button6";
-            this.button6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button6.Size = new System.Drawing.Size(198, 40);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Pinnen";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_pin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pin.Location = new System.Drawing.Point(209, 502);
+            this.btn_pin.Name = "btn_pin";
+            this.btn_pin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_pin.Size = new System.Drawing.Size(198, 40);
+            this.btn_pin.TabIndex = 10;
+            this.btn_pin.Text = "Pinnen";
+            this.btn_pin.UseVisualStyleBackColor = true;
+            this.btn_pin.Click += new System.EventHandler(this.btn_pin_Click);
             // 
-            // button5
+            // btn_contant
             // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(7, 502);
-            this.button5.Name = "button5";
-            this.button5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button5.Size = new System.Drawing.Size(196, 40);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Contant betalen";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_contant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_contant.Location = new System.Drawing.Point(7, 502);
+            this.btn_contant.Name = "btn_contant";
+            this.btn_contant.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btn_contant.Size = new System.Drawing.Size(196, 40);
+            this.btn_contant.TabIndex = 9;
+            this.btn_contant.Text = "Contant betalen";
+            this.btn_contant.UseVisualStyleBackColor = true;
+            this.btn_contant.Click += new System.EventHandler(this.btn_contant_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 473);
+            this.label9.Location = new System.Drawing.Point(7, 388);
             this.label9.Name = "label9";
             this.label9.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label9.Size = new System.Drawing.Size(72, 16);
@@ -350,7 +356,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(8, 441);
+            this.label8.Location = new System.Drawing.Point(8, 356);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label8.Size = new System.Drawing.Size(28, 16);
@@ -361,7 +367,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 419);
+            this.label7.Location = new System.Drawing.Point(8, 334);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label7.Size = new System.Drawing.Size(34, 16);
@@ -372,7 +378,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 397);
+            this.label6.Location = new System.Drawing.Point(8, 312);
             this.label6.Name = "label6";
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(68, 16);
@@ -383,7 +389,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 373);
+            this.label5.Location = new System.Drawing.Point(8, 288);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label5.Size = new System.Drawing.Size(61, 16);
@@ -419,7 +425,7 @@
             this.listView2.Location = new System.Drawing.Point(7, 65);
             this.listView2.Name = "listView2";
             this.listView2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listView2.Size = new System.Drawing.Size(404, 305);
+            this.listView2.Size = new System.Drawing.Size(404, 216);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -438,6 +444,25 @@
             // 
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
+            // 
+            // txt_opmerking
+            // 
+            this.txt_opmerking.Location = new System.Drawing.Point(10, 417);
+            this.txt_opmerking.Multiline = true;
+            this.txt_opmerking.Name = "txt_opmerking";
+            this.txt_opmerking.Size = new System.Drawing.Size(401, 46);
+            this.txt_opmerking.TabIndex = 21;
+            // 
+            // btn_updatopm
+            // 
+            this.btn_updatopm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_updatopm.Location = new System.Drawing.Point(119, 469);
+            this.btn_updatopm.Name = "btn_updatopm";
+            this.btn_updatopm.Size = new System.Drawing.Size(175, 30);
+            this.btn_updatopm.TabIndex = 22;
+            this.btn_updatopm.Text = "Voeg opmerking toe";
+            this.btn_updatopm.UseVisualStyleBackColor = true;
+            this.btn_updatopm.Click += new System.EventHandler(this.button1_Click);
             // 
             // RekeningOverzicht
             // 
@@ -473,10 +498,10 @@
         private System.Windows.Forms.Label lbl_prijs;
         private System.Windows.Forms.Label lbl_btwh;
         private System.Windows.Forms.Label lbl_btwl;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_Terug;
         private System.Windows.Forms.TextBox txt_tip;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_pin;
+        private System.Windows.Forms.Button btn_contant;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -493,5 +518,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Label lbl_tafelnummer2;
         private System.Windows.Forms.Button btn_updatefooi;
+        private System.Windows.Forms.Button btn_updatopm;
+        private System.Windows.Forms.TextBox txt_opmerking;
     }
 }
