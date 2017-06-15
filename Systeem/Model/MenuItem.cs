@@ -37,5 +37,9 @@ namespace Model
             this.Categorie = Categorie;
             this.prijs = prijs;
         }
+        public MenuItem(string product)
+        { 
+            this.product = product;
+        }
     }
 }

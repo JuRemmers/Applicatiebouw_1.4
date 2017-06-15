@@ -53,6 +53,11 @@
             this.btn_opmerking = new System.Windows.Forms.Button();
             this.btn_wijzigAantal = new System.Windows.Forms.Button();
             this.btn_verwijderitem = new System.Windows.Forms.Button();
+            this.btn_plaats = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_wijzigAantal = new System.Windows.Forms.Button();
+            this.btn_verwijderitem = new System.Windows.Forms.Button();
             this.lv_bestelling = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -632,6 +637,7 @@
             this.clb_bestellingen.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Bestelling,
             this.Tafel});
+            this.clb_bestellingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
             this.clb_bestellingen.FullRowSelect = true;
             this.clb_bestellingen.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.clb_bestellingen.HideSelection = false;

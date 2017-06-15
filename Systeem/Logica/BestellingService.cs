@@ -47,9 +47,9 @@ namespace Logica
             return Bestellingen;
         }
 
-        public void UpdateStatus(int bestellingid, Status updatestatus)
+        public void UpdateStatus(int bestellingid, Status updatestatus, string gerecht)
         {
-            BestelDAL.UpdateBestelling(bestellingid, updatestatus);
+            bestelItemDAL.UpdateBestelitem(bestellingid, updatestatus, gerecht);
         }
 
         public List<BestelItem> GetBestelling()
@@ -71,7 +71,7 @@ namespace Logica
 
         public List<BestelItem> GetAllForItems(int bestelId)
         {
-            List<BestelItem> bestelling = bestelItemDAL.GetMenuItemsByBestellingId(bestelId);
+            List<BestelItem>bestelling = bestelItemDAL.GetBestellingItemsByBestellingId(bestelId);
             return bestelling;
         }
     }

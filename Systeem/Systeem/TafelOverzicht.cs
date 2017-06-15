@@ -300,7 +300,8 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point( this.Left, this.Top);
+            // pb_table1.Image = Image.FromFile("C:/Users/jesse/OneDrive/Afbeeldingen/111.png");        
         }
 
         // Kayleigh Vossen
@@ -309,7 +310,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -318,7 +319,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+            overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -327,7 +328,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -336,7 +337,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -345,7 +346,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -354,7 +355,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -362,7 +363,7 @@ namespace Systeem
         {
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -371,7 +372,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
             
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         // Kayleigh Vossen
@@ -380,7 +381,7 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
            
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         private void btn_bekijkbestel_Click(object sender, EventArgs e)
@@ -398,14 +399,14 @@ namespace Systeem
         {
             gbox_Bestelling.Visible = true;
         }
+
         public void clb_bestellingen_ColumnClick(object sender, EventArgs e)
         {
-            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
-
             bestellingid = int.Parse(clb_bestellingen.SelectedItems[0].Text);
+            BestellingOverzicht overzicht = new BestellingOverzicht(bestellingid);
             overzicht.lb_bestelling.Text = bestellingid.ToString();
             overzicht.Show();
-            overzicht.Location = new Point(this.Top, this.Left);
+           overzicht.Location = new Point(this.Left, this.Top);
         }
 
         private void UpdateAantal()
