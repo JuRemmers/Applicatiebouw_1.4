@@ -83,9 +83,10 @@ namespace DAO
         public void UpdateBestelitem(int bestellingid, Status updatestatus, string gerecht)
          {
             string stringstatus = updatestatus.ToString();
-             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st WHERE Bestelling.ID = @id", conn);
-             command.Parameters.AddWithValue("@id", bestellingid);
+             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st FROM Bestel_Item INNER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Menu_Item.Gerecht = @mg AND Bestel_Item.Bestel_ID = @id; ", conn);
+            command.Parameters.AddWithValue("@id", bestellingid);
              command.Parameters.AddWithValue("@st", stringstatus);
+            command.Parameters.AddWithValue("@mg", gerecht);
  
              conn.Open();
             command.ExecuteNonQuery();
