@@ -16,10 +16,10 @@ namespace Logica
         public List<BestelItem> GetBestellingByTafelId(int id)
         {
             BestellingDAO d = new BestellingDAO();
-            int bestelId = d.GetBestelIdByTafelId(id);
+            Bestelling best = d.GetBestellingByTafelId(id);
             
             BestelItemDAO b = new BestelItemDAO();
-            List <BestelItem> bestelling = b.GetMenuItemsByBestellingId(bestelId);
+            List <BestelItem> bestelling = b.GetMenuItemsByBestellingId(best.ID);
             
             return bestelling;
         }
@@ -27,7 +27,7 @@ namespace Logica
         public Rekening MakeRekening(int TafelId, List<BestelItem> items)
         {
             BestellingDAO d = new BestellingDAO();
-            int bestelId = d.GetBestelIdByTafelId(TafelId);
+            Bestelling b = d.GetBestellingByTafelId(TafelId);
 
 
             double prijs = 0;
@@ -48,7 +48,7 @@ namespace Logica
             double fooi = 0;
             double totaalprijs = prijs + fooi;
             string opm = "";
-            Rekening r = new Rekening(, btwl, btwh, prijs, fooi, totaalprijs, items[0].bestelling.medewerker, opm);
+            Rekening r = new Rekening(b, btwl, btwh, prijs, fooi, totaalprijs, items[0].bestelling.medewerker, opm);
             return r;
         }
 
