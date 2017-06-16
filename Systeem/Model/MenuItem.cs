@@ -12,7 +12,7 @@ namespace Model
         public string product { get; private set; }
         public double prijs { get; private set; }
         public int voorraad { get; set; }
-        public Menucategorie Categorie { get; private set; }
+        public Menucategorie Categorie { get; set; }
         private MenuKaart kaart;
 
         public MenuItem(int id, string product, double prijs, int vooraad, Menucategorie categorie, MenuKaart kaart)

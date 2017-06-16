@@ -49,7 +49,7 @@ namespace DAO
                 string opmerking = "";
                 
                 double BestelItemPrijs = reader.GetDouble(6);
-                DateTime bestelItemTijd = DateTime.Now;
+                DateTime bestelItemTijd = reader.GetDateTime(7);
                 string MenuItemNaam = reader.GetString(9);
                 double MenuItemPrijs = reader.GetDouble(10);
                 int MenuItemVoorraad = reader.GetInt32(11);
@@ -83,9 +83,10 @@ namespace DAO
         public void UpdateBestelitem(int bestellingid, Status updatestatus, string gerecht)
          {
             string stringstatus = updatestatus.ToString();
-             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st WHERE Bestelling.ID = @id", conn);
-             command.Parameters.AddWithValue("@id", bestellingid);
-             command.Parameters.AddWithValue("@st", stringstatus);
+             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st FROM Bestel_Item INNER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Menu_Item.Gerecht = @mg AND Bestel_Item.Bestel_ID = @id; ", conn);
+            command.Parameters.AddWithValue("@id", bestellingid);
+            command.Parameters.AddWithValue("@st", stringstatus);
+            command.Parameters.AddWithValue("@mg", gerecht);
  
              conn.Open();
             command.ExecuteNonQuery();

@@ -17,7 +17,7 @@ namespace Model
         private string opmerking;
         public DateTime tijd { get; private set; }
 
-        public BestelItem(int id, Bestelling bestelling, MenuItem item,double prijs, int aantal, Status status, string opmerking, DateTime tijd)
+        public BestelItem(int id, Bestelling bestelling, MenuItem item, double prijs, int aantal, Status status, string opmerking, DateTime tijd)
         {
             this.ID = id;
             this.bestelling = bestelling;
