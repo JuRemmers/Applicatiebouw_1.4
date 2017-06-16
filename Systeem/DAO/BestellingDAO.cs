@@ -98,8 +98,8 @@ namespace DAO
                             " WHERE Tafel_ID=@id AND Betaald=0";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
-            SqlDataReader reader = c.ExecuteReader();
             conn.Open();
+            SqlDataReader reader = c.ExecuteReader();
             int bestelID = 0;
             int MedewerkerID = 0;
             bool Betaald = false;
