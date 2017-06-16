@@ -8,8 +8,8 @@ namespace Model
 {
     public class MenuKaart
     {
-        int id;
-        string kaart;
+        public int id { get; private set; }
+        public string kaart { get; private set; }
 
         public MenuKaart(int id, string kaart)
         {

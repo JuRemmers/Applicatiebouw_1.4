@@ -38,13 +38,65 @@ namespace Systeem
 
             foreach (BestelItem i in bestellingen)
             {
+                DateTime tijd1 = DateTime.Now;
+                TimeSpan wachttijd = tijd1.Subtract(i.tijd);
                 string sa = i.item.product;
                 string sa2 = i.aantal.ToString();
                 string sa3 = i.status.ToString();
+                string sa4 = Math.Round(wachttijd.TotalMinutes, 0).ToString();
                 ListViewItem listview = new ListViewItem(sa);
                 listview.SubItems.Add(sa2);
+                listview.SubItems.Add(sa4);
                 listview.SubItems.Add(sa3);
                 clb_besteIitems.Items.Add(listview);
+
+                int categorie = i.item.Categorie.menu.id;
+
+                if (categorie == 1)
+                {
+                    //true is drank
+
+                    TimeSpan maxtijd = new TimeSpan( 0, 15, 0);
+                    TimeSpan midtijd = new TimeSpan( 0, 5, 0);
+                    if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
+                    {
+                        listview.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        if (wachttijd.TotalMinutes > midtijd.TotalMinutes)
+                        {
+                            listview.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            listview.ForeColor = Color.Black;
+                        }
+            }
+        }
+                else
+                {
+                    //false is eten
+
+                    TimeSpan maxtijd = new TimeSpan(0, 60, 0);
+                    TimeSpan midtijd = new TimeSpan(0, 30, 0);
+                    if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
+                    {
+                        listview.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        if (wachttijd.TotalMinutes > midtijd.TotalMinutes)
+                        {
+                            listview.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            listview.ForeColor = Color.Black;
+                        }
+                    }
+                }
+
             }
         }
 
@@ -69,6 +121,11 @@ namespace Systeem
             {
                 MessageBox.Show("Maak een selectie");
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bestellinglist(bestellingid);
         }
     }
 }

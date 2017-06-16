@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tp_tafeloverzicht = new System.Windows.Forms.TabPage();
+            this.lbl_Tafelstatus = new System.Windows.Forms.Label();
             this.btn_vrij = new System.Windows.Forms.Button();
             this.btn_bezet = new System.Windows.Forms.Button();
             this.lbl_tafelnummer = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lbl_Tafelstatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -106,6 +106,15 @@
             this.tp_tafeloverzicht.TabIndex = 1;
             this.tp_tafeloverzicht.Text = "Overzicht tafel";
             this.tp_tafeloverzicht.UseVisualStyleBackColor = true;
+            // 
+            // lbl_Tafelstatus
+            // 
+            this.lbl_Tafelstatus.AutoSize = true;
+            this.lbl_Tafelstatus.Location = new System.Drawing.Point(19, 461);
+            this.lbl_Tafelstatus.Name = "lbl_Tafelstatus";
+            this.lbl_Tafelstatus.Size = new System.Drawing.Size(184, 16);
+            this.lbl_Tafelstatus.TabIndex = 8;
+            this.lbl_Tafelstatus.Text = "Als dit er staat is het niet goed";
             // 
             // btn_vrij
             // 
@@ -479,15 +488,6 @@
             // 
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
-            // 
-            // lbl_Tafelstatus
-            // 
-            this.lbl_Tafelstatus.AutoSize = true;
-            this.lbl_Tafelstatus.Location = new System.Drawing.Point(19, 461);
-            this.lbl_Tafelstatus.Name = "lbl_Tafelstatus";
-            this.lbl_Tafelstatus.Size = new System.Drawing.Size(184, 16);
-            this.lbl_Tafelstatus.TabIndex = 8;
-            this.lbl_Tafelstatus.Text = "Als dit er staat is het niet goed";
             // 
             // RekeningOverzicht
             // 

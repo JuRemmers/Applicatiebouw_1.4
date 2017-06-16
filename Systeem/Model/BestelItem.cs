@@ -17,7 +17,7 @@ namespace Model
         private string opmerking;
         public DateTime tijd { get; private set; }
 
-        public BestelItem(int id, Bestelling bestelling, MenuItem item,double prijs, int aantal, Status status, string opmerking, DateTime tijd)
+        public BestelItem(int id, Bestelling bestelling, MenuItem item, double prijs, int aantal, Status status, string opmerking, DateTime tijd)
         {
             this.ID = id;
             this.bestelling = bestelling;
@@ -41,12 +41,6 @@ namespace Model
             this.aantal = aantal;
             opmerking = "";
             status = Status.Opgenomen;
-        }
-        public BestelItem(MenuItem item, int aantal, Status status)
-        {
-            this.item = item;
-            this.aantal = aantal;
-            this.status = status;
         }
 
         public bool Compare(BestelItem bestelitem)

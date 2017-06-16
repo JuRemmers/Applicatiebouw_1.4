@@ -30,7 +30,7 @@ namespace Systeem
             RekeningDAO d = new RekeningDAO();
             d.InsertRekening(r);
             BestellingDAO b = new BestellingDAO();
-            b.UpdateBetaald(r.bestelId);
+            b.UpdateBetaald(r.bestelling.ID);
             InitList(items);
         }
 
