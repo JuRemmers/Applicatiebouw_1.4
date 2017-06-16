@@ -48,7 +48,7 @@ namespace Logica
             double fooi = 0;
             double totaalprijs = prijs + fooi;
             string opm = "";
-            Rekening r = new Rekening(bestelId, btwl, btwh, prijs, fooi, totaalprijs, items[0].bestelling.medewerker, opm);
+            Rekening r = new Rekening(, btwl, btwh, prijs, fooi, totaalprijs, items[0].bestelling.medewerker, opm);
             return r;
         }
 

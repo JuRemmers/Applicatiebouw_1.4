@@ -10,7 +10,7 @@ namespace Model
 {
     public class Rekening
     {
-        public int bestelId { get; private set; }
+        public Bestelling bestelling { get; private set; }
         public double btwLaag { get; private set; }
         public double btwHoog { get; private set; }
         public double Prijs { get; private set; }
@@ -20,9 +20,9 @@ namespace Model
         public string opmerking { get; private set; }
         public DateTime datumtijd { get; private set; }
 
-        public Rekening(int bestelId, double btwLaag,double btwHoog,double Prijs,double fooi,double totaalprijs,Medewerker medewerker, string opmerking)
+        public Rekening(Bestelling bestelling, double btwLaag,double btwHoog,double Prijs,double fooi,double totaalprijs,Medewerker medewerker, string opmerking)
         {
-            this.bestelId = bestelId;
+            this.bestelling = bestelling;
             this.btwLaag = btwLaag;
             this.btwHoog = btwHoog;
             this.Prijs = Prijs;
