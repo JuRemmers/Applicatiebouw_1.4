@@ -34,7 +34,7 @@ namespace Systeem
             BestellingService service = new BestellingService();
             List<BestelItem> bestellingen = service.GetAllForItems(bestelId);                                   
             TafelOverzicht tafel = new TafelOverzicht();
-            TimeSpan maxtijd = new TimeSpan(30, 0, 0);
+
 
             foreach (BestelItem i in bestellingen)
             {
@@ -47,18 +47,56 @@ namespace Systeem
                 ListViewItem listview = new ListViewItem(sa);
                 listview.SubItems.Add(sa2);
                 listview.SubItems.Add(sa4);
-                listview.SubItems.Add(sa3);                
+                listview.SubItems.Add(sa3);
                 clb_besteIitems.Items.Add(listview);
 
+                int categorie = i.item.Categorie.menukaartID;
 
-                if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
+                if (categorie == 1)
                 {
-                    listview.ForeColor = Color.Red;
+                    //true is drank
+
+                    TimeSpan maxtijd = new TimeSpan(15, 0, 0);
+                    TimeSpan midtijd = new TimeSpan(5, 0, 0);
+                    if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
+                    {
+                        listview.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        if (wachttijd.TotalMinutes > midtijd.TotalMinutes)
+                        {
+                            listview.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            listview.ForeColor = Color.White;
+                        }
+                    }
                 }
                 else
                 {
-                    listview.ForeColor = Color.White;
+                    //false is eten
+
+                    TimeSpan maxtijd = new TimeSpan(60, 0, 0);
+                    TimeSpan midtijd = new TimeSpan(30, 0, 0);
+                    if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
+                    {
+                        listview.ForeColor = Color.Red;
+                    }
+                    else
+                    {
+                        if (wachttijd.TotalMinutes > midtijd.TotalMinutes)
+                        {
+                            listview.ForeColor = Color.Orange;
+                        }
+                        else
+                        {
+                            listview.ForeColor = Color.White;
+                        }
+                    }
                 }
+
             }
         }
 

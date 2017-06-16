@@ -11,7 +11,7 @@ namespace Model
         private int id;
         public string Categorie { get; private set; }
         public int btw { get; private set; }
-        private int menukaartID;
+        public int menukaartID { get; private set; }
 
         public Menucategorie(int ID, string Cat, int btw, int menu)
         {
