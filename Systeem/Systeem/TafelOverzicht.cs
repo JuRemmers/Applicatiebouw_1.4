@@ -18,10 +18,12 @@ namespace Systeem
 
         string sectie;
         BestellingService bestelservice = new BestellingService();
+        TafelService tafelservice = new TafelService();
 
         public TafelOverzicht()
         {
             InitializeComponent();
+            loadTableStatus();                       
         }
 
         public TafelOverzicht(string tabopen)
@@ -245,97 +247,6 @@ namespace Systeem
 
         }
 
-
-        // Kayleigh Vossen
-        private void pb_table1_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(1);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-                 
-        }
-
-        // Kayleigh Vossen
-        private void pb_table3_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(3);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table5_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(5);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table7_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(7);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table9_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(9);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table2_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(2);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table4_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(4);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table6_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(6);
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table8_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(8);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table10_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(10);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
         private void btn_bekijkbestel_Click(object sender, EventArgs e)
         {
             BestellingService items = new BestellingService();
@@ -413,6 +324,147 @@ namespace Systeem
                 UpdateAantal();
 
                 UpdateBestelling();
+            }
+        }
+
+        public void btn_table1_Click(object sender, EventArgs e)
+        {          
+            RekeningOverzicht overzicht = new RekeningOverzicht(1);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+        
+        public void btn_table2_Click(object sender, EventArgs e)
+        {           
+            RekeningOverzicht overzicht = new RekeningOverzicht(2);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table3_Click(object sender, EventArgs e)
+        {           
+            RekeningOverzicht overzicht = new RekeningOverzicht(3);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table4_Click(object sender, EventArgs e)
+        {          
+            RekeningOverzicht overzicht = new RekeningOverzicht(4);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table5_Click(object sender, EventArgs e)
+        {           
+            RekeningOverzicht overzicht = new RekeningOverzicht(5);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table6_Click(object sender, EventArgs e)
+        {         
+            RekeningOverzicht overzicht = new RekeningOverzicht(6);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table7_Click(object sender, EventArgs e)
+        {       
+            RekeningOverzicht overzicht = new RekeningOverzicht(7);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table8_Click(object sender, EventArgs e)
+        {            
+            RekeningOverzicht overzicht = new RekeningOverzicht(8);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table9_Click(object sender, EventArgs e)
+        {                    
+            RekeningOverzicht overzicht = new RekeningOverzicht(9);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void btn_table10_Click(object sender, EventArgs e)
+        {            
+            RekeningOverzicht overzicht = new RekeningOverzicht(10);
+            overzicht.ShowDialog();
+            overzicht.Location = new Point(this.Left, this.Top);
+            loadTableStatus();
+        }
+
+        public void loadTableStatus()
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                bool tafelstatus = tafelservice.TafelStatus(i);
+                switch (i)
+                {
+                    case 1:
+                        if (tafelstatus == true)
+                            btn_table1.BackColor = Color.Red;
+                        else btn_table1.BackColor = Color.PaleGreen;
+                        break;
+                    case 2:
+                        if (tafelstatus == true)
+                            btn_table2.BackColor = Color.Red;
+                        else btn_table2.BackColor = Color.PaleGreen;
+                        break;
+                    case 3:
+                        if (tafelstatus == true)
+                            btn_table3.BackColor = Color.Red;
+                        else btn_table3.BackColor = Color.PaleGreen;
+                        break;
+                    case 4:
+                        if (tafelstatus == true)
+                            btn_table4.BackColor = Color.Red;
+                        else btn_table4.BackColor = Color.PaleGreen;
+                        break;
+                    case 5:
+                        if (tafelstatus == true)
+                            btn_table5.BackColor = Color.Red;
+                        else btn_table5.BackColor = Color.PaleGreen;
+                        break;
+                    case 6:
+                        if (tafelstatus == true)
+                            btn_table6.BackColor = Color.Red;
+                        else btn_table6.BackColor = Color.PaleGreen;
+                        break;
+                    case 7:
+                        if (tafelstatus == true)
+                            btn_table7.BackColor = Color.Red;
+                        else btn_table7.BackColor = Color.PaleGreen;
+                        break;
+                    case 8:
+                        if (tafelstatus == true)
+                            btn_table8.BackColor = Color.Red;
+                        else btn_table8.BackColor = Color.PaleGreen;
+                        break;
+                    case 9:
+                        if (tafelstatus == true)
+                            btn_table9.BackColor = Color.Red;
+                        else btn_table9.BackColor = Color.PaleGreen;
+                        break;
+                    case 10:
+                        if (tafelstatus == true)
+                            btn_table10.BackColor = Color.Red;
+                        else btn_table10.BackColor = Color.PaleGreen;
+                        break;
+                }
             }
         }
     }

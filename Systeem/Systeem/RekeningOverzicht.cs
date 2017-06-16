@@ -20,6 +20,7 @@ namespace Systeem
         private List<BestelItem> items;
         private Rekening r;
         private TafelService t = new TafelService();
+        private TafelOverzicht tafeloverzicht = new TafelOverzicht();   
 
         public RekeningOverzicht(int tafelId)
         {
@@ -105,7 +106,8 @@ namespace Systeem
 
         private void btn_terug_Click(object sender, EventArgs e)
         {
-                        this.Close();
+            TafelOverzicht tafeloverzicht = new TafelOverzicht();
+            this.Close();
         }
 
         private void btn_AddBestelling_Click(object sender, EventArgs e)
@@ -159,27 +161,19 @@ namespace Systeem
             // 2. Logicalaag verbind met databaselaag 
             // 3. Databaselaag zoekt uit of status bezet/vrij is
             // 4. if status == bezet --> zet status op vrij
-            t.UpdateStatus(tafelId, false);
+            t.UpdateStatus(tafelId, true);
             string tafelStatus = "Tafel " + tafelId + ": Bezet";
             lbl_Tafelstatus.Text = tafelStatus;
-            
+            tafeloverzicht.loadTableStatus();
         }
 
         public void btn_vrij_Click(object sender, EventArgs e)
         {
-            t.UpdateStatus(tafelId, true);
+            t.UpdateStatus(tafelId, false);
             string tafelStatus = "Tafel " + tafelId + ": Vrij";
             lbl_Tafelstatus.Text = tafelStatus;
-
-            // Wat ga je doen?
-            // 1. Goede tafel selecteren (gebeurt hierboven al?)
-            // 2. Kleur aanpassen 
-
-            TafelOverzicht tafeloverzicht = new TafelOverzicht(tafelStatus);
-            // this.tafeloverzicht.btn_table1_Click.BackColor = Color.Red; error error
-
+            tafeloverzicht.loadTableStatus();
             
-          
         }
     }
 }

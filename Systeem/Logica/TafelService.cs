@@ -24,7 +24,9 @@ namespace Logica
 
         public void UpdateStatus(int id, bool status)
         {
-            tafelDAL.UpdateStatus(id, status);            
+            tafelDAL.UpdateStatus(id, status);
         }
+
+
     }
 }
