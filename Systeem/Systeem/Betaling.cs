@@ -51,9 +51,9 @@ namespace Systeem
 
         private void btn_plattegrond_Click(object sender, EventArgs e)
         {
-            TafelOverzicht overzicht = new TafelOverzicht();
-            overzicht.Location = this.Location;
-            overzicht.Show();
+        //    TafelOverzicht overzicht = new TafelOverzicht();
+        //    overzicht.Location = this.Location;
+        //    overzicht.Show();
             this.Close();
         }
     }

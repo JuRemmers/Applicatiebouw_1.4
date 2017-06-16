@@ -27,7 +27,6 @@ namespace Model
             this.status = status;
             this.opmerking = opmerking;
             this.tijd = tijd;
-
         }
 
         public override string ToString()
@@ -41,7 +40,7 @@ namespace Model
             this.item = item;
             this.aantal = aantal;
             opmerking = "";
-            status = Status.Uitgeserveerd;
+            status = Status.Opgenomen;
         }
         public BestelItem(MenuItem item, int aantal, Status status)
         {
@@ -74,6 +73,12 @@ namespace Model
         public void WijzigAantal(int aantal)
         {
             this.aantal = aantal;
+        }
+
+        public void SetPrijs(double prijs)
+        {
+            this.prijs = prijs;
+            this.tijd = DateTime.Now;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace Systeem
             int bestelId = bestellingid;
             BestellingService service = new BestellingService();
             List<BestelItem> bestellingen = service.GetAllForItems(bestelId);                                   
-            TafelOverzicht tafel = new TafelOverzicht();            
+            //TafelOverzicht tafel = new TafelOverzicht();            
             
 
             foreach (BestelItem i in bestellingen)

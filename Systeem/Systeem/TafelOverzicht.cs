@@ -15,11 +15,12 @@ namespace Systeem
     public partial class TafelOverzicht : Form
     {
         int bestellingid { get; set; }
+        int medewerkerId;
 
         string sectie;
         BestellingService bestelservice = new BestellingService();
 
-        public TafelOverzicht()
+        public TafelOverzicht(int medewerkerId)
         {
             InitializeComponent();
             //cb_status.Items.Add("Opgenomen");
@@ -292,7 +293,7 @@ namespace Systeem
 
             overzicht.Show();
             overzicht.Location = new Point(this.Left, this.Top);
-                 
+
         }
 
         // Kayleigh Vossen
@@ -453,6 +454,17 @@ namespace Systeem
 
                 UpdateBestelling();
             }
+        }
+
+        private void btn_plaats_Click(object sender, EventArgs e)
+        {
+            //int tafel = (int)nod_tafel.Value;
+
+            //if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
+            //{
+            //    MessageBox.Show("Er ging iets fout.");
+            //}
+
         }
     }
 }

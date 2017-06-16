@@ -326,6 +326,7 @@
             this.btn_plaats.TabIndex = 12;
             this.btn_plaats.Text = "Plaats bestelling";
             this.btn_plaats.UseVisualStyleBackColor = true;
+            this.btn_plaats.Click += new System.EventHandler(this.btn_plaats_Click);
             // 
             // nod_aantal
             // 

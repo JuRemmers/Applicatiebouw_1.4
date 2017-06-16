@@ -71,7 +71,7 @@ namespace Logica
 
         public List<BestelItem> GetAllForItems(int bestelId)
         {
-            List<BestelItem>bestelling = bestelItemDAL.GetMenuItemsByBestellingId(bestelId);
+            List<BestelItem> bestelling = bestelItemDAL.GetMenuItemsByBestellingId(bestelId);
             return bestelling;
         }
 
@@ -100,5 +100,22 @@ namespace Logica
             }
             return false;
         }
+
+        //public bool PlaatsBestelling(int medewerkerId, int tafelId)
+        //{
+        //    try {BestelDAL.GetBestelling(medewerkerId, tafelId, false);}
+        //    catch
+        //    { Bestelling bestelling = BestelDAL.NewBestelling(tafelId, medewerkerId); }
+
+        //    foreach (BestelItem bestelitem in bestelling)
+        //    {
+        //        bestelitem.SetPrijs(menuItemDAL.GetPrijs(bestelitem.item.ToString()));
+        //        if (!bestelItemDAL.InsertBestelItem(bestelitem))
+        //        { return false; }
+        //    }
+
+        //    bestelling.Clear();
+        //    return true;
+        //}
     }
 }

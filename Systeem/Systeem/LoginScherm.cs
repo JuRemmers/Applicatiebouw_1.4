@@ -36,7 +36,7 @@ namespace Systeem
                 if (check)
                 {
                     this.Hide(); // Verbergt loginscherm wanneer ingelogd
-                    var TafelOverzicht = new TafelOverzicht(); // 'var' = compiler bepaalt datatype
+                    var TafelOverzicht = new TafelOverzicht(werknemer_id); // 'var' = compiler bepaalt datatype
                     TafelOverzicht.ShowDialog();
                     this.Show(); // Showt tafeloverzichtscherm
                 }
