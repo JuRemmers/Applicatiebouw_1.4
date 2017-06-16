@@ -122,5 +122,10 @@ namespace Systeem
                 MessageBox.Show("Maak een selectie");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bestellinglist(bestellingid);
+        }
     }
 }

@@ -13,16 +13,14 @@ namespace Model
         public double prijs { get; private set; }
         public int voorraad { get; set; }
         public Menucategorie Categorie { get; set; }
-        private MenuKaart kaart;
 
-        public MenuItem(int id, string product, double prijs, int vooraad, Menucategorie categorie, MenuKaart kaart)
+        public MenuItem(int id, string product, double prijs, int vooraad, Menucategorie categorie)
         {
             this.id = id;
             this.product = product;
             this.prijs = prijs;
             this.voorraad = vooraad;
             this.Categorie = categorie;
-            this.kaart = kaart;
         }
 
         public override string ToString()
