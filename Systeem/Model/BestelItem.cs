@@ -43,12 +43,6 @@ namespace Model
             opmerking = "";
             status = Status.Uitgeserveerd;
         }
-        public BestelItem(MenuItem item, int aantal, Status status)
-        {
-            this.item = item;
-            this.aantal = aantal;
-            this.status = status;
-        }
 
         public bool Compare(BestelItem bestelitem)
         {

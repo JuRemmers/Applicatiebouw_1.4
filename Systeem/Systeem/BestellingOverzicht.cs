@@ -43,21 +43,21 @@ namespace Systeem
                 string sa = i.item.product;
                 string sa2 = i.aantal.ToString();
                 string sa3 = i.status.ToString();
-                string sa4 = wachttijd.ToString();
+                string sa4 = Math.Round(wachttijd.TotalMinutes, 0).ToString();
                 ListViewItem listview = new ListViewItem(sa);
                 listview.SubItems.Add(sa2);
                 listview.SubItems.Add(sa4);
                 listview.SubItems.Add(sa3);
                 clb_besteIitems.Items.Add(listview);
 
-                int categorie = i.item.Categorie.menukaartID;
+                int categorie = i.item.Categorie.menu.id;
 
                 if (categorie == 1)
                 {
                     //true is drank
 
-                    TimeSpan maxtijd = new TimeSpan(15, 0, 0);
-                    TimeSpan midtijd = new TimeSpan(5, 0, 0);
+                    TimeSpan maxtijd = new TimeSpan( 0, 15, 0);
+                    TimeSpan midtijd = new TimeSpan( 0, 5, 0);
                     if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
                     {
                         listview.ForeColor = Color.Red;
@@ -70,7 +70,7 @@ namespace Systeem
                         }
                         else
                         {
-                            listview.ForeColor = Color.White;
+                            listview.ForeColor = Color.Black;
                         }
                     }
                 }
@@ -78,8 +78,8 @@ namespace Systeem
                 {
                     //false is eten
 
-                    TimeSpan maxtijd = new TimeSpan(60, 0, 0);
-                    TimeSpan midtijd = new TimeSpan(30, 0, 0);
+                    TimeSpan maxtijd = new TimeSpan(0, 60, 0);
+                    TimeSpan midtijd = new TimeSpan(0, 30, 0);
                     if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
                     {
                         listview.ForeColor = Color.Red;
@@ -92,7 +92,7 @@ namespace Systeem
                         }
                         else
                         {
-                            listview.ForeColor = Color.White;
+                            listview.ForeColor = Color.Black;
                         }
                     }
                 }

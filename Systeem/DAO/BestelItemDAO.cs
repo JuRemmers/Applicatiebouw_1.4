@@ -67,8 +67,9 @@ namespace DAO
                 Functie functie = (Functie) Enum.Parse(typeof(Functie), reader.GetString(28));
                 string wachtwoord = reader.GetString(29);
 
-                Menucategorie cat = new Menucategorie(MenuCatId, menuCatNaam, btw, MenuKaartId);
+                
                 MenuKaart kaart = new MenuKaart(MenuKaartId, menukaartNaam);
+                Menucategorie cat = new Menucategorie(MenuCatId, menuCatNaam, btw, kaart);
                 MenuItem menuitem = new MenuItem(menuItemID, MenuItemNaam, MenuItemPrijs, MenuItemVoorraad, cat);
                 Tafel tafel = new Tafel(tafelId, tafelstatus);
                 Medewerker med = new Medewerker(medId, voornaam, achternaam, functie, wachtwoord);

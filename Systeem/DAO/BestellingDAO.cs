@@ -87,21 +87,44 @@ namespace DAO
         }
 
         // Kayleigh
-        public int GetBestelIdByTafelId(int tafelId)
+        public Bestelling GetBestellingByTafelId(int tafelId)
         {
-            string com = "SELECT ID FROM Bestelling WHERE Tafel_ID=@id AND Betaald=0";
+            string com = "SELECT *" +
+                            " FROM Bestelling" +
+                            " FULL OUTER JOIN Tafel" +
+                            " ON Bestelling.Tafel_ID=Tafel.ID" +
+                            " FULL OUTER JOIN Medewerker" +
+                            " ON Bestelling.Medewerker_ID=Medewerker.ID" +
+                            " WHERE Tafel_ID=@id AND Betaald=0";
             SqlCommand c = new SqlCommand(com, conn);
             c.Parameters.AddWithValue("@id", tafelId);
-            int bestId = 0;
+            SqlDataReader reader = c.ExecuteReader();
             conn.Open();
-            var scalar = c.ExecuteScalar();
-            if (scalar == null)
+            int bestelID = 0;
+            int MedewerkerID = 0;
+            bool Betaald = false;
+            bool Bezet = true;
+            string voornaam = "";
+            string achternaam = "";
+            Functie functie = Functie.Bar;
+            string wachtwoord = "";
+
+
+            while (reader.Read())
             {
-                return 0;
+                bestelID = reader.GetInt32(0);
+                MedewerkerID = reader.GetInt32(2);
+                Betaald = reader.GetBoolean(3);
+                Bezet = reader.GetBoolean(5);
+                voornaam = reader.GetString(7);
+                achternaam = reader.GetString(8);
+                functie = (Functie)Enum.Parse(typeof(Functie), reader.GetString(9));
+                wachtwoord = reader.GetString(10);
             }
-            bestId = Convert.ToInt32(scalar);
             conn.Close();
-            return bestId;
+            Medewerker m = new Medewerker(MedewerkerID, voornaam, achternaam, functie, wachtwoord);
+            Tafel t = new Tafel(tafelId, Bezet);
+            return new Bestelling(bestelID,Betaald,t,m);
         }
 
         // Kayleigh
