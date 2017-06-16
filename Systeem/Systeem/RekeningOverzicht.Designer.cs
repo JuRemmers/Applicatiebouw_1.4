@@ -36,7 +36,6 @@
             this.btn_terugPlattegrond = new System.Windows.Forms.Button();
             this.btn_afrekenen = new System.Windows.Forms.Button();
             this.btn_AddBestelling = new System.Windows.Forms.Button();
-            this.bt_wijzig_tafelstatus = new System.Windows.Forms.Button();
             this.lv_bestelitems = new System.Windows.Forms.ListView();
             this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,6 +66,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lbl_Tafelstatus = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tp_tafeloverzicht.SuspendLayout();
             this.tp_rekening.SuspendLayout();
@@ -90,13 +90,13 @@
             // 
             // tp_tafeloverzicht
             // 
+            this.tp_tafeloverzicht.Controls.Add(this.lbl_Tafelstatus);
             this.tp_tafeloverzicht.Controls.Add(this.btn_vrij);
             this.tp_tafeloverzicht.Controls.Add(this.btn_bezet);
             this.tp_tafeloverzicht.Controls.Add(this.lbl_tafelnummer);
             this.tp_tafeloverzicht.Controls.Add(this.btn_terugPlattegrond);
             this.tp_tafeloverzicht.Controls.Add(this.btn_afrekenen);
             this.tp_tafeloverzicht.Controls.Add(this.btn_AddBestelling);
-            this.tp_tafeloverzicht.Controls.Add(this.bt_wijzig_tafelstatus);
             this.tp_tafeloverzicht.Controls.Add(this.lv_bestelitems);
             this.tp_tafeloverzicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tp_tafeloverzicht.Location = new System.Drawing.Point(4, 34);
@@ -173,19 +173,6 @@
             this.btn_AddBestelling.Text = "Voeg nieuw bestelling toe";
             this.btn_AddBestelling.UseVisualStyleBackColor = true;
             this.btn_AddBestelling.Click += new System.EventHandler(this.btn_AddBestelling_Click);
-            // 
-            // bt_wijzig_tafelstatus
-            // 
-            this.bt_wijzig_tafelstatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.bt_wijzig_tafelstatus.Location = new System.Drawing.Point(6, 448);
-            this.bt_wijzig_tafelstatus.Name = "bt_wijzig_tafelstatus";
-            this.bt_wijzig_tafelstatus.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.bt_wijzig_tafelstatus.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.bt_wijzig_tafelstatus.Size = new System.Drawing.Size(197, 94);
-            this.bt_wijzig_tafelstatus.TabIndex = 1;
-            this.bt_wijzig_tafelstatus.Text = "Wijzig status tafel:";
-            this.bt_wijzig_tafelstatus.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bt_wijzig_tafelstatus.UseVisualStyleBackColor = true;
             // 
             // lv_bestelitems
             // 
@@ -493,6 +480,15 @@
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 70;
             // 
+            // lbl_Tafelstatus
+            // 
+            this.lbl_Tafelstatus.AutoSize = true;
+            this.lbl_Tafelstatus.Location = new System.Drawing.Point(19, 461);
+            this.lbl_Tafelstatus.Name = "lbl_Tafelstatus";
+            this.lbl_Tafelstatus.Size = new System.Drawing.Size(184, 16);
+            this.lbl_Tafelstatus.TabIndex = 8;
+            this.lbl_Tafelstatus.Text = "Als dit er staat is het niet goed";
+            // 
             // RekeningOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,7 +515,6 @@
         private System.Windows.Forms.Button btn_terugPlattegrond;
         private System.Windows.Forms.Button btn_afrekenen;
         private System.Windows.Forms.Button btn_AddBestelling;
-        private System.Windows.Forms.Button bt_wijzig_tafelstatus;
         private System.Windows.Forms.ListView lv_bestelitems;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -551,5 +546,6 @@
         private System.Windows.Forms.TextBox txt_opmerking;
         private System.Windows.Forms.Button btn_vrij;
         private System.Windows.Forms.Button btn_bezet;
+        private System.Windows.Forms.Label lbl_Tafelstatus;
     }
 }

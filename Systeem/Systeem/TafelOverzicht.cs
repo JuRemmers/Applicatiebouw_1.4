@@ -37,7 +37,6 @@ namespace Systeem
 
         private void btn_lunch_Click(object sender, EventArgs e)
         {
-
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
@@ -164,6 +163,7 @@ namespace Systeem
 
                 UpdateAantal();
 
+                txt_aantal.Text = "1";
                 this.clb_menukaart.SelectedIndices.Clear();
             }
         }
@@ -253,7 +253,7 @@ namespace Systeem
 
             overzicht.Show();
             overzicht.Location = new Point(this.Left, this.Top);
-            // pb_table1.Image = Image.FromFile("C:/Users/jesse/OneDrive/Afbeeldingen/111.png");        
+                 
         }
 
         // Kayleigh Vossen
@@ -396,6 +396,23 @@ namespace Systeem
                 ListViewItem listview = new ListViewItem(item.item.ToString());
                 listview.SubItems.Add(item.aantal.ToString());
                 lv_bestelling.Items.Add(listview);
+            }
+        }
+
+        private void btn_verwijderitem_Click(object sender, EventArgs e)
+        {
+            if (lv_bestelling.SelectedIndices.Count == 0)
+            { MessageBox.Show("Selecteer een item."); }
+            else
+            {
+                string selected = lv_bestelling.SelectedItems[0].Text;
+
+                bestelservice.Verwijder(selected);
+
+                this.lv_bestelling.SelectedIndices.Clear();
+                UpdateAantal();
+
+                UpdateBestelling();
             }
         }
     }

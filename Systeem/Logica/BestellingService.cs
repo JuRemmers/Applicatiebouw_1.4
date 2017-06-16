@@ -87,5 +87,18 @@ namespace Logica
             }
             return false;
         }
+
+        public bool Verwijder(string item)
+        {
+            foreach (BestelItem bestelitem in bestelling)
+            {
+                if (bestelitem.Vergelijk(item))
+                {
+                    bestelling.Remove(bestelitem);
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
