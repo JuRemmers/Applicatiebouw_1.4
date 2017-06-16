@@ -45,7 +45,6 @@ namespace Systeem
 
         private void btn_lunch_Click(object sender, EventArgs e)
         {
-
             gbox_items.Visible = true;
 
             clb_menukaart.Items.Clear();
@@ -285,96 +284,6 @@ namespace Systeem
 
         //}
 
-        // Kayleigh Vossen
-        private void pb_table1_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(1);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-                 
-        }
-
-        // Kayleigh Vossen
-        private void pb_table3_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(3);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table5_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(5);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table7_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(7);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table9_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(9);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table2_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(2);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table4_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(4);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table6_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(6);
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table8_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(8);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
-        // Kayleigh Vossen
-        private void pb_table10_Click(object sender, EventArgs e)
-        {
-            RekeningOverzicht overzicht = new RekeningOverzicht(10);
-
-            overzicht.Show();
-            overzicht.Location = new Point(this.Left, this.Top);
-        }
-
         private void btn_bekijkbestel_Click(object sender, EventArgs e)
         {
             BestellingService items = new BestellingService();
@@ -436,6 +345,76 @@ namespace Systeem
                 listview.SubItems.Add(item.aantal.ToString());
                 lv_bestelling.Items.Add(listview);
             }
+        }
+
+        public void btn_table1_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(1);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table2_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(2);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table3_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(3);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table4_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(4);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table5_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(5);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table6_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(6);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table7_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(7);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table8_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(8);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table9_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(9);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
+        }
+
+        public void btn_table10_Click(object sender, EventArgs e)
+        {
+            RekeningOverzicht overzicht = new RekeningOverzicht(10);
+            overzicht.Show();
+            overzicht.Location = new Point(this.Left, this.Top);
         }
     }
 }
