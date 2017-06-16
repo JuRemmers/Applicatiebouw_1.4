@@ -165,11 +165,21 @@ namespace Systeem
             
         }
 
-        private void btn_vrij_Click(object sender, EventArgs e)
+        public void btn_vrij_Click(object sender, EventArgs e)
         {
             t.UpdateStatus(tafelId, true);
             string tafelStatus = "Tafel " + tafelId + ": Vrij";
             lbl_Tafelstatus.Text = tafelStatus;
+
+            // Wat ga je doen?
+            // 1. Goede tafel selecteren (gebeurt hierboven al?)
+            // 2. Kleur aanpassen 
+
+            TafelOverzicht tafeloverzicht = new TafelOverzicht(tafelStatus);
+            // this.tafeloverzicht.btn_table1_Click.BackColor = Color.Red; error error
+
+            
+          
         }
     }
 }
