@@ -40,7 +40,7 @@ namespace DAO
 
                 MenuKaart kaart = new MenuKaart(menukaart_id, naam);
 
-                return new MenuItem(menuitemID, gerecht, prijs, voorraad, cAtegorie, kaart);
+                return new MenuItem(menuitemID, gerecht, prijs, voorraad, cAtegorie);
             }
             catch
             { return null; }

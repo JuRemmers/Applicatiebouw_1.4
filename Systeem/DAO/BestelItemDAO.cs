@@ -69,7 +69,7 @@ namespace DAO
 
                 Menucategorie cat = new Menucategorie(MenuCatId, menuCatNaam, btw, MenuKaartId);
                 MenuKaart kaart = new MenuKaart(MenuKaartId, menukaartNaam);
-                MenuItem menuitem = new MenuItem(menuItemID, MenuItemNaam, MenuItemPrijs, MenuItemVoorraad, cat, kaart);
+                MenuItem menuitem = new MenuItem(menuItemID, MenuItemNaam, MenuItemPrijs, MenuItemVoorraad, cat);
                 Tafel tafel = new Tafel(tafelId, tafelstatus);
                 Medewerker med = new Medewerker(medId, voornaam, achternaam, functie, wachtwoord);
                 Bestelling best = new Bestelling(bestelId, betaald, tafel, med);

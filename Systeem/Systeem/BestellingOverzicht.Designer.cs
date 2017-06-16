@@ -31,13 +31,14 @@
             this.clb_besteIitems = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cb_status = new System.Windows.Forms.ComboBox();
             this.btn_aanpassen = new System.Windows.Forms.Button();
             this.lb_bestelling = new System.Windows.Forms.Label();
             this.btn_back = new System.Windows.Forms.Button();
             this.lb_bestellingtitel = new System.Windows.Forms.Label();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btn_vernieuw = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // clb_besteIitems
@@ -68,6 +69,12 @@
             // 
             this.columnHeader2.Text = "Aantal";
             this.columnHeader2.Width = 50;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Tijd";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 100;
             // 
             // status
             // 
@@ -100,7 +107,7 @@
             // 
             this.lb_bestelling.AutoSize = true;
             this.lb_bestelling.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lb_bestelling.Location = new System.Drawing.Point(383, 9);
+            this.lb_bestelling.Location = new System.Drawing.Point(242, 7);
             this.lb_bestelling.Name = "lb_bestelling";
             this.lb_bestelling.Size = new System.Drawing.Size(29, 31);
             this.lb_bestelling.TabIndex = 3;
@@ -109,7 +116,7 @@
             // btn_back
             // 
             this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.Location = new System.Drawing.Point(13, 9);
+            this.btn_back.Location = new System.Drawing.Point(11, 9);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(75, 31);
             this.btn_back.TabIndex = 4;
@@ -121,18 +128,22 @@
             // 
             this.lb_bestellingtitel.AutoSize = true;
             this.lb_bestellingtitel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.lb_bestellingtitel.Location = new System.Drawing.Point(237, 9);
+            this.lb_bestellingtitel.Location = new System.Drawing.Point(92, 7);
             this.lb_bestellingtitel.Name = "lb_bestellingtitel";
             this.lb_bestellingtitel.Size = new System.Drawing.Size(154, 31);
             this.lb_bestellingtitel.TabIndex = 5;
             this.lb_bestellingtitel.Text = "Bestelling #";
             // 
-            // columnHeader3
+            // btn_vernieuw
             // 
-            this.columnHeader3.DisplayIndex = 3;
-            this.columnHeader3.Text = "Tijd";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 100;
+            this.btn_vernieuw.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_vernieuw.Location = new System.Drawing.Point(277, 9);
+            this.btn_vernieuw.Name = "btn_vernieuw";
+            this.btn_vernieuw.Size = new System.Drawing.Size(135, 31);
+            this.btn_vernieuw.TabIndex = 6;
+            this.btn_vernieuw.Text = "Vernieuwen";
+            this.btn_vernieuw.UseVisualStyleBackColor = true;
+            this.btn_vernieuw.Click += new System.EventHandler(this.button1_Click);
             // 
             // BestellingOverzicht
             // 
@@ -140,6 +151,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 591);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_vernieuw);
             this.Controls.Add(this.lb_bestellingtitel);
             this.Controls.Add(this.btn_back);
             this.Controls.Add(this.lb_bestelling);
@@ -165,5 +177,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader status;
         private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Button btn_vernieuw;
     }
 }
