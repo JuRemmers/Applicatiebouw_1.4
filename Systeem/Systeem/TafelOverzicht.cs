@@ -21,10 +21,10 @@ namespace Systeem
         BestellingService bestelservice = new BestellingService();
         TafelService tafelservice = new TafelService();
 
-        public TafelOverzicht(int medewerkerId)
+        public TafelOverzicht(int medewerkerId = 0)
         {
             InitializeComponent();
-            loadTableStatus();                       
+            loadTableStatus();                                
         }
 
         public TafelOverzicht(string tabopen)
@@ -412,6 +412,25 @@ namespace Systeem
         {
             for (int i = 1; i <= 10; i++)
             {
+                Status gerechtstatus = tafelservice.GetGerechtStatus(i);
+                string status;
+
+                //switch(gerechtstatus)
+                //{
+                //    case Status.Gereed:
+                //        status = "Gereed";
+                //        break;
+                //    case Status.Onderhande:
+                //        status = "Onderhande";
+                //        break;
+                //    case Status.Opgenomen:
+                //        status = "Opgenomen";
+                //        break;
+                //    case Status.Uitgeserveerd:
+                //        status = "Uitgeserveerd";
+                //        break;
+                //}   
+
                 bool tafelstatus = tafelservice.TafelStatus(i);
                 switch (i)
                 {
@@ -419,11 +438,14 @@ namespace Systeem
                         if (tafelstatus == true)
                             btn_table1.BackColor = Color.Red;
                         else btn_table1.BackColor = Color.PaleGreen;
+                        btn_table1.Text = "Tafel 1"; // dit is een reset omdat je hem leegmaakt
+                        btn_table1.Text += gerechtstatus.ToString();
                         break;
                     case 2:
                         if (tafelstatus == true)
                             btn_table2.BackColor = Color.Red;
                         else btn_table2.BackColor = Color.PaleGreen;
+
                         break;
                     case 3:
                         if (tafelstatus == true)

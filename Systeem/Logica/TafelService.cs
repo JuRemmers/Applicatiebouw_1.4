@@ -11,6 +11,7 @@ namespace Logica
     public class TafelService
     {
         TafelDAO tafelDAL = new TafelDAO();
+        BestelItemDAO bestelItemDAL = new BestelItemDAO();
 
         public bool TafelStatus(int id)
         {
@@ -27,6 +28,10 @@ namespace Logica
             tafelDAL.UpdateStatus(id, status);
         }
 
-
+        public Status GetGerechtStatus(int tafelId)
+        {
+            BestelItem bestelitem = bestelItemDAL.GetForTable(tafelId);
+            return bestelitem.status;
+        }
     }
 }

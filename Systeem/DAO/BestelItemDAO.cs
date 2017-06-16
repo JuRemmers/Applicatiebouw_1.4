@@ -22,13 +22,15 @@ namespace DAO
 
         private BestelItem ReadBestelItem(SqlDataReader reader)
         {
+            try
+            {
                 int BestelItemID = reader.GetInt32(0);
-            int bestelId = reader.GetInt32(1);
+                int bestelId = reader.GetInt32(1);
                 int menuItemID = reader.GetInt32(2);
                 int aantal = reader.GetInt32(3);
-            Status status = (Status)Enum.Parse(typeof(Status), reader.GetString(4));
+                Status status = (Status)Enum.Parse(typeof(Status), reader.GetString(4));
                 string opmerking = "";
-                
+
                 double BestelItemPrijs = reader.GetDouble(6);
                 DateTime bestelItemTijd = reader.GetDateTime(7);
                 string MenuItemNaam = reader.GetString(9);
@@ -46,18 +48,24 @@ namespace DAO
                 bool tafelstatus = reader.GetBoolean(24);
                 string voornaam = reader.GetString(26);
                 string achternaam = reader.GetString(27);
-            Functie functie = (Functie)Enum.Parse(typeof(Functie), reader.GetString(28));
+                Functie functie = (Functie)Enum.Parse(typeof(Functie), reader.GetString(28));
                 string wachtwoord = reader.GetString(29);
 
-                
+
                 MenuKaart kaart = new MenuKaart(MenuKaartId, menukaartNaam);
                 Menucategorie cat = new Menucategorie(MenuCatId, menuCatNaam, btw, kaart);
                 MenuItem menuitem = new MenuItem(menuItemID, MenuItemNaam, MenuItemPrijs, MenuItemVoorraad, cat);
                 Tafel tafel = new Tafel(tafelId, tafelstatus);
                 Medewerker med = new Medewerker(medId, voornaam, achternaam, functie, wachtwoord);
                 Bestelling best = new Bestelling(bestelId, betaald, tafel, med);
-            BestelItem bestelItem = new BestelItem(BestelItemID, best, menuitem, BestelItemPrijs, aantal, status, opmerking, bestelItemTijd);
-            return bestelItem;
+                BestelItem bestelItem = new BestelItem(BestelItemID, best, menuitem, BestelItemPrijs, aantal, status, opmerking, bestelItemTijd);
+                return bestelItem;
+            }
+            catch
+            {
+                return null;
+            }
+            
         }
 
         // Kayleigh
@@ -90,16 +98,16 @@ namespace DAO
         }
 
         public void UpdateBestelitem(int bestellingid, Status updatestatus, string gerecht)
-         {
+        {
             string stringstatus = updatestatus.ToString();
-             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st FROM Bestel_Item INNER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Menu_Item.Gerecht = @mg AND Bestel_Item.Bestel_ID = @id; ", conn);
-             command.Parameters.AddWithValue("@id", bestellingid);
-             command.Parameters.AddWithValue("@st", stringstatus);
+            SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st FROM Bestel_Item INNER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Menu_Item.Gerecht = @mg AND Bestel_Item.Bestel_ID = @id; ", conn);
+            command.Parameters.AddWithValue("@id", bestellingid);
+            command.Parameters.AddWithValue("@st", stringstatus);
             command.Parameters.AddWithValue("@mg", gerecht);
- 
-             conn.Open();
+
+            conn.Open();
             command.ExecuteNonQuery();
- 
+
             conn.Close();
         }
 
@@ -111,5 +119,28 @@ namespace DAO
             command.ExecuteNonQuery();
             conn.Close();
         }
-}
+
+        public BestelItem GetForTable(int tafelId)
+        {
+            string query = "SELECT *" +
+                        " FROM Bestel_Item" +
+                        " FULL OUTER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID" +
+                        " FULL OUTER JOIN Bestelling ON Bestelling.ID = Bestel_Item.Bestel_ID" +
+                        " FULL OUTER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID" +
+                        " FULL OUTER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID" +
+                        " FULL OUTER JOIN Tafel ON Bestelling.Tafel_ID = Tafel.ID" +
+                        " FULL OUTER JOIN Medewerker ON Bestelling.Medewerker_ID = Medewerker.ID" +
+                        " WHERE Tafel.id = " + tafelId;
+
+            conn.Open();
+            SqlCommand command = new SqlCommand(query, conn);
+            SqlDataReader reader = command.ExecuteReader();
+
+            BestelItem item = ReadBestelItem(reader);
+            reader.Close();
+            conn.Close();
+
+            return item;              
+        }
+    }
 }
