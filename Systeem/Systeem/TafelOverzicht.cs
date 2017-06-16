@@ -418,14 +418,14 @@ namespace Systeem
 
         private void btn_bar_meldingen_Click(object sender, EventArgs e)
         {
-            tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;
             btn_bar.PerformClick();
+            tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;            
         }
 
         private void btn_keuken_meldingen_Click(object sender, EventArgs e)
         {
-            tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;
             btn_keuken.PerformClick();
+            tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;           
         }
     }
 }

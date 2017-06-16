@@ -43,7 +43,7 @@ namespace Systeem
                 string sa = i.item.product;
                 string sa2 = i.aantal.ToString();
                 string sa3 = i.status.ToString();
-                string sa4 = wachttijd.ToString();
+                string sa4 = Math.Round(wachttijd.TotalMinutes, 2).ToString();
                 ListViewItem listview = new ListViewItem(sa);
                 listview.SubItems.Add(sa2);
                 listview.SubItems.Add(sa4);
@@ -70,7 +70,7 @@ namespace Systeem
                         }
                         else
                         {
-                            listview.ForeColor = Color.White;
+                            listview.ForeColor = Color.Black;
                         }
                     }
                 }
@@ -92,7 +92,7 @@ namespace Systeem
                         }
                         else
                         {
-                            listview.ForeColor = Color.White;
+                            listview.ForeColor = Color.Black;
                         }
                     }
                 }
