@@ -31,15 +31,10 @@ namespace DAO
                 int categorieid = (int)reader["categorieID"];
                 string categorie = (string)reader["Categorie"];
                 int btw = (int)reader["btw"];
-                int menukaartid = (int)reader["Menu_Kaart_ID"];
-
-                Menucategorie cAtegorie = new Menucategorie(categorieid, categorie, btw, menukaartid);
-
                 int menukaart_id = (int)reader["menuKaartID"];
                 string naam = (string)reader["Kaart"];
 
-                MenuKaart kaart = new MenuKaart(menukaart_id, naam);
-
+                Menucategorie cAtegorie = new Menucategorie(categorieid, categorie, btw, new MenuKaart(menukaart_id, naam));
                 return new MenuItem(menuitemID, gerecht, prijs, voorraad, cAtegorie);
             }
             catch

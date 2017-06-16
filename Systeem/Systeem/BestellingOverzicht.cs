@@ -50,7 +50,7 @@ namespace Systeem
                 listview.SubItems.Add(sa3);
                 clb_besteIitems.Items.Add(listview);
 
-                int categorie = i.item.Categorie.menukaartID;
+                int categorie = i.item.Categorie.menu.id;
 
                 if (categorie == 1)
                 {

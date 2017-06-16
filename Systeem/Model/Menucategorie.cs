@@ -11,14 +11,14 @@ namespace Model
         private int id;
         public string Categorie { get; private set; }
         public int btw { get; private set; }
-        public int menukaartID { get; private set; }
+        public MenuKaart menu { get; private set; }
 
-        public Menucategorie(int ID, string Cat, int btw, int menu)
+        public Menucategorie(int ID, string Cat, int btw, MenuKaart menu)
         {
             this.id = ID;
             this.Categorie = Cat;
             this.btw = btw;
-            this.menukaartID = menu;
+            this.menu = menu;
         }
 
         public override string ToString()
