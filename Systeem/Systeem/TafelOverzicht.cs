@@ -22,19 +22,11 @@ namespace Systeem
         public TafelOverzicht()
         {
             InitializeComponent();
-            //cb_status.Items.Add("Opgenomen");
-            //cb_status.Items.Add("Onderhande");
-            //cb_status.Items.Add("Gereed");
-            //cb_status.Items.Add("Uitgeserveerd");
         }
 
         public TafelOverzicht(string tabopen)
         {
             InitializeComponent();
-            //cb_status.Items.Add("Opgenomen");
-            //cb_status.Items.Add("Onderhande");
-            //cb_status.Items.Add("Gereed");
-            //cb_status.Items.Add("Uitgeserveerd");
 
             // Kayleigh Vossen
             if (tabopen == "tp_bestelling_maken")
@@ -253,37 +245,6 @@ namespace Systeem
 
         }
 
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    int bestellingid;
-        //    Status updatestatus = Model.Status.Gereed;
-
-        //    ListViewItem list2 = clb_bestellingen.SelectedItems[0];
-        //    bestellingid = int.Parse(list2.SubItems[0].Text);
-        //    updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
-
-        //    BestellingService service = new BestellingService();
-        //    service.UpdateStatus(bestellingid, updatestatus);
-
-
-        //    switch (sectie)
-        //    {
-        //        case "Keuken":
-        //            btn_keuken.PerformClick();
-        //            break;
-
-        //        case "Bar":
-        //            btn_bar.PerformClick();
-        //            break;
-
-        //        case "Alles":
-        //            btn_all.PerformClick();
-        //            break;
-
-        //    }
-
-
-        //}
 
         // Kayleigh Vossen
         private void pb_table1_Click(object sender, EventArgs e)
