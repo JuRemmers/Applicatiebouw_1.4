@@ -101,21 +101,24 @@ namespace Logica
             return false;
         }
 
-        //public bool PlaatsBestelling(int medewerkerId, int tafelId)
-        //{
-        //    try {BestelDAL.GetBestelling(medewerkerId, tafelId, false);}
-        //    catch
-        //    { Bestelling bestelling = BestelDAL.NewBestelling(tafelId, medewerkerId); }
+        public bool PlaatsBestelling(int medewerkerId, int tafelId)
+        {
+            Bestelling order;
+            try { order = BestelDAL.GetBestelling(medewerkerId, tafelId, false); }
+            catch
+            { order = BestelDAL.NewBestelling(tafelId, medewerkerId); }
 
-        //    foreach (BestelItem bestelitem in bestelling)
-        //    {
-        //        bestelitem.SetPrijs(menuItemDAL.GetPrijs(bestelitem.item.ToString()));
-        //        if (!bestelItemDAL.InsertBestelItem(bestelitem))
-        //        { return false; }
-        //    }
+            foreach (BestelItem bestelitem in bestelling)
+            {
+                MenuItem item = menuItemDAL.GetForGerecht(bestelitem.item.ToString());
+                bestelitem.SetPrijs(item.prijs);
+                bestelitem.SetMenuItem(item);
+                if (!bestelItemDAL.InsertBestelItem(bestelitem))
+                { return false; }
+            }
 
-        //    bestelling.Clear();
-        //    return true;
-        //}
+            bestelling.Clear();
+            return true;
+        }
     }
 }

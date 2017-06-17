@@ -22,40 +22,40 @@ namespace DAO
 
         private BestelItem ReadBestelItem(SqlDataReader reader)
         {
-                int BestelItemID = reader.GetInt32(0);
+            int BestelItemID = reader.GetInt32(0);
             int bestelId = reader.GetInt32(1);
-                int menuItemID = reader.GetInt32(2);
-                int aantal = reader.GetInt32(3);
+            int menuItemID = reader.GetInt32(2);
+            int aantal = reader.GetInt32(3);
             Status status = (Status)Enum.Parse(typeof(Status), reader.GetString(4));
-                string opmerking = "";
-                
-                double BestelItemPrijs = reader.GetDouble(6);
-                DateTime bestelItemTijd = reader.GetDateTime(7);
-                string MenuItemNaam = reader.GetString(9);
-                double MenuItemPrijs = reader.GetDouble(10);
-                int MenuItemVoorraad = reader.GetInt32(11);
+            string opmerking = "";
 
-                int MenuCatId = reader.GetInt32(12);
-                int tafelId = reader.GetInt32(14);
-                int medId = reader.GetInt32(15);
-                bool betaald = reader.GetBoolean(16);
-                string menuCatNaam = reader.GetString(18);
-                int btw = reader.GetInt32(19);
-                int MenuKaartId = reader.GetInt32(20);
-                string menukaartNaam = reader.GetString(22);
-                bool tafelstatus = reader.GetBoolean(24);
-                string voornaam = reader.GetString(26);
-                string achternaam = reader.GetString(27);
+            double BestelItemPrijs = reader.GetDouble(6);
+            DateTime bestelItemTijd = reader.GetDateTime(7);
+            string MenuItemNaam = reader.GetString(9);
+            double MenuItemPrijs = reader.GetDouble(10);
+            int MenuItemVoorraad = reader.GetInt32(11);
+
+            int MenuCatId = reader.GetInt32(12);
+            int tafelId = reader.GetInt32(14);
+            int medId = reader.GetInt32(15);
+            bool betaald = reader.GetBoolean(16);
+            string menuCatNaam = reader.GetString(18);
+            int btw = reader.GetInt32(19);
+            int MenuKaartId = reader.GetInt32(20);
+            string menukaartNaam = reader.GetString(22);
+            bool tafelstatus = reader.GetBoolean(24);
+            string voornaam = reader.GetString(26);
+            string achternaam = reader.GetString(27);
             Functie functie = (Functie)Enum.Parse(typeof(Functie), reader.GetString(28));
-                string wachtwoord = reader.GetString(29);
+            string wachtwoord = reader.GetString(29);
 
-                
-                MenuKaart kaart = new MenuKaart(MenuKaartId, menukaartNaam);
-                Menucategorie cat = new Menucategorie(MenuCatId, menuCatNaam, btw, kaart);
-                MenuItem menuitem = new MenuItem(menuItemID, MenuItemNaam, MenuItemPrijs, MenuItemVoorraad, cat);
-                Tafel tafel = new Tafel(tafelId, tafelstatus);
-                Medewerker med = new Medewerker(medId, voornaam, achternaam, functie, wachtwoord);
-                Bestelling best = new Bestelling(bestelId, betaald, tafel, med);
+
+            MenuKaart kaart = new MenuKaart(MenuKaartId, menukaartNaam);
+            Menucategorie cat = new Menucategorie(MenuCatId, menuCatNaam, btw, kaart);
+            MenuItem menuitem = new MenuItem(menuItemID, MenuItemNaam, MenuItemPrijs, MenuItemVoorraad, cat);
+            Tafel tafel = new Tafel(tafelId, tafelstatus);
+            Medewerker med = new Medewerker(medId, voornaam, achternaam, functie, wachtwoord);
+            Bestelling best = new Bestelling(bestelId, betaald, tafel, med);
             BestelItem bestelItem = new BestelItem(BestelItemID, best, menuitem, BestelItemPrijs, aantal, status, opmerking, bestelItemTijd);
             return bestelItem;
         }
@@ -90,26 +90,33 @@ namespace DAO
         }
 
         public void UpdateBestelitem(int bestellingid, Status updatestatus, string gerecht)
-         {
-            string stringstatus = updatestatus.ToString();
-             SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st FROM Bestel_Item INNER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Menu_Item.Gerecht = @mg AND Bestel_Item.Bestel_ID = @id; ", conn);
-             command.Parameters.AddWithValue("@id", bestellingid);
-             command.Parameters.AddWithValue("@st", stringstatus);
-            command.Parameters.AddWithValue("@mg", gerecht);
- 
-             conn.Open();
-            command.ExecuteNonQuery();
- 
-            conn.Close();
-        }
-
-        public void InsertBestelItem()
         {
-            SqlCommand command = new SqlCommand("", conn);
+            string stringstatus = updatestatus.ToString();
+            SqlCommand command = new SqlCommand("UPDATE Bestel_Item SET Status = @st FROM Bestel_Item INNER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID WHERE Menu_Item.Gerecht = @mg AND Bestel_Item.Bestel_ID = @id; ", conn);
+            command.Parameters.AddWithValue("@id", bestellingid);
+            command.Parameters.AddWithValue("@st", stringstatus);
+            command.Parameters.AddWithValue("@mg", gerecht);
 
             conn.Open();
             command.ExecuteNonQuery();
+
             conn.Close();
         }
-}
+
+        public bool InsertBestelItem(BestelItem bestelitem)
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand("", conn);
+
+                conn.Open();
+                command.ExecuteNonQuery();
+                conn.Close();
+
+                return true;
+            }
+            catch { return false; }
+
+        }
+    }
 }

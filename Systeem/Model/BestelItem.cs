@@ -74,5 +74,10 @@ namespace Model
             this.prijs = prijs;
             this.tijd = DateTime.Now;
         }
+
+        public void SetMenuItem(MenuItem item)
+        {
+            this.item = item;
+        }
     }
 }

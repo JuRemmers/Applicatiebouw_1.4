@@ -21,7 +21,7 @@ namespace Systeem
         BestellingService bestelservice = new BestellingService();
         TafelService tafelservice = new TafelService();
 
-        public TafelOverzicht(int medewerkerId)
+        public TafelOverzicht(int medewerkerId = 0)
         {
             InitializeComponent();
             loadTableStatus();                       
@@ -471,12 +471,12 @@ namespace Systeem
 
         private void btn_plaats_Click(object sender, EventArgs e)
         {
-            //int tafel = (int)nod_tafel.Value;
+            int tafel = (int)nod_tafel.Value;
 
-            //if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
-            //{
-            //    MessageBox.Show("Er ging iets fout.");
-            //}
+            if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
+            {
+                MessageBox.Show("Er ging iets fout.");
+            }
 
         }
     }
