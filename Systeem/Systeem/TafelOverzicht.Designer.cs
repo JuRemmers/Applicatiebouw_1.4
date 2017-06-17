@@ -30,6 +30,7 @@
         {
             this.tab_tafeloverzicht = new System.Windows.Forms.TabControl();
             this.tp_plattegrond = new System.Windows.Forms.TabPage();
+            this.btn_loguit = new System.Windows.Forms.Button();
             this.btn_table9 = new System.Windows.Forms.Button();
             this.btn_table10 = new System.Windows.Forms.Button();
             this.btn_table8 = new System.Windows.Forms.Button();
@@ -80,7 +81,6 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
-            this.btn_loguit = new System.Windows.Forms.Button();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             this.tp_bestelling_maken.SuspendLayout();
@@ -131,13 +131,25 @@
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
             // 
+            // btn_loguit
+            // 
+            this.btn_loguit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_loguit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_loguit.Location = new System.Drawing.Point(354, 525);
+            this.btn_loguit.Name = "btn_loguit";
+            this.btn_loguit.Size = new System.Drawing.Size(66, 32);
+            this.btn_loguit.TabIndex = 24;
+            this.btn_loguit.Text = "Log uit";
+            this.btn_loguit.UseVisualStyleBackColor = false;
+            this.btn_loguit.Click += new System.EventHandler(this.btn_loguit_Click);
+            // 
             // btn_table9
             // 
             this.btn_table9.BackColor = System.Drawing.Color.Transparent;
             this.btn_table9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table9.Location = new System.Drawing.Point(95, 434);
+            this.btn_table9.Location = new System.Drawing.Point(78, 435);
             this.btn_table9.Name = "btn_table9";
-            this.btn_table9.Size = new System.Drawing.Size(83, 69);
+            this.btn_table9.Size = new System.Drawing.Size(121, 69);
             this.btn_table9.TabIndex = 23;
             this.btn_table9.Text = "Tafel 9";
             this.btn_table9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -149,9 +161,9 @@
             this.btn_table10.BackColor = System.Drawing.Color.Transparent;
             this.btn_table10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_table10.ForeColor = System.Drawing.Color.Black;
-            this.btn_table10.Location = new System.Drawing.Point(232, 435);
+            this.btn_table10.Location = new System.Drawing.Point(215, 436);
             this.btn_table10.Name = "btn_table10";
-            this.btn_table10.Size = new System.Drawing.Size(83, 69);
+            this.btn_table10.Size = new System.Drawing.Size(121, 69);
             this.btn_table10.TabIndex = 22;
             this.btn_table10.Text = "Tafel 10";
             this.btn_table10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -162,9 +174,9 @@
             // 
             this.btn_table8.BackColor = System.Drawing.Color.Transparent;
             this.btn_table8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table8.Location = new System.Drawing.Point(232, 346);
+            this.btn_table8.Location = new System.Drawing.Point(215, 347);
             this.btn_table8.Name = "btn_table8";
-            this.btn_table8.Size = new System.Drawing.Size(83, 69);
+            this.btn_table8.Size = new System.Drawing.Size(121, 69);
             this.btn_table8.TabIndex = 21;
             this.btn_table8.Text = "Tafel 8";
             this.btn_table8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -175,9 +187,9 @@
             // 
             this.btn_table7.BackColor = System.Drawing.Color.Transparent;
             this.btn_table7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table7.Location = new System.Drawing.Point(95, 346);
+            this.btn_table7.Location = new System.Drawing.Point(78, 347);
             this.btn_table7.Name = "btn_table7";
-            this.btn_table7.Size = new System.Drawing.Size(83, 69);
+            this.btn_table7.Size = new System.Drawing.Size(121, 69);
             this.btn_table7.TabIndex = 20;
             this.btn_table7.Text = "Tafel 7";
             this.btn_table7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -188,9 +200,9 @@
             // 
             this.btn_table6.BackColor = System.Drawing.Color.Transparent;
             this.btn_table6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table6.Location = new System.Drawing.Point(232, 257);
+            this.btn_table6.Location = new System.Drawing.Point(215, 258);
             this.btn_table6.Name = "btn_table6";
-            this.btn_table6.Size = new System.Drawing.Size(83, 69);
+            this.btn_table6.Size = new System.Drawing.Size(121, 69);
             this.btn_table6.TabIndex = 19;
             this.btn_table6.Text = "Tafel 6";
             this.btn_table6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -201,9 +213,9 @@
             // 
             this.btn_table5.BackColor = System.Drawing.Color.Transparent;
             this.btn_table5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table5.Location = new System.Drawing.Point(95, 257);
+            this.btn_table5.Location = new System.Drawing.Point(78, 258);
             this.btn_table5.Name = "btn_table5";
-            this.btn_table5.Size = new System.Drawing.Size(83, 69);
+            this.btn_table5.Size = new System.Drawing.Size(121, 69);
             this.btn_table5.TabIndex = 18;
             this.btn_table5.Text = "Tafel 5";
             this.btn_table5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -214,9 +226,9 @@
             // 
             this.btn_table4.BackColor = System.Drawing.Color.Transparent;
             this.btn_table4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table4.Location = new System.Drawing.Point(232, 165);
+            this.btn_table4.Location = new System.Drawing.Point(215, 166);
             this.btn_table4.Name = "btn_table4";
-            this.btn_table4.Size = new System.Drawing.Size(83, 69);
+            this.btn_table4.Size = new System.Drawing.Size(121, 69);
             this.btn_table4.TabIndex = 17;
             this.btn_table4.Text = "Tafel 4";
             this.btn_table4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -227,9 +239,9 @@
             // 
             this.btn_table3.BackColor = System.Drawing.Color.Transparent;
             this.btn_table3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table3.Location = new System.Drawing.Point(95, 167);
+            this.btn_table3.Location = new System.Drawing.Point(78, 168);
             this.btn_table3.Name = "btn_table3";
-            this.btn_table3.Size = new System.Drawing.Size(83, 69);
+            this.btn_table3.Size = new System.Drawing.Size(121, 69);
             this.btn_table3.TabIndex = 16;
             this.btn_table3.Text = "Tafel 3";
             this.btn_table3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -240,9 +252,9 @@
             // 
             this.btn_table2.BackColor = System.Drawing.Color.Transparent;
             this.btn_table2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table2.Location = new System.Drawing.Point(232, 74);
+            this.btn_table2.Location = new System.Drawing.Point(215, 75);
             this.btn_table2.Name = "btn_table2";
-            this.btn_table2.Size = new System.Drawing.Size(83, 69);
+            this.btn_table2.Size = new System.Drawing.Size(121, 69);
             this.btn_table2.TabIndex = 15;
             this.btn_table2.Text = "Tafel 2";
             this.btn_table2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -253,9 +265,9 @@
             // 
             this.btn_table1.BackColor = System.Drawing.Color.Transparent;
             this.btn_table1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_table1.Location = new System.Drawing.Point(95, 74);
+            this.btn_table1.Location = new System.Drawing.Point(78, 75);
             this.btn_table1.Name = "btn_table1";
-            this.btn_table1.Size = new System.Drawing.Size(83, 69);
+            this.btn_table1.Size = new System.Drawing.Size(121, 69);
             this.btn_table1.TabIndex = 14;
             this.btn_table1.Text = "Tafel 1";
             this.btn_table1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -716,18 +728,6 @@
             this.btn_bar.Text = "Bar";
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
-            // 
-            // btn_loguit
-            // 
-            this.btn_loguit.BackColor = System.Drawing.Color.Transparent;
-            this.btn_loguit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_loguit.Location = new System.Drawing.Point(354, 525);
-            this.btn_loguit.Name = "btn_loguit";
-            this.btn_loguit.Size = new System.Drawing.Size(66, 32);
-            this.btn_loguit.TabIndex = 24;
-            this.btn_loguit.Text = "Log uit";
-            this.btn_loguit.UseVisualStyleBackColor = false;
-            this.btn_loguit.Click += new System.EventHandler(this.btn_loguit_Click);
             // 
             // TafelOverzicht
             // 
