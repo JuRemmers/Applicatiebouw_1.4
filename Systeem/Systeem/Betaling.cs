@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Model;
 using DAO;
 
-
+// Kayleigh Vossen
 namespace Systeem
 {
     public partial class Betaling : Form
@@ -51,9 +51,6 @@ namespace Systeem
 
         private void btn_plattegrond_Click(object sender, EventArgs e)
         {
-        //    TafelOverzicht overzicht = new TafelOverzicht();
-        //    overzicht.Location = this.Location;
-        //    overzicht.Show();
             this.Close();
         }
     }

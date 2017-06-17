@@ -153,6 +153,7 @@ namespace Systeem
             MessageBox.Show("Opmerking is bij rekening gevoegd" + Environment.NewLine + "\"" + opm + "\"");
         }
 
+        // Jesse van Duijne
         private void btn_bezet_Click(object sender, EventArgs e)
         {
             // 1. Verbind met logicalaag 
@@ -165,6 +166,7 @@ namespace Systeem
             tafeloverzicht.loadTableStatus();            
         }
 
+        // Jesse van Duijne
         public void btn_vrij_Click(object sender, EventArgs e)
         {
             if(lv_bestelitems.Items.Count != 0)

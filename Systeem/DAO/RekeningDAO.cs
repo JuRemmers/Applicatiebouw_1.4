@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Model;
 
-// Geschreven door Kayleigh Vossen
-
+// Kayleigh Vossen
 namespace DAO
 {
     public class RekeningDAO

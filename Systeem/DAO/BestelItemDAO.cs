@@ -12,7 +12,6 @@ namespace DAO
     {
         protected SqlConnection conn;
         protected DBconnection dbconn;
-        // hai
 
         public BestelItemDAO()
         {
@@ -68,7 +67,7 @@ namespace DAO
 
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         public List<BestelItem> GetMenuItemsByBestellingId(int bestelId)
         {
             string com = "SELECT *" +
@@ -131,6 +130,7 @@ namespace DAO
             }
         }
 
+        // Julian Remmers
         public List<BestelItem> GetForTable(int tafelId)
         {
             List<BestelItem> bestelitemlist = new List<BestelItem>();

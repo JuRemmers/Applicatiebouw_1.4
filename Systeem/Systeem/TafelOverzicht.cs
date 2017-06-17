@@ -28,17 +28,6 @@ namespace Systeem
             this.medewerkerId = medewerkerId;
         }
 
-        public TafelOverzicht(string tabopen)
-        {
-            InitializeComponent();
-            loadTableStatus();
-            // Kayleigh Vossen
-            if (tabopen == "tp_bestelling_maken")
-            {
-                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
-            }
-        }
-
         private void btn_lunch_Click(object sender, EventArgs e)
         {
             gbox_items.Visible = true;
@@ -329,123 +318,193 @@ namespace Systeem
             }
         }
 
+        // Kayleigh Vossen
         public void btn_table1_Click(object sender, EventArgs e)
-        {          
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
-        
+
+        // Kayleigh Vossen
         public void btn_table2_Click(object sender, EventArgs e)
-        {           
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table3_Click(object sender, EventArgs e)
-        {           
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table4_Click(object sender, EventArgs e)
-        {          
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table5_Click(object sender, EventArgs e)
-        {           
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table6_Click(object sender, EventArgs e)
-        {         
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table7_Click(object sender, EventArgs e)
-        {       
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table8_Click(object sender, EventArgs e)
-        {            
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table9_Click(object sender, EventArgs e)
-        {                    
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 
+        // Kayleigh Vossen
         public void btn_table10_Click(object sender, EventArgs e)
-        {            
+        {
+            // new form initialseren & tafelnummer meegeven          
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
+
+            // locatie overzichtform op dezelfde locatie zetten
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+
+            // als button "Nieuwe bestelling" geklikt wordt, dialogresult = ok, dan opent hij tabpage bestelling maken
             if (overzicht.ShowDialog() == DialogResult.OK)
             {
                 tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
             }
+            // tafelstatus wordt geladen
             loadTableStatus();
         }
 

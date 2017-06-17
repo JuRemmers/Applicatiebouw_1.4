@@ -87,7 +87,7 @@ namespace DAO
             return bestellingalles;
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         public Bestelling GetBestellingByTafelId(int tafelId)
         {
             string com = "SELECT *" +
@@ -128,7 +128,7 @@ namespace DAO
             return new Bestelling(bestelID,Betaald,t,m);
         }
 
-        // Kayleigh
+        // Kayleigh Vossen
         public void UpdateBetaald(int bestelId)
         {
             string com = "UPDATE Bestelling SET Betaald=1 WHERE ID=@id";
