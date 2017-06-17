@@ -16,29 +16,32 @@ namespace Systeem
 {
     public partial class RekeningOverzicht : Form
     {
-        private int tafelId;
+        private int tafelId; // wordt meegegeven om de list met bestelitems op te halen
         private List<BestelItem> items;
         private Rekening r;
         private TafelService t = new TafelService();
-        private TafelOverzicht tafeloverzicht = new TafelOverzicht();   
+        private RekeningService s = new RekeningService(); 
 
         public RekeningOverzicht(int tafelId)
         {
             InitializeComponent();
-            this.tafelId = tafelId;
-            lbl_tafelnummer.Text = "Tafel " + tafelId;
-            lbl_tafelnummer2.Text = "Tafel " + tafelId;
-            RekeningService s = new RekeningService();
-            items = s.GetBestellingByTafelId(tafelId);
+            this.tafelId = tafelId; // tafelId wordt toegekend
+            lbl_tafelnummer.Text = "Tafel " + tafelId; // toont welke tafel dit rekeningoverzicht betreft
+            lbl_tafelnummer2.Text = "Tafel " + tafelId; // toont welke tafel dit rekeningoverzicht betreft
+
+            items = s.GetBestellingByTafelId(tafelId); // vult list<bestelItems>
+            InitList(items);
+            
+            // als er geen items in items zitten dan kom je met geen mogelijkheid nog bij rekening aanmaken
             if (!items.Any())
             {
                 btn_afrekenen.Enabled = false;
                 tabControl1.TabPages.Remove(tp_rekening);
             }
-            InitList(items);
+
             InitRekening(items);
 
-            lbl_Tafelstatus.Text = t.TafelStatus(tafelId).ToString();
+            // checken of tafel vrij/bezet is, wordt daarna getoont in label
             if(t.TafelStatus(tafelId) == false)
             {
                 lbl_Tafelstatus.Text = "Tafel " + tafelId + ": Vrij";                
@@ -52,6 +55,7 @@ namespace Systeem
 
         private void InitList(List<BestelItem> items)
         {
+            // vult de listvieuw met items uit list<bestelitems>
             foreach(BestelItem i in items)
             {
                 string sa = i.aantal.ToString();
@@ -59,12 +63,16 @@ namespace Systeem
                 string sa3 = "€ " + (i.item.prijs*i.aantal).ToString("0.00");
                 ListViewItem lvi = new ListViewItem(sa);
                 
+                // voeg overige waardes aan kolommen toe
                 lvi.SubItems.Add(sa2);
                 lvi.SubItems.Add(sa3);
+
+                // voegt het listvieuwitem toe
                 lv_bestelitems.Items.Add(lvi);                
             }
         }
 
+        // hetzelfde als InitList voor rekeningtab
         private void InitRekening(List<BestelItem> items)
         {
             foreach (BestelItem i in items)
@@ -80,6 +88,7 @@ namespace Systeem
             }
         }
 
+        // toont de waardes van de rekening
         private void ShowRekening()
         {
             lbl_mednaam.Text = r.medewerker.voornaam;
@@ -90,6 +99,7 @@ namespace Systeem
             lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
         }
 
+        // maakt de rekening op en toont deze daarna
         private void tp_rekening_Click(object sender, EventArgs e)
         {
             RekeningService s = new RekeningService();
@@ -97,6 +107,7 @@ namespace Systeem
             ShowRekening();
         }
 
+        // update het fooi bedrag en toont daarna de nieuwe rekening
         private void btn_updatefooi_Click(object sender, EventArgs e)
         {
             double fooi = double.Parse(txt_tip.Text);
@@ -104,17 +115,21 @@ namespace Systeem
             ShowRekening();
         }
 
+        // gaat terug naar tafeloverzicht
         private void btn_terug_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // gaat naar tafeloverzicht, tab bestelling maken
         private void btn_AddBestelling_Click(object sender, EventArgs e)
         {
+            // dialogresult wordt meegegeven om de juiste tab te openen
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
+        // maakt de rekening op en toont deze op de volgende tabpage
         private void btn_afrekenen_Click(object sender, EventArgs e)
         {
             RekeningService s = new RekeningService();
@@ -123,11 +138,13 @@ namespace Systeem
             tabControl1.SelectedTab = tp_rekening;
         }
 
+        // gaat terug naar rekeningoverzicht ipv rekening
         private void btn_Terug_Click(object sender, EventArgs e)
         {
             tabControl1.SelectedTab = tp_tafeloverzicht;
         }
 
+        // geeft aan dat de gast contact wilt betalen
         private void btn_contant_Click(object sender, EventArgs e)
         {
             string c = "contant";
@@ -137,6 +154,7 @@ namespace Systeem
             this.Close();
         }
 
+        // geeft aan dat de klant wil pinnen
         private void btn_pin_Click(object sender, EventArgs e)
         {
             string c = "met pin";
@@ -146,6 +164,7 @@ namespace Systeem
             this.Close();
         }
 
+        // toont messagebox met de opmerking die wordt toegevoegd aan de rekening
         private void button1_Click(object sender, EventArgs e)
         {
             string opm = txt_opmerking.Text;
@@ -162,8 +181,7 @@ namespace Systeem
             // 4. if status == bezet --> zet status op vrij
             t.UpdateStatus(tafelId, true);
             string tafelStatus = "Tafel " + tafelId + ": Bezet";
-            lbl_Tafelstatus.Text = tafelStatus;
-            tafeloverzicht.loadTableStatus();            
+            lbl_Tafelstatus.Text = tafelStatus;           
         }
 
         // Jesse van Duijne
@@ -179,10 +197,10 @@ namespace Systeem
                 t.UpdateStatus(tafelId, false);
                 string tafelStatus = "Tafel " + tafelId + ": Vrij";
                 lbl_Tafelstatus.Text = tafelStatus;
-                tafeloverzicht.loadTableStatus();
             }           
         }
 
+        // zorgt ervoor dat de instructietekst verdwijnt als medewerker wilt typen
         private void txt_opmerking_Click(object sender, EventArgs e)
         {
             txt_opmerking.Clear();
