@@ -334,7 +334,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
         
@@ -343,7 +346,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -352,7 +358,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -361,7 +370,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -370,7 +382,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -379,7 +394,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -388,7 +406,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -397,7 +418,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -406,7 +430,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
@@ -415,7 +442,10 @@ namespace Systeem
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
             overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
-            overzicht.ShowDialog();
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
