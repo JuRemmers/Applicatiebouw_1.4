@@ -149,7 +149,9 @@ namespace Systeem
         private void button1_Click(object sender, EventArgs e)
         {
             string opm = txt_opmerking.Text;
-            r.UpdateOpmerking(opm);            
+            r.UpdateOpmerking(opm);
+            MessageBox.Show("Opmerking is bij rekening gevoegd");
+                        
         }
 
         private void btn_bezet_Click(object sender, EventArgs e)
