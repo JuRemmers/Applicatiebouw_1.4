@@ -150,8 +150,7 @@ namespace Systeem
         {
             string opm = txt_opmerking.Text;
             r.UpdateOpmerking(opm);
-            MessageBox.Show("Opmerking is bij rekening gevoegd");
-                        
+            MessageBox.Show("Opmerking is bij rekening gevoegd" + Environment.NewLine + "\"" + opm + "\"");
         }
 
         private void btn_bezet_Click(object sender, EventArgs e)
@@ -180,6 +179,11 @@ namespace Systeem
                 lbl_Tafelstatus.Text = tafelStatus;
                 tafeloverzicht.loadTableStatus();
             }           
+        }
+
+        private void txt_opmerking_Click(object sender, EventArgs e)
+        {
+            txt_opmerking.Clear();
         }
     }
 }

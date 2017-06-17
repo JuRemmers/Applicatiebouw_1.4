@@ -261,8 +261,11 @@
             this.txt_opmerking.Location = new System.Drawing.Point(10, 417);
             this.txt_opmerking.Multiline = true;
             this.txt_opmerking.Name = "txt_opmerking";
+            this.txt_opmerking.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_opmerking.Size = new System.Drawing.Size(401, 46);
             this.txt_opmerking.TabIndex = 21;
+            this.txt_opmerking.Text = " Typ hier uw opmerking";
+            this.txt_opmerking.Click += new System.EventHandler(this.txt_opmerking_Click);
             // 
             // btn_updatefooi
             // 
