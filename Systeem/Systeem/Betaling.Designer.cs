@@ -32,6 +32,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_UheeftBetaald = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,9 +49,6 @@
             this.lbl_totaalprijs = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btn_plattegrond = new System.Windows.Forms.Button();
-            this.Aantal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Naam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Prijs = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +90,18 @@
             this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Aantal
+            // 
+            this.Aantal.Text = "Aantal";
+            // 
+            // Naam
+            // 
+            this.Naam.Text = "Naam";
+            // 
+            // Prijs
+            // 
+            this.Prijs.Text = "Prijs";
             // 
             // label1
             // 
@@ -231,18 +243,6 @@
             this.btn_plattegrond.UseVisualStyleBackColor = true;
             this.btn_plattegrond.Click += new System.EventHandler(this.btn_plattegrond_Click);
             // 
-            // Aantal
-            // 
-            this.Aantal.Text = "Aantal";
-            // 
-            // Naam
-            // 
-            this.Naam.Text = "Naam";
-            // 
-            // Prijs
-            // 
-            this.Prijs.Text = "Prijs";
-            // 
             // Betaling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +267,7 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.lbl_UheeftBetaald);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Betaling";

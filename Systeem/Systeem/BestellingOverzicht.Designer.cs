@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BestellingOverzicht));
             this.clb_besteIitems = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -158,6 +159,7 @@
             this.Controls.Add(this.btn_aanpassen);
             this.Controls.Add(this.cb_status);
             this.Controls.Add(this.clb_besteIitems);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BestellingOverzicht";
             this.Text = "BestellingOverzicht";
             this.ResumeLayout(false);
