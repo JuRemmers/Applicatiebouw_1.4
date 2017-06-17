@@ -11,14 +11,17 @@ namespace Logica
 {
     public class RekeningService
     {
+        // constanten voor vaste waardes
         const double BTWL = 0.06;
         const double BTWH = 0.21;
 
         public List<BestelItem> GetBestellingByTafelId(int id)
         {
+            // haalt de bestelling op bij opgegeven tafelId
             BestellingDAO d = new BestellingDAO();
             Bestelling best = d.GetBestellingByTafelId(id);
             
+            // haalt de list<bestelItems> op bij opgegeven bestelId
             BestelItemDAO b = new BestelItemDAO();
             List <BestelItem> bestelling = b.GetMenuItemsByBestellingId(best.ID);
             
@@ -27,6 +30,7 @@ namespace Logica
 
         public Rekening MakeRekening(int TafelId, List<BestelItem> items)
         {
+            // haalt de bestelling op bij tafelID
             BestellingDAO d = new BestellingDAO();
             Bestelling b = d.GetBestellingByTafelId(TafelId);
 
@@ -35,6 +39,7 @@ namespace Logica
             double btwl = 0;
             double btwh = 0;
 
+            // prijzen worden voor elk item in de lijst opgemaakt + btw waardes worden berekend
             foreach(BestelItem i in items)
             {
                 double productprijs = i.aantal * i.item.prijs;
@@ -46,6 +51,7 @@ namespace Logica
                     btwh += productprijs * BTWH;
             }
 
+            // fooi + opmerking blijven leeg tot medewerker dit aanpast.
             double fooi = 0;
             double totaalprijs = prijs + fooi;
             string opm = "";

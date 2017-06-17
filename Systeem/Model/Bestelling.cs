@@ -31,8 +31,7 @@ namespace Model
 
             return String;
         }
-
-        // Kayleigh Vossen
+        
         public void UpdateBetaald()
         {
             this.betaald = true;

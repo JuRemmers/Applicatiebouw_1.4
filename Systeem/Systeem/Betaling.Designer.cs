@@ -79,6 +79,7 @@
             // 
             // listView1
             // 
+            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Aantal,
             this.Naam,
@@ -94,14 +95,18 @@
             // Aantal
             // 
             this.Aantal.Text = "Aantal";
+            this.Aantal.Width = 50;
             // 
             // Naam
             // 
             this.Naam.Text = "Naam";
+            this.Naam.Width = 280;
             // 
             // Prijs
             // 
             this.Prijs.Text = "Prijs";
+            this.Prijs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.Prijs.Width = 70;
             // 
             // label1
             // 

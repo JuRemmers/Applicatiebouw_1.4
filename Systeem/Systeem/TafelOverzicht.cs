@@ -20,6 +20,7 @@ namespace Systeem
         string sectie;
         BestellingService bestelservice = new BestellingService();
         TafelService tafelservice = new TafelService();
+        List<BestelItem> b;
 
         public TafelOverzicht(int medewerkerId = 0)
         {
@@ -292,8 +293,9 @@ namespace Systeem
         private void UpdateBestelling()
         {
             lv_bestelling.Items.Clear();
+            b = bestelservice.GetBestelling();
 
-            foreach (BestelItem item in bestelservice.GetBestelling())
+            foreach (BestelItem item in b)
             {
                 ListViewItem listview = new ListViewItem(item.item.ToString());
                 listview.SubItems.Add(item.aantal.ToString());
@@ -595,7 +597,7 @@ namespace Systeem
         {
             int tafel = (int)nod_tafel.Value;
 
-            if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
+            if (!bestelservice.PlaatsBestelling(medewerkerId, tafel, b))
             {
                 MessageBox.Show("Er ging iets fout.");
             }

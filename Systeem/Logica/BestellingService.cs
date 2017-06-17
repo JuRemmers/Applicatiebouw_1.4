@@ -101,16 +101,17 @@ namespace Logica
             return false;
         }
 
-        public bool PlaatsBestelling(int medewerkerId, int tafelId)
+        public bool PlaatsBestelling(int medewerkerId, int tafelId, List<BestelItem> best)
         {
             Bestelling order = BestelDAL.GetBestelling(medewerkerId, tafelId, false);
             if (order == null)
             {  order = BestelDAL.NewBestelling(tafelId, medewerkerId);  }
             
-
-            foreach (BestelItem bestelitem in bestelling)
+            foreach (BestelItem bestelitem in best)
             {
+
                 MenuItem item = menuItemDAL.GetForGerecht(bestelitem.item.ToString());
+                bestelitem.SetBestelling(order);
                 bestelitem.SetBestelId(order.ID);
                 bestelitem.SetPrijs(item.prijs);
                 bestelitem.SetMenuItem(item);
@@ -118,7 +119,7 @@ namespace Logica
                 { return false; }
             }
 
-            bestelling.Clear();
+            best.Clear();
             return true;
         }
     }

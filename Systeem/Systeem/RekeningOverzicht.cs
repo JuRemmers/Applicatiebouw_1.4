@@ -91,7 +91,7 @@ namespace Systeem
         // toont de waardes van de rekening
         private void ShowRekening()
         {
-            lbl_mednaam.Text = r.medewerker.voornaam;
+            lbl_mednaam.Text = "Medewerker : " + r.medewerker.voornaam;
             lbl_btwl.Text = "€" + r.btwLaag.ToString("0.00");
             lbl_btwh.Text = "€" + r.btwHoog.ToString("0.00");
             lbl_prijs.Text = "€" + r.Prijs.ToString("0.00");

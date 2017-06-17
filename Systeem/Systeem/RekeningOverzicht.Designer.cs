@@ -62,7 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_mednaam = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -211,6 +210,7 @@
             // Prijs
             // 
             this.Prijs.Text = "Prijs";
+            this.Prijs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Prijs.Width = 70;
             // 
             // tp_rekening
@@ -235,7 +235,6 @@
             this.tp_rekening.Controls.Add(this.label6);
             this.tp_rekening.Controls.Add(this.label5);
             this.tp_rekening.Controls.Add(this.lbl_mednaam);
-            this.tp_rekening.Controls.Add(this.label2);
             this.tp_rekening.Controls.Add(this.listView2);
             this.tp_rekening.Location = new System.Drawing.Point(4, 34);
             this.tp_rekening.Name = "tp_rekening";
@@ -270,7 +269,7 @@
             // btn_updatefooi
             // 
             this.btn_updatefooi.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_updatefooi.Location = new System.Drawing.Point(358, 354);
+            this.btn_updatefooi.Location = new System.Drawing.Point(255, 355);
             this.btn_updatefooi.Name = "btn_updatefooi";
             this.btn_updatefooi.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btn_updatefooi.Size = new System.Drawing.Size(50, 20);
@@ -310,39 +309,42 @@
             // 
             // lbl_totaal
             // 
-            this.lbl_totaal.AutoSize = true;
             this.lbl_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totaal.Location = new System.Drawing.Point(355, 388);
+            this.lbl_totaal.Location = new System.Drawing.Point(310, 388);
             this.lbl_totaal.Name = "lbl_totaal";
-            this.lbl_totaal.Size = new System.Drawing.Size(0, 16);
+            this.lbl_totaal.Size = new System.Drawing.Size(104, 16);
             this.lbl_totaal.TabIndex = 16;
+            this.lbl_totaal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_prijs
             // 
-            this.lbl_prijs.AutoSize = true;
             this.lbl_prijs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_prijs.Location = new System.Drawing.Point(355, 334);
+            this.lbl_prijs.Location = new System.Drawing.Point(307, 334);
             this.lbl_prijs.Name = "lbl_prijs";
-            this.lbl_prijs.Size = new System.Drawing.Size(0, 16);
+            this.lbl_prijs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_prijs.Size = new System.Drawing.Size(104, 16);
             this.lbl_prijs.TabIndex = 15;
+            this.lbl_prijs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_btwh
             // 
-            this.lbl_btwh.AutoSize = true;
             this.lbl_btwh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_btwh.Location = new System.Drawing.Point(355, 312);
+            this.lbl_btwh.Location = new System.Drawing.Point(310, 312);
             this.lbl_btwh.Name = "lbl_btwh";
-            this.lbl_btwh.Size = new System.Drawing.Size(0, 16);
+            this.lbl_btwh.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_btwh.Size = new System.Drawing.Size(101, 16);
             this.lbl_btwh.TabIndex = 14;
+            this.lbl_btwh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_btwl
             // 
-            this.lbl_btwl.AutoSize = true;
             this.lbl_btwl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_btwl.Location = new System.Drawing.Point(355, 288);
+            this.lbl_btwl.Location = new System.Drawing.Point(313, 288);
             this.lbl_btwl.Name = "lbl_btwl";
-            this.lbl_btwl.Size = new System.Drawing.Size(0, 16);
+            this.lbl_btwl.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_btwl.Size = new System.Drawing.Size(98, 16);
             this.lbl_btwl.TabIndex = 13;
+            this.lbl_btwl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btn_Terug
             // 
@@ -358,11 +360,12 @@
             // 
             // txt_tip
             // 
-            this.txt_tip.Location = new System.Drawing.Point(252, 355);
+            this.txt_tip.Location = new System.Drawing.Point(311, 355);
             this.txt_tip.Name = "txt_tip";
             this.txt_tip.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txt_tip.Size = new System.Drawing.Size(100, 20);
             this.txt_tip.TabIndex = 11;
+            this.txt_tip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btn_pin
             // 
@@ -445,22 +448,13 @@
             // 
             // lbl_mednaam
             // 
-            this.lbl_mednaam.AutoSize = true;
-            this.lbl_mednaam.Location = new System.Drawing.Point(352, 46);
+            this.lbl_mednaam.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mednaam.Location = new System.Drawing.Point(209, 49);
             this.lbl_mednaam.Name = "lbl_mednaam";
             this.lbl_mednaam.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_mednaam.Size = new System.Drawing.Size(0, 13);
+            this.lbl_mednaam.Size = new System.Drawing.Size(202, 13);
             this.lbl_mednaam.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(260, 46);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Medewerker : ";
+            this.lbl_mednaam.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // listView2
             // 
@@ -490,6 +484,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Prijs";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.columnHeader3.Width = 70;
             // 
             // RekeningOverzicht
@@ -535,7 +530,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_mednaam;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader Aantal;
         private System.Windows.Forms.ColumnHeader Naam;

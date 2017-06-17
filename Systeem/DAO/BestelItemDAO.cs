@@ -19,6 +19,7 @@ namespace DAO
             conn = dbconn.GetConnection();
         }
 
+        // Kayleigh
         private BestelItem ReadBestelItem(SqlDataReader reader)
         {
             try
@@ -114,8 +115,17 @@ namespace DAO
         {
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Bestel_Item(Bestel_ID, Menu_Item_ID, Aantal, Status, Opmerking, Prijs, DatumTijd)" +
-                    "VALUES (" + bestelitem.bestelling.ID + "," + bestelitem.item.id + "," + bestelitem.aantal + "," + bestelitem.status + ","+ bestelitem.opmerking + "," + bestelitem.prijs + "," + bestelitem.tijd + ")", conn);
+                string com = "INSERT INTO Bestel_Item (Bestel_ID, Menu_Item_ID, Aantal, Status, Opmerking, Prijs, DatumTijd)" +
+                                " VALUES (@bestid, @menuId, @aantal, @status, @opmerking, @prijs, @datumtijd)";
+                SqlCommand command = new SqlCommand(com, conn);
+
+                command.Parameters.AddWithValue("@bestid", bestelitem.bestelling.ID);
+                command.Parameters.AddWithValue("@menuId", bestelitem.item.id);
+                command.Parameters.AddWithValue("@aantal", bestelitem.aantal);
+                command.Parameters.AddWithValue("@status", bestelitem.status.ToString());
+                command.Parameters.AddWithValue("@opmerking", bestelitem.opmerking);
+                command.Parameters.AddWithValue("@prijs", bestelitem.prijs);
+                command.Parameters.AddWithValue("datumtijd", bestelitem.tijd);
 
                 conn.Open();
                 command.ExecuteNonQuery();
@@ -123,7 +133,10 @@ namespace DAO
 
                 return true;
             }
-            catch { return false; }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                    return false; }
             finally
             {
                 conn.Close();

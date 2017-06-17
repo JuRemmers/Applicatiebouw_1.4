@@ -34,6 +34,7 @@ namespace Model
             return item.ToString() + ", " + aantal;
         }
 
+        
         public BestelItem(MenuItem item, int aantal)
         {
             this.item = item;
@@ -82,6 +83,11 @@ namespace Model
         public void SetBestelId(int id)
         {
             this.bestelling.SetID(id);
+        }
+
+        public void SetBestelling(Bestelling b)
+        {
+            this.bestelling = b;
         }
     }
 }

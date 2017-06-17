@@ -19,6 +19,8 @@ namespace Systeem
         public Betaling(List<BestelItem> items, string betaalmethode, Rekening r)
         {
             InitializeComponent();
+
+            // toont de rekening
             lbl_UheeftBetaald.Text = "U heeft " + betaalmethode + " betaald";
             lbl_btwL.Text = "€ " + r.btwLaag.ToString("0.00");
             lbl_btwH.Text = "€ " + r.btwHoog.ToString("0.00");
@@ -27,10 +29,14 @@ namespace Systeem
             lbl_totaalprijs.Text = "€ " + r.totaalprijs.ToString("0.00");
             lbl_Medewerker.Text = "U werd geholpen door: " + r.medewerker.voornaam;
             lbl_datetime.Text = r.datumtijd.ToString("dd - MM - yyyy  hh:mm");
+
+            // insert de rekening direct in de database
             RekeningDAO d = new RekeningDAO();
             d.InsertRekening(r);
+            // update betaaldstatus van de betreffende bestelling
             BestellingDAO b = new BestellingDAO();
             b.UpdateBetaald(r.bestelling.ID);
+            // toont listview van bestelde items
             InitList(items);
         }
 
@@ -49,6 +55,7 @@ namespace Systeem
             }
         }
 
+        // sluit rekening, terug naar plattegrond
         private void btn_plattegrond_Click(object sender, EventArgs e)
         {
             this.Close();
