@@ -20,21 +20,23 @@ namespace DAO
         }
         private Bestelling ReadBestelItem(SqlDataReader reader)
         {
-            int bestellingID = 0;
-            int tafelid = 0;
-            int medewerkerid = 0;
-            while (reader.Read())
+            try
             {
-                bestellingID = (int)reader["ID"];
-                tafelid= (int)reader["Tafel_ID"];
-                medewerkerid = (int)reader["Medewerker_ID"];
+                while (reader.Read())
+                {
+                    int bestellingID = (int)reader["ID"];
+                    int tafelid = (int)reader["Tafel_ID"];
+                    int medewerkerid = (int)reader["Medewerker_ID"];
+                    Tafel tafel = new Tafel(tafelid, true);
+                    Medewerker medewerker = new Medewerker(medewerkerid, "naam", "achternaam", Functie.Bar, "password");
+                    return new Bestelling(bestellingID, true, tafel, medewerker);
+                }
+                return null;
             }
-            Tafel tafel = new Tafel(tafelid, true);
-            Medewerker medewerker = new Medewerker(medewerkerid, "naam", "achternaam", Functie.Bar, "password");
-
-
-            return new Bestelling(bestellingID, true, tafel, medewerker);
-            
+            catch
+            {
+                return null;
+            }
         }
 
         public List<Bestelling> GetAllBestellingen(string locatieid)
