@@ -31,7 +31,7 @@ namespace Systeem
         public TafelOverzicht(string tabopen)
         {
             InitializeComponent();
-
+            loadTableStatus();
             // Kayleigh Vossen
             if (tabopen == "tp_bestelling_maken")
             {
