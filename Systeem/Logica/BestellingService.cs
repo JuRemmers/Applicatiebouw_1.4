@@ -103,14 +103,15 @@ namespace Logica
 
         public bool PlaatsBestelling(int medewerkerId, int tafelId)
         {
-            Bestelling order;
-            try { order = BestelDAL.GetBestelling(medewerkerId, tafelId, false); }
-            catch
-            { order = BestelDAL.NewBestelling(tafelId, medewerkerId); }
+            Bestelling order = BestelDAL.GetBestelling(medewerkerId, tafelId, false);
+            if (order == null)
+            {  order = BestelDAL.NewBestelling(tafelId, medewerkerId);  }
+            
 
             foreach (BestelItem bestelitem in bestelling)
             {
                 MenuItem item = menuItemDAL.GetForGerecht(bestelitem.item.ToString());
+                bestelitem.SetBestelId(order.ID);
                 bestelitem.SetPrijs(item.prijs);
                 bestelitem.SetMenuItem(item);
                 if (!bestelItemDAL.InsertBestelItem(bestelitem))
