@@ -283,6 +283,7 @@
             this.btn_keuken_meldingen.TabIndex = 1;
             this.btn_keuken_meldingen.Text = "Keuken meldingen";
             this.btn_keuken_meldingen.UseVisualStyleBackColor = true;
+            this.btn_keuken_meldingen.Click += new System.EventHandler(this.btn_keuken_meldingen_Click);
             // 
             // btn_bar_meldingen
             // 
