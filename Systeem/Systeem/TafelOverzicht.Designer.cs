@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TafelOverzicht));
             this.tab_tafeloverzicht = new System.Windows.Forms.TabControl();
             this.tp_plattegrond = new System.Windows.Forms.TabPage();
+            this.btn_loguit = new System.Windows.Forms.Button();
             this.btn_table9 = new System.Windows.Forms.Button();
             this.btn_table10 = new System.Windows.Forms.Button();
             this.btn_table8 = new System.Windows.Forms.Button();
@@ -41,7 +41,6 @@
             this.btn_table3 = new System.Windows.Forms.Button();
             this.btn_table2 = new System.Windows.Forms.Button();
             this.btn_table1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_keuken_meldingen = new System.Windows.Forms.Button();
             this.btn_bar_meldingen = new System.Windows.Forms.Button();
             this.tp_bestelling_maken = new System.Windows.Forms.TabPage();
@@ -84,7 +83,6 @@
             this.btn_bar = new System.Windows.Forms.Button();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tp_bestelling_maken.SuspendLayout();
             this.gbox_Bestelling.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nod_tafel)).BeginInit();
@@ -112,6 +110,7 @@
             // 
             // tp_plattegrond
             // 
+            this.tp_plattegrond.Controls.Add(this.btn_loguit);
             this.tp_plattegrond.Controls.Add(this.btn_table9);
             this.tp_plattegrond.Controls.Add(this.btn_table10);
             this.tp_plattegrond.Controls.Add(this.btn_table8);
@@ -122,7 +121,6 @@
             this.tp_plattegrond.Controls.Add(this.btn_table3);
             this.tp_plattegrond.Controls.Add(this.btn_table2);
             this.tp_plattegrond.Controls.Add(this.btn_table1);
-            this.tp_plattegrond.Controls.Add(this.pictureBox1);
             this.tp_plattegrond.Controls.Add(this.btn_keuken_meldingen);
             this.tp_plattegrond.Controls.Add(this.btn_bar_meldingen);
             this.tp_plattegrond.Location = new System.Drawing.Point(4, 34);
@@ -133,128 +131,152 @@
             this.tp_plattegrond.Text = "Plattegrond";
             this.tp_plattegrond.UseVisualStyleBackColor = true;
             // 
+            // btn_loguit
+            // 
+            this.btn_loguit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_loguit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_loguit.Location = new System.Drawing.Point(354, 525);
+            this.btn_loguit.Name = "btn_loguit";
+            this.btn_loguit.Size = new System.Drawing.Size(66, 32);
+            this.btn_loguit.TabIndex = 24;
+            this.btn_loguit.Text = "Log uit";
+            this.btn_loguit.UseVisualStyleBackColor = false;
+            this.btn_loguit.Click += new System.EventHandler(this.btn_loguit_Click);
+            // 
             // btn_table9
             // 
-            this.btn_table9.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table9.Location = new System.Drawing.Point(95, 399);
+            this.btn_table9.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table9.Location = new System.Drawing.Point(78, 435);
             this.btn_table9.Name = "btn_table9";
-            this.btn_table9.Size = new System.Drawing.Size(83, 61);
+            this.btn_table9.Size = new System.Drawing.Size(121, 69);
             this.btn_table9.TabIndex = 23;
             this.btn_table9.Text = "Tafel 9";
+            this.btn_table9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table9.UseVisualStyleBackColor = false;
             this.btn_table9.Click += new System.EventHandler(this.btn_table9_Click);
             // 
             // btn_table10
             // 
-            this.btn_table10.BackColor = System.Drawing.Color.PaleGreen;
+            this.btn_table10.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_table10.ForeColor = System.Drawing.Color.Black;
-            this.btn_table10.Location = new System.Drawing.Point(232, 399);
+            this.btn_table10.Location = new System.Drawing.Point(215, 436);
             this.btn_table10.Name = "btn_table10";
-            this.btn_table10.Size = new System.Drawing.Size(83, 61);
+            this.btn_table10.Size = new System.Drawing.Size(121, 69);
             this.btn_table10.TabIndex = 22;
             this.btn_table10.Text = "Tafel 10";
+            this.btn_table10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table10.UseVisualStyleBackColor = false;
             this.btn_table10.Click += new System.EventHandler(this.btn_table10_Click);
             // 
             // btn_table8
             // 
-            this.btn_table8.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table8.Location = new System.Drawing.Point(232, 321);
+            this.btn_table8.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table8.Location = new System.Drawing.Point(215, 347);
             this.btn_table8.Name = "btn_table8";
-            this.btn_table8.Size = new System.Drawing.Size(83, 61);
+            this.btn_table8.Size = new System.Drawing.Size(121, 69);
             this.btn_table8.TabIndex = 21;
             this.btn_table8.Text = "Tafel 8";
+            this.btn_table8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table8.UseVisualStyleBackColor = false;
             this.btn_table8.Click += new System.EventHandler(this.btn_table8_Click);
             // 
             // btn_table7
             // 
-            this.btn_table7.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table7.Location = new System.Drawing.Point(95, 321);
+            this.btn_table7.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table7.Location = new System.Drawing.Point(78, 347);
             this.btn_table7.Name = "btn_table7";
-            this.btn_table7.Size = new System.Drawing.Size(83, 61);
+            this.btn_table7.Size = new System.Drawing.Size(121, 69);
             this.btn_table7.TabIndex = 20;
             this.btn_table7.Text = "Tafel 7";
+            this.btn_table7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table7.UseVisualStyleBackColor = false;
             this.btn_table7.Click += new System.EventHandler(this.btn_table7_Click);
             // 
             // btn_table6
             // 
-            this.btn_table6.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table6.Location = new System.Drawing.Point(232, 241);
+            this.btn_table6.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table6.Location = new System.Drawing.Point(215, 258);
             this.btn_table6.Name = "btn_table6";
-            this.btn_table6.Size = new System.Drawing.Size(83, 61);
+            this.btn_table6.Size = new System.Drawing.Size(121, 69);
             this.btn_table6.TabIndex = 19;
             this.btn_table6.Text = "Tafel 6";
+            this.btn_table6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table6.UseVisualStyleBackColor = false;
             this.btn_table6.Click += new System.EventHandler(this.btn_table6_Click);
             // 
             // btn_table5
             // 
-            this.btn_table5.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table5.Location = new System.Drawing.Point(95, 241);
+            this.btn_table5.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table5.Location = new System.Drawing.Point(78, 258);
             this.btn_table5.Name = "btn_table5";
-            this.btn_table5.Size = new System.Drawing.Size(83, 61);
+            this.btn_table5.Size = new System.Drawing.Size(121, 69);
             this.btn_table5.TabIndex = 18;
             this.btn_table5.Text = "Tafel 5";
+            this.btn_table5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table5.UseVisualStyleBackColor = false;
             this.btn_table5.Click += new System.EventHandler(this.btn_table5_Click);
             // 
             // btn_table4
             // 
-            this.btn_table4.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table4.Location = new System.Drawing.Point(232, 164);
+            this.btn_table4.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table4.Location = new System.Drawing.Point(215, 166);
             this.btn_table4.Name = "btn_table4";
-            this.btn_table4.Size = new System.Drawing.Size(83, 61);
+            this.btn_table4.Size = new System.Drawing.Size(121, 69);
             this.btn_table4.TabIndex = 17;
             this.btn_table4.Text = "Tafel 4";
+            this.btn_table4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table4.UseVisualStyleBackColor = false;
             this.btn_table4.Click += new System.EventHandler(this.btn_table4_Click);
             // 
             // btn_table3
             // 
-            this.btn_table3.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table3.Location = new System.Drawing.Point(95, 164);
+            this.btn_table3.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table3.Location = new System.Drawing.Point(78, 168);
             this.btn_table3.Name = "btn_table3";
-            this.btn_table3.Size = new System.Drawing.Size(83, 61);
+            this.btn_table3.Size = new System.Drawing.Size(121, 69);
             this.btn_table3.TabIndex = 16;
             this.btn_table3.Text = "Tafel 3";
+            this.btn_table3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table3.UseVisualStyleBackColor = false;
             this.btn_table3.Click += new System.EventHandler(this.btn_table3_Click);
             // 
             // btn_table2
             // 
-            this.btn_table2.BackColor = System.Drawing.Color.PaleGreen;
-            this.btn_table2.Location = new System.Drawing.Point(232, 88);
+            this.btn_table2.BackColor = System.Drawing.Color.Transparent;
+            this.btn_table2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table2.Location = new System.Drawing.Point(215, 75);
             this.btn_table2.Name = "btn_table2";
-            this.btn_table2.Size = new System.Drawing.Size(83, 61);
+            this.btn_table2.Size = new System.Drawing.Size(121, 69);
             this.btn_table2.TabIndex = 15;
             this.btn_table2.Text = "Tafel 2";
+            this.btn_table2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table2.UseVisualStyleBackColor = false;
             this.btn_table2.Click += new System.EventHandler(this.btn_table2_Click);
             // 
             // btn_table1
             // 
             this.btn_table1.BackColor = System.Drawing.Color.Transparent;
-            this.btn_table1.Location = new System.Drawing.Point(95, 88);
+            this.btn_table1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_table1.Location = new System.Drawing.Point(78, 75);
             this.btn_table1.Name = "btn_table1";
-            this.btn_table1.Size = new System.Drawing.Size(83, 61);
+            this.btn_table1.Size = new System.Drawing.Size(121, 69);
             this.btn_table1.TabIndex = 14;
             this.btn_table1.Text = "Tafel 1";
+            this.btn_table1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_table1.UseVisualStyleBackColor = false;
             this.btn_table1.Click += new System.EventHandler(this.btn_table1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-4, 490);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 67);
-            this.pictureBox1.TabIndex = 12;
-            this.pictureBox1.TabStop = false;
-            // 
             // btn_keuken_meldingen
             // 
+            this.btn_keuken_meldingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_keuken_meldingen.Location = new System.Drawing.Point(215, 16);
             this.btn_keuken_meldingen.Name = "btn_keuken_meldingen";
             this.btn_keuken_meldingen.Size = new System.Drawing.Size(186, 39);
@@ -264,12 +286,14 @@
             // 
             // btn_bar_meldingen
             // 
+            this.btn_bar_meldingen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_bar_meldingen.Location = new System.Drawing.Point(20, 16);
             this.btn_bar_meldingen.Name = "btn_bar_meldingen";
             this.btn_bar_meldingen.Size = new System.Drawing.Size(178, 39);
             this.btn_bar_meldingen.TabIndex = 0;
             this.btn_bar_meldingen.Text = "Bar meldingen";
             this.btn_bar_meldingen.UseVisualStyleBackColor = true;
+            this.btn_bar_meldingen.Click += new System.EventHandler(this.btn_bar_meldingen_Click);
             // 
             // tp_bestelling_maken
             // 
@@ -715,7 +739,6 @@
             this.Text = "TafelOverzicht";
             this.tab_tafeloverzicht.ResumeLayout(false);
             this.tp_plattegrond.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tp_bestelling_maken.ResumeLayout(false);
             this.gbox_Bestelling.ResumeLayout(false);
             this.gbox_Bestelling.PerformLayout();
@@ -772,7 +795,6 @@
         private System.Windows.Forms.Button btn_opmerking;
         private System.Windows.Forms.Button btn_wijzigAantal;
         private System.Windows.Forms.Button btn_verwijderitem;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.NumericUpDown nod_tafel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_table9;
@@ -785,5 +807,6 @@
         private System.Windows.Forms.Button btn_table3;
         private System.Windows.Forms.Button btn_table2;
         private System.Windows.Forms.Button btn_table1;
+        private System.Windows.Forms.Button btn_loguit;
     }
 }

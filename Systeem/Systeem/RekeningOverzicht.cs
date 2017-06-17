@@ -164,16 +164,23 @@ namespace Systeem
             t.UpdateStatus(tafelId, true);
             string tafelStatus = "Tafel " + tafelId + ": Bezet";
             lbl_Tafelstatus.Text = tafelStatus;
-            tafeloverzicht.loadTableStatus();
+            tafeloverzicht.loadTableStatus();            
         }
 
         public void btn_vrij_Click(object sender, EventArgs e)
         {
-            t.UpdateStatus(tafelId, false);
-            string tafelStatus = "Tafel " + tafelId + ": Vrij";
-            lbl_Tafelstatus.Text = tafelStatus;
-            tafeloverzicht.loadTableStatus();
-            
+            if(lv_bestelitems.Items.Count != 0)
+            {
+                MessageBox.Show("Kan niet op vrij zetten, want er loopt nog een bestelling");
+            }
+
+            else
+            {
+                t.UpdateStatus(tafelId, false);
+                string tafelStatus = "Tafel " + tafelId + ": Vrij";
+                lbl_Tafelstatus.Text = tafelStatus;
+                tafeloverzicht.loadTableStatus();
+            }           
         }
     }
 }
