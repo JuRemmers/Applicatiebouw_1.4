@@ -77,11 +77,5 @@ namespace DAO
 
             return item;
         }
-
-        public double GetPrijs(string gerecht)
-        {
-            MenuItem item = GetForGerecht(gerecht);
-            return item.prijs;
-        }
     }
 }

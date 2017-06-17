@@ -138,25 +138,27 @@ namespace DAO
             conn.Close();
         }
 
-        ////public Bestelling NewBestelling(int tafel, int medewerkerId)
-        ////{
-        ////    SqlCommand command = new SqlCommand("INSERT INTO Bestelling(Tafel_ID, Medewerker_ID, betaald) VALUES(" + tafel + ", " + medewerkerId + ", false", conn);
-        ////    conn.Open();
-        ////    command.ExecuteNonQuery();
-        ////    conn.Close(); 
+        public Bestelling NewBestelling(int tafel, int medewerkerId)
+        {
+            SqlCommand command = new SqlCommand("INSERT INTO Bestelling(Tafel_ID, Medewerker_ID, betaald) VALUES(" + tafel + ", " + medewerkerId + ", false", conn);
+            conn.Open();
+            command.ExecuteNonQuery();
+            conn.Close();
 
-        ////    //SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE tafel_ID=" + tafel + "medewerker_ID=")
-        ////}
+            return GetBestelling(medewerkerId, tafel, false);
+        }
 
         public Bestelling GetBestelling(int medewerkerid, int tafelid, bool betaald)
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Medewerker_ID=" + medewerkerid + "AND Tafel_ID=" + tafelid + "AND betaald=" + betaald, conn);
             conn.Open();
             SqlDataReader reader = command.ExecuteReader();
+
+            Bestelling bestelling = ReadBestelItem(reader);
+
             conn.Close();
             reader.Close();
-            return ReadBestelItem(reader);
-
+            return bestelling;
         }
     }
 }
