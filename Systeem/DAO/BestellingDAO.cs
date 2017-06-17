@@ -140,8 +140,9 @@ namespace DAO
 
         public Bestelling NewBestelling(int tafel, int medewerkerId)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO Bestelling(Tafel_ID, Medewerker_ID, betaald) VALUES(" + tafel + ", " + medewerkerId + ", false", conn);
             conn.Open();
+            SqlCommand command = new SqlCommand("INSERT INTO Bestelling(Tafel_ID, Medewerker_ID, betaald) VALUES(" + tafel + ", " + medewerkerId + ", false", conn);
+            
             command.ExecuteNonQuery();
             conn.Close();
 

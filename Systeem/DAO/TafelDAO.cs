@@ -75,25 +75,6 @@ namespace DAO
 
             return tafel;
         }
-        //Haal de status van de tafels op
-        public bool GetAllBezet(bool bezet)
-        {
-            SqlCommand command = new SqlCommand("SELECT * FROM tafel WHERE Bezet=" + bezet, conn);
-            SqlDataReader reader = command.ExecuteReader();
-            string result = ReadTafel(reader).ToString();
-
-
-            if (result == "true")
-            {
-                bezet = true;
-            }
-            else
-            {
-                bezet = false;
-            }
-
-            return bezet;
-        }
 
         public void UpdateStatus(int id, bool status)
         {
