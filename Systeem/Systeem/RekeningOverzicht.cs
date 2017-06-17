@@ -106,15 +106,12 @@ namespace Systeem
 
         private void btn_terug_Click(object sender, EventArgs e)
         {
-            TafelOverzicht tafeloverzicht = new TafelOverzicht();
             this.Close();
         }
 
         private void btn_AddBestelling_Click(object sender, EventArgs e)
         {
-            TafelOverzicht overzicht = new TafelOverzicht("tp_bestelling_maken");
-            overzicht.Location = this.Location;
-            overzicht.Show();
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -152,7 +149,9 @@ namespace Systeem
         private void button1_Click(object sender, EventArgs e)
         {
             string opm = txt_opmerking.Text;
-            r.UpdateOpmerking(opm);            
+            r.UpdateOpmerking(opm);
+            MessageBox.Show("Opmerking is bij rekening gevoegd");
+                        
         }
 
         private void btn_bezet_Click(object sender, EventArgs e)

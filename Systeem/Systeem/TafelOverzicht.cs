@@ -31,7 +31,7 @@ namespace Systeem
         public TafelOverzicht(string tabopen)
         {
             InitializeComponent();
-
+            loadTableStatus();
             // Kayleigh Vossen
             if (tabopen == "tp_bestelling_maken")
             {
@@ -332,80 +332,120 @@ namespace Systeem
         public void btn_table1_Click(object sender, EventArgs e)
         {          
             RekeningOverzicht overzicht = new RekeningOverzicht(1);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
         
         public void btn_table2_Click(object sender, EventArgs e)
         {           
             RekeningOverzicht overzicht = new RekeningOverzicht(2);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table3_Click(object sender, EventArgs e)
         {           
             RekeningOverzicht overzicht = new RekeningOverzicht(3);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table4_Click(object sender, EventArgs e)
         {          
             RekeningOverzicht overzicht = new RekeningOverzicht(4);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table5_Click(object sender, EventArgs e)
         {           
             RekeningOverzicht overzicht = new RekeningOverzicht(5);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table6_Click(object sender, EventArgs e)
         {         
             RekeningOverzicht overzicht = new RekeningOverzicht(6);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table7_Click(object sender, EventArgs e)
         {       
             RekeningOverzicht overzicht = new RekeningOverzicht(7);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table8_Click(object sender, EventArgs e)
         {            
             RekeningOverzicht overzicht = new RekeningOverzicht(8);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table9_Click(object sender, EventArgs e)
         {                    
             RekeningOverzicht overzicht = new RekeningOverzicht(9);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
         public void btn_table10_Click(object sender, EventArgs e)
         {            
             RekeningOverzicht overzicht = new RekeningOverzicht(10);
-            overzicht.ShowDialog();
+            overzicht.StartPosition = FormStartPosition.Manual;
             overzicht.Location = new Point(this.Left, this.Top);
+            if (overzicht.ShowDialog() == DialogResult.OK)
+            {
+                tab_tafeloverzicht.SelectedTab = tp_bestelling_maken;
+            }
             loadTableStatus();
         }
 
