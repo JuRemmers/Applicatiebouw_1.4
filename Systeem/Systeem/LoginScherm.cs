@@ -38,6 +38,8 @@ namespace Systeem
                     this.Hide(); // Verbergt loginscherm wanneer ingelogd
                     var TafelOverzicht = new TafelOverzicht(werknemer_id); // 'var' = compiler bepaalt datatype
                     TafelOverzicht.ShowDialog();
+                    tb_werknemer_id.Clear(); // Leegt de textboxen als je opnieuw inlogt
+                    tb_wachtwoord.Clear();
                     this.Show(); // Showt tafeloverzichtscherm
                 }
                 else MessageBox.Show("Incorect wachtwoord");

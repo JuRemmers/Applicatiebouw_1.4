@@ -80,6 +80,7 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
+            this.btn_loguit = new System.Windows.Forms.Button();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             this.tp_bestelling_maken.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // tp_plattegrond
             // 
+            this.tp_plattegrond.Controls.Add(this.btn_loguit);
             this.tp_plattegrond.Controls.Add(this.btn_table9);
             this.tp_plattegrond.Controls.Add(this.btn_table10);
             this.tp_plattegrond.Controls.Add(this.btn_table8);
@@ -279,6 +281,7 @@
             this.btn_bar_meldingen.TabIndex = 0;
             this.btn_bar_meldingen.Text = "Bar meldingen";
             this.btn_bar_meldingen.UseVisualStyleBackColor = true;
+            this.btn_bar_meldingen.Click += new System.EventHandler(this.btn_bar_meldingen_Click);
             // 
             // tp_bestelling_maken
             // 
@@ -616,7 +619,7 @@
             this.tp_huidige_bestellingen.Location = new System.Drawing.Point(4, 34);
             this.tp_huidige_bestellingen.Name = "tp_huidige_bestellingen";
             this.tp_huidige_bestellingen.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_huidige_bestellingen.Size = new System.Drawing.Size(417, 553);
+            this.tp_huidige_bestellingen.Size = new System.Drawing.Size(416, 553);
             this.tp_huidige_bestellingen.TabIndex = 2;
             this.tp_huidige_bestellingen.Text = "Huidige bestellingen";
             this.tp_huidige_bestellingen.UseVisualStyleBackColor = true;
@@ -714,6 +717,18 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
+            // btn_loguit
+            // 
+            this.btn_loguit.BackColor = System.Drawing.Color.Transparent;
+            this.btn_loguit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_loguit.Location = new System.Drawing.Point(354, 525);
+            this.btn_loguit.Name = "btn_loguit";
+            this.btn_loguit.Size = new System.Drawing.Size(66, 32);
+            this.btn_loguit.TabIndex = 24;
+            this.btn_loguit.Text = "Log uit";
+            this.btn_loguit.UseVisualStyleBackColor = false;
+            this.btn_loguit.Click += new System.EventHandler(this.btn_loguit_Click);
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -792,5 +807,6 @@
         private System.Windows.Forms.Button btn_table3;
         private System.Windows.Forms.Button btn_table2;
         private System.Windows.Forms.Button btn_table1;
+        private System.Windows.Forms.Button btn_loguit;
     }
 }

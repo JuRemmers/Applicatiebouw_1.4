@@ -65,7 +65,7 @@ namespace DAO
             {
                 return null;
             }
-            
+
         }
 
         // Kayleigh
@@ -120,8 +120,10 @@ namespace DAO
             conn.Close();
         }
 
-        public BestelItem GetForTable(int tafelId)
+        public List<BestelItem> GetForTable(int tafelId)
         {
+            List<BestelItem> bestelitemlist = new List<BestelItem>();
+
             string query = "SELECT *" +
                         " FROM Bestel_Item" +
                         " FULL OUTER JOIN Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID" +
@@ -130,17 +132,22 @@ namespace DAO
                         " FULL OUTER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID" +
                         " FULL OUTER JOIN Tafel ON Bestelling.Tafel_ID = Tafel.ID" +
                         " FULL OUTER JOIN Medewerker ON Bestelling.Medewerker_ID = Medewerker.ID" +
-                        " WHERE Tafel.id = " + tafelId;
+                        " WHERE Tafel.id = " + tafelId + "AND Bestelling.Betaald = 0";
 
             conn.Open();
             SqlCommand command = new SqlCommand(query, conn);
             SqlDataReader reader = command.ExecuteReader();
 
-            BestelItem item = ReadBestelItem(reader);
+            while (reader.Read())
+            {
+                BestelItem item = ReadBestelItem(reader);
+                bestelitemlist.Add(item);
+            }
+
             reader.Close();
             conn.Close();
 
-            return item;              
+            return bestelitemlist;
         }
     }
 }

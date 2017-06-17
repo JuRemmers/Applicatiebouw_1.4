@@ -412,80 +412,80 @@ namespace Systeem
         {
             for (int i = 1; i <= 10; i++)
             {
-                Status gerechtstatus = tafelservice.GetGerechtStatus(i);
-                string status;
-
-                //switch(gerechtstatus)
-                //{
-                //    case Status.Gereed:
-                //        status = "Gereed";
-                //        break;
-                //    case Status.Onderhande:
-                //        status = "Onderhande";
-                //        break;
-                //    case Status.Opgenomen:
-                //        status = "Opgenomen";
-                //        break;
-                //    case Status.Uitgeserveerd:
-                //        status = "Uitgeserveerd";
-                //        break;
-                //}   
+                string gerechtstatus = tafelservice.GetGerechtStatus(i);
 
                 bool tafelstatus = tafelservice.TafelStatus(i);
                 switch (i)
                 {
                     case 1:
                         if (tafelstatus == true)
-                            btn_table1.BackColor = Color.Red;
+                            btn_table1.BackColor = Color.Salmon;
                         else btn_table1.BackColor = Color.PaleGreen;
-                        btn_table1.Text = "Tafel 1"; // dit is een reset omdat je hem leegmaakt
-                        btn_table1.Text += gerechtstatus.ToString();
+                        btn_table1.Text = "Tafel 1 "; // dit is een reset omdat je hem leegmaakt                        
+                        btn_table1.Text += gerechtstatus;
                         break;
                     case 2:
                         if (tafelstatus == true)
-                            btn_table2.BackColor = Color.Red;
+                            btn_table2.BackColor = Color.Salmon;
                         else btn_table2.BackColor = Color.PaleGreen;
-
+                        btn_table2.Text = "Tafel 2 ";                       
+                        btn_table2.Text += gerechtstatus;
                         break;
                     case 3:
                         if (tafelstatus == true)
-                            btn_table3.BackColor = Color.Red;
+                            btn_table3.BackColor = Color.Salmon;
                         else btn_table3.BackColor = Color.PaleGreen;
+                        btn_table3.Text = "Tafel 3 ";
+                        btn_table3.Text += gerechtstatus;
                         break;
                     case 4:
                         if (tafelstatus == true)
-                            btn_table4.BackColor = Color.Red;
+                            btn_table4.BackColor = Color.Salmon;
                         else btn_table4.BackColor = Color.PaleGreen;
+                        btn_table4.Text = "Tafel 4 ";
+                        btn_table4.Text += gerechtstatus;
                         break;
                     case 5:
                         if (tafelstatus == true)
-                            btn_table5.BackColor = Color.Red;
+                            btn_table5.BackColor = Color.Salmon;
                         else btn_table5.BackColor = Color.PaleGreen;
+                        btn_table5.Text = "Tafel 5 ";
+                        btn_table5.Text += gerechtstatus;
                         break;
                     case 6:
                         if (tafelstatus == true)
-                            btn_table6.BackColor = Color.Red;
+                            btn_table6.BackColor = Color.Salmon;
                         else btn_table6.BackColor = Color.PaleGreen;
+                        btn_table6.Text = "Tafel 6 ";
+                        btn_table6.Text += gerechtstatus;
                         break;
                     case 7:
                         if (tafelstatus == true)
-                            btn_table7.BackColor = Color.Red;
+                            btn_table7.BackColor = Color.Salmon;
                         else btn_table7.BackColor = Color.PaleGreen;
+                        btn_table7.Text = "Tafel 7 ";
+                        btn_table7.Text += gerechtstatus;
                         break;
                     case 8:
                         if (tafelstatus == true)
-                            btn_table8.BackColor = Color.Red;
+                            btn_table8.BackColor = Color.Salmon;
                         else btn_table8.BackColor = Color.PaleGreen;
+                        btn_table8.Text = "Tafel 8 ";
+                        btn_table8.Text += gerechtstatus;
                         break;
                     case 9:
                         if (tafelstatus == true)
-                            btn_table9.BackColor = Color.Red;
+                            btn_table9.BackColor = Color.Salmon;
                         else btn_table9.BackColor = Color.PaleGreen;
+                        btn_table9.Text = "Tafel 9 ";
+                        btn_table9.Text += gerechtstatus;
                         break;
                     case 10:
                         if (tafelstatus == true)
-                            btn_table10.BackColor = Color.Red;
+                            btn_table10.BackColor = Color.Salmon;
                         else btn_table10.BackColor = Color.PaleGreen;
+                        btn_table10.Text = "Tafel 10 ";
+                        btn_table10.Text += gerechtstatus;
                         break;
                 }
             }
@@ -499,6 +499,16 @@ namespace Systeem
             //{
             //    MessageBox.Show("Er ging iets fout.");
             //}
+
+        }
+
+        private void btn_loguit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_bar_meldingen_Click(object sender, EventArgs e)
+        {
 
         }
     }

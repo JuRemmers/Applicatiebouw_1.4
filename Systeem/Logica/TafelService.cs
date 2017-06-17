@@ -28,10 +28,38 @@ namespace Logica
             tafelDAL.UpdateStatus(id, status);
         }
 
-        public Status GetGerechtStatus(int tafelId)
+        public string GetGerechtStatus(int tafelId)
         {
-            BestelItem bestelitem = bestelItemDAL.GetForTable(tafelId);
-            return bestelitem.status;
+            List<BestelItem> bestelitem = bestelItemDAL.GetForTable(tafelId);
+            List<Status> statuslist = new List<Status>();
+
+            foreach (BestelItem item in bestelitem)
+            {
+                if (item == null)
+                {
+                    statuslist.Add(Status.Null);
+                }
+                else statuslist.Add(item.status);
+            }
+
+            if (statuslist.Contains(Status.Gereed))
+                return "gereed";
+
+            else if (statuslist.Contains(Status.Onderhande))
+                return "onderhande";
+
+            else if (statuslist.Contains(Status.Opgenomen))
+                return "opgenomen";
+
+            else if (statuslist.Contains(Status.Uitgeserveerd))
+                return "uitgeserveerd";
+
+            else return null;
+                        
+            // Wat gaan we doen
+            // 1. nieuwe methode servicelaag
+            // 2. verander naam huidige methode
+            // 3. 
         }
     }
 }
