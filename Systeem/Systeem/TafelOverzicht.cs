@@ -24,7 +24,8 @@ namespace Systeem
         public TafelOverzicht(int medewerkerId = 0)
         {
             InitializeComponent();
-            loadTableStatus();                                
+            loadTableStatus();
+            this.medewerkerId = medewerkerId;
         }
 
         public TafelOverzicht(string tabopen)
@@ -493,12 +494,12 @@ namespace Systeem
 
         private void btn_plaats_Click(object sender, EventArgs e)
         {
-            //int tafel = (int)nod_tafel.Value;
+            int tafel = (int)nod_tafel.Value;
 
-            //if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
-            //{
-            //    MessageBox.Show("Er ging iets fout.");
-            //}
+            if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
+            {
+                MessageBox.Show("Er ging iets fout.");
+            }
 
         }
 

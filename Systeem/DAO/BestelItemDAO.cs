@@ -111,13 +111,19 @@ namespace DAO
             conn.Close();
         }
 
-        public void InsertBestelItem()
+        public bool InsertBestelItem(BestelItem bestelitem)
         {
-            SqlCommand command = new SqlCommand("", conn);
+            try
+            {
+                SqlCommand command = new SqlCommand("", conn);
 
-            conn.Open();
-            command.ExecuteNonQuery();
-            conn.Close();
+                conn.Open();
+                command.ExecuteNonQuery();
+                conn.Close();
+
+                return true;
+            }
+            catch { return false; }
         }
 
         public List<BestelItem> GetForTable(int tafelId)
