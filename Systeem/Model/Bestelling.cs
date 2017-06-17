@@ -37,7 +37,10 @@ namespace Model
             this.betaald = true;
         }
 
-
+        public void SetID(int id)
+        {
+            this.ID = id;
+        }
     }
 }
 

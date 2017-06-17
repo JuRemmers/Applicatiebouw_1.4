@@ -20,18 +20,19 @@ namespace DAO
         }
         private Bestelling ReadBestelItem(SqlDataReader reader)
         {
-            Status enumstatus = Status.Gereed;
+            try
+            {
+                int bestellingID = (int)reader["ID"];
+                int tafelid = (int)reader["Tafel_ID"];
+                int Medewerker_ID = (int)reader["Medewerker_ID"];
 
-            int bestellingID = (int)reader["ID"];
-            int tafelid = (int)reader["Tafel_ID"];
-            int Medewerker_ID = (int)reader["Medewerker_ID"];
-
-            Tafel tafel = new Tafel(tafelid, true);
-            Medewerker medewerker = new Medewerker(Medewerker_ID, "naam", "achternaam", Functie.Bar, "password");
+                Tafel tafel = new Tafel(tafelid, true);
+                Medewerker medewerker = new Medewerker(Medewerker_ID, "naam", "achternaam", Functie.Bar, "password");
 
 
-            return new Bestelling(bestellingID, true, tafel, medewerker);
-
+                return new Bestelling(bestellingID, true, tafel, medewerker);
+            }
+            catch { return null; }
         }
 
         public List<Bestelling> GetAllBestellingen(string locatieid)
@@ -141,7 +142,7 @@ namespace DAO
         public Bestelling NewBestelling(int tafel, int medewerkerId)
         {
             conn.Open();
-            SqlCommand command = new SqlCommand("INSERT INTO Bestelling(Tafel_ID, Medewerker_ID, betaald) VALUES(" + tafel + ", " + medewerkerId + ", false", conn);
+            SqlCommand command = new SqlCommand("INSERT INTO Bestelling(Tafel_ID, Medewerker_ID, betaald) VALUES(" + tafel + ", " + medewerkerId + ", 'false')", conn);
             
             command.ExecuteNonQuery();
             conn.Close();
@@ -151,7 +152,7 @@ namespace DAO
 
         public Bestelling GetBestelling(int medewerkerid, int tafelid, bool betaald)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Medewerker_ID=" + medewerkerid + "AND Tafel_ID=" + tafelid + "AND betaald=" + betaald, conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Medewerker_ID=" + medewerkerid + " AND Tafel_ID=" + tafelid, conn);
             conn.Open();
             SqlDataReader reader = command.ExecuteReader();
 

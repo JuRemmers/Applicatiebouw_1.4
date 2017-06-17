@@ -115,7 +115,8 @@ namespace DAO
         {
             try
             {
-                SqlCommand command = new SqlCommand("", conn);
+                SqlCommand command = new SqlCommand("INSERT INTO Bestel_Item(Bestel_ID, Menu_Item_ID, Aantal, Status, Opmerking, Prijs, DatumTijd)" +
+                    "VALUES (" + bestelitem.bestelling.ID + "," + bestelitem.item.id + "," + bestelitem.aantal + "," + bestelitem.status + ","+ bestelitem.opmerking + "," + bestelitem.prijs + "," + bestelitem.tijd + ")", conn);
 
                 conn.Open();
                 command.ExecuteNonQuery();
@@ -124,6 +125,10 @@ namespace DAO
                 return true;
             }
             catch { return false; }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         public List<BestelItem> GetForTable(int tafelId)

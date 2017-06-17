@@ -14,7 +14,7 @@ namespace Model
         public int aantal { get; private set; }
         public double prijs { get; private set; }
         public Status status { get; private set; }
-        private string opmerking;
+        public string opmerking { get; set; }
         public DateTime tijd { get; private set; }
 
         public BestelItem(int id, Bestelling bestelling, MenuItem item, double prijs, int aantal, Status status, string opmerking, DateTime tijd)
@@ -78,6 +78,11 @@ namespace Model
         public void SetMenuItem(MenuItem item)
         {
             this.item = item;
+        }
+
+        public void SetBestelId(int id)
+        {
+            this.bestelling.SetID(id);
         }
     }
 }
