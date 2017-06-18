@@ -620,8 +620,16 @@ namespace Systeem
         private void btn_opmerking_Click(object sender, EventArgs e)
         {
             string opm = tb_opmerking.Text;
-            string selected = lv_bestelling.SelectedItems[0].Text;
-
+            string selected = "";
+            try
+            {
+                selected = lv_bestelling.SelectedItems[0].Text;
+            }
+            catch
+            {
+                MessageBox.Show("Selecteer een item");
+                return;
+            }
             if (!bestelservice.WijzigOpmerking(selected, opm))
             {
                 MessageBox.Show("Kon opmerking niet toevoegen");

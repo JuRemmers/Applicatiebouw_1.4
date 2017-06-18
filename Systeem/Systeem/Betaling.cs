@@ -28,7 +28,11 @@ namespace Systeem
             lbl_tip.Text = "€ " + r.fooi.ToString("0.00");
             lbl_totaalprijs.Text = "€ " + r.totaalprijs.ToString("0.00");
             lbl_Medewerker.Text = "U werd geholpen door: " + r.medewerker.voornaam;
-            lbl_datetime.Text = r.datumtijd.ToString("dd - MM - yyyy  hh:mm");
+            lbl_datetime.Text = r.datumtijd.ToString("dd - MM - yyyy  HH:mm");
+            if (r.opmerking == "")
+                lbl_opmerking.Text = "Opmerking : n.v.t";
+            else
+                lbl_opmerking.Text = "Opmerking : " + r.opmerking;
 
             // insert de rekening direct in de database
             RekeningDAO d = new RekeningDAO();
