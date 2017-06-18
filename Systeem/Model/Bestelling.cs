@@ -9,9 +9,9 @@ namespace Model
 {
     public class Bestelling
     {
-        public int ID { get; private set; }
+        public int ID { get; set; }
         private bool betaald;
-        public Tafel tafel { get; private set; }
+        public Tafel tafel { get; set; }
         public Medewerker medewerker { get; private set; }
         
 

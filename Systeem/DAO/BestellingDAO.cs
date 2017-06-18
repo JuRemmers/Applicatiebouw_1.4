@@ -41,29 +41,25 @@ namespace DAO
 
         public List<Bestelling> GetAllBestellingen(string locatieid)
         {
-            int checkid;
             List<Bestelling> bestelling = new List<Bestelling>();
+            string com;
 
             conn.Open();
-
             if (locatieid == "Bar")
             {
-                checkid = 1;
+                com = "SELECT * FROM Bestelling INNER JOIN Bestel_Item ON Bestelling.ID = Bestel_Item.Bestel_ID INNER JOIN  Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID INNER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID WHERE Menu_Kaart.ID = 1  AND Bestelling.Betaald = 0";
             }
             else
             {
-                checkid = 2;
+                com = "SELECT * FROM Bestelling INNER JOIN Bestel_Item ON Bestelling.ID = Bestel_Item.Bestel_ID INNER JOIN  Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID INNER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID WHERE Menu_Kaart.ID != 1  AND Bestelling.Betaald = 0";
             }
 
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling INNER JOIN Bestel_Item ON Bestelling.ID = Bestel_Item.Bestel_ID INNER JOIN  Menu_Item ON Bestel_Item.Menu_Item_ID = Menu_Item.ID INNER JOIN Menu_Categorie ON Menu_Item.Menu_Categorie_ID = Menu_Categorie.ID INNER JOIN Menu_Kaart ON Menu_Categorie.Menu_Kaart_ID = Menu_Kaart.ID WHERE Menu_Kaart.ID = @id AND Bestelling.Betaald = 0", conn);
-            command.Parameters.AddWithValue("@id", checkid);
+
+            SqlCommand command = new SqlCommand(com, conn);
             SqlDataReader reader = command.ExecuteReader();
 
-            while (reader.Read())
-            {
-                Bestelling item = ReadBestelItem(reader);
-                bestelling.Add(item);
-            }
+            Bestelling item = ReadBestelItem(reader);
+            bestelling.Add(item);
 
             reader.Close();
             conn.Close();
@@ -79,11 +75,8 @@ namespace DAO
             SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Betaald = 0", conn);
             SqlDataReader reader = command.ExecuteReader();
 
-            while (reader.Read())
-            {
-                Bestelling item = ReadBestelItem(reader);
-                bestellingalles.Add(item);
-            }
+            Bestelling item = ReadBestelItem(reader);
+            bestellingalles.Add(item);
 
             reader.Close();
             conn.Close();
