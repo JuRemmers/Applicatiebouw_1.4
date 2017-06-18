@@ -150,7 +150,7 @@ namespace Systeem
             string c = "contant";
             Betaling b = new Betaling(items, c, r);
             b.Location = this.Location;
-            b.Show();
+            b.ShowDialog();
             this.Close();
         }
 
@@ -160,7 +160,7 @@ namespace Systeem
             string c = "met pin";
             Betaling b = new Betaling(items, c, r);
             b.Location = this.Location;
-            b.Show();
+            b.ShowDialog();
             this.Close();
         }
 
