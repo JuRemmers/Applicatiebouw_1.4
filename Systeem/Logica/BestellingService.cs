@@ -93,6 +93,20 @@ namespace Logica
             return false;
         }
 
+        // Kayleigh Vossen
+        public bool WijzigOpmerking(string item, string opm)
+        {
+            foreach(BestelItem bestelitem in bestelling)
+            {
+                if (bestelitem.Vergelijk(item))
+                {
+                    bestelitem.WijzigOpmerking(opm);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Donna vd Bent
         public bool Verwijder(string item)
         {

@@ -71,6 +71,12 @@ namespace Model
             this.aantal = aantal;
         }
 
+        // Kayleigh Vossen
+        public void WijzigOpmerking(string opmerking)
+        {
+            this.opmerking = opmerking;
+        }
+
         // Donna vd Bent
         public void SetPrijs(double prijs)
         {

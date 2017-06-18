@@ -615,5 +615,27 @@ namespace Systeem
             tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;
             btn_keuken.PerformClick();
         }
+
+        private void btn_opmerking_Click(object sender, EventArgs e)
+        {
+            string opm = tb_opmerking.Text;
+            string selected = lv_bestelling.SelectedItems[0].Text;
+
+            if (!bestelservice.WijzigOpmerking(selected, opm))
+            {
+                MessageBox.Show("Kon opmerking niet toevoegen");
+            }
+            else
+            {
+                MessageBox.Show("Opmerking toegevoegd");
+            }
+
+            tb_opmerking.Text = "Schrijf hier een opmerking voor een item";
+        }
+
+        private void tb_opmerking_Click(object sender, EventArgs e)
+        {
+            tb_opmerking.Clear();
+        }
     }
 }

@@ -81,6 +81,7 @@
             this.btn_keuken = new System.Windows.Forms.Button();
             this.btn_all = new System.Windows.Forms.Button();
             this.btn_bar = new System.Windows.Forms.Button();
+            this.tb_opmerking = new System.Windows.Forms.TextBox();
             this.tab_tafeloverzicht.SuspendLayout();
             this.tp_plattegrond.SuspendLayout();
             this.tp_bestelling_maken.SuspendLayout();
@@ -314,6 +315,7 @@
             // 
             // gbox_Bestelling
             // 
+            this.gbox_Bestelling.Controls.Add(this.tb_opmerking);
             this.gbox_Bestelling.Controls.Add(this.nod_tafel);
             this.gbox_Bestelling.Controls.Add(this.label2);
             this.gbox_Bestelling.Controls.Add(this.btn_plaats);
@@ -388,7 +390,7 @@
             this.btn_opmerking.TabIndex = 11;
             this.btn_opmerking.Text = "Voeg opmerking toe";
             this.btn_opmerking.UseVisualStyleBackColor = true;
-            this.btn_opmerking.Visible = false;
+            this.btn_opmerking.Click += new System.EventHandler(this.btn_opmerking_Click);
             // 
             // btn_wijzigAantal
             // 
@@ -422,7 +424,7 @@
             this.lv_bestelling.Location = new System.Drawing.Point(6, 49);
             this.lv_bestelling.MultiSelect = false;
             this.lv_bestelling.Name = "lv_bestelling";
-            this.lv_bestelling.Size = new System.Drawing.Size(390, 367);
+            this.lv_bestelling.Size = new System.Drawing.Size(390, 337);
             this.lv_bestelling.TabIndex = 7;
             this.lv_bestelling.UseCompatibleStateImageBehavior = false;
             this.lv_bestelling.View = System.Windows.Forms.View.Details;
@@ -737,6 +739,15 @@
             this.btn_bar.UseVisualStyleBackColor = false;
             this.btn_bar.Click += new System.EventHandler(this.btn_bar_Click);
             // 
+            // tb_opmerking
+            // 
+            this.tb_opmerking.Location = new System.Drawing.Point(6, 392);
+            this.tb_opmerking.Name = "tb_opmerking";
+            this.tb_opmerking.Size = new System.Drawing.Size(390, 20);
+            this.tb_opmerking.TabIndex = 15;
+            this.tb_opmerking.Text = "Schrijf hier een opmerking voor een item";
+            this.tb_opmerking.Click += new System.EventHandler(this.tb_opmerking_Click);
+            // 
             // TafelOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -816,5 +827,6 @@
         private System.Windows.Forms.Button btn_table2;
         private System.Windows.Forms.Button btn_table1;
         private System.Windows.Forms.Button btn_loguit;
+        private System.Windows.Forms.TextBox tb_opmerking;
     }
 }
