@@ -91,12 +91,19 @@ namespace Systeem
         // toont de waardes van de rekening
         private void ShowRekening()
         {
-            lbl_mednaam.Text = "Medewerker : " + r.medewerker.voornaam;
-            lbl_btwl.Text = "€" + r.btwLaag.ToString("0.00");
-            lbl_btwh.Text = "€" + r.btwHoog.ToString("0.00");
-            lbl_prijs.Text = "€" + r.Prijs.ToString("0.00");
-            txt_tip.Text = r.fooi.ToString("0.00");
-            lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
+            try
+            {
+                lbl_mednaam.Text = "Medewerker : " + r.medewerker.voornaam;
+                lbl_btwl.Text = "€" + r.btwLaag.ToString("0.00");
+                lbl_btwh.Text = "€" + r.btwHoog.ToString("0.00");
+                lbl_prijs.Text = "€" + r.Prijs.ToString("0.00");
+                txt_tip.Text = r.fooi.ToString("0.00");
+                lbl_totaal.Text = "€" + r.totaalprijs.ToString("0.00");
+            }
+            catch
+            {
+                MessageBox.Show("Er is iets misgegaan, probeer opniew");
+            }
         }
 
         // maakt de rekening op en toont deze daarna
