@@ -125,6 +125,7 @@ namespace Systeem
             }
         }
 
+        // Donna vd Bent
         private void btn_Bekijk_Click(object sender, EventArgs e)
         {
             UpdateBestelling();
@@ -249,9 +250,9 @@ namespace Systeem
         }
 
         //Donna vd Bent
-        //Telt aantal bestelitems in bestellingservice en zet deze in label
         private void UpdateAantal()
         {
+            //Telt aantal bestelitems in bestellingservice en zet deze in label
             int aantal = bestelservice.GetCount();
             lbl_aantal.Text = aantal.ToString();
         }
@@ -607,16 +608,6 @@ namespace Systeem
         {
             tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;
             btn_keuken.PerformClick();
-        }
-
-        private void btn_opmerking_Click(object sender, EventArgs e)
-        {
-            if (lv_bestelling.SelectedIndices.Count == 0)
-            { MessageBox.Show("Selecteer een item."); }
-            else
-            {
-
-            }
         }
     }
 }
