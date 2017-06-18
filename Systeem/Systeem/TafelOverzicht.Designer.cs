@@ -369,7 +369,7 @@
             // nod_aantal
             // 
             this.nod_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nod_aantal.Location = new System.Drawing.Point(357, 426);
+            this.nod_aantal.Location = new System.Drawing.Point(357, 461);
             this.nod_aantal.Name = "nod_aantal";
             this.nod_aantal.Size = new System.Drawing.Size(39, 26);
             this.nod_aantal.TabIndex = 2;
@@ -382,18 +382,18 @@
             // btn_opmerking
             // 
             this.btn_opmerking.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_opmerking.Location = new System.Drawing.Point(219, 459);
+            this.btn_opmerking.Location = new System.Drawing.Point(219, 424);
             this.btn_opmerking.Name = "btn_opmerking";
             this.btn_opmerking.Size = new System.Drawing.Size(177, 30);
             this.btn_opmerking.TabIndex = 11;
             this.btn_opmerking.Text = "Voeg opmerking toe";
             this.btn_opmerking.UseVisualStyleBackColor = true;
-            this.btn_opmerking.Click += new System.EventHandler(this.btn_opmerking_Click);
+            this.btn_opmerking.Visible = false;
             // 
             // btn_wijzigAantal
             // 
             this.btn_wijzigAantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_wijzigAantal.Location = new System.Drawing.Point(219, 423);
+            this.btn_wijzigAantal.Location = new System.Drawing.Point(219, 458);
             this.btn_wijzigAantal.Name = "btn_wijzigAantal";
             this.btn_wijzigAantal.Size = new System.Drawing.Size(132, 30);
             this.btn_wijzigAantal.TabIndex = 10;

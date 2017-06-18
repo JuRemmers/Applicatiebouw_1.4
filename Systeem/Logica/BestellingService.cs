@@ -28,7 +28,7 @@ namespace Logica
             bool dubbel = false;
             foreach (BestelItem bestel_item in bestelling)
             {
-                dubbel = bestel_item.Compare(bestelitem); // Compare update ook het aantal
+                dubbel = bestel_item.Compare(bestelitem); // Compare > update ook het aantal
             }
 
             if (!dubbel)
