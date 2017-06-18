@@ -69,13 +69,13 @@
             // 
             // lbl_UheeftBetaald
             // 
-            this.lbl_UheeftBetaald.AutoSize = true;
             this.lbl_UheeftBetaald.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UheeftBetaald.Location = new System.Drawing.Point(165, 164);
+            this.lbl_UheeftBetaald.Location = new System.Drawing.Point(119, 154);
             this.lbl_UheeftBetaald.Name = "lbl_UheeftBetaald";
-            this.lbl_UheeftBetaald.Size = new System.Drawing.Size(99, 16);
+            this.lbl_UheeftBetaald.Size = new System.Drawing.Size(197, 26);
             this.lbl_UheeftBetaald.TabIndex = 15;
-            this.lbl_UheeftBetaald.Text = "U heeft betaald";
+            this.lbl_UheeftBetaald.Text = "u heeft pin betaald";
+            this.lbl_UheeftBetaald.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // listView1
             // 
@@ -160,71 +160,65 @@
             // 
             // lbl_Medewerker
             // 
-            this.lbl_Medewerker.AutoSize = true;
             this.lbl_Medewerker.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Medewerker.Location = new System.Drawing.Point(119, 493);
             this.lbl_Medewerker.Name = "lbl_Medewerker";
-            this.lbl_Medewerker.Size = new System.Drawing.Size(0, 16);
+            this.lbl_Medewerker.Size = new System.Drawing.Size(194, 16);
             this.lbl_Medewerker.TabIndex = 22;
+            this.lbl_Medewerker.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_datetime
             // 
-            this.lbl_datetime.AutoSize = true;
             this.lbl_datetime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_datetime.Location = new System.Drawing.Point(146, 509);
+            this.lbl_datetime.Location = new System.Drawing.Point(138, 509);
             this.lbl_datetime.Name = "lbl_datetime";
-            this.lbl_datetime.Size = new System.Drawing.Size(0, 16);
+            this.lbl_datetime.Size = new System.Drawing.Size(144, 16);
             this.lbl_datetime.TabIndex = 23;
             this.lbl_datetime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_datetime.UseWaitCursor = true;
             // 
             // lbl_btwL
             // 
-            this.lbl_btwL.AutoSize = true;
             this.lbl_btwL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_btwL.Location = new System.Drawing.Point(367, 369);
+            this.lbl_btwL.Location = new System.Drawing.Point(276, 369);
             this.lbl_btwL.Name = "lbl_btwL";
-            this.lbl_btwL.Size = new System.Drawing.Size(0, 16);
+            this.lbl_btwL.Size = new System.Drawing.Size(136, 16);
             this.lbl_btwL.TabIndex = 24;
             this.lbl_btwL.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_btwH
             // 
-            this.lbl_btwH.AutoSize = true;
             this.lbl_btwH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_btwH.Location = new System.Drawing.Point(367, 385);
+            this.lbl_btwH.Location = new System.Drawing.Point(276, 385);
             this.lbl_btwH.Name = "lbl_btwH";
-            this.lbl_btwH.Size = new System.Drawing.Size(0, 16);
+            this.lbl_btwH.Size = new System.Drawing.Size(136, 16);
             this.lbl_btwH.TabIndex = 25;
             this.lbl_btwH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_prijs
             // 
-            this.lbl_prijs.AutoSize = true;
             this.lbl_prijs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_prijs.Location = new System.Drawing.Point(360, 410);
+            this.lbl_prijs.Location = new System.Drawing.Point(276, 410);
             this.lbl_prijs.Name = "lbl_prijs";
-            this.lbl_prijs.Size = new System.Drawing.Size(0, 16);
+            this.lbl_prijs.Size = new System.Drawing.Size(136, 16);
             this.lbl_prijs.TabIndex = 26;
             this.lbl_prijs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_tip
             // 
-            this.lbl_tip.AutoSize = true;
             this.lbl_tip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tip.Location = new System.Drawing.Point(360, 426);
+            this.lbl_tip.Location = new System.Drawing.Point(276, 426);
             this.lbl_tip.Name = "lbl_tip";
-            this.lbl_tip.Size = new System.Drawing.Size(0, 16);
+            this.lbl_tip.Size = new System.Drawing.Size(136, 16);
             this.lbl_tip.TabIndex = 27;
             this.lbl_tip.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lbl_totaalprijs
             // 
-            this.lbl_totaalprijs.AutoSize = true;
             this.lbl_totaalprijs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_totaalprijs.Location = new System.Drawing.Point(360, 462);
+            this.lbl_totaalprijs.Location = new System.Drawing.Point(276, 462);
             this.lbl_totaalprijs.Name = "lbl_totaalprijs";
-            this.lbl_totaalprijs.Size = new System.Drawing.Size(0, 16);
+            this.lbl_totaalprijs.Size = new System.Drawing.Size(136, 16);
             this.lbl_totaalprijs.TabIndex = 28;
             this.lbl_totaalprijs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

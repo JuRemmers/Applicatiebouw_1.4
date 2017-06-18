@@ -137,17 +137,23 @@ namespace Systeem
             sectie = "Bar";
 
             gbox_bestellingen.Visible = true;
-
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling(sectie);
-
-            foreach (Bestelling item in bestellingen)
+            try
             {
-                ListViewItem listview = new ListViewItem(item.ID.ToString());
-                listview.SubItems.Add(item.tafel.ToString());
-                clb_bestellingen.Items.Add(listview);
+                List<Bestelling> bestellingen = service.GetAllForBestelling(sectie);
+
+                foreach (Bestelling item in bestellingen)
+                {
+                    ListViewItem listview = new ListViewItem(item.ID.ToString());
+                    listview.SubItems.Add(item.tafel.ToString());
+                    clb_bestellingen.Items.Add(listview);
+                }
             }
+            catch
+            {
+
+            }           
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
@@ -159,13 +165,20 @@ namespace Systeem
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestelling(sectie);
-
-            foreach (Bestelling item in bestellingen)
+            try
             {
-                ListViewItem listview = new ListViewItem(item.ID.ToString());
-                listview.SubItems.Add(item.tafel.ToString());
-                clb_bestellingen.Items.Add(listview);
+                List<Bestelling> bestellingen = service.GetAllForBestelling(sectie);
+
+                foreach (Bestelling item in bestellingen)
+                {
+                    ListViewItem listview = new ListViewItem(item.ID.ToString());
+                    listview.SubItems.Add(item.tafel.ToString());
+                    clb_bestellingen.Items.Add(listview);
+                }
+            }
+            catch
+            {
+
             }
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
@@ -179,14 +192,19 @@ namespace Systeem
             gbox_bestellingen.Visible = true;
             clb_bestellingen.Items.Clear();
             BestellingService service = new BestellingService();
-            List<Bestelling> bestellingen = service.GetAllForBestellingAlles();
-
-            foreach (Model.Bestelling item in bestellingen)
+            try
             {
-                ListViewItem listview = new ListViewItem(item.ID.ToString());
-                listview.SubItems.Add(item.tafel.ToString());
-                clb_bestellingen.Items.Add(listview);
+                List<Bestelling> bestellingen = service.GetAllForBestellingAlles();
+
+                foreach (Model.Bestelling item in bestellingen)
+                {
+                    ListViewItem listview = new ListViewItem(item.ID.ToString());
+                    listview.SubItems.Add(item.tafel.ToString());
+                    clb_bestellingen.Items.Add(listview);
+                }
             }
+            catch
+            { }
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
