@@ -19,7 +19,7 @@ namespace DAO
             conn = dbconn.GetConnection();
         }
 
-        public MenuItem ReadMenuItem(SqlDataReader reader)
+        private MenuItem ReadMenuItem(SqlDataReader reader)
         {
             try
             {

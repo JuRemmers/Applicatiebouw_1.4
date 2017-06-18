@@ -19,7 +19,7 @@ namespace DAO
             conn = dbconn.GetConnection();
         }
 
-        public Medewerker ReadMedewerker(SqlDataReader reader)
+        private Medewerker ReadMedewerker(SqlDataReader reader)
         {
             try
             {
