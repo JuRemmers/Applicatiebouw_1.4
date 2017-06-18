@@ -410,6 +410,7 @@
             this.btn_verwijderitem.TabIndex = 9;
             this.btn_verwijderitem.Text = "Verwijder item";
             this.btn_verwijderitem.UseVisualStyleBackColor = true;
+            this.btn_verwijderitem.Click += new System.EventHandler(this.btn_verwijderitem_Click);
             // 
             // lv_bestelling
             // 

@@ -37,7 +37,7 @@ namespace Systeem
             
 
             foreach (BestelItem i in bestellingen)
-            {
+            {                
                 DateTime tijd1 = DateTime.Now;
                 TimeSpan wachttijd = tijd1.Subtract(i.tijd);
                 string sa = i.item.product;
@@ -50,14 +50,21 @@ namespace Systeem
                 listview.SubItems.Add(sa3);
                 clb_besteIitems.Items.Add(listview);
 
+                // Kayleigh Vossen, zorgt ervoor dat uitgeserveerd andere kleur krijgt
+                if (i.status == Status.Uitgeserveerd)
+                {
+                    listview.ForeColor = Color.ForestGreen;
+                    continue;
+                }
+
                 int categorie = i.item.Categorie.menu.id;
 
                 if (categorie == 1)
                 {
                     //true is drank
 
-                    TimeSpan maxtijd = new TimeSpan( 0, 15, 0);
-                    TimeSpan midtijd = new TimeSpan( 0, 5, 0);
+                    TimeSpan maxtijd = new TimeSpan(0, 15, 0);
+                    TimeSpan midtijd = new TimeSpan(0, 5, 0);
                     if (wachttijd.TotalMinutes > maxtijd.TotalMinutes)
                     {
                         listview.ForeColor = Color.Red;
@@ -72,8 +79,8 @@ namespace Systeem
                         {
                             listview.ForeColor = Color.Black;
                         }
-            }
-        }
+                    }
+                }
                 else
                 {
                     //false is eten
@@ -96,11 +103,10 @@ namespace Systeem
                         }
                     }
                 }
-
             }
         }
 
-    private void btn_back_Click(object sender, EventArgs e)
+        private void btn_back_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -109,7 +115,7 @@ namespace Systeem
         {
             try
             {
-                Status updatestatus = Model.Status.Gereed;
+                Status updatestatus = Status.Gereed;
                 string gerecht = clb_besteIitems.SelectedItems[0].Text;
                 updatestatus = (Status)Enum.Parse(typeof(Status), cb_status.SelectedItem.ToString());
                 BestellingService service = new BestellingService();
@@ -117,9 +123,9 @@ namespace Systeem
                 Bestellinglist(bestellingid);
             }
 
-            catch
+            catch(Exception e2)
             {
-                MessageBox.Show("Maak een selectie");
+                MessageBox.Show(e2.Message);
             }
         }
 
