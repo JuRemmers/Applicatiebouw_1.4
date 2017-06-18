@@ -39,6 +39,25 @@ namespace DAO
             }
         }
 
+            private Bestelling ReadBestellingen(SqlDataReader reader)
+        {
+            try
+            {
+
+                    int bestellingID = (int)reader["ID"];
+                    int tafelid = (int)reader["Tafel_ID"];
+                    int medewerkerid = (int)reader["Medewerker_ID"];
+                    Tafel tafel = new Tafel(tafelid, true);
+                    Medewerker medewerker = new Medewerker(medewerkerid, "naam", "achternaam", Functie.Bar, "password");
+                    return new Bestelling(bestellingID, true, tafel, medewerker);
+
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
         public List<Bestelling> GetAllBestellingen(string locatieid)
         {
             List<Bestelling> bestelling = new List<Bestelling>();
@@ -57,9 +76,15 @@ namespace DAO
 
             SqlCommand command = new SqlCommand(com, conn);
             SqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
 
-            Bestelling item = ReadBestelItem(reader);
-            bestelling.Add(item);
+                Bestelling item = ReadBestellingen(reader);
+                if (!bestelling.Contains(item))
+                {
+                    bestelling.Add(item);
+                }
+            }
 
             reader.Close();
             conn.Close();
@@ -75,8 +100,11 @@ namespace DAO
             SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Betaald = 0", conn);
             SqlDataReader reader = command.ExecuteReader();
 
-            Bestelling item = ReadBestelItem(reader);
-            bestellingalles.Add(item);
+            while (reader.Read())
+            {
+                Bestelling item = ReadBestellingen(reader);
+                bestellingalles.Add(item);
+            }
 
             reader.Close();
             conn.Close();
