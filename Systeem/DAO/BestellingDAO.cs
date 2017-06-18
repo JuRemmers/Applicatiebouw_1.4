@@ -18,6 +18,7 @@ namespace DAO
             dbconn = new DBconnection();
             conn = dbconn.GetConnection();
         }
+        //Kayleigh, Julian, Donna,  Vult de Items voor de bestellingen
         private Bestelling ReadBestelItem(SqlDataReader reader)
         {
             try
@@ -38,7 +39,7 @@ namespace DAO
                 return null;
             }
         }
-
+        //Julian Remmers, Vult de items voor het bestellingen overzicht
             private Bestelling ReadBestellingen(SqlDataReader reader)
         {
             try
@@ -57,7 +58,7 @@ namespace DAO
                 return null;
             }
         }
-
+        //Julian Remmers, Vraagt de bestellingen op voor Bar en Keuken
         public List<Bestelling> GetAllBestellingen(string locatieid)
         {
             List<Bestelling> bestelling = new List<Bestelling>();
@@ -104,6 +105,7 @@ namespace DAO
             return bestelling;
         }
 
+        //Julian Remmers, vraagt bestellingen op voor het alles overzicht
         public List<Bestelling> GetAllBestellingenAlles()
         {
             conn.Open();

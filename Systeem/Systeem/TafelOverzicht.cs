@@ -135,6 +135,7 @@ namespace Systeem
             gbox_Bestelling.Visible = true;
         }
 
+        //Julian Remmers, Print de lijst met bestellingen voor Bar
         public void btn_bar_Click(object sender, EventArgs e)
         {
             sectie = "Bar";
@@ -154,13 +155,13 @@ namespace Systeem
             }
             catch
             {
-                MessageBox.Show("wow");
             }    
                    
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
+        //Julian Remmers, Print de lijst met bestellingen voor Keuken
         public void btn_keuken_Click(object sender, EventArgs e)
         {
             sectie = "Keuken";
@@ -181,13 +182,13 @@ namespace Systeem
             }
             catch
             {
-                MessageBox.Show("wow");
             }
 
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
+        //Julian Remmers, Print de lijst met bestellingen voor Alles
         private void btn_all_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = true;
@@ -207,13 +208,13 @@ namespace Systeem
             }
             catch
             {
-                MessageBox.Show("wow");
             }
 
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             clb_bestellingen.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
+        //Julian Remmers, Terug knop, heeft niet echt uitleg nodig
         private void btn_back_Click(object sender, EventArgs e)
         {
             gbox_bestellingen.Visible = false;
@@ -221,8 +222,8 @@ namespace Systeem
 
         private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
+
 
         private void btn_bekijkbestel_Click(object sender, EventArgs e)
         {
