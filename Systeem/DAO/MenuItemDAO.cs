@@ -63,6 +63,7 @@ namespace DAO
             return menuitems;
         }
 
+        // Donna vd Bent
         public MenuItem GetForGerecht(string gerecht)
         {
             conn.Open();
@@ -77,6 +78,16 @@ namespace DAO
             conn.Close();
 
             return item;
+        }
+
+        // Donna vd Bent
+        public void UpdateVoorraad(int id, int voorraad)
+        {
+            conn.Open();
+            SqlCommand command = new SqlCommand("UPDATE Menu_Item SET voorraad=" + voorraad + " WHERE ID ="+ id, conn);
+
+            command.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

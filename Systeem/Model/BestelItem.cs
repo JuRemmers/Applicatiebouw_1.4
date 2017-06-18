@@ -56,6 +56,7 @@ namespace Model
             }
         }
 
+        // Donna vd Bent
         public bool Vergelijk(string item)
         {
             if (this.item.ToString() == item)
@@ -64,27 +65,32 @@ namespace Model
             else { return false; }
         }
 
+        // Donna vd Bent
         public void WijzigAantal(int aantal)
         {
             this.aantal = aantal;
         }
 
+        // Donna vd Bent
         public void SetPrijs(double prijs)
         {
             this.prijs = prijs;
             this.tijd = DateTime.Now;
         }
 
+        // Donna vd Bent
         public void SetMenuItem(MenuItem item)
         {
             this.item = item;
         }
 
+        // Donna vd Bent
         public void SetBestelId(int id)
         {
             this.bestelling.SetID(id);
         }
 
+        // Donna vd Bent
         public void SetBestelling(Bestelling b)
         {
             this.bestelling = b;

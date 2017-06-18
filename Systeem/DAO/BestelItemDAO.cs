@@ -111,6 +111,7 @@ namespace DAO
             conn.Close();
         }
 
+        // Donna vd Bent
         public bool InsertBestelItem(BestelItem bestelitem)
         {
             try

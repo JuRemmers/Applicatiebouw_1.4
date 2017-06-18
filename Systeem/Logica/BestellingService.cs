@@ -54,6 +54,7 @@ namespace Logica
             bestelItemDAL.UpdateBestelitem(bestellingid, updatestatus, gerecht);
         }
 
+        // Donna vd Bent
         public List<BestelItem> GetBestelling()
         {
             return bestelling;
@@ -77,6 +78,7 @@ namespace Logica
             return bestelling;
         }
 
+        // Donna vd Bent
         public bool WijzigAantal(string item, int aantal)
         {
             foreach (BestelItem bestelItem in bestelling)
@@ -90,6 +92,7 @@ namespace Logica
             return false;
         }
 
+        // Donna vd Bent
         public bool Verwijder(string item)
         {
             foreach (BestelItem bestelitem in bestelling)
@@ -103,6 +106,7 @@ namespace Logica
             return false;
         }
 
+        // Donna vd Bent
         public bool PlaatsBestelling(int medewerkerId, int tafelId)
         {
             if (bestelling.Count == 0)
@@ -116,10 +120,13 @@ namespace Logica
             {
 
                 MenuItem item = menuItemDAL.GetForGerecht(bestelitem.item.ToString());
+                menuItemDAL.UpdateVoorraad(item.id, item.voorraad - bestelitem.aantal);
+
                 bestelitem.SetBestelling(order);
                 bestelitem.SetBestelId(order.ID);
                 bestelitem.SetPrijs(item.prijs);
                 bestelitem.SetMenuItem(item);
+
                 if (!bestelItemDAL.InsertBestelItem(bestelitem))
                 { return false; }
             }

@@ -257,6 +257,7 @@ namespace Systeem
             lbl_aantal.Text = aantal.ToString();
         }
 
+        // Donna vd Bent
         private void btn_wijzigAantal_Click(object sender, EventArgs e)
         {
             if (lv_bestelling.SelectedIndices.Count == 0)
@@ -270,14 +271,16 @@ namespace Systeem
                 { MessageBox.Show("Input ongeldig."); }
 
                 this.lv_bestelling.SelectedIndices.Clear();
-                UpdateAantal();
 
+                UpdateAantal();
                 UpdateBestelling();
             }
         }
 
+        // Donna vd Bent
         private void UpdateBestelling()
         {
+            // refresht bestellingoverzicht (lokaal)
             lv_bestelling.Items.Clear();
 
             foreach (BestelItem item in bestelservice.GetBestelling())
@@ -288,6 +291,7 @@ namespace Systeem
             }
         }
 
+        // Donna vd Bent
         private void btn_verwijderitem_Click(object sender, EventArgs e)
         {
             if (lv_bestelling.SelectedIndices.Count == 0)
