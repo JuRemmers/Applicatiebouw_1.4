@@ -80,10 +80,22 @@ namespace DAO
             {
 
                 Bestelling item = ReadBestellingen(reader);
-                if (!bestelling.Contains(item))
+
+                // Kayleigh, zorgt ervoor dat er niet meerdere bestellingen met overeenkomdend ID in de lijst komen
+                bool gelijk = false;
+                foreach(Bestelling b in bestelling)
                 {
-                    bestelling.Add(item);
+                    if(b.ID == item.ID)
+                    {
+                        gelijk = true;
+                    }
+
                 }
+                if (gelijk)
+                    continue;
+                else
+                    bestelling.Add(item);
+
             }
 
             reader.Close();
