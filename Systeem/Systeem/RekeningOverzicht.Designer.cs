@@ -312,6 +312,7 @@
             this.lbl_totaal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_totaal.Location = new System.Drawing.Point(310, 388);
             this.lbl_totaal.Name = "lbl_totaal";
+            this.lbl_totaal.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_totaal.Size = new System.Drawing.Size(104, 16);
             this.lbl_totaal.TabIndex = 16;
             this.lbl_totaal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
