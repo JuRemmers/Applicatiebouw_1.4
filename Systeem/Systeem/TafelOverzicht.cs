@@ -115,7 +115,8 @@ namespace Systeem
 
                 if (!bestelservice.Add(selected, aantal))
                 {
-                    MessageBox.Show("Input ongeldig.");
+                    // message tekst iets aangepast -- Kayleigh
+                    MessageBox.Show("Item niet voldoende op voorraad");
                 }
 
                 UpdateAantal();

@@ -20,7 +20,8 @@ namespace Logica
             MenuItem item = menuItemDAL.GetForGerecht(gerecht);
 
             // item = null als een categorie gekozen is
-            if (item == null || item.voorraad <= 0)
+            // Kayleigh edit: ipv item.voorraad <= 0, want nu wordt ook een vraag naar 10 items afgekapt als er maar 9 zijn
+            if (item == null || aantal > item.voorraad )
             { return false; }
 
             BestelItem bestelitem = new BestelItem(item, aantal);

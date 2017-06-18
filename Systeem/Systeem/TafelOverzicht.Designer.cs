@@ -522,6 +522,11 @@
             // 
             this.txt_aantal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_aantal.Location = new System.Drawing.Point(63, 507);
+            this.txt_aantal.Maximum = new decimal(new int[] {
+            -1981284352,
+            -1966660860,
+            0,
+            0});
             this.txt_aantal.Name = "txt_aantal";
             this.txt_aantal.Size = new System.Drawing.Size(120, 29);
             this.txt_aantal.TabIndex = 6;
