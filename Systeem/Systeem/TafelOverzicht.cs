@@ -581,7 +581,9 @@ namespace Systeem
             {
                 MessageBox.Show("Er ging iets fout.");
             }
+            else { MessageBox.Show("Bestelling geplaatst"); }
 
+            loadTableStatus();
             UpdateBestelling();
         }
 
@@ -600,6 +602,16 @@ namespace Systeem
         {
             tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;
             btn_keuken.PerformClick();
+        }
+
+        private void btn_opmerking_Click(object sender, EventArgs e)
+        {
+            if (lv_bestelling.SelectedIndices.Count == 0)
+            { MessageBox.Show("Selecteer een item."); }
+            else
+            {
+
+            }
         }
     }
 }

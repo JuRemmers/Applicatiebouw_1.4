@@ -135,7 +135,7 @@
             // 
             this.btn_loguit.BackColor = System.Drawing.Color.Transparent;
             this.btn_loguit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_loguit.Location = new System.Drawing.Point(354, 525);
+            this.btn_loguit.Location = new System.Drawing.Point(344, 515);
             this.btn_loguit.Name = "btn_loguit";
             this.btn_loguit.Size = new System.Drawing.Size(66, 32);
             this.btn_loguit.TabIndex = 24;
@@ -388,6 +388,7 @@
             this.btn_opmerking.TabIndex = 11;
             this.btn_opmerking.Text = "Voeg opmerking toe";
             this.btn_opmerking.UseVisualStyleBackColor = true;
+            this.btn_opmerking.Click += new System.EventHandler(this.btn_opmerking_Click);
             // 
             // btn_wijzigAantal
             // 
