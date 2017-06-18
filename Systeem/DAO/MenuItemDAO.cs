@@ -19,7 +19,7 @@ namespace DAO
             conn = dbconn.GetConnection();
         }
 
-        public MenuItem ReadMenuItem(SqlDataReader reader)
+        private MenuItem ReadMenuItem(SqlDataReader reader)
         {
             try
             {
@@ -41,6 +41,7 @@ namespace DAO
             { return null; }
         }
 
+        // Donna vd Bent
         public List<MenuItem> GetAllForKaart(string menukaart)
         {
             List<MenuItem> menuitems = new List<MenuItem>();

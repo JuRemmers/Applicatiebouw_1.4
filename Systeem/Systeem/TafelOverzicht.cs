@@ -102,14 +102,15 @@ namespace Systeem
 
         }
 
+        // Donna vd Bent
         private void btn_add_Click(object sender, EventArgs e)
         {
             if (clb_menukaart.SelectedIndices.Count == 0)
             { MessageBox.Show("Selecteer een item."); }
             else
             {
+                // kan maar 1 selecteren > [0]
                 string selected = clb_menukaart.SelectedItems[0].Text;
-
                 int aantal = (int)txt_aantal.Value;
 
                 if (!bestelservice.Add(selected, aantal))
@@ -247,6 +248,8 @@ namespace Systeem
             overzicht.Location = new Point(this.Left, this.Top);
         }
 
+        //Donna vd Bent
+        //Telt aantal bestelitems in bestellingservice en zet deze in label
         private void UpdateAantal()
         {
             int aantal = bestelservice.GetCount();
@@ -583,7 +586,9 @@ namespace Systeem
             {
                 MessageBox.Show("Er ging iets fout.");
             }
+            else { MessageBox.Show("Bestelling geplaatst"); }
 
+            loadTableStatus();
             UpdateBestelling();
         }
 
@@ -602,6 +607,16 @@ namespace Systeem
         {
             tab_tafeloverzicht.SelectedTab = tp_huidige_bestellingen;
             btn_keuken.PerformClick();
+        }
+
+        private void btn_opmerking_Click(object sender, EventArgs e)
+        {
+            if (lv_bestelling.SelectedIndices.Count == 0)
+            { MessageBox.Show("Selecteer een item."); }
+            else
+            {
+
+            }
         }
     }
 }

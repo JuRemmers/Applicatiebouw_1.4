@@ -147,9 +147,13 @@ namespace DAO
             return GetBestelling(medewerkerId, tafel);
         }
 
-        public Bestelling GetBestelling(int medewerkerid, int tafelid)
+        public Bestelling GetBestelling(int medewerkerid, int tafelid, bool betaald = false)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Medewerker_ID=" + medewerkerid + " AND Tafel_ID=" + tafelid, conn);
+            int check;
+            if (betaald)
+                check =1;
+            else { check = 0; }
+            SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Medewerker_ID=" + medewerkerid + " AND Tafel_ID=" + tafelid + " AND Betaald =" + check, conn);
             conn.Open();
             SqlDataReader reader = command.ExecuteReader();
 

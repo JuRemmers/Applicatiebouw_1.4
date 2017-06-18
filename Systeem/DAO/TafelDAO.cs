@@ -22,7 +22,7 @@ namespace DAO
             conn = dbconn.GetConnection();
         }
 
-        public Tafel ReadTafel(SqlDataReader reader)
+        private Tafel ReadTafel(SqlDataReader reader)
         {
             try
             {

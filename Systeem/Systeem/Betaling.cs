@@ -53,11 +53,6 @@ namespace Systeem
                 lvi.SubItems.Add(sa3);
                 listView1.Items.Add(lvi);
             }
-
-            string opmerking = r.opmerking;
-            ListViewItem lv = new ListViewItem("");
-            lv.SubItems.Add(opmerking);
-            listView1.Items.Add(lv);
         }
 
         // sluit rekening, terug naar plattegrond

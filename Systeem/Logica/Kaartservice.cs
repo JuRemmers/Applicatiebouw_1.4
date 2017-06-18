@@ -10,9 +10,11 @@ namespace Logica
 {
     public class Kaartservice
     {
+        MenuItemDAO MenuDal = new MenuItemDAO();
+        
+        // Donna vd Bent
         public List<MenuItem> GetAllkaart(string kaartid)
         {
-            MenuItemDAO MenuDal = new MenuItemDAO();
             List<MenuItem> kaart = MenuDal.GetAllForKaart(kaartid);
             return kaart;
         }
