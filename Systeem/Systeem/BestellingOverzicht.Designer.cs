@@ -92,6 +92,7 @@
             this.cb_status.Size = new System.Drawing.Size(197, 39);
             this.cb_status.TabIndex = 1;
             this.cb_status.Text = "Status...";
+            this.cb_status.SelectedIndexChanged += new System.EventHandler(this.cb_status_SelectedIndexChanged);
             // 
             // btn_aanpassen
             // 

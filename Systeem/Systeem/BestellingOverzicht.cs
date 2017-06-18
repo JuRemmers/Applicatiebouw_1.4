@@ -48,6 +48,7 @@ namespace Systeem
                 listview.SubItems.Add(sa2);
                 listview.SubItems.Add(sa4);
                 listview.SubItems.Add(sa3);
+                listview.Tag = i.opmerking;
                 clb_besteIitems.Items.Add(listview);
 
                 // Kayleigh Vossen, zorgt ervoor dat uitgeserveerd andere kleur krijgt
@@ -132,6 +133,18 @@ namespace Systeem
         private void button1_Click(object sender, EventArgs e)
         {
             Bestellinglist(bestellingid);
+        }
+
+        // Kayleigh Vossen, toont opmerking bij bestelitem in bestelling overzicht
+        private void cb_status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_status.SelectedItem.ToString()==Status.Onderhande.ToString())
+            {
+                if(clb_besteIitems.SelectedItems[0].Tag.ToString() != "")
+                {
+                    MessageBox.Show(clb_besteIitems.SelectedItems[0].Tag.ToString());
+                }
+            }
         }
     }
 }

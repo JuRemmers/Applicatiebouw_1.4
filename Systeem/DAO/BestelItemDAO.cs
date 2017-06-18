@@ -29,7 +29,7 @@ namespace DAO
                 int menuItemID = reader.GetInt32(2);
                 int aantal = reader.GetInt32(3);
                 Status status = (Status)Enum.Parse(typeof(Status), reader.GetString(4));
-                string opmerking = "";
+                string opmerking = reader.GetString(5);
 
                 double BestelItemPrijs = reader.GetDouble(6);
                 DateTime bestelItemTijd = reader.GetDateTime(7);
