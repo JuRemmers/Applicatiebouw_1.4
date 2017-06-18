@@ -616,6 +616,7 @@ namespace Systeem
             btn_keuken.PerformClick();
         }
 
+        // Kayleigh Vossen
         private void btn_opmerking_Click(object sender, EventArgs e)
         {
             string opm = tb_opmerking.Text;
@@ -633,6 +634,7 @@ namespace Systeem
             tb_opmerking.Text = "Schrijf hier een opmerking voor een item";
         }
 
+        // Kayleigh Vossen
         private void tb_opmerking_Click(object sender, EventArgs e)
         {
             tb_opmerking.Clear();
