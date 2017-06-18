@@ -149,6 +149,7 @@ namespace Systeem
         {
             string c = "contant";
             Betaling b = new Betaling(items, c, r);
+            b.StartPosition = FormStartPosition.Manual;
             b.Location = this.Location;
             b.ShowDialog();
             this.Close();
@@ -159,6 +160,7 @@ namespace Systeem
         {
             string c = "met pin";
             Betaling b = new Betaling(items, c, r);
+            b.StartPosition = FormStartPosition.Manual;
             b.Location = this.Location;
             b.ShowDialog();
             this.Close();
