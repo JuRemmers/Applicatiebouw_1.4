@@ -18,6 +18,8 @@ namespace Logica
         public bool Add(string gerecht, int aantal)
         {
             MenuItem item = menuItemDAL.GetForGerecht(gerecht);
+
+            // item = null als een categorie gekozen is
             if (item == null || item.voorraad <= 0)
             { return false; }
 
@@ -26,7 +28,7 @@ namespace Logica
             bool dubbel = false;
             foreach (BestelItem bestel_item in bestelling)
             {
-                dubbel = bestel_item.Compare(bestelitem);
+                dubbel = bestel_item.Compare(bestelitem); // Compare update ook het aantal
             }
 
             if (!dubbel)
