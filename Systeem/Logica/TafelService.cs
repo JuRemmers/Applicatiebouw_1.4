@@ -8,6 +8,7 @@ using Model;
 
 namespace Logica
 {
+    // Jesse van Duijne
     public class TafelService
     {
         TafelDAO tafelDAL = new TafelDAO();
@@ -54,12 +55,7 @@ namespace Logica
             else if (statuslist.Contains(Status.Uitgeserveerd))
                 return "uitgeserveerd";
 
-            else return null;
-                        
-            // Wat gaan we doen
-            // 1. nieuwe methode servicelaag
-            // 2. verander naam huidige methode
-            // 3. 
+            else return null;                        
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Logica
 {
     public class Loginservice
     {
+        // Jesse van Duijne
         public bool logincheck(int werknemer_id, string wachtwoord)
         {
             MedewerkerDAO medewerkerDAL = new MedewerkerDAO(); // Nieuwe instantie van medewerker

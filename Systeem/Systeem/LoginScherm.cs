@@ -18,6 +18,7 @@ namespace Systeem
             InitializeComponent();
         }
 
+        // Jesse van Duijne
         private void b_login_enter_Click(object sender, EventArgs e)
         {
             int werknemer_id = 0; // Initialiseert waarden voor id en wachtwoord

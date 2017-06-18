@@ -49,6 +49,7 @@ namespace DAO
             { return null; }
         }
 
+        // Jesse van Duijne
         public Medewerker GetForID(int id)
         {
             conn.Open();

@@ -76,6 +76,7 @@ namespace DAO
             return tafel;
         }
 
+        // Jesse van Duijne
         public void UpdateStatus(int id, bool status)
         {
             SqlCommand c = new SqlCommand("UPDATE Tafel SET Bezet ='" + status.ToString() + "' WHERE ID =" + id, conn); // Enkele haakjes want varchar (hierom geen parameters)
