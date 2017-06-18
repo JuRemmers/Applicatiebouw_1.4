@@ -151,10 +151,10 @@ namespace DAO
             command.ExecuteNonQuery();
             conn.Close();
 
-            return GetBestelling(medewerkerId, tafel, false);
+            return GetBestelling(medewerkerId, tafel);
         }
 
-        public Bestelling GetBestelling(int medewerkerid, int tafelid, bool betaald)
+        public Bestelling GetBestelling(int medewerkerid, int tafelid)
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Bestelling WHERE Medewerker_ID=" + medewerkerid + " AND Tafel_ID=" + tafelid, conn);
             conn.Open();

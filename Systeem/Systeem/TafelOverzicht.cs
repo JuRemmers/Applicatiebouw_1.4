@@ -20,7 +20,7 @@ namespace Systeem
         string sectie;
         BestellingService bestelservice = new BestellingService();
         TafelService tafelservice = new TafelService();
-        List<BestelItem> b;
+        Kaartservice kaartservice = new Kaartservice();
 
         public TafelOverzicht(int medewerkerId = 0)
         {
@@ -29,18 +29,44 @@ namespace Systeem
             this.medewerkerId = medewerkerId;
         }
 
+        //Donna vd Bent
         private void btn_lunch_Click(object sender, EventArgs e)
         {
             gbox_items.Visible = true;
-
             clb_menukaart.Items.Clear();
-            Kaartservice service = new Kaartservice();
-            List<Model.MenuItem> allLunch = service.GetAllkaart("Lunch");
+
+            PrintKaart("Lunch");
+        }
+
+        // Donna vd Bent
+        private void btn_diner_Click(object sender, EventArgs e)
+        {
+            gbox_items.Visible = true;
+            clb_menukaart.Items.Clear();
+
+
+            PrintKaart("Diner");
+        }
+
+        // Donna vd Bent
+        private void btn_dranken_Click(object sender, EventArgs e)
+        {
+            gbox_items.Visible = true;
+            clb_menukaart.Items.Clear();
+
+            PrintKaart("Drank");
+        }
+
+        // Donna vd Bent
+        private void PrintKaart(string kaart)
+        {
+            List<Model.MenuItem> allLunch = kaartservice.GetAllkaart(kaart);
 
             ListViewItem listview;
             string cat = null;
             foreach (Model.MenuItem item in allLunch)
             {
+                // als de catergorie veranderd is, print deze
                 if (cat != item.Categorie.ToString())
                 {
                     listview = new ListViewItem(item.Categorie.ToString());
@@ -48,13 +74,13 @@ namespace Systeem
                     clb_menukaart.Items.Add(listview);
                 }
 
+                // print item, als er geen voorraad meer is, maak tekst grijs
                 listview = new ListViewItem(item.product);
+                listview.SubItems.Add(item.prijs.ToString());
                 if (item.voorraad <= 0)
                 { listview.ForeColor = Color.Silver; }
 
-                listview.SubItems.Add(item.prijs.ToString());
-
-
+                // Update categorie
                 cat = item.Categorie.ToString();
 
                 clb_menukaart.Items.Add(listview);
@@ -74,70 +100,6 @@ namespace Systeem
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btn_diner_Click(object sender, EventArgs e)
-        {
-            gbox_items.Visible = true;
-
-            clb_menukaart.Items.Clear();
-            Kaartservice service = new Kaartservice();
-            List<Model.MenuItem> allDiner = service.GetAllkaart("Diner");
-
-            ListViewItem listview;
-            string cat = null;
-            foreach (Model.MenuItem item in allDiner)
-            {
-                if (cat != item.Categorie.ToString())
-                {
-                    listview = new ListViewItem(item.Categorie.ToString());
-                    listview.Font = new Font("Serif", 15, FontStyle.Bold);
-                    clb_menukaart.Items.Add(listview);
-                }
-
-                listview = new ListViewItem(item.product);
-                if (item.voorraad <= 0)
-                { listview.ForeColor = Color.Silver; }
-
-                listview.SubItems.Add(item.prijs.ToString());
-
-
-                cat = item.Categorie.ToString();
-
-                clb_menukaart.Items.Add(listview);
-            }
-        }
-
-        private void btn_dranken_Click(object sender, EventArgs e)
-        {
-            gbox_items.Visible = true;
-
-            clb_menukaart.Items.Clear();
-            Kaartservice service = new Kaartservice();
-            List<Model.MenuItem> allDranken = service.GetAllkaart("Drank");
-
-            ListViewItem listview;
-            string cat = null;
-            foreach (Model.MenuItem item in allDranken)
-            {
-                if (cat != item.Categorie.ToString())
-                {
-                    listview = new ListViewItem(item.Categorie.ToString());
-                    listview.Font = new Font("Serif", 15, FontStyle.Bold);
-                    clb_menukaart.Items.Add(listview);
-                }
-
-                listview = new ListViewItem(item.product);
-                if (item.voorraad <= 0)
-                { listview.ForeColor = Color.Silver; }
-
-                listview.SubItems.Add(item.prijs.ToString());
-
-
-                cat = item.Categorie.ToString();
-
-                clb_menukaart.Items.Add(listview);
-            }
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -293,9 +255,8 @@ namespace Systeem
         private void UpdateBestelling()
         {
             lv_bestelling.Items.Clear();
-            b = bestelservice.GetBestelling();
 
-            foreach (BestelItem item in b)
+            foreach (BestelItem item in bestelservice.GetBestelling())
             {
                 ListViewItem listview = new ListViewItem(item.item.ToString());
                 listview.SubItems.Add(item.aantal.ToString());
@@ -530,7 +491,7 @@ namespace Systeem
                         if (tafelstatus == true)
                             btn_table2.BackColor = Color.Salmon;
                         else btn_table2.BackColor = Color.PaleGreen;
-                        btn_table2.Text = "Tafel 2 ";                       
+                        btn_table2.Text = "Tafel 2 ";
                         btn_table2.Text += gerechtstatus;
                         break;
                     case 3:
@@ -593,15 +554,17 @@ namespace Systeem
             }
         }
 
+        // Donna vd Bent
         private void btn_plaats_Click(object sender, EventArgs e)
         {
             int tafel = (int)nod_tafel.Value;
 
-            if (!bestelservice.PlaatsBestelling(medewerkerId, tafel, b))
+            if (!bestelservice.PlaatsBestelling(medewerkerId, tafel))
             {
                 MessageBox.Show("Er ging iets fout.");
             }
 
+            UpdateBestelling();
         }
 
         private void btn_loguit_Click(object sender, EventArgs e)

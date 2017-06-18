@@ -125,7 +125,7 @@ namespace DAO
                 command.Parameters.AddWithValue("@status", bestelitem.status.ToString());
                 command.Parameters.AddWithValue("@opmerking", bestelitem.opmerking);
                 command.Parameters.AddWithValue("@prijs", bestelitem.prijs);
-                command.Parameters.AddWithValue("datumtijd", bestelitem.tijd);
+                command.Parameters.AddWithValue("@datumtijd", bestelitem.tijd);
 
                 conn.Open();
                 command.ExecuteNonQuery();
