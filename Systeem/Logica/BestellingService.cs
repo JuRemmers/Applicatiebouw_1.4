@@ -103,6 +103,9 @@ namespace Logica
 
         public bool PlaatsBestelling(int medewerkerId, int tafelId)
         {
+            if (bestelling.Count == 0)
+                return false;
+
             Bestelling order = BestelDAL.GetBestelling(medewerkerId, tafelId);
             if (order == null)
             {  order = BestelDAL.NewBestelling(tafelId, medewerkerId);  }
@@ -118,6 +121,9 @@ namespace Logica
                 if (!bestelItemDAL.InsertBestelItem(bestelitem))
                 { return false; }
             }
+
+            TafelService service = new TafelService();
+            service.UpdateStatus(tafelId, true);
 
             bestelling.Clear();
             return true;
