@@ -63,7 +63,7 @@
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(58, -11);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(295, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(303, 162);
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
@@ -100,7 +100,7 @@
             // Naam
             // 
             this.Naam.Text = "Naam";
-            this.Naam.Width = 280;
+            this.Naam.Width = 250;
             // 
             // Prijs
             // 

@@ -205,7 +205,7 @@
             // Naam
             // 
             this.Naam.Text = "Naam";
-            this.Naam.Width = 280;
+            this.Naam.Width = 250;
             // 
             // Prijs
             // 
@@ -479,7 +479,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Naam";
-            this.columnHeader2.Width = 280;
+            this.columnHeader2.Width = 250;
             // 
             // columnHeader3
             // 
