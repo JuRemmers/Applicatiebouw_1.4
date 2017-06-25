@@ -13,10 +13,10 @@ namespace Logica
     {
         TafelDAO tafelDAL = new TafelDAO();
         BestelItemDAO bestelItemDAL = new BestelItemDAO();
-
+                
         public bool TafelStatus(int id)
         {
-            Tafel tafel = tafelDAL.GetForId(id);
+            Tafel tafel = tafelDAL.GetForId(id); // Nieuwe instantie van tafel vullen met juiste ID uit database
             if (tafel.Bezet)
             {
                 return true;
@@ -30,11 +30,11 @@ namespace Logica
         }
 
         public string GetGerechtStatus(int tafelId)
-        {
-            List<BestelItem> bestelitem = bestelItemDAL.GetForTable(tafelId);
+        {            
+            List<BestelItem> alleBesteldeItems = bestelItemDAL.GetForTable(tafelId); // GetForTable haalt alle bestelde items van een geselecteerde tafel op
             List<Status> statuslist = new List<Status>();
 
-            foreach (BestelItem item in bestelitem)
+            foreach (BestelItem item in alleBesteldeItems)
             {
                 if (item == null)
                 {

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Model
 {
+    // Jesse van Duijne
     public class Medewerker
     {
         public int ID { get; private set; }
@@ -34,7 +35,5 @@ namespace Model
                 return false;
             }
         }
-    }
-
-    
+    }    
 }

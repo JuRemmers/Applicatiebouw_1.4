@@ -21,7 +21,7 @@ namespace Systeem
         // Jesse van Duijne
         private void b_login_enter_Click(object sender, EventArgs e)
         {
-            int werknemer_id = 0; // Initialiseert waarden voor id en wachtwoord
+            int werknemer_id = 0; 
             string wachtwoord = " ";
 
             // Inlezen ID en wachtwoord
@@ -29,12 +29,12 @@ namespace Systeem
             {
                 // Proceed
                 werknemer_id = Int32.Parse(tb_werknemer_id.Text);
-                wachtwoord = tb_wachtwoord.Text.ToString();
+                wachtwoord = tb_wachtwoord.Text;
 
                 // Onderstaande controleerd of de login valide is
                 Loginservice login = new Loginservice();  // Maakt instantie van class Loginservice
-                bool check = login.logincheck(werknemer_id, wachtwoord); // ..en stopt hem in bool
-                if (check)
+                bool loginIsJuist = login.logincheck(werknemer_id, wachtwoord); // Het resultaat van logincheck wordt in de bool gestopt
+                if (loginIsJuist)
                 {
                     this.Hide(); // Verbergt loginscherm wanneer ingelogd
                     var TafelOverzicht = new TafelOverzicht(werknemer_id); // 'var' = compiler bepaalt datatype
@@ -45,7 +45,7 @@ namespace Systeem
                     tb_wachtwoord.Clear();
                     this.Show(); // Showt tafeloverzichtscherm
                 }
-                else MessageBox.Show("Incorect wachtwoord");
+                else MessageBox.Show("Incorrect wachtwoord");
             }
             else MessageBox.Show("Geen geldig ID ingevoerd: voer cijfers in");                     
         }

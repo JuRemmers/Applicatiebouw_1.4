@@ -16,16 +16,15 @@ namespace Logica
             MedewerkerDAO medewerkerDAL = new MedewerkerDAO(); // Nieuwe instantie van medewerker
 
             Medewerker medewerker = medewerkerDAL.GetForID(werknemer_id); // Roept methode GetForID aan uit MedewerkerDAO in een nieuwe instantie van medewerker (Model-laag)
-
-            bool result;
-
+            
             if (medewerker != null) 
             {
-                result = medewerker.CheckWachtwoord(wachtwoord); // Roept methode CheckWachtwoord aan uit Medewerker (model-laag)
-                return result; // Returned de bool als invoer medewerker niet herkent wordt in database
+                bool wachtwoordIsJuist = medewerker.CheckWachtwoord(wachtwoord); // Roept methode CheckWachtwoord aan uit Medewerker (model-laag)
+                return wachtwoordIsJuist; // Returned de bool als invoer medewerker herkent wordt in database
             }
 
             else return false; // Als medewerker niet herkent wordt, wordt ook niks gereturned            
         }
+
     }
 }

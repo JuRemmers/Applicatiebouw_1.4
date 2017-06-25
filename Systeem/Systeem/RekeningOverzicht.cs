@@ -184,10 +184,6 @@ namespace Systeem
         // Jesse van Duijne
         private void btn_bezet_Click(object sender, EventArgs e)
         {
-            // 1. Verbind met logicalaag 
-            // 2. Logicalaag verbind met databaselaag 
-            // 3. Databaselaag zoekt uit of status bezet/vrij is
-            // 4. if status == bezet --> zet status op vrij
             t.UpdateStatus(tafelId, true);
             string tafelStatus = "Tafel " + tafelId + ": Bezet";
             lbl_Tafelstatus.Text = tafelStatus;           

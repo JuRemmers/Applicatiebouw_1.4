@@ -21,7 +21,8 @@ namespace Systeem
         BestellingService bestelservice = new BestellingService();
         TafelService tafelservice = new TafelService();
         Kaartservice kaartservice = new Kaartservice();
-
+                
+        // Jesse van Duijne
         public TafelOverzicht(int medewerkerId = 0)
         {
             InitializeComponent();
@@ -502,86 +503,105 @@ namespace Systeem
         }
 
         // Jesse van Duijne
+        public void Verandertafelstatus(Button[] tafelKnoppenArray, int tafelNummer, bool tafelIsBezet, string gerechtstatus)
+        {
+            if (tafelIsBezet == true)
+                tafelKnoppenArray[tafelNummer - 1].BackColor = Color.Salmon;
+            else tafelKnoppenArray[tafelNummer - 1].BackColor = Color.PaleGreen;
+            tafelKnoppenArray[tafelNummer - 1].Text = "Tafel " + tafelNummer + " ";                        
+            tafelKnoppenArray[tafelNummer - 1].Text += gerechtstatus;
+        }
+
+        // Jesse van Duijne
         public void loadTableStatus()
         {
-            for (int i = 1; i <= 10; i++)
+            Button[] tafelKnoppenArray = new Button[] { btn_table1, btn_table2, btn_table3, btn_table4, btn_table5, btn_table6, btn_table7, btn_table8, btn_table9, btn_table10 };
+            
+            for (int tafelNummer = 1; tafelNummer <= 10; tafelNummer++)
             {
-                string gerechtstatus = tafelservice.GetGerechtStatus(i);
+                // Tafel vrij of bezet
+                bool tafelIsBezet = tafelservice.TafelStatus(tafelNummer);
 
-                bool tafelstatus = tafelservice.TafelStatus(i);
-                switch (i)
-                {
-                    case 1:
-                        if (tafelstatus == true)
-                            btn_table1.BackColor = Color.Salmon;
-                        else btn_table1.BackColor = Color.PaleGreen;
-                        btn_table1.Text = "Tafel 1 "; // dit is een reset omdat je hem leegmaakt                        
-                        btn_table1.Text += gerechtstatus;
-                        break;
-                    case 2:
-                        if (tafelstatus == true)
-                            btn_table2.BackColor = Color.Salmon;
-                        else btn_table2.BackColor = Color.PaleGreen;
-                        btn_table2.Text = "Tafel 2 ";
-                        btn_table2.Text += gerechtstatus;
-                        break;
-                    case 3:
-                        if (tafelstatus == true)
-                            btn_table3.BackColor = Color.Salmon;
-                        else btn_table3.BackColor = Color.PaleGreen;
-                        btn_table3.Text = "Tafel 3 ";
-                        btn_table3.Text += gerechtstatus;
-                        break;
-                    case 4:
-                        if (tafelstatus == true)
-                            btn_table4.BackColor = Color.Salmon;
-                        else btn_table4.BackColor = Color.PaleGreen;
-                        btn_table4.Text = "Tafel 4 ";
-                        btn_table4.Text += gerechtstatus;
-                        break;
-                    case 5:
-                        if (tafelstatus == true)
-                            btn_table5.BackColor = Color.Salmon;
-                        else btn_table5.BackColor = Color.PaleGreen;
-                        btn_table5.Text = "Tafel 5 ";
-                        btn_table5.Text += gerechtstatus;
-                        break;
-                    case 6:
-                        if (tafelstatus == true)
-                            btn_table6.BackColor = Color.Salmon;
-                        else btn_table6.BackColor = Color.PaleGreen;
-                        btn_table6.Text = "Tafel 6 ";
-                        btn_table6.Text += gerechtstatus;
-                        break;
-                    case 7:
-                        if (tafelstatus == true)
-                            btn_table7.BackColor = Color.Salmon;
-                        else btn_table7.BackColor = Color.PaleGreen;
-                        btn_table7.Text = "Tafel 7 ";
-                        btn_table7.Text += gerechtstatus;
-                        break;
-                    case 8:
-                        if (tafelstatus == true)
-                            btn_table8.BackColor = Color.Salmon;
-                        else btn_table8.BackColor = Color.PaleGreen;
-                        btn_table8.Text = "Tafel 8 ";
-                        btn_table8.Text += gerechtstatus;
-                        break;
-                    case 9:
-                        if (tafelstatus == true)
-                            btn_table9.BackColor = Color.Salmon;
-                        else btn_table9.BackColor = Color.PaleGreen;
-                        btn_table9.Text = "Tafel 9 ";
-                        btn_table9.Text += gerechtstatus;
-                        break;
-                    case 10:
-                        if (tafelstatus == true)
-                            btn_table10.BackColor = Color.Salmon;
-                        else btn_table10.BackColor = Color.PaleGreen;
-                        btn_table10.Text = "Tafel 10 ";
-                        btn_table10.Text += gerechtstatus;
-                        break;
-                }
+                // Status van werkzaamheden personeel
+                string gerechtstatus = tafelservice.GetGerechtStatus(tafelNummer);               
+
+                // Bovenstaande variabelen worden aangeroepen in methode die hieronder wordt aangeroepen
+                Verandertafelstatus(tafelKnoppenArray, tafelNummer, tafelIsBezet, gerechtstatus);
+                
+                // OUDE CODE:
+                //switch (i)
+                //{
+                //    case 1:
+                //        if (tafelstatus == true)
+                //            btn_table1.BackColor = Color.Salmon;
+                //        else btn_table1.BackColor = Color.PaleGreen;
+                //        btn_table1.Text = "Tafel 1 "; // dit is een reset omdat je hem leegmaakt                        
+                //        btn_table1.Text += gerechtstatus;
+                //        break;
+                //    case 2:
+                //        if (tafelstatus == true)
+                //            btn_table2.BackColor = Color.Salmon;
+                //        else btn_table2.BackColor = Color.PaleGreen;
+                //        btn_table2.Text = "Tafel 2 ";
+                //        btn_table2.Text += gerechtstatus;
+                //        break;
+                //    case 3:
+                //        if (tafelstatus == true)
+                //            btn_table3.BackColor = Color.Salmon;
+                //        else btn_table3.BackColor = Color.PaleGreen;
+                //        btn_table3.Text = "Tafel 3 ";
+                //        btn_table3.Text += gerechtstatus;
+                //        break;
+                //    case 4:
+                //        if (tafelstatus == true)
+                //            btn_table4.BackColor = Color.Salmon;
+                //        else btn_table4.BackColor = Color.PaleGreen;
+                //        btn_table4.Text = "Tafel 4 ";
+                //        btn_table4.Text += gerechtstatus;
+                //        break;
+                //    case 5:
+                //        if (tafelstatus == true)
+                //            btn_table5.BackColor = Color.Salmon;
+                //        else btn_table5.BackColor = Color.PaleGreen;
+                //        btn_table5.Text = "Tafel 5 ";
+                //        btn_table5.Text += gerechtstatus;
+                //        break;
+                //    case 6:
+                //        if (tafelstatus == true)
+                //            btn_table6.BackColor = Color.Salmon;
+                //        else btn_table6.BackColor = Color.PaleGreen;
+                //        btn_table6.Text = "Tafel 6 ";
+                //        btn_table6.Text += gerechtstatus;
+                //        break;
+                //    case 7:
+                //        if (tafelstatus == true)
+                //            btn_table7.BackColor = Color.Salmon;
+                //        else btn_table7.BackColor = Color.PaleGreen;
+                //        btn_table7.Text = "Tafel 7 ";
+                //        btn_table7.Text += gerechtstatus;
+                //        break;
+                //    case 8:
+                //        if (tafelstatus == true)
+                //            btn_table8.BackColor = Color.Salmon;
+                //        else btn_table8.BackColor = Color.PaleGreen;
+                //        btn_table8.Text = "Tafel 8 ";
+                //        btn_table8.Text += gerechtstatus;
+                //        break;
+                //    case 9:
+                //        if (tafelstatus == true)
+                //            btn_table9.BackColor = Color.Salmon;
+                //        else btn_table9.BackColor = Color.PaleGreen;
+                //        btn_table9.Text = "Tafel 9 ";
+                //        btn_table9.Text += gerechtstatus;
+                //        break;
+                //    case 10:
+                //        if (tafelstatus == true)
+                //            btn_table10.BackColor = Color.Salmon;
+                //        else btn_table10.BackColor = Color.PaleGreen;
+                //        btn_table10.Text = "Tafel 10 ";
+                //        btn_table10.Text += gerechtstatus;
+                //        break;
+                //}
             }
         }
 
